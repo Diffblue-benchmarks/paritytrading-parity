@@ -1,0 +1,690 @@
+{
+  "meta" : {
+    "reportVersion" : "2.7"
+  },
+  "run" : {
+    "version" : "2025.09.01-44e352d-licensed",
+    "creationTimestamp" : "2025-09-19T09:50:20.92Z",
+    "command" : "dcover create --coverage-reports --upload http://localhost:8080 --project-name paritytrading-parity --name with-diffblue-tests",
+    "totalTime" : 67.298,
+    "environmentDetectionTime" : 0.186,
+    "indexingTime" : 0.352,
+    "entryPointsTime" : 0.174,
+    "generationTime" : 181.339,
+    "timeToFirstTest" : 310.927,
+    "timeToLastTest" : 257.206,
+    "indexQueryTime" : 3.194,
+    "verificationTime" : 10.384,
+    "validationTime" : 6.61
+  },
+  "codes" : {
+    "R000" : "Success",
+    "R002" : "Missing observers",
+    "R013" : "No inputs found that don't throw a trivial exception",
+    "R031" : "Method may be time-sensitive",
+    "R081" : "Exception in arrange section",
+    "T000" : "Method eligible for test creation",
+    "T001" : "Trivial getter",
+    "T003" : "Private method",
+    "T005" : "Trivial constructor",
+    "T008" : "Private and never called",
+    "T012" : "Synthetic method",
+    "T023" : "Testability unknown",
+    "V000" : "Validated successfully"
+  },
+  "summary" : {
+    "classesCount" : 7,
+    "methodsCount" : 43,
+    "cumulativeDiffblueTestCount" : 17,
+    "cumulativeManualTestCount" : 22,
+    "completeTestCount" : 17,
+    "incompleteTestCount" : 0,
+    "skeletonTestCount" : 0,
+    "totalPhysicalLineCount" : 239,
+    "perMethodTestability" : {
+      "T000" : 16,
+      "T001" : 12,
+      "T003" : 8,
+      "T005" : 2,
+      "T008" : 1,
+      "T012" : 2,
+      "T023" : 2
+    },
+    "perMethodOutcome" : {
+      "R000" : 15,
+      "R002" : 2,
+      "R013" : 5,
+      "R031" : 1,
+      "R081" : 6,
+      "T003" : 8,
+      "T005" : 1,
+      "T008" : 1,
+      "T012" : 2,
+      "T023" : 2
+    },
+    "perTestOutcome" : {
+      "R000" : 17
+    },
+    "perTestValidation" : {
+      "V000" : 17
+    }
+  },
+  "classes" : {
+    "com.paritytrading.parity.util.Instrument" : {
+      "methodsCount" : 13,
+      "completeTestCount" : 11,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 5,
+        "T001" : 6,
+        "T003" : 2
+      },
+      "perMethodOutcome" : {
+        "R000" : 11,
+        "T003" : 2
+      },
+      "perTestOutcome" : {
+        "R000" : 11
+      }
+    },
+    "com.paritytrading.parity.util.Instruments" : {
+      "methodsCount" : 16,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 4,
+        "T001" : 6,
+        "T003" : 4,
+        "T012" : 2
+      },
+      "perMethodOutcome" : {
+        "R013" : 4,
+        "R081" : 6,
+        "T003" : 4,
+        "T012" : 2
+      }
+    },
+    "com.paritytrading.parity.util.OrderIDGenerator" : {
+      "methodsCount" : 4,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 3,
+        "T023" : 1
+      },
+      "perMethodOutcome" : {
+        "R002" : 1,
+        "R013" : 1,
+        "R031" : 1,
+        "T023" : 1
+      }
+    },
+    "com.paritytrading.parity.util.Strings" : {
+      "methodsCount" : 2,
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 1,
+        "T005" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 1,
+        "T005" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 1
+      }
+    },
+    "com.paritytrading.parity.util.TableHeader" : {
+      "methodsCount" : 4,
+      "completeTestCount" : 4,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 2,
+        "T003" : 1,
+        "T005" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 2,
+        "R002" : 1,
+        "T003" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 4
+      }
+    },
+    "com.paritytrading.parity.util.TableHeader$Column" : {
+      "methodsCount" : 1,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T003" : 1
+      },
+      "perMethodOutcome" : {
+        "T003" : 1
+      }
+    },
+    "com.paritytrading.parity.util.Timestamps" : {
+      "methodsCount" : 3,
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 1,
+        "T008" : 1,
+        "T023" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 1,
+        "T008" : 1,
+        "T023" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 1
+      }
+    }
+  },
+  "methods" : {
+    "com.paritytrading.parity.util.Instrument.<init>:(Ljava/lang/String;II)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        41,
+        42,
+        43,
+        45,
+        46,
+        48,
+        49,
+        51,
+        52,
+        53
+      ]
+    },
+    "com.paritytrading.parity.util.Instrument.asLong:()J" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        70
+      ]
+    },
+    "com.paritytrading.parity.util.Instrument.asString:()Ljava/lang/String;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        61
+      ]
+    },
+    "com.paritytrading.parity.util.Instrument.fromConfig:(Lcom/typesafe/config/Config;Ljava/lang/String;)Lcom/paritytrading/parity/util/Instrument;" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        136,
+        137,
+        139
+      ]
+    },
+    "com.paritytrading.parity.util.Instrument.getFormat:(III)Ljava/lang/String;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        143,
+        145,
+        147,
+        148,
+        150
+      ]
+    },
+    "com.paritytrading.parity.util.Instrument.getPriceFactor:()D" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        97
+      ]
+    },
+    "com.paritytrading.parity.util.Instrument.getPriceFormat:()Ljava/lang/String;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        115
+      ]
+    },
+    "com.paritytrading.parity.util.Instrument.getPriceFractionDigits:()I" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        79
+      ]
+    },
+    "com.paritytrading.parity.util.Instrument.getSizeFactor:()D" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        106
+      ]
+    },
+    "com.paritytrading.parity.util.Instrument.getSizeFormat:()Ljava/lang/String;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        124
+      ]
+    },
+    "com.paritytrading.parity.util.Instrument.getSizeFractionDigits:()I" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        88
+      ]
+    },
+    "com.paritytrading.parity.util.Instrument.setPriceFormat:(II)V" : {
+      "completeTestCount" : 3,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 3
+      },
+      "lineNumbers" : [
+        128,
+        129
+      ]
+    },
+    "com.paritytrading.parity.util.Instrument.setSizeFormat:(II)V" : {
+      "completeTestCount" : 3,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 3
+      },
+      "lineNumbers" : [
+        132,
+        133
+      ]
+    },
+    "com.paritytrading.parity.util.Instruments.<init>:([Lcom/paritytrading/parity/util/Instrument;IIII)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        46,
+        47,
+        49,
+        50,
+        52,
+        53,
+        55,
+        56,
+        57
+      ]
+    },
+    "com.paritytrading.parity.util.Instruments.fromConfig:(Lcom/typesafe/config/Config;Ljava/lang/String;)Lcom/paritytrading/parity/util/Instruments;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        161,
+        163,
+        165,
+        166,
+        168,
+        170,
+        171,
+        173,
+        174,
+        175,
+        177,
+        178,
+        180,
+        181,
+        182,
+        180,
+        185
+      ]
+    },
+    "com.paritytrading.parity.util.Instruments.get:(J)Lcom/paritytrading/parity/util/Instrument;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        81,
+        82,
+        83,
+        81,
+        86
+      ]
+    },
+    "com.paritytrading.parity.util.Instruments.get:(Ljava/lang/String;)Lcom/paritytrading/parity/util/Instrument;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        66,
+        67,
+        68,
+        66,
+        71
+      ]
+    },
+    "com.paritytrading.parity.util.Instruments.getInt:(Lcom/typesafe/config/Config;Ljava/lang/String;I)I" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        190
+      ]
+    },
+    "com.paritytrading.parity.util.Instruments.getMaxPriceFractionDigits:()I" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R081",
+      "lineNumbers" : [
+        104
+      ]
+    },
+    "com.paritytrading.parity.util.Instruments.getMaxSizeFractionDigits:()I" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R081",
+      "lineNumbers" : [
+        113
+      ]
+    },
+    "com.paritytrading.parity.util.Instruments.getPricePlaceholder:()Ljava/lang/String;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R081",
+      "lineNumbers" : [
+        140
+      ]
+    },
+    "com.paritytrading.parity.util.Instruments.getPriceWidth:()I" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R081",
+      "lineNumbers" : [
+        122
+      ]
+    },
+    "com.paritytrading.parity.util.Instruments.getSizePlaceholder:()Ljava/lang/String;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R081",
+      "lineNumbers" : [
+        149
+      ]
+    },
+    "com.paritytrading.parity.util.Instruments.getSizeWidth:()I" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R081",
+      "lineNumbers" : [
+        131
+      ]
+    },
+    "com.paritytrading.parity.util.Instruments.iterator:()Ljava/util/Iterator;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        95
+      ]
+    },
+    "com.paritytrading.parity.util.Instruments.lambda$fromConfig$0:(Lcom/typesafe/config/Config;Ljava/lang/String;)Lcom/paritytrading/parity/util/Instrument;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        174
+      ]
+    },
+    "com.paritytrading.parity.util.Instruments.lambda$fromConfig$1:(I)[Lcom/paritytrading/parity/util/Instrument;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        175
+      ]
+    },
+    "com.paritytrading.parity.util.Instruments.max:([Ljava/lang/Object;Ljava/util/function/ToIntFunction;)I" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        194
+      ]
+    },
+    "com.paritytrading.parity.util.Instruments.placeholder:(II)Ljava/lang/String;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        198,
+        199,
+        201
+      ]
+    },
+    "com.paritytrading.parity.util.OrderIDGenerator.<clinit>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T023",
+      "perMethodOutcome" : "T023"
+    },
+    "com.paritytrading.parity.util.OrderIDGenerator.<init>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R002",
+      "lineNumbers" : [
+        36,
+        37
+      ]
+    },
+    "com.paritytrading.parity.util.OrderIDGenerator.<init>:(Ljava/time/LocalTime;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        44,
+        45,
+        46,
+        47
+      ]
+    },
+    "com.paritytrading.parity.util.OrderIDGenerator.next:()Ljava/lang/String;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R031",
+      "lineNumbers" : [
+        55
+      ]
+    },
+    "com.paritytrading.parity.util.Strings.<init>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "T005",
+      "lineNumbers" : [
+        20
+      ]
+    },
+    "com.paritytrading.parity.util.Strings.repeat:(CI)Ljava/lang/String;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        23,
+        25,
+        27
+      ]
+    },
+    "com.paritytrading.parity.util.TableHeader$Column.<init>:(Ljava/lang/String;I)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        76,
+        77,
+        78,
+        79
+      ]
+    },
+    "com.paritytrading.parity.util.TableHeader.<init>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R002",
+      "lineNumbers" : [
+        33,
+        34,
+        35
+      ]
+    },
+    "com.paritytrading.parity.util.TableHeader.add:(Ljava/lang/String;I)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        44,
+        45
+      ]
+    },
+    "com.paritytrading.parity.util.TableHeader.format:()Ljava/lang/String;" : {
+      "completeTestCount" : 3,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 3
+      },
+      "lineNumbers" : [
+        53,
+        55,
+        56,
+        58,
+        59,
+        55,
+        62,
+        63,
+        65,
+        66,
+        62,
+        69
+      ]
+    },
+    "com.paritytrading.parity.util.TableHeader.format:(Ljava/lang/String;I)Ljava/lang/String;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        83
+      ]
+    },
+    "com.paritytrading.parity.util.Timestamps.<clinit>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T023",
+      "perMethodOutcome" : "T023"
+    },
+    "com.paritytrading.parity.util.Timestamps.<init>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T008",
+      "perMethodOutcome" : "T008",
+      "lineNumbers" : [
+        28,
+        29
+      ]
+    },
+    "com.paritytrading.parity.util.Timestamps.format:(J)Ljava/lang/String;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        38
+      ]
+    }
+  },
+  "validationMetrics" : { }
+}

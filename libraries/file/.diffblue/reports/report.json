@@ -1,0 +1,609 @@
+{
+  "meta" : {
+    "reportVersion" : "2.7"
+  },
+  "run" : {
+    "version" : "2025.09.01-44e352d-licensed",
+    "creationTimestamp" : "2025-09-19T09:50:20.92Z",
+    "command" : "dcover create --coverage-reports --upload http://localhost:8080 --project-name paritytrading-parity --name with-diffblue-tests",
+    "totalTime" : 61.418,
+    "environmentDetectionTime" : 0.053,
+    "indexingTime" : 0.341,
+    "entryPointsTime" : 0.039,
+    "generationTime" : 66.526,
+    "timeToFirstTest" : 94.289,
+    "timeToLastTest" : 99.81,
+    "indexQueryTime" : 3.436,
+    "verificationTime" : 5.634,
+    "validationTime" : 6.032
+  },
+  "codes" : {
+    "R000" : "Success",
+    "R002" : "Missing observers",
+    "R013" : "No inputs found that don't throw a trivial exception",
+    "R020" : "Temporary files were created but not deleted",
+    "T000" : "Method eligible for test creation",
+    "T001" : "Trivial getter",
+    "T002" : "Trivial setter",
+    "T003" : "Private method",
+    "T005" : "Trivial constructor",
+    "T012" : "Synthetic method",
+    "T023" : "Testability unknown",
+    "V000" : "Validated successfully"
+  },
+  "summary" : {
+    "classesCount" : 6,
+    "methodsCount" : 36,
+    "cumulativeDiffblueTestCount" : 12,
+    "cumulativeManualTestCount" : 2,
+    "completeTestCount" : 12,
+    "incompleteTestCount" : 0,
+    "skeletonTestCount" : 0,
+    "totalPhysicalLineCount" : 237,
+    "perMethodTestability" : {
+      "T000" : 16,
+      "T001" : 1,
+      "T002" : 1,
+      "T003" : 9,
+      "T005" : 2,
+      "T012" : 5,
+      "T023" : 2
+    },
+    "perMethodOutcome" : {
+      "R000" : 13,
+      "R002" : 1,
+      "R013" : 4,
+      "R020" : 2,
+      "T003" : 9,
+      "T012" : 5,
+      "T023" : 2
+    },
+    "perTestOutcome" : {
+      "R000" : 12
+    },
+    "perTestValidation" : {
+      "V000" : 12
+    }
+  },
+  "classes" : {
+    "com.paritytrading.parity.file.taq.TAQ" : {
+      "methodsCount" : 1,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T003" : 1
+      },
+      "perMethodOutcome" : {
+        "T003" : 1
+      }
+    },
+    "com.paritytrading.parity.file.taq.TAQ$Quote" : {
+      "methodsCount" : 1,
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T005" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 1
+      }
+    },
+    "com.paritytrading.parity.file.taq.TAQ$Trade" : {
+      "methodsCount" : 1,
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T005" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 1
+      }
+    },
+    "com.paritytrading.parity.file.taq.TAQConfig" : {
+      "methodsCount" : 13,
+      "completeTestCount" : 3,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 2,
+        "T001" : 1,
+        "T003" : 4,
+        "T012" : 5,
+        "T023" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 3,
+        "T003" : 4,
+        "T012" : 5,
+        "T023" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 3
+      }
+    },
+    "com.paritytrading.parity.file.taq.TAQConfig$Builder" : {
+      "methodsCount" : 7,
+      "completeTestCount" : 6,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 6,
+        "T002" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 7
+      },
+      "perTestOutcome" : {
+        "R000" : 6
+      }
+    },
+    "com.paritytrading.parity.file.taq.TAQWriter" : {
+      "methodsCount" : 13,
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 8,
+        "T003" : 4,
+        "T023" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 1,
+        "R002" : 1,
+        "R013" : 4,
+        "R020" : 2,
+        "T003" : 4,
+        "T023" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 1
+      }
+    }
+  },
+  "methods" : {
+    "com.paritytrading.parity.file.taq.TAQ$Quote.<init>:()V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        39
+      ]
+    },
+    "com.paritytrading.parity.file.taq.TAQ$Trade.<init>:()V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        80
+      ]
+    },
+    "com.paritytrading.parity.file.taq.TAQ.<init>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        33,
+        34
+      ]
+    },
+    "com.paritytrading.parity.file.taq.TAQConfig$Builder.<init>:()V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        110,
+        111,
+        113,
+        114,
+        116,
+        117,
+        119,
+        120,
+        121
+      ]
+    },
+    "com.paritytrading.parity.file.taq.TAQConfig$Builder.build:()Lcom/paritytrading/parity/file/taq/TAQConfig;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        195
+      ]
+    },
+    "com.paritytrading.parity.file.taq.TAQConfig$Builder.setEncoding:(Ljava/nio/charset/Charset;)Lcom/paritytrading/parity/file/taq/TAQConfig$Builder;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T002",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        130,
+        132
+      ]
+    },
+    "com.paritytrading.parity.file.taq.TAQConfig$Builder.setPriceFractionDigits:(I)Lcom/paritytrading/parity/file/taq/TAQConfig$Builder;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        171,
+        173
+      ]
+    },
+    "com.paritytrading.parity.file.taq.TAQConfig$Builder.setPriceFractionDigits:(Ljava/lang/String;I)Lcom/paritytrading/parity/file/taq/TAQConfig$Builder;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        144,
+        146
+      ]
+    },
+    "com.paritytrading.parity.file.taq.TAQConfig$Builder.setSizeFractionDigits:(I)Lcom/paritytrading/parity/file/taq/TAQConfig$Builder;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        184,
+        186
+      ]
+    },
+    "com.paritytrading.parity.file.taq.TAQConfig$Builder.setSizeFractionDigits:(Ljava/lang/String;I)Lcom/paritytrading/parity/file/taq/TAQConfig$Builder;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        158,
+        160
+      ]
+    },
+    "com.paritytrading.parity.file.taq.TAQConfig.<clinit>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T023",
+      "perMethodOutcome" : "T023"
+    },
+    "com.paritytrading.parity.file.taq.TAQConfig.<init>:(Ljava/nio/charset/Charset;Ljava/util/Map;Ljava/util/Map;Ljava/text/DecimalFormat;Ljava/text/DecimalFormat;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        49,
+        50,
+        52,
+        53,
+        55,
+        56,
+        57
+      ]
+    },
+    "com.paritytrading.parity.file.taq.TAQConfig.<init>:(Ljava/nio/charset/Charset;Ljava/util/Map;Ljava/util/Map;Ljava/text/DecimalFormat;Ljava/text/DecimalFormat;Lcom/paritytrading/parity/file/taq/TAQConfig$1;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        30
+      ]
+    },
+    "com.paritytrading.parity.file.taq.TAQConfig.access$000:()Ljava/text/DecimalFormat;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        30
+      ]
+    },
+    "com.paritytrading.parity.file.taq.TAQConfig.access$100:(Ljava/text/DecimalFormat;I)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        30
+      ]
+    },
+    "com.paritytrading.parity.file.taq.TAQConfig.access$200:(Ljava/util/Map;Ljava/lang/String;)Ljava/text/DecimalFormat;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        30
+      ]
+    },
+    "com.paritytrading.parity.file.taq.TAQConfig.getEncoding:()Ljava/nio/charset/Charset;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        65
+      ]
+    },
+    "com.paritytrading.parity.file.taq.TAQConfig.getFormat:(Ljava/util/Map;Ljava/lang/String;)Ljava/text/DecimalFormat;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        206
+      ]
+    },
+    "com.paritytrading.parity.file.taq.TAQConfig.getPriceFormat:(Ljava/lang/String;)Ljava/text/DecimalFormat;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        75
+      ]
+    },
+    "com.paritytrading.parity.file.taq.TAQConfig.getSizeFormat:(Ljava/lang/String;)Ljava/text/DecimalFormat;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        85
+      ]
+    },
+    "com.paritytrading.parity.file.taq.TAQConfig.lambda$getFormat$0:(Ljava/lang/String;)Ljava/text/DecimalFormat;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        206
+      ]
+    },
+    "com.paritytrading.parity.file.taq.TAQConfig.newFormat:()Ljava/text/DecimalFormat;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        202
+      ]
+    },
+    "com.paritytrading.parity.file.taq.TAQConfig.setFractionDigits:(Ljava/text/DecimalFormat;I)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        210,
+        211,
+        212
+      ]
+    },
+    "com.paritytrading.parity.file.taq.TAQWriter.<clinit>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T023",
+      "perMethodOutcome" : "T023"
+    },
+    "com.paritytrading.parity.file.taq.TAQWriter.<init>:(Ljava/io/File;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R020",
+      "lineNumbers" : [
+        73,
+        74
+      ]
+    },
+    "com.paritytrading.parity.file.taq.TAQWriter.<init>:(Ljava/io/File;Lcom/paritytrading/parity/file/taq/TAQConfig;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R020",
+      "lineNumbers" : [
+        84,
+        85
+      ]
+    },
+    "com.paritytrading.parity.file.taq.TAQWriter.<init>:(Ljava/io/OutputStream;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R002",
+      "lineNumbers" : [
+        94,
+        95
+      ]
+    },
+    "com.paritytrading.parity.file.taq.TAQWriter.<init>:(Ljava/io/OutputStream;Lcom/paritytrading/parity/file/taq/TAQConfig;)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        104,
+        105
+      ]
+    },
+    "com.paritytrading.parity.file.taq.TAQWriter.<init>:(Ljava/io/Writer;Lcom/paritytrading/parity/file/taq/TAQConfig;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        107,
+        108,
+        110,
+        112,
+        114,
+        116,
+        117
+      ]
+    },
+    "com.paritytrading.parity.file.taq.TAQWriter.close:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        196,
+        197
+      ]
+    },
+    "com.paritytrading.parity.file.taq.TAQWriter.flush:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        201,
+        202
+      ]
+    },
+    "com.paritytrading.parity.file.taq.TAQWriter.write:(Lcom/paritytrading/parity/file/taq/TAQ$Quote;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        158,
+        159,
+        160,
+        161,
+        162,
+        163,
+        164,
+        165,
+        167,
+        168,
+        170,
+        172,
+        173,
+        175,
+        177,
+        178,
+        180,
+        182,
+        183,
+        185,
+        187,
+        189,
+        191,
+        192
+      ]
+    },
+    "com.paritytrading.parity.file.taq.TAQWriter.write:(Lcom/paritytrading/parity/file/taq/TAQ$Trade;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        125,
+        126,
+        127,
+        128,
+        129,
+        130,
+        131,
+        132,
+        134,
+        136,
+        138,
+        140,
+        141,
+        142,
+        143,
+        144,
+        146,
+        147,
+        149,
+        150
+      ]
+    },
+    "com.paritytrading.parity.file.taq.TAQWriter.writePrice:(Ljava/lang/String;D)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        209,
+        211,
+        213,
+        214
+      ]
+    },
+    "com.paritytrading.parity.file.taq.TAQWriter.writeSize:(Ljava/lang/String;D)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        217,
+        219,
+        221,
+        222
+      ]
+    },
+    "com.paritytrading.parity.file.taq.TAQWriter.writeTimestamp:(J)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        205,
+        206
+      ]
+    }
+  },
+  "validationMetrics" : { }
+}

@@ -1,0 +1,466 @@
+{
+  "meta" : {
+    "reportVersion" : "2.7"
+  },
+  "run" : {
+    "version" : "2025.09.01-44e352d-licensed",
+    "creationTimestamp" : "2025-09-19T09:50:20.92Z",
+    "command" : "dcover create --coverage-reports --upload http://localhost:8080 --project-name paritytrading-parity --name with-diffblue-tests",
+    "totalTime" : 60.022,
+    "environmentDetectionTime" : 0.028,
+    "indexingTime" : 0.364,
+    "entryPointsTime" : 0.018,
+    "generationTime" : 291.413,
+    "timeToFirstTest" : 520.983,
+    "timeToLastTest" : 410.226,
+    "indexQueryTime" : 3.126,
+    "verificationTime" : 15.651,
+    "validationTime" : 10.547
+  },
+  "codes" : {
+    "R000" : "Success",
+    "R013" : "No inputs found that don't throw a trivial exception",
+    "R081" : "Exception in arrange section",
+    "T000" : "Method eligible for test creation",
+    "T003" : "Private method",
+    "T005" : "Trivial constructor",
+    "T006" : "Main method",
+    "T010" : "Abstract or interface method",
+    "T021" : "Empty method body",
+    "V000" : "Validated successfully",
+    "V003" : "Tests discarded during validation"
+  },
+  "summary" : {
+    "classesCount" : 7,
+    "methodsCount" : 18,
+    "cumulativeDiffblueTestCount" : 8,
+    "cumulativeManualTestCount" : 0,
+    "completeTestCount" : 9,
+    "incompleteTestCount" : 0,
+    "skeletonTestCount" : 0,
+    "totalPhysicalLineCount" : 224,
+    "perMethodTestability" : {
+      "T000" : 10,
+      "T003" : 2,
+      "T005" : 2,
+      "T006" : 1,
+      "T010" : 2,
+      "T021" : 1
+    },
+    "perMethodOutcome" : {
+      "R000" : 9,
+      "R013" : 2,
+      "R081" : 1,
+      "T003" : 2,
+      "T005" : 1,
+      "T006" : 1,
+      "T010" : 2
+    },
+    "perTestOutcome" : {
+      "R000" : 9
+    },
+    "perTestValidation" : {
+      "V000" : 8,
+      "V003" : 1
+    }
+  },
+  "classes" : {
+    "com.paritytrading.parity.reporter.DisplayFormat" : {
+      "methodsCount" : 2,
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 2
+      },
+      "perMethodOutcome" : {
+        "R000" : 2
+      },
+      "perTestOutcome" : {
+        "R000" : 2
+      }
+    },
+    "com.paritytrading.parity.reporter.TSVFormat" : {
+      "methodsCount" : 2,
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 2
+      },
+      "perMethodOutcome" : {
+        "R000" : 2
+      },
+      "perTestOutcome" : {
+        "R000" : 2
+      }
+    },
+    "com.paritytrading.parity.reporter.Trade" : {
+      "methodsCount" : 1,
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T005" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 1
+      }
+    },
+    "com.paritytrading.parity.reporter.TradeListener" : {
+      "methodsCount" : 3,
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 1,
+        "T010" : 2
+      },
+      "perMethodOutcome" : {
+        "R000" : 1,
+        "T010" : 2
+      },
+      "perTestOutcome" : {
+        "R000" : 1
+      }
+    },
+    "com.paritytrading.parity.reporter.TradeProcessor" : {
+      "methodsCount" : 6,
+      "completeTestCount" : 3,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 5,
+        "T021" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 3,
+        "R013" : 2,
+        "R081" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 3
+      }
+    },
+    "com.paritytrading.parity.reporter.TradeProcessor$Order" : {
+      "methodsCount" : 1,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T003" : 1
+      },
+      "perMethodOutcome" : {
+        "T003" : 1
+      }
+    },
+    "com.paritytrading.parity.reporter.TradeReporter" : {
+      "methodsCount" : 3,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T003" : 1,
+        "T005" : 1,
+        "T006" : 1
+      },
+      "perMethodOutcome" : {
+        "T003" : 1,
+        "T005" : 1,
+        "T006" : 1
+      }
+    }
+  },
+  "methods" : {
+    "com.paritytrading.parity.reporter.DisplayFormat.<init>:(Lcom/paritytrading/parity/util/Instruments;)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        26,
+        27,
+        29,
+        30,
+        32,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        41,
+        42,
+        43
+      ]
+    },
+    "com.paritytrading.parity.reporter.DisplayFormat.trade:(Lcom/paritytrading/parity/reporter/Trade;)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        47,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54
+      ]
+    },
+    "com.paritytrading.parity.reporter.TSVFormat.<init>:(Lcom/paritytrading/parity/util/Instruments;)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        40,
+        41,
+        43,
+        45,
+        46,
+        47,
+        49,
+        51,
+        52,
+        54,
+        55
+      ]
+    },
+    "com.paritytrading.parity.reporter.TSVFormat.trade:(Lcom/paritytrading/parity/reporter/Trade;)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        59,
+        61,
+        63,
+        64,
+        66,
+        68,
+        70,
+        71,
+        70,
+        72
+      ]
+    },
+    "com.paritytrading.parity.reporter.Trade.<init>:()V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        18
+      ]
+    },
+    "com.paritytrading.parity.reporter.TradeListener.<init>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010",
+      "lineNumbers" : [
+        20
+      ]
+    },
+    "com.paritytrading.parity.reporter.TradeListener.printf:(Ljava/lang/String;[Ljava/lang/Object;)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        25,
+        26
+      ]
+    },
+    "com.paritytrading.parity.reporter.TradeListener.trade:(Lcom/paritytrading/parity/reporter/Trade;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "com.paritytrading.parity.reporter.TradeProcessor$Order.<init>:(Lcom/paritytrading/parity/net/pmr/PMR$OrderEntered;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        111,
+        112,
+        113,
+        114,
+        115,
+        116,
+        117
+      ]
+    },
+    "com.paritytrading.parity.reporter.TradeProcessor.<init>:(Lcom/paritytrading/parity/reporter/TradeListener;)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        35,
+        36,
+        38,
+        40,
+        41
+      ]
+    },
+    "com.paritytrading.parity.reporter.TradeProcessor.orderAdded:(Lcom/paritytrading/parity/net/pmr/PMR$OrderAdded;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T021",
+      "perMethodOutcome" : "R081",
+      "lineNumbers" : [
+        56
+      ]
+    },
+    "com.paritytrading.parity.reporter.TradeProcessor.orderCanceled:(Lcom/paritytrading/parity/net/pmr/PMR$OrderCanceled;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        60,
+        62,
+        64,
+        65,
+        66
+      ]
+    },
+    "com.paritytrading.parity.reporter.TradeProcessor.orderEntered:(Lcom/paritytrading/parity/net/pmr/PMR$OrderEntered;)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        51,
+        52
+      ]
+    },
+    "com.paritytrading.parity.reporter.TradeProcessor.trade:(Lcom/paritytrading/parity/net/pmr/PMR$Trade;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        70,
+        71,
+        73,
+        74,
+        76,
+        79,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89,
+        90,
+        92,
+        94,
+        95,
+        97,
+        98,
+        100,
+        101,
+        102
+      ]
+    },
+    "com.paritytrading.parity.reporter.TradeProcessor.version:(Lcom/paritytrading/parity/net/pmr/PMR$Version;)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        45,
+        46,
+        47
+      ]
+    },
+    "com.paritytrading.parity.reporter.TradeReporter.<init>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "T005",
+      "lineNumbers" : [
+        34
+      ]
+    },
+    "com.paritytrading.parity.reporter.TradeReporter.main:(Lcom/typesafe/config/Config;Z)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        61,
+        63,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        73,
+        75,
+        76,
+        77,
+        78,
+        79,
+        81,
+        83
+      ]
+    },
+    "com.paritytrading.parity.reporter.TradeReporter.main:([Ljava/lang/String;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T006",
+      "perMethodOutcome" : "T006",
+      "lineNumbers" : [
+        39,
+        40,
+        42,
+        44,
+        45,
+        46,
+        48,
+        52,
+        57,
+        53,
+        54,
+        57,
+        55,
+        56,
+        58
+      ]
+    }
+  },
+  "validationMetrics" : { }
+}
