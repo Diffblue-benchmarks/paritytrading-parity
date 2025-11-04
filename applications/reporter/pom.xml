@@ -56,12 +56,22 @@
       <artifactId>config</artifactId>
     </dependency>
     <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-engine</artifactId>
+      <version>5.11.1</version>
+    </dependency>
+    <dependency>
       <groupId>org.jvirtanen.config</groupId>
       <artifactId>config-extras</artifactId>
     </dependency>
     <dependency>
       <groupId>org.jvirtanen.util</groupId>
       <artifactId>util-extras</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.mockito</groupId>
+      <artifactId>mockito-core</artifactId>
+      <version>4.11.0</version>
     </dependency>
   </dependencies>
 
