@@ -1,0 +1,1388 @@
+{
+  "meta" : {
+    "reportVersion" : "2.6"
+  },
+  "run" : {
+    "version" : "2025.02.02-08b2a5a-licensed",
+    "creationTimestamp" : "2025-11-04T17:06:52.849Z",
+    "command" : "dcover create --coverage-reports --upload http://localhost:8080 --project-name paritytrading-parity --name with-diffblue-tests",
+    "totalTime" : 2226.02,
+    "environmentDetectionTime" : 0.194,
+    "indexingTime" : 0.398,
+    "entryPointsTime" : 0.191,
+    "generationTime" : 2575.283,
+    "timeToFirstTest" : 2815.565,
+    "timeToLastTest" : 2710.429,
+    "indexQueryTime" : 4.256,
+    "verificationTime" : 14.652,
+    "validationTime" : 12.001
+  },
+  "codes" : {
+    "R024" : "Analysis service shutdown unexpectedly",
+    "R081" : "Exception in arrange section",
+    "T000" : "Method eligible for test creation",
+    "T001" : "Trivial getter",
+    "T002" : "Trivial setter",
+    "T003" : "Private method",
+    "T005" : "Trivial constructor",
+    "T006" : "Main method",
+    "T012" : "Synthetic method",
+    "V000" : "Validated successfully",
+    "V003" : "Tests discarded during validation"
+  },
+  "summary" : {
+    "classesCount" : 10,
+    "methodsCount" : 91,
+    "cumulativeDiffblueTestCount" : 3,
+    "cumulativeManualTestCount" : 0,
+    "completeTestCount" : 0,
+    "incompleteTestCount" : 0,
+    "skeletonTestCount" : 0,
+    "totalPhysicalLineCount" : 725,
+    "perMethodTestability" : {
+      "T000" : 33,
+      "T001" : 12,
+      "T002" : 2,
+      "T003" : 26,
+      "T005" : 1,
+      "T006" : 1,
+      "T012" : 16
+    },
+    "perMethodOutcome" : {
+      "R024" : 7,
+      "R081" : 14,
+      "T003" : 26,
+      "T005" : 1,
+      "T006" : 1,
+      "T012" : 16
+    },
+    "perTestValidation" : {
+      "V000" : 8,
+      "V003" : 1
+    }
+  },
+  "classes" : {
+    "com.paritytrading.parity.system.Events" : {
+      "methodsCount" : 5,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 2,
+        "T003" : 4
+      },
+      "perMethodOutcome" : {
+        "R024" : 1,
+        "T003" : 4
+      }
+    },
+    "com.paritytrading.parity.system.MarketData" : {
+      "methodsCount" : 6,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 6,
+        "T001" : 2,
+        "T003" : 3
+      },
+      "perMethodOutcome" : {
+        "R024" : 1,
+        "R081" : 2,
+        "T003" : 3
+      }
+    },
+    "com.paritytrading.parity.system.MarketReporting" : {
+      "methodsCount" : 6,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 7,
+        "T001" : 2,
+        "T003" : 3
+      },
+      "perMethodOutcome" : {
+        "R024" : 1,
+        "R081" : 2,
+        "T003" : 3
+      }
+    },
+    "com.paritytrading.parity.system.Order" : {
+      "methodsCount" : 5,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 1,
+        "T001" : 4
+      },
+      "perMethodOutcome" : {
+        "R024" : 1,
+        "R081" : 4
+      }
+    },
+    "com.paritytrading.parity.system.OrderBooks" : {
+      "methodsCount" : 15,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 4,
+        "T003" : 4,
+        "T012" : 10
+      },
+      "perMethodOutcome" : {
+        "R024" : 1,
+        "T003" : 4,
+        "T012" : 10
+      }
+    },
+    "com.paritytrading.parity.system.OrderBooks$CancelReason" : {
+      "methodsCount" : 4,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T003" : 1,
+        "T012" : 3
+      },
+      "perMethodOutcome" : {
+        "T003" : 1,
+        "T012" : 3
+      }
+    },
+    "com.paritytrading.parity.system.OrderBooks$EventHandler" : {
+      "methodsCount" : 5,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T003" : 4,
+        "T012" : 1
+      },
+      "perMethodOutcome" : {
+        "T003" : 4,
+        "T012" : 1
+      }
+    },
+    "com.paritytrading.parity.system.OrderEntry" : {
+      "methodsCount" : 3,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 2,
+        "T001" : 1,
+        "T003" : 1
+      },
+      "perMethodOutcome" : {
+        "R024" : 1,
+        "R081" : 1,
+        "T003" : 1
+      }
+    },
+    "com.paritytrading.parity.system.Session" : {
+      "methodsCount" : 9,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 11,
+        "T001" : 3,
+        "T002" : 2,
+        "T003" : 2,
+        "T012" : 1
+      },
+      "perMethodOutcome" : {
+        "R024" : 1,
+        "R081" : 5,
+        "T003" : 2,
+        "T012" : 1
+      }
+    },
+    "com.paritytrading.parity.system.TradingSystem" : {
+      "methodsCount" : 7,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T003" : 4,
+        "T005" : 1,
+        "T006" : 1,
+        "T012" : 1
+      },
+      "perMethodOutcome" : {
+        "T003" : 4,
+        "T005" : 1,
+        "T006" : 1,
+        "T012" : 1
+      }
+    }
+  },
+  "methods" : {
+    "com.paritytrading.parity.system.Events.<init>:(Lcom/paritytrading/parity/system/MarketData;Lcom/paritytrading/parity/system/MarketReporting;Lcom/paritytrading/parity/system/OrderEntry;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R024",
+      "lineNumbers" : [
+        39,
+        40,
+        41,
+        42,
+        44,
+        45,
+        47,
+        49,
+        51,
+        53,
+        54
+      ]
+    },
+    "com.paritytrading.parity.system.Events.accept:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        98,
+        99,
+        100,
+        102,
+        105,
+        104,
+        106
+      ]
+    },
+    "com.paritytrading.parity.system.Events.cleanUp:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        143,
+        144,
+        146,
+        148,
+        143,
+        151,
+        152,
+        153
+      ]
+    },
+    "com.paritytrading.parity.system.Events.keepAlive:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        119,
+        121,
+        120,
+        124,
+        126,
+        125,
+        128,
+        129,
+        132,
+        134,
+        135,
+        138,
+        136,
+        137,
+        128,
+        140
+      ]
+    },
+    "com.paritytrading.parity.system.Events.receive:(Lcom/paritytrading/parity/system/Session;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        110,
+        111,
+        114,
+        112,
+        113,
+        115
+      ]
+    },
+    "com.paritytrading.parity.system.Events.run:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "F009",
+      "lineNumbers" : [
+        62,
+        65,
+        63,
+        64,
+        67,
+        68,
+        70,
+        71,
+        73,
+        74,
+        76,
+        77,
+        78,
+        79,
+        80,
+        81,
+        83,
+        86,
+        87,
+        90,
+        92,
+        94
+      ]
+    },
+    "com.paritytrading.parity.system.MarketData.<init>:(Lcom/paritytrading/nassau/moldudp64/MoldUDP64Server;Lcom/paritytrading/nassau/moldudp64/MoldUDP64RequestServer;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        50,
+        51,
+        52,
+        53,
+        54,
+        56,
+        58,
+        60,
+        62,
+        63,
+        64
+      ]
+    },
+    "com.paritytrading.parity.system.MarketData.getRequestTransport:()Lcom/paritytrading/nassau/moldudp64/MoldUDP64RequestServer;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R081",
+      "lineNumbers" : [
+        91
+      ]
+    },
+    "com.paritytrading.parity.system.MarketData.getTransport:()Lcom/paritytrading/nassau/moldudp64/MoldUDP64Server;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R081",
+      "lineNumbers" : [
+        87
+      ]
+    },
+    "com.paritytrading.parity.system.MarketData.open:(Ljava/lang/String;Ljava/net/NetworkInterface;Ljava/net/InetSocketAddress;Ljava/net/InetSocketAddress;)Lcom/paritytrading/parity/system/MarketData;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R024",
+      "lineNumbers" : [
+        69,
+        71,
+        72,
+        74,
+        76,
+        78,
+        79,
+        81,
+        83
+      ]
+    },
+    "com.paritytrading.parity.system.MarketData.orderAdded:(JBJJJ)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "F009",
+      "lineNumbers" : [
+        109,
+        110,
+        111,
+        112,
+        113,
+        114,
+        116,
+        117
+      ]
+    },
+    "com.paritytrading.parity.system.MarketData.orderCanceled:(JJ)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "F009",
+      "lineNumbers" : [
+        129,
+        130,
+        131,
+        133,
+        134
+      ]
+    },
+    "com.paritytrading.parity.system.MarketData.orderExecuted:(JJJ)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "F009",
+      "lineNumbers" : [
+        120,
+        121,
+        122,
+        123,
+        125,
+        126
+      ]
+    },
+    "com.paritytrading.parity.system.MarketData.send:(Lcom/paritytrading/parity/net/pmd/PMD$Message;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        141,
+        142,
+        143,
+        146,
+        148,
+        150,
+        152,
+        154,
+        157,
+        155,
+        156,
+        158
+      ]
+    },
+    "com.paritytrading.parity.system.MarketData.serve:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "F009",
+      "lineNumbers" : [
+        96,
+        99,
+        97,
+        98,
+        100
+      ]
+    },
+    "com.paritytrading.parity.system.MarketData.timestamp:()J" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        137
+      ]
+    },
+    "com.paritytrading.parity.system.MarketData.version:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "F009",
+      "lineNumbers" : [
+        103,
+        105,
+        106
+      ]
+    },
+    "com.paritytrading.parity.system.MarketReporting.<init>:(Lcom/paritytrading/nassau/moldudp64/MoldUDP64Server;Lcom/paritytrading/nassau/moldudp64/MoldUDP64RequestServer;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        58,
+        60,
+        62,
+        64,
+        65,
+        66
+      ]
+    },
+    "com.paritytrading.parity.system.MarketReporting.getRequestTransport:()Lcom/paritytrading/nassau/moldudp64/MoldUDP64RequestServer;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R081",
+      "lineNumbers" : [
+        93
+      ]
+    },
+    "com.paritytrading.parity.system.MarketReporting.getTransport:()Lcom/paritytrading/nassau/moldudp64/MoldUDP64Server;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R081",
+      "lineNumbers" : [
+        89
+      ]
+    },
+    "com.paritytrading.parity.system.MarketReporting.open:(Ljava/lang/String;Ljava/net/NetworkInterface;Ljava/net/InetSocketAddress;Ljava/net/InetSocketAddress;)Lcom/paritytrading/parity/system/MarketReporting;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R024",
+      "lineNumbers" : [
+        71,
+        73,
+        74,
+        76,
+        78,
+        80,
+        81,
+        83,
+        85
+      ]
+    },
+    "com.paritytrading.parity.system.MarketReporting.orderAdded:(J)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "F009",
+      "lineNumbers" : [
+        123,
+        124,
+        126,
+        127
+      ]
+    },
+    "com.paritytrading.parity.system.MarketReporting.orderCanceled:(JJ)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "F009",
+      "lineNumbers" : [
+        130,
+        131,
+        132,
+        134,
+        135
+      ]
+    },
+    "com.paritytrading.parity.system.MarketReporting.orderEntered:(JJBJJJ)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "F009",
+      "lineNumbers" : [
+        111,
+        112,
+        113,
+        114,
+        115,
+        116,
+        117,
+        119,
+        120
+      ]
+    },
+    "com.paritytrading.parity.system.MarketReporting.send:(Lcom/paritytrading/parity/net/pmr/PMR$Message;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        149,
+        150,
+        151,
+        154,
+        156,
+        158,
+        160,
+        162,
+        165,
+        163,
+        164,
+        166
+      ]
+    },
+    "com.paritytrading.parity.system.MarketReporting.serve:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "F009",
+      "lineNumbers" : [
+        98,
+        101,
+        99,
+        100,
+        102
+      ]
+    },
+    "com.paritytrading.parity.system.MarketReporting.timestamp:()J" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        169
+      ]
+    },
+    "com.paritytrading.parity.system.MarketReporting.trade:(JJJJ)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "F009",
+      "lineNumbers" : [
+        139,
+        140,
+        141,
+        142,
+        143,
+        145,
+        146
+      ]
+    },
+    "com.paritytrading.parity.system.MarketReporting.version:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "F009",
+      "lineNumbers" : [
+        105,
+        107,
+        108
+      ]
+    },
+    "com.paritytrading.parity.system.Order.<init>:([BJLcom/paritytrading/parity/system/Session;Lcom/paritytrading/parity/match/OrderBook;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R024",
+      "lineNumbers" : [
+        27,
+        28,
+        29,
+        30,
+        31,
+        32
+      ]
+    },
+    "com.paritytrading.parity.system.Order.getBook:()Lcom/paritytrading/parity/match/OrderBook;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R081",
+      "lineNumbers" : [
+        47
+      ]
+    },
+    "com.paritytrading.parity.system.Order.getOrderId:()[B" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R081",
+      "lineNumbers" : [
+        35
+      ]
+    },
+    "com.paritytrading.parity.system.Order.getOrderNumber:()J" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R081",
+      "lineNumbers" : [
+        39
+      ]
+    },
+    "com.paritytrading.parity.system.Order.getSession:()Lcom/paritytrading/parity/system/Session;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R081",
+      "lineNumbers" : [
+        43
+      ]
+    },
+    "com.paritytrading.parity.system.OrderBooks$CancelReason.<clinit>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        31,
+        32,
+        30
+      ]
+    },
+    "com.paritytrading.parity.system.OrderBooks$CancelReason.<init>:(Ljava/lang/String;I)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        30
+      ]
+    },
+    "com.paritytrading.parity.system.OrderBooks$CancelReason.valueOf:(Ljava/lang/String;)Lcom/paritytrading/parity/system/OrderBooks$CancelReason;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        30
+      ]
+    },
+    "com.paritytrading.parity.system.OrderBooks$CancelReason.values:()[Lcom/paritytrading/parity/system/OrderBooks$CancelReason;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        30
+      ]
+    },
+    "com.paritytrading.parity.system.OrderBooks$EventHandler.<init>:(Lcom/paritytrading/parity/system/OrderBooks;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        127
+      ]
+    },
+    "com.paritytrading.parity.system.OrderBooks$EventHandler.<init>:(Lcom/paritytrading/parity/system/OrderBooks;Lcom/paritytrading/parity/system/OrderBooks$1;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        127
+      ]
+    },
+    "com.paritytrading.parity.system.OrderBooks$EventHandler.add:(JLcom/paritytrading/parity/match/Side;JJ)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        154,
+        156,
+        158,
+        159
+      ]
+    },
+    "com.paritytrading.parity.system.OrderBooks$EventHandler.cancel:(JJJ)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        163,
+        165,
+        166,
+        168,
+        170,
+        171,
+        172
+      ]
+    },
+    "com.paritytrading.parity.system.OrderBooks$EventHandler.match:(JJLcom/paritytrading/parity/match/Side;JJJ)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        132,
+        133,
+        134,
+        136,
+        138,
+        140,
+        143,
+        144,
+        143,
+        146,
+        148,
+        149,
+        150
+      ]
+    },
+    "com.paritytrading.parity.system.OrderBooks.<init>:(Ljava/util/List;Lcom/paritytrading/parity/system/MarketData;Lcom/paritytrading/parity/system/MarketReporting;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R024",
+      "lineNumbers" : [
+        50,
+        51,
+        52,
+        54,
+        56,
+        57,
+        59,
+        60,
+        62,
+        63,
+        64
+      ]
+    },
+    "com.paritytrading.parity.system.OrderBooks.access$1000:(Lcom/paritytrading/parity/system/OrderBooks;)Lcom/paritytrading/parity/system/OrderBooks$CancelReason;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        28
+      ]
+    },
+    "com.paritytrading.parity.system.OrderBooks.access$100:(Lcom/paritytrading/parity/system/OrderBooks;)Lit/unimi/dsi/fastutil/longs/Long2ObjectOpenHashMap;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        28
+      ]
+    },
+    "com.paritytrading.parity.system.OrderBooks.access$208:(Lcom/paritytrading/parity/system/OrderBooks;)J" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        28
+      ]
+    },
+    "com.paritytrading.parity.system.OrderBooks.access$300:(Lcom/paritytrading/parity/system/OrderBooks;)Lcom/paritytrading/parity/system/MarketData;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        28
+      ]
+    },
+    "com.paritytrading.parity.system.OrderBooks.access$400:(Lcom/paritytrading/parity/system/OrderBooks;)Lcom/paritytrading/parity/system/Order;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        28
+      ]
+    },
+    "com.paritytrading.parity.system.OrderBooks.access$500:(Lcom/paritytrading/parity/system/OrderBooks;)Lcom/paritytrading/parity/system/MarketReporting;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        28
+      ]
+    },
+    "com.paritytrading.parity.system.OrderBooks.access$600:(Lcom/paritytrading/parity/system/OrderBooks;Lcom/paritytrading/parity/system/Order;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        28
+      ]
+    },
+    "com.paritytrading.parity.system.OrderBooks.access$700:(Lcom/paritytrading/parity/system/OrderBooks;Lcom/paritytrading/parity/match/Side;)B" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        28
+      ]
+    },
+    "com.paritytrading.parity.system.OrderBooks.access$800:(Lcom/paritytrading/parity/system/OrderBooks;)J" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        28
+      ]
+    },
+    "com.paritytrading.parity.system.OrderBooks.access$900:(Lcom/paritytrading/parity/system/OrderBooks;Lcom/paritytrading/parity/system/Order;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        28
+      ]
+    },
+    "com.paritytrading.parity.system.OrderBooks.cancel:(Lcom/paritytrading/parity/system/Order;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "F009",
+      "lineNumbers" : [
+        106,
+        108,
+        110,
+        112,
+        113
+      ]
+    },
+    "com.paritytrading.parity.system.OrderBooks.cancelOrder:(Lcom/paritytrading/parity/net/poe/POE$CancelOrder;Lcom/paritytrading/parity/system/Order;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "F009",
+      "lineNumbers" : [
+        98,
+        100,
+        102,
+        103
+      ]
+    },
+    "com.paritytrading.parity.system.OrderBooks.enterOrder:(Lcom/paritytrading/parity/net/poe/POE$EnterOrder;Lcom/paritytrading/parity/system/Session;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "F009",
+      "lineNumbers" : [
+        67,
+        68,
+        69,
+        70,
+        73,
+        74,
+        75,
+        78,
+        79,
+        80,
+        83,
+        85,
+        87,
+        89,
+        91,
+        94,
+        95
+      ]
+    },
+    "com.paritytrading.parity.system.OrderBooks.release:(Lcom/paritytrading/parity/system/Order;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        122,
+        124,
+        125
+      ]
+    },
+    "com.paritytrading.parity.system.OrderBooks.side:(B)Lcom/paritytrading/parity/match/Side;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        177
+      ]
+    },
+    "com.paritytrading.parity.system.OrderBooks.side:(Lcom/paritytrading/parity/match/Side;)B" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        181
+      ]
+    },
+    "com.paritytrading.parity.system.OrderBooks.track:(Lcom/paritytrading/parity/system/Order;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        116,
+        118,
+        119
+      ]
+    },
+    "com.paritytrading.parity.system.OrderEntry.<init>:(Ljava/nio/channels/ServerSocketChannel;Lcom/paritytrading/parity/system/OrderBooks;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        30,
+        31,
+        33,
+        34
+      ]
+    },
+    "com.paritytrading.parity.system.OrderEntry.accept:()Lcom/paritytrading/parity/system/Session;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R024",
+      "lineNumbers" : [
+        50,
+        51,
+        52,
+        54,
+        55,
+        57
+      ]
+    },
+    "com.paritytrading.parity.system.OrderEntry.getChannel:()Ljava/nio/channels/ServerSocketChannel;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R081",
+      "lineNumbers" : [
+        46
+      ]
+    },
+    "com.paritytrading.parity.system.OrderEntry.open:(Ljava/net/InetSocketAddress;Lcom/paritytrading/parity/system/OrderBooks;)Lcom/paritytrading/parity/system/OrderEntry;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "F009",
+      "lineNumbers" : [
+        37,
+        39,
+        40,
+        42
+      ]
+    },
+    "com.paritytrading.parity.system.Session.<clinit>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        48,
+        50,
+        51,
+        52,
+        53,
+        55,
+        56
+      ]
+    },
+    "com.paritytrading.parity.system.Session.<init>:(Ljava/nio/channels/SocketChannel;Lcom/paritytrading/parity/system/OrderBooks;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R024",
+      "lineNumbers" : [
+        70,
+        71,
+        74,
+        75,
+        77,
+        79,
+        80
+      ]
+    },
+    "com.paritytrading.parity.system.Session.cancelOrder:(Lcom/paritytrading/parity/net/poe/POE$CancelOrder;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "F009",
+      "lineNumbers" : [
+        149,
+        150,
+        151,
+        154,
+        155,
+        156,
+        158,
+        159
+      ]
+    },
+    "com.paritytrading.parity.system.Session.close:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "F009",
+      "lineNumbers" : [
+        96,
+        97,
+        100,
+        102,
+        101,
+        103
+      ]
+    },
+    "com.paritytrading.parity.system.Session.enterOrder:(Lcom/paritytrading/parity/net/poe/POE$EnterOrder;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "F009",
+      "lineNumbers" : [
+        136,
+        137,
+        138,
+        141,
+        142,
+        144,
+        145
+      ]
+    },
+    "com.paritytrading.parity.system.Session.getTransport:()Lcom/paritytrading/nassau/soupbintcp/SoupBinTCPServer;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R081",
+      "lineNumbers" : [
+        83
+      ]
+    },
+    "com.paritytrading.parity.system.Session.getUsername:()J" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R081",
+      "lineNumbers" : [
+        87
+      ]
+    },
+    "com.paritytrading.parity.system.Session.heartbeatTimeout:(Lcom/paritytrading/nassau/soupbintcp/SoupBinTCPServer;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T002",
+      "perMethodOutcome" : "R081",
+      "lineNumbers" : [
+        107,
+        108
+      ]
+    },
+    "com.paritytrading.parity.system.Session.isTerminated:()Z" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R081",
+      "lineNumbers" : [
+        91
+      ]
+    },
+    "com.paritytrading.parity.system.Session.loginRequest:(Lcom/paritytrading/nassau/soupbintcp/SoupBinTCPServer;Lcom/paritytrading/nassau/soupbintcp/SoupBinTCP$LoginRequest;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "F009",
+      "lineNumbers" : [
+        112,
+        113,
+        114,
+        117,
+        118,
+        121,
+        124,
+        122,
+        123,
+        126,
+        127
+      ]
+    },
+    "com.paritytrading.parity.system.Session.logoutRequest:(Lcom/paritytrading/nassau/soupbintcp/SoupBinTCPServer;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T002",
+      "perMethodOutcome" : "R081",
+      "lineNumbers" : [
+        131,
+        132
+      ]
+    },
+    "com.paritytrading.parity.system.Session.orderAccepted:(Lcom/paritytrading/parity/net/poe/POE$EnterOrder;Lcom/paritytrading/parity/system/Order;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "F009",
+      "lineNumbers" : [
+        170,
+        171,
+        172,
+        173,
+        174,
+        175,
+        176,
+        178,
+        180,
+        181
+      ]
+    },
+    "com.paritytrading.parity.system.Session.orderCanceled:(JBLcom/paritytrading/parity/system/Order;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "F009",
+      "lineNumbers" : [
+        204,
+        205,
+        206,
+        207,
+        209,
+        210
+      ]
+    },
+    "com.paritytrading.parity.system.Session.orderExecuted:(JJBJLcom/paritytrading/parity/system/Order;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "F009",
+      "lineNumbers" : [
+        193,
+        194,
+        195,
+        196,
+        197,
+        198,
+        200,
+        201
+      ]
+    },
+    "com.paritytrading.parity.system.Session.orderRejected:(Lcom/paritytrading/parity/net/poe/POE$EnterOrder;B)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "F009",
+      "lineNumbers" : [
+        184,
+        185,
+        186,
+        188,
+        189
+      ]
+    },
+    "com.paritytrading.parity.system.Session.release:(Lcom/paritytrading/parity/system/Order;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "F009",
+      "lineNumbers" : [
+        166,
+        167
+      ]
+    },
+    "com.paritytrading.parity.system.Session.send:(Lcom/paritytrading/parity/net/poe/POE$OutboundMessage;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        213,
+        214,
+        215,
+        218,
+        221,
+        219,
+        220,
+        222
+      ]
+    },
+    "com.paritytrading.parity.system.Session.timestamp:()J" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        225
+      ]
+    },
+    "com.paritytrading.parity.system.Session.track:(Lcom/paritytrading/parity/system/Order;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "F009",
+      "lineNumbers" : [
+        162,
+        163
+      ]
+    },
+    "com.paritytrading.parity.system.TradingSystem.<clinit>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        34,
+        35,
+        34
+      ]
+    },
+    "com.paritytrading.parity.system.TradingSystem.<init>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "T005",
+      "lineNumbers" : [
+        32
+      ]
+    },
+    "com.paritytrading.parity.system.TradingSystem.main:(Lcom/typesafe/config/Config;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        49,
+        51,
+        53,
+        55,
+        57,
+        59,
+        60,
+        62,
+        63
+      ]
+    },
+    "com.paritytrading.parity.system.TradingSystem.main:([Ljava/lang/String;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T006",
+      "perMethodOutcome" : "T006",
+      "lineNumbers" : [
+        38,
+        39,
+        42,
+        45,
+        43,
+        44,
+        46
+      ]
+    },
+    "com.paritytrading.parity.system.TradingSystem.marketData:(Lcom/typesafe/config/Config;)Lcom/paritytrading/parity/system/MarketData;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        73
+      ]
+    },
+    "com.paritytrading.parity.system.TradingSystem.marketReporting:(Lcom/typesafe/config/Config;)Lcom/paritytrading/parity/system/MarketReporting;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        79,
+        80,
+        81,
+        82,
+        83,
+        84,
+        86
+      ]
+    },
+    "com.paritytrading.parity.system.TradingSystem.orderEntry:(Lcom/typesafe/config/Config;Lcom/paritytrading/parity/system/OrderBooks;)Lcom/paritytrading/parity/system/OrderEntry;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        92,
+        93,
+        95
+      ]
+    }
+  }
+}

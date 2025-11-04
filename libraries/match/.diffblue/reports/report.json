@@ -1,0 +1,425 @@
+{
+  "meta" : {
+    "reportVersion" : "2.6"
+  },
+  "run" : {
+    "version" : "2025.02.02-08b2a5a-licensed",
+    "creationTimestamp" : "2025-11-04T17:06:52.849Z",
+    "command" : "dcover create --coverage-reports --upload http://localhost:8080 --project-name paritytrading-parity --name with-diffblue-tests",
+    "totalTime" : 48.775,
+    "environmentDetectionTime" : 0.263,
+    "indexingTime" : 0.371,
+    "entryPointsTime" : 0.259,
+    "generationTime" : 163.203,
+    "timeToFirstTest" : 221.124,
+    "timeToLastTest" : 211.102,
+    "indexQueryTime" : 4.274,
+    "verificationTime" : 6.069,
+    "validationTime" : 6.992
+  },
+  "codes" : {
+    "R000" : "Success",
+    "R002" : "Missing observers",
+    "R013" : "No inputs found that don't throw a trivial exception",
+    "T000" : "Method eligible for test creation",
+    "T001" : "Trivial getter",
+    "T002" : "Trivial setter",
+    "T003" : "Private method",
+    "T010" : "Abstract or interface method",
+    "T012" : "Synthetic method",
+    "V000" : "Validated successfully"
+  },
+  "summary" : {
+    "classesCount" : 4,
+    "methodsCount" : 23,
+    "cumulativeDiffblueTestCount" : 2,
+    "cumulativeManualTestCount" : 15,
+    "completeTestCount" : 2,
+    "incompleteTestCount" : 0,
+    "skeletonTestCount" : 0,
+    "totalPhysicalLineCount" : 152,
+    "perMethodTestability" : {
+      "T000" : 4,
+      "T001" : 5,
+      "T002" : 2,
+      "T003" : 6,
+      "T010" : 3,
+      "T012" : 3
+    },
+    "perMethodOutcome" : {
+      "R000" : 8,
+      "R002" : 2,
+      "R013" : 1,
+      "T003" : 6,
+      "T010" : 3,
+      "T012" : 3
+    },
+    "perTestOutcome" : {
+      "R000" : 2
+    },
+    "perTestValidation" : {
+      "V000" : 2
+    }
+  },
+  "classes" : {
+    "com.paritytrading.parity.match.Order" : {
+      "methodsCount" : 8,
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 1,
+        "T001" : 5,
+        "T002" : 2
+      },
+      "perMethodOutcome" : {
+        "R000" : 8
+      },
+      "perTestOutcome" : {
+        "R000" : 2
+      }
+    },
+    "com.paritytrading.parity.match.OrderBook" : {
+      "methodsCount" : 8,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 3,
+        "T003" : 5
+      },
+      "perMethodOutcome" : {
+        "R002" : 2,
+        "R013" : 1,
+        "T003" : 5
+      }
+    },
+    "com.paritytrading.parity.match.OrderBookListener" : {
+      "methodsCount" : 3,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T010" : 3
+      },
+      "perMethodOutcome" : {
+        "T010" : 3
+      }
+    },
+    "com.paritytrading.parity.match.Side" : {
+      "methodsCount" : 4,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T003" : 1,
+        "T012" : 3
+      },
+      "perMethodOutcome" : {
+        "T003" : 1,
+        "T012" : 3
+      }
+    }
+  },
+  "methods" : {
+    "com.paritytrading.parity.match.Order.<init>:(JJLcom/paritytrading/parity/match/Side;JJ)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        30,
+        31,
+        33,
+        35,
+        37,
+        39,
+        40
+      ]
+    },
+    "com.paritytrading.parity.match.Order.getId:()J" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        47
+      ]
+    },
+    "com.paritytrading.parity.match.Order.getNumber:()J" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        43
+      ]
+    },
+    "com.paritytrading.parity.match.Order.getPrice:()J" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        55
+      ]
+    },
+    "com.paritytrading.parity.match.Order.getRemainingQuantity:()J" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        59
+      ]
+    },
+    "com.paritytrading.parity.match.Order.getSide:()Lcom/paritytrading/parity/match/Side;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        51
+      ]
+    },
+    "com.paritytrading.parity.match.Order.reduce:(J)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T002",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        63,
+        64
+      ]
+    },
+    "com.paritytrading.parity.match.Order.resize:(J)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T002",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        67,
+        68
+      ]
+    },
+    "com.paritytrading.parity.match.OrderBook.<init>:(Lcom/paritytrading/parity/match/OrderBookListener;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R002",
+      "lineNumbers" : [
+        40,
+        41,
+        42,
+        44,
+        46,
+        48,
+        49
+      ]
+    },
+    "com.paritytrading.parity.match.OrderBook.add:(JLcom/paritytrading/parity/match/Side;JJLjava/util/TreeSet;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        144,
+        146,
+        147,
+        149,
+        150
+      ]
+    },
+    "com.paritytrading.parity.match.OrderBook.buy:(JJJ)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        79,
+        80,
+        82,
+        83,
+        84,
+        86,
+        88,
+        90,
+        91,
+        93,
+        95,
+        98,
+        99,
+        101,
+        103,
+        104,
+        105,
+        106,
+        108,
+        109
+      ]
+    },
+    "com.paritytrading.parity.match.OrderBook.cancel:(JJ)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R002",
+      "lineNumbers" : [
+        165,
+        166,
+        167,
+        169,
+        171,
+        172,
+        174,
+        175,
+        177,
+        179,
+        180,
+        183,
+        184
+      ]
+    },
+    "com.paritytrading.parity.match.OrderBook.compareAsks:(Lcom/paritytrading/parity/match/Order;Lcom/paritytrading/parity/match/Order;)I" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        195,
+        196,
+        197,
+        199
+      ]
+    },
+    "com.paritytrading.parity.match.OrderBook.compareBids:(Lcom/paritytrading/parity/match/Order;Lcom/paritytrading/parity/match/Order;)I" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        187,
+        188,
+        189,
+        191
+      ]
+    },
+    "com.paritytrading.parity.match.OrderBook.enter:(JLcom/paritytrading/parity/match/Side;JJ)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        69,
+        70,
+        72,
+        73,
+        75,
+        76
+      ]
+    },
+    "com.paritytrading.parity.match.OrderBook.sell:(JJJ)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        112,
+        113,
+        115,
+        116,
+        117,
+        119,
+        121,
+        122,
+        123,
+        125,
+        127,
+        130,
+        131,
+        133,
+        135,
+        136,
+        137,
+        138,
+        140,
+        141
+      ]
+    },
+    "com.paritytrading.parity.match.OrderBookListener.add:(JLcom/paritytrading/parity/match/Side;JJ)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "com.paritytrading.parity.match.OrderBookListener.cancel:(JJJ)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "com.paritytrading.parity.match.OrderBookListener.match:(JJLcom/paritytrading/parity/match/Side;JJJ)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "com.paritytrading.parity.match.Side.<clinit>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        22,
+        23,
+        21
+      ]
+    },
+    "com.paritytrading.parity.match.Side.<init>:(Ljava/lang/String;I)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        21
+      ]
+    },
+    "com.paritytrading.parity.match.Side.valueOf:(Ljava/lang/String;)Lcom/paritytrading/parity/match/Side;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        21
+      ]
+    },
+    "com.paritytrading.parity.match.Side.values:()[Lcom/paritytrading/parity/match/Side;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        21
+      ]
+    }
+  }
+}
