@@ -1,0 +1,2202 @@
+{
+  "meta" : {
+    "reportVersion" : "2.8"
+  },
+  "run" : {
+    "version" : "2025.11.01-3385b9f-licensed",
+    "creationTimestamp" : "2025-11-13T00:06:56.847Z",
+    "command" : "dcover create --coverage-reports --upload http://localhost:8080 --project-name paritytrading-parity --name with-diffblue-tests",
+    "totalTime" : 80.266,
+    "environmentDetectionTime" : 0.144,
+    "indexingTime" : 0.329,
+    "entryPointsTime" : 0.132,
+    "generationTime" : 133.435,
+    "timeToFirstTest" : 205.806,
+    "timeToLastTest" : 171.62,
+    "indexQueryTime" : 0.642,
+    "verificationTime" : 9.304,
+    "validationTime" : 6.038
+  },
+  "codes" : {
+    "F009" : "Internal error",
+    "R000" : "Success",
+    "R013" : "No inputs found that don't throw a trivial exception",
+    "T000" : "Method eligible for test creation",
+    "T003" : "Private method",
+    "T005" : "Trivial constructor",
+    "T010" : "Abstract or interface method",
+    "T012" : "Synthetic method",
+    "V000" : "Validated successfully"
+  },
+  "summary" : {
+    "classesCount" : 31,
+    "methodsCount" : 95,
+    "cumulativeDiffblueTestCount" : 60,
+    "cumulativeManualTestCount" : 0,
+    "completeTestCount" : 60,
+    "incompleteTestCount" : 0,
+    "skeletonTestCount" : 0,
+    "totalPhysicalLineCount" : 729,
+    "perMethodTestability" : {
+      "T000" : 44,
+      "T003" : 13,
+      "T005" : 15,
+      "T010" : 17,
+      "T012" : 6
+    },
+    "perMethodOutcome" : {
+      "F009" : 2,
+      "R000" : 36,
+      "R013" : 21,
+      "T003" : 13,
+      "T010" : 17,
+      "T012" : 6
+    },
+    "perTestOutcome" : {
+      "R000" : 60
+    },
+    "perTestValidation" : {
+      "V000" : 60
+    },
+    "warnings" : {
+      "F009" : 24
+    }
+  },
+  "classes" : {
+    "com.paritytrading.parity.net.ProtocolException" : {
+      "methodsCount" : 3,
+      "completeTestCount" : 3,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T005" : 3
+      },
+      "perMethodOutcome" : {
+        "R000" : 3
+      },
+      "perTestOutcome" : {
+        "R000" : 3
+      }
+    },
+    "com.paritytrading.parity.net.ProtocolMessage" : {
+      "methodsCount" : 2,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T010" : 2
+      },
+      "perMethodOutcome" : {
+        "T010" : 2
+      }
+    },
+    "com.paritytrading.parity.net.pmd.PMD" : {
+      "methodsCount" : 5,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T003" : 3,
+        "T012" : 2
+      },
+      "perMethodOutcome" : {
+        "T003" : 3,
+        "T012" : 2
+      }
+    },
+    "com.paritytrading.parity.net.pmd.PMD$OrderAdded" : {
+      "methodsCount" : 3,
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 2,
+        "T005" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 1,
+        "R013" : 2
+      },
+      "perTestOutcome" : {
+        "R000" : 1
+      }
+    },
+    "com.paritytrading.parity.net.pmd.PMD$OrderCanceled" : {
+      "methodsCount" : 3,
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 2,
+        "T005" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 2,
+        "R013" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 2
+      }
+    },
+    "com.paritytrading.parity.net.pmd.PMD$OrderExecuted" : {
+      "methodsCount" : 3,
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 2,
+        "T005" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 1,
+        "R013" : 2
+      },
+      "perTestOutcome" : {
+        "R000" : 1
+      }
+    },
+    "com.paritytrading.parity.net.pmd.PMD$Version" : {
+      "methodsCount" : 3,
+      "completeTestCount" : 3,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 2,
+        "T005" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 3
+      },
+      "perTestOutcome" : {
+        "R000" : 3
+      }
+    },
+    "com.paritytrading.parity.net.pmd.PMDException" : {
+      "methodsCount" : 1,
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T005" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 1
+      }
+    },
+    "com.paritytrading.parity.net.pmd.PMDListener" : {
+      "methodsCount" : 4,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T010" : 4
+      },
+      "perMethodOutcome" : {
+        "T010" : 4
+      }
+    },
+    "com.paritytrading.parity.net.pmd.PMDParser" : {
+      "methodsCount" : 3,
+      "completeTestCount" : 8,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 2,
+        "T003" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 2,
+        "T003" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 8
+      },
+      "warnings" : {
+        "F009" : 6
+      }
+    },
+    "com.paritytrading.parity.net.pmr.PMR" : {
+      "methodsCount" : 5,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T003" : 3,
+        "T012" : 2
+      },
+      "perMethodOutcome" : {
+        "T003" : 3,
+        "T012" : 2
+      }
+    },
+    "com.paritytrading.parity.net.pmr.PMR$OrderAdded" : {
+      "methodsCount" : 3,
+      "completeTestCount" : 3,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 2,
+        "T005" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 3
+      },
+      "perTestOutcome" : {
+        "R000" : 3
+      }
+    },
+    "com.paritytrading.parity.net.pmr.PMR$OrderCanceled" : {
+      "methodsCount" : 3,
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 2,
+        "T005" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 2,
+        "R013" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 2
+      }
+    },
+    "com.paritytrading.parity.net.pmr.PMR$OrderEntered" : {
+      "methodsCount" : 3,
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 2,
+        "T005" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 1,
+        "R013" : 2
+      },
+      "perTestOutcome" : {
+        "R000" : 1
+      }
+    },
+    "com.paritytrading.parity.net.pmr.PMR$Trade" : {
+      "methodsCount" : 3,
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 2,
+        "T005" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 1,
+        "R013" : 2
+      },
+      "perTestOutcome" : {
+        "R000" : 1
+      }
+    },
+    "com.paritytrading.parity.net.pmr.PMR$Version" : {
+      "methodsCount" : 3,
+      "completeTestCount" : 3,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 2,
+        "T005" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 3
+      },
+      "perTestOutcome" : {
+        "R000" : 3
+      }
+    },
+    "com.paritytrading.parity.net.pmr.PMRException" : {
+      "methodsCount" : 1,
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T005" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 1
+      }
+    },
+    "com.paritytrading.parity.net.pmr.PMRListener" : {
+      "methodsCount" : 5,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T010" : 5
+      },
+      "perMethodOutcome" : {
+        "T010" : 5
+      }
+    },
+    "com.paritytrading.parity.net.pmr.PMRParser" : {
+      "methodsCount" : 3,
+      "completeTestCount" : 12,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 2,
+        "T003" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 2,
+        "T003" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 12
+      },
+      "warnings" : {
+        "F009" : 8
+      }
+    },
+    "com.paritytrading.parity.net.poe.POE" : {
+      "methodsCount" : 5,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T003" : 3,
+        "T012" : 2
+      },
+      "perMethodOutcome" : {
+        "T003" : 3,
+        "T012" : 2
+      }
+    },
+    "com.paritytrading.parity.net.poe.POE$CancelOrder" : {
+      "methodsCount" : 3,
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 3
+      },
+      "perMethodOutcome" : {
+        "R000" : 2,
+        "R013" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 2
+      }
+    },
+    "com.paritytrading.parity.net.poe.POE$EnterOrder" : {
+      "methodsCount" : 3,
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 3
+      },
+      "perMethodOutcome" : {
+        "R000" : 1,
+        "R013" : 2
+      },
+      "perTestOutcome" : {
+        "R000" : 1
+      }
+    },
+    "com.paritytrading.parity.net.poe.POE$OrderAccepted" : {
+      "methodsCount" : 3,
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 3
+      },
+      "perMethodOutcome" : {
+        "R000" : 1,
+        "R013" : 2
+      },
+      "perTestOutcome" : {
+        "R000" : 1
+      }
+    },
+    "com.paritytrading.parity.net.poe.POE$OrderCanceled" : {
+      "methodsCount" : 3,
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 3
+      },
+      "perMethodOutcome" : {
+        "R000" : 1,
+        "R013" : 2
+      },
+      "perTestOutcome" : {
+        "R000" : 1
+      }
+    },
+    "com.paritytrading.parity.net.poe.POE$OrderExecuted" : {
+      "methodsCount" : 3,
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 3
+      },
+      "perMethodOutcome" : {
+        "R000" : 1,
+        "R013" : 2
+      },
+      "perTestOutcome" : {
+        "R000" : 1
+      }
+    },
+    "com.paritytrading.parity.net.poe.POE$OrderRejected" : {
+      "methodsCount" : 3,
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 3
+      },
+      "perMethodOutcome" : {
+        "R000" : 1,
+        "R013" : 2
+      },
+      "perTestOutcome" : {
+        "R000" : 1
+      }
+    },
+    "com.paritytrading.parity.net.poe.POEClientListener" : {
+      "methodsCount" : 4,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T010" : 4
+      },
+      "perMethodOutcome" : {
+        "T010" : 4
+      }
+    },
+    "com.paritytrading.parity.net.poe.POEClientParser" : {
+      "methodsCount" : 3,
+      "completeTestCount" : 6,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 2,
+        "T003" : 1
+      },
+      "perMethodOutcome" : {
+        "F009" : 1,
+        "R000" : 1,
+        "T003" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 6
+      },
+      "warnings" : {
+        "F009" : 6
+      }
+    },
+    "com.paritytrading.parity.net.poe.POEException" : {
+      "methodsCount" : 1,
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T005" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 1
+      }
+    },
+    "com.paritytrading.parity.net.poe.POEServerListener" : {
+      "methodsCount" : 2,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T010" : 2
+      },
+      "perMethodOutcome" : {
+        "T010" : 2
+      }
+    },
+    "com.paritytrading.parity.net.poe.POEServerParser" : {
+      "methodsCount" : 3,
+      "completeTestCount" : 4,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 2,
+        "T003" : 1
+      },
+      "perMethodOutcome" : {
+        "F009" : 1,
+        "R000" : 1,
+        "T003" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 4
+      },
+      "warnings" : {
+        "F009" : 4
+      }
+    }
+  },
+  "methods" : {
+    "com.paritytrading.parity.net.ProtocolException.<init>:(Ljava/lang/String;)V" : {
+      "completeTestCount" : 3,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 3
+      },
+      "lineNumbers" : [
+        31,
+        32
+      ]
+    },
+    "com.paritytrading.parity.net.ProtocolException.<init>:(Ljava/lang/String;Ljava/lang/Throwable;)V" : {
+      "completeTestCount" : 3,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 3
+      },
+      "lineNumbers" : [
+        41,
+        42
+      ]
+    },
+    "com.paritytrading.parity.net.ProtocolException.<init>:(Ljava/lang/Throwable;)V" : {
+      "completeTestCount" : 3,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 3
+      },
+      "lineNumbers" : [
+        50,
+        51
+      ]
+    },
+    "com.paritytrading.parity.net.ProtocolMessage.get:(Ljava/nio/ByteBuffer;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "com.paritytrading.parity.net.ProtocolMessage.put:(Ljava/nio/ByteBuffer;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "com.paritytrading.parity.net.pmd.PMD$OrderAdded.<init>:()V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        71
+      ]
+    },
+    "com.paritytrading.parity.net.pmd.PMD$OrderAdded.get:(Ljava/nio/ByteBuffer;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87
+      ]
+    },
+    "com.paritytrading.parity.net.pmd.PMD$OrderAdded.put:(Ljava/nio/ByteBuffer;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        91,
+        92,
+        93,
+        94,
+        95,
+        96,
+        97,
+        98
+      ]
+    },
+    "com.paritytrading.parity.net.pmd.PMD$OrderCanceled.<init>:()V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        131
+      ]
+    },
+    "com.paritytrading.parity.net.pmd.PMD$OrderCanceled.get:(Ljava/nio/ByteBuffer;)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        138,
+        139,
+        140,
+        141
+      ]
+    },
+    "com.paritytrading.parity.net.pmd.PMD$OrderCanceled.put:(Ljava/nio/ByteBuffer;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        145,
+        146,
+        147,
+        148,
+        149
+      ]
+    },
+    "com.paritytrading.parity.net.pmd.PMD$OrderExecuted.<init>:()V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        104
+      ]
+    },
+    "com.paritytrading.parity.net.pmd.PMD$OrderExecuted.get:(Ljava/nio/ByteBuffer;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        112,
+        113,
+        114,
+        115,
+        116
+      ]
+    },
+    "com.paritytrading.parity.net.pmd.PMD$OrderExecuted.put:(Ljava/nio/ByteBuffer;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        120,
+        121,
+        122,
+        123,
+        124,
+        125
+      ]
+    },
+    "com.paritytrading.parity.net.pmd.PMD$Version.<init>:()V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        53
+      ]
+    },
+    "com.paritytrading.parity.net.pmd.PMD$Version.get:(Ljava/nio/ByteBuffer;)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        58,
+        59
+      ]
+    },
+    "com.paritytrading.parity.net.pmd.PMD$Version.put:(Ljava/nio/ByteBuffer;)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        63,
+        64,
+        65
+      ]
+    },
+    "com.paritytrading.parity.net.pmd.PMD.<init>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        26,
+        27
+      ]
+    },
+    "com.paritytrading.parity.net.pmd.PMD.access$000:(Ljava/nio/ByteBuffer;)J" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        24
+      ]
+    },
+    "com.paritytrading.parity.net.pmd.PMD.access$100:(Ljava/nio/ByteBuffer;J)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        24
+      ]
+    },
+    "com.paritytrading.parity.net.pmd.PMD.getUnsignedInt:(Ljava/nio/ByteBuffer;)J" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        153
+      ]
+    },
+    "com.paritytrading.parity.net.pmd.PMD.putUnsignedInt:(Ljava/nio/ByteBuffer;J)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        157,
+        158
+      ]
+    },
+    "com.paritytrading.parity.net.pmd.PMDException.<init>:(Ljava/lang/String;)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        31,
+        32
+      ]
+    },
+    "com.paritytrading.parity.net.pmd.PMDListener.orderAdded:(Lcom/paritytrading/parity/net/pmd/PMD$OrderAdded;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "com.paritytrading.parity.net.pmd.PMDListener.orderCanceled:(Lcom/paritytrading/parity/net/pmd/PMD$OrderCanceled;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "com.paritytrading.parity.net.pmd.PMDListener.orderExecuted:(Lcom/paritytrading/parity/net/pmd/PMD$OrderExecuted;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "com.paritytrading.parity.net.pmd.PMDListener.version:(Lcom/paritytrading/parity/net/pmd/PMD$Version;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "com.paritytrading.parity.net.pmd.PMDParser.<init>:(Lcom/paritytrading/parity/net/pmd/PMDListener;)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "warnings" : {
+        "F009" : 6
+      },
+      "lineNumbers" : [
+        41,
+        42,
+        43,
+        44,
+        45,
+        47,
+        48
+      ]
+    },
+    "com.paritytrading.parity.net.pmd.PMDParser.malformedMessage:(B)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        94
+      ]
+    },
+    "com.paritytrading.parity.net.pmd.PMDParser.message:(Ljava/nio/ByteBuffer;)V" : {
+      "completeTestCount" : 7,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 7
+      },
+      "lineNumbers" : [
+        52,
+        54,
+        55,
+        57,
+        59,
+        61,
+        62,
+        64,
+        65,
+        66,
+        68,
+        69,
+        71,
+        72,
+        73,
+        75,
+        76,
+        78,
+        79,
+        80,
+        82,
+        83,
+        85,
+        86,
+        87,
+        89,
+        91
+      ]
+    },
+    "com.paritytrading.parity.net.pmr.PMR$OrderAdded.<init>:()V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        112
+      ]
+    },
+    "com.paritytrading.parity.net.pmr.PMR$OrderAdded.get:(Ljava/nio/ByteBuffer;)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        118,
+        119,
+        120
+      ]
+    },
+    "com.paritytrading.parity.net.pmr.PMR$OrderAdded.put:(Ljava/nio/ByteBuffer;)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        124,
+        125,
+        126,
+        127
+      ]
+    },
+    "com.paritytrading.parity.net.pmr.PMR$OrderCanceled.<init>:()V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        133
+      ]
+    },
+    "com.paritytrading.parity.net.pmr.PMR$OrderCanceled.get:(Ljava/nio/ByteBuffer;)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        140,
+        141,
+        142,
+        143
+      ]
+    },
+    "com.paritytrading.parity.net.pmr.PMR$OrderCanceled.put:(Ljava/nio/ByteBuffer;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        147,
+        148,
+        149,
+        150,
+        151
+      ]
+    },
+    "com.paritytrading.parity.net.pmr.PMR$OrderEntered.<init>:()V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        76
+      ]
+    },
+    "com.paritytrading.parity.net.pmr.PMR$OrderEntered.get:(Ljava/nio/ByteBuffer;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        87,
+        88,
+        89,
+        90,
+        91,
+        92,
+        93,
+        94
+      ]
+    },
+    "com.paritytrading.parity.net.pmr.PMR$OrderEntered.put:(Ljava/nio/ByteBuffer;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        98,
+        99,
+        100,
+        101,
+        102,
+        103,
+        104,
+        105,
+        106
+      ]
+    },
+    "com.paritytrading.parity.net.pmr.PMR$Trade.<init>:()V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        157
+      ]
+    },
+    "com.paritytrading.parity.net.pmr.PMR$Trade.get:(Ljava/nio/ByteBuffer;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        166,
+        167,
+        168,
+        169,
+        170,
+        171
+      ]
+    },
+    "com.paritytrading.parity.net.pmr.PMR$Trade.put:(Ljava/nio/ByteBuffer;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        175,
+        176,
+        177,
+        178,
+        179,
+        180,
+        181
+      ]
+    },
+    "com.paritytrading.parity.net.pmr.PMR$Version.<init>:()V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        58
+      ]
+    },
+    "com.paritytrading.parity.net.pmr.PMR$Version.get:(Ljava/nio/ByteBuffer;)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        63,
+        64
+      ]
+    },
+    "com.paritytrading.parity.net.pmr.PMR$Version.put:(Ljava/nio/ByteBuffer;)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        68,
+        69,
+        70
+      ]
+    },
+    "com.paritytrading.parity.net.pmr.PMR.<init>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        26,
+        27
+      ]
+    },
+    "com.paritytrading.parity.net.pmr.PMR.access$000:(Ljava/nio/ByteBuffer;)J" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        24
+      ]
+    },
+    "com.paritytrading.parity.net.pmr.PMR.access$100:(Ljava/nio/ByteBuffer;J)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        24
+      ]
+    },
+    "com.paritytrading.parity.net.pmr.PMR.getUnsignedInt:(Ljava/nio/ByteBuffer;)J" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        185
+      ]
+    },
+    "com.paritytrading.parity.net.pmr.PMR.putUnsignedInt:(Ljava/nio/ByteBuffer;J)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        189,
+        190
+      ]
+    },
+    "com.paritytrading.parity.net.pmr.PMRException.<init>:(Ljava/lang/String;)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        31,
+        32
+      ]
+    },
+    "com.paritytrading.parity.net.pmr.PMRListener.orderAdded:(Lcom/paritytrading/parity/net/pmr/PMR$OrderAdded;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "com.paritytrading.parity.net.pmr.PMRListener.orderCanceled:(Lcom/paritytrading/parity/net/pmr/PMR$OrderCanceled;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "com.paritytrading.parity.net.pmr.PMRListener.orderEntered:(Lcom/paritytrading/parity/net/pmr/PMR$OrderEntered;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "com.paritytrading.parity.net.pmr.PMRListener.trade:(Lcom/paritytrading/parity/net/pmr/PMR$Trade;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "com.paritytrading.parity.net.pmr.PMRListener.version:(Lcom/paritytrading/parity/net/pmr/PMR$Version;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "com.paritytrading.parity.net.pmr.PMRParser.<init>:(Lcom/paritytrading/parity/net/pmr/PMRListener;)V" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "warnings" : {
+        "F009" : 8
+      },
+      "lineNumbers" : [
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        49,
+        50
+      ]
+    },
+    "com.paritytrading.parity.net.pmr.PMRParser.malformedMessage:(B)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        103
+      ]
+    },
+    "com.paritytrading.parity.net.pmr.PMRParser.message:(Ljava/nio/ByteBuffer;)V" : {
+      "completeTestCount" : 10,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 10
+      },
+      "lineNumbers" : [
+        54,
+        56,
+        57,
+        59,
+        61,
+        63,
+        64,
+        66,
+        67,
+        68,
+        70,
+        71,
+        73,
+        74,
+        75,
+        77,
+        78,
+        80,
+        81,
+        82,
+        84,
+        85,
+        87,
+        88,
+        89,
+        91,
+        92,
+        94,
+        95,
+        96,
+        98,
+        100
+      ]
+    },
+    "com.paritytrading.parity.net.poe.POE$CancelOrder.<init>:()V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        112,
+        113,
+        114
+      ]
+    },
+    "com.paritytrading.parity.net.poe.POE$CancelOrder.get:(Ljava/nio/ByteBuffer;)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        118,
+        119,
+        120
+      ]
+    },
+    "com.paritytrading.parity.net.poe.POE$CancelOrder.put:(Ljava/nio/ByteBuffer;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        124,
+        125,
+        126,
+        127
+      ]
+    },
+    "com.paritytrading.parity.net.poe.POE$EnterOrder.<init>:()V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        78,
+        79,
+        80
+      ]
+    },
+    "com.paritytrading.parity.net.poe.POE$EnterOrder.get:(Ljava/nio/ByteBuffer;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        84,
+        85,
+        86,
+        87,
+        88,
+        89
+      ]
+    },
+    "com.paritytrading.parity.net.poe.POE$EnterOrder.put:(Ljava/nio/ByteBuffer;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        93,
+        94,
+        95,
+        96,
+        97,
+        98,
+        99
+      ]
+    },
+    "com.paritytrading.parity.net.poe.POE$OrderAccepted.<init>:()V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        161,
+        162,
+        163
+      ]
+    },
+    "com.paritytrading.parity.net.poe.POE$OrderAccepted.get:(Ljava/nio/ByteBuffer;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        167,
+        168,
+        169,
+        170,
+        171,
+        172,
+        173,
+        174
+      ]
+    },
+    "com.paritytrading.parity.net.poe.POE$OrderAccepted.put:(Ljava/nio/ByteBuffer;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        178,
+        179,
+        180,
+        181,
+        182,
+        183,
+        184,
+        185,
+        186
+      ]
+    },
+    "com.paritytrading.parity.net.poe.POE$OrderCanceled.<init>:()V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        272,
+        273,
+        274
+      ]
+    },
+    "com.paritytrading.parity.net.poe.POE$OrderCanceled.get:(Ljava/nio/ByteBuffer;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        278,
+        279,
+        280,
+        281,
+        282
+      ]
+    },
+    "com.paritytrading.parity.net.poe.POE$OrderCanceled.put:(Ljava/nio/ByteBuffer;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        286,
+        287,
+        288,
+        289,
+        290,
+        291
+      ]
+    },
+    "com.paritytrading.parity.net.poe.POE$OrderExecuted.<init>:()V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        234,
+        235,
+        236
+      ]
+    },
+    "com.paritytrading.parity.net.poe.POE$OrderExecuted.get:(Ljava/nio/ByteBuffer;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        240,
+        241,
+        242,
+        243,
+        244,
+        245,
+        246
+      ]
+    },
+    "com.paritytrading.parity.net.poe.POE$OrderExecuted.put:(Ljava/nio/ByteBuffer;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        250,
+        251,
+        252,
+        253,
+        254,
+        255,
+        256,
+        257
+      ]
+    },
+    "com.paritytrading.parity.net.poe.POE$OrderRejected.<init>:()V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        200,
+        201,
+        202
+      ]
+    },
+    "com.paritytrading.parity.net.poe.POE$OrderRejected.get:(Ljava/nio/ByteBuffer;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        206,
+        207,
+        208,
+        209
+      ]
+    },
+    "com.paritytrading.parity.net.poe.POE$OrderRejected.put:(Ljava/nio/ByteBuffer;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        213,
+        214,
+        215,
+        216,
+        217
+      ]
+    },
+    "com.paritytrading.parity.net.poe.POE.<init>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        26,
+        27
+      ]
+    },
+    "com.paritytrading.parity.net.poe.POE.access$000:(Ljava/nio/ByteBuffer;)J" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        24
+      ]
+    },
+    "com.paritytrading.parity.net.poe.POE.access$100:(Ljava/nio/ByteBuffer;J)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        24
+      ]
+    },
+    "com.paritytrading.parity.net.poe.POE.getUnsignedInt:(Ljava/nio/ByteBuffer;)J" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        295
+      ]
+    },
+    "com.paritytrading.parity.net.poe.POE.putUnsignedInt:(Ljava/nio/ByteBuffer;J)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        299,
+        300
+      ]
+    },
+    "com.paritytrading.parity.net.poe.POEClientListener.orderAccepted:(Lcom/paritytrading/parity/net/poe/POE$OrderAccepted;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "com.paritytrading.parity.net.poe.POEClientListener.orderCanceled:(Lcom/paritytrading/parity/net/poe/POE$OrderCanceled;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "com.paritytrading.parity.net.poe.POEClientListener.orderExecuted:(Lcom/paritytrading/parity/net/poe/POE$OrderExecuted;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "com.paritytrading.parity.net.poe.POEClientListener.orderRejected:(Lcom/paritytrading/parity/net/poe/POE$OrderRejected;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "com.paritytrading.parity.net.poe.POEClientParser.<init>:(Lcom/paritytrading/parity/net/poe/POEClientListener;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "F009",
+      "warnings" : {
+        "F009" : 6
+      },
+      "lineNumbers" : [
+        41,
+        42,
+        43,
+        44,
+        45,
+        47,
+        48
+      ]
+    },
+    "com.paritytrading.parity.net.poe.POEClientParser.malformedMessage:(B)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        94
+      ]
+    },
+    "com.paritytrading.parity.net.poe.POEClientParser.message:(Ljava/nio/ByteBuffer;)V" : {
+      "completeTestCount" : 6,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 6
+      },
+      "lineNumbers" : [
+        52,
+        54,
+        55,
+        57,
+        59,
+        61,
+        62,
+        64,
+        65,
+        66,
+        68,
+        69,
+        71,
+        72,
+        73,
+        75,
+        76,
+        78,
+        79,
+        80,
+        82,
+        83,
+        85,
+        86,
+        87,
+        89,
+        91
+      ]
+    },
+    "com.paritytrading.parity.net.poe.POEException.<init>:(Ljava/lang/String;)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        31,
+        32
+      ]
+    },
+    "com.paritytrading.parity.net.poe.POEServerListener.cancelOrder:(Lcom/paritytrading/parity/net/poe/POE$CancelOrder;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "com.paritytrading.parity.net.poe.POEServerListener.enterOrder:(Lcom/paritytrading/parity/net/poe/POE$EnterOrder;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "com.paritytrading.parity.net.poe.POEServerParser.<init>:(Lcom/paritytrading/parity/net/poe/POEServerListener;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "F009",
+      "warnings" : {
+        "F009" : 4
+      },
+      "lineNumbers" : [
+        39,
+        40,
+        41,
+        43,
+        44
+      ]
+    },
+    "com.paritytrading.parity.net.poe.POEServerParser.malformedMessage:(B)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        76
+      ]
+    },
+    "com.paritytrading.parity.net.poe.POEServerParser.message:(Ljava/nio/ByteBuffer;)V" : {
+      "completeTestCount" : 4,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 4
+      },
+      "lineNumbers" : [
+        48,
+        50,
+        51,
+        53,
+        55,
+        57,
+        58,
+        60,
+        61,
+        62,
+        64,
+        65,
+        67,
+        68,
+        69,
+        71,
+        73
+      ]
+    }
+  },
+  "validationMetrics" : { },
+  "outputCodes" : [
+    {
+      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.limitation.MissingObserverMessage\",\"fields\":[{\"className\":{\"descriptor\":\"Lcom/paritytrading/parity/book/Market;\",\"simpleNames\":[\"Market\"]},\"fieldName\":\"books\"},{\"className\":{\"descriptor\":\"Lcom/paritytrading/parity/book/Market;\",\"simpleNames\":[\"Market\"]},\"fieldName\":\"listener\"},{\"className\":{\"descriptor\":\"Lcom/paritytrading/parity/book/Market;\",\"simpleNames\":[\"Market\"]},\"fieldName\":\"orders\"}],\"serializableCause\":null}",
+      "methodGroup" : {
+        "methods" : [
+          {
+            "binaryClassName" : "com.paritytrading.parity.book.Market",
+            "descriptor" : "(JJLcom/paritytrading/parity/book/Side;JJ)V",
+            "methodName" : "add"
+          }
+        ]
+      }
+    },
+    {
+      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.limitation.MissingObserverMessage\",\"fields\":[{\"className\":{\"descriptor\":\"Lcom/paritytrading/parity/book/Market;\",\"simpleNames\":[\"Market\"]},\"fieldName\":\"books\"},{\"className\":{\"descriptor\":\"Lcom/paritytrading/parity/book/Market;\",\"simpleNames\":[\"Market\"]},\"fieldName\":\"listener\"},{\"className\":{\"descriptor\":\"Lcom/paritytrading/parity/book/Market;\",\"simpleNames\":[\"Market\"]},\"fieldName\":\"orders\"}],\"serializableCause\":null}",
+      "methodGroup" : {
+        "methods" : [
+          {
+            "binaryClassName" : "com.paritytrading.parity.book.Market",
+            "descriptor" : "(J)V",
+            "methodName" : "delete"
+          }
+        ]
+      }
+    },
+    {
+      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.limitation.MissingObserverMessage\",\"fields\":[{\"className\":{\"descriptor\":\"Lcom/paritytrading/parity/book/Market;\",\"simpleNames\":[\"Market\"]},\"fieldName\":\"books\"},{\"className\":{\"descriptor\":\"Lcom/paritytrading/parity/book/Market;\",\"simpleNames\":[\"Market\"]},\"fieldName\":\"listener\"},{\"className\":{\"descriptor\":\"Lcom/paritytrading/parity/book/Market;\",\"simpleNames\":[\"Market\"]},\"fieldName\":\"orders\"}],\"serializableCause\":null}",
+      "methodGroup" : {
+        "methods" : [
+          {
+            "binaryClassName" : "com.paritytrading.parity.book.Market",
+            "descriptor" : "(JJ)V",
+            "methodName" : "modify"
+          }
+        ]
+      }
+    },
+    {
+      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.testability.SyntheticMethodMessage\",\"serializableCause\":null}",
+      "methodGroup" : {
+        "methods" : [
+          {
+            "binaryClassName" : "com.paritytrading.parity.book.Side",
+            "descriptor" : "(Ljava/lang/String;)Lcom/paritytrading/parity/book/Side;",
+            "methodName" : "valueOf"
+          }
+        ]
+      }
+    },
+    {
+      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.testability.SyntheticMethodMessage\",\"serializableCause\":null}",
+      "methodGroup" : {
+        "methods" : [
+          {
+            "binaryClassName" : "com.paritytrading.parity.book.Side",
+            "descriptor" : "()[Lcom/paritytrading/parity/book/Side;",
+            "methodName" : "values"
+          }
+        ]
+      }
+    },
+    {
+      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.environment.TemporaryFilesCreatedButNotDeletedMessage\",\"serializableCause\":null,\"temporaryFiles\":[\"file:///tmp/test.txt\"]}",
+      "methodGroup" : {
+        "methods" : [
+          {
+            "binaryClassName" : "com.paritytrading.parity.file.taq.TAQWriter",
+            "descriptor" : "(Ljava/io/File;)V",
+            "methodName" : "<init>"
+          }
+        ]
+      }
+    },
+    {
+      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.environment.TemporaryFilesCreatedButNotDeletedMessage\",\"serializableCause\":null,\"temporaryFiles\":[\"file:///tmp/test.txt\"]}",
+      "methodGroup" : {
+        "methods" : [
+          {
+            "binaryClassName" : "com.paritytrading.parity.file.taq.TAQWriter",
+            "descriptor" : "(Ljava/io/File;Lcom/paritytrading/parity/file/taq/TAQConfig;)V",
+            "methodName" : "<init>"
+          }
+        ]
+      }
+    },
+    {
+      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.limitation.MissingObserverMessage\",\"fields\":[{\"className\":{\"descriptor\":\"Lcom/paritytrading/parity/file/taq/TAQWriter;\",\"simpleNames\":[\"TAQWriter\"]},\"fieldName\":\"buffer\"},{\"className\":{\"descriptor\":\"Lcom/paritytrading/parity/file/taq/TAQWriter;\",\"simpleNames\":[\"TAQWriter\"]},\"fieldName\":\"config\"},{\"className\":{\"descriptor\":\"Lcom/paritytrading/parity/file/taq/TAQWriter;\",\"simpleNames\":[\"TAQWriter\"]},\"fieldName\":\"position\"},{\"className\":{\"descriptor\":\"Lcom/paritytrading/parity/file/taq/TAQWriter;\",\"simpleNames\":[\"TAQWriter\"]},\"fieldName\":\"sink\"}],\"serializableCause\":null}",
+      "methodGroup" : {
+        "methods" : [
+          {
+            "binaryClassName" : "com.paritytrading.parity.file.taq.TAQWriter",
+            "descriptor" : "(Ljava/io/OutputStream;)V",
+            "methodName" : "<init>"
+          }
+        ]
+      }
+    },
+    {
+      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.limitation.NoNonThrowingInputsMessage\",\"serializableCause\":{\"cause\":null,\"message\":null,\"originalClassName\":\"java.lang.NullPointerException\",\"stackTrace\":[{\"className\":\"java.io.BufferedOutputStream\",\"fileName\":\"BufferedOutputStream.java\",\"lineNumber\":122,\"methodName\":\"write\",\"nativeMethod\":false},{\"className\":\"sun.nio.cs.StreamEncoder\",\"fileName\":\"StreamEncoder.java\",\"lineNumber\":221,\"methodName\":\"writeBytes\",\"nativeMethod\":false},{\"className\":\"sun.nio.cs.StreamEncoder\",\"fileName\":\"StreamEncoder.java\",\"lineNumber\":316,\"methodName\":\"implClose\",\"nativeMethod\":false},{\"className\":\"sun.nio.cs.StreamEncoder\",\"fileName\":\"StreamEncoder.java\",\"lineNumber\":149,\"methodName\":\"close\",\"nativeMethod\":false},{\"className\":\"java.io.OutputStreamWriter\",\"fileName\":\"OutputStreamWriter.java\",\"lineNumber\":233,\"methodName\":\"close\",\"nativeMethod\":false},{\"className\":\"java.io.PrintWriter\",\"fileName\":\"PrintWriter.java\",\"lineNumber\":339,\"methodName\":\"close\",\"nativeMethod\":false},{\"className\":\"com.paritytrading.parity.file.taq.TAQWriter\",\"fileName\":\"TAQWriter.java\",\"lineNumber\":196,\"methodName\":\"close\",\"nativeMethod\":false},{\"className\":\"sun.reflect.GeneratedMethodAccessor162\",\"fileName\":null,\"lineNumber\":-1,\"methodName\":\"invoke\",\"nativeMethod\":false},{\"className\":\"sun.reflect.DelegatingMethodAccessorImpl\",\"fileName\":\"DelegatingMethodAccessorImpl.java\",\"lineNumber\":43,\"methodName\":\"invoke\",\"nativeMethod\":false},{\"className\":\"java.lang.reflect.Method\",\"fileName\":\"Method.java\",\"lineNumber\":498,\"methodName\":\"invoke\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.h\",\"fileName\":\"SourceFile\",\"lineNumber\":140,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.h\",\"fileName\":\"SourceFile\",\"lineNumber\":77,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.a.f\",\"fileName\":\"SourceFile\",\"lineNumber\":852,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.f\",\"fileName\":\"SourceFile\",\"lineNumber\":463,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.f\",\"fileName\":\"SourceFile\",\"lineNumber\":99,\"methodName\":\"b\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.g.d\",\"fileName\":\"SourceFile\",\"lineNumber\":51,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.g\",\"fileName\":\"SourceFile\",\"lineNumber\":368,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.g\",\"fileName\":\"SourceFile\",\"lineNumber\":261,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.fuzztest.b.f\",\"fileName\":\"SourceFile\",\"lineNumber\":1105,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.SafeTimedExecutor\",\"fileName\":\"SourceFile\",\"lineNumber\":171,\"methodName\":\"lambda$runWithLoopIterationLimit$5\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.TimedCallableExecutor$CallableFuture\",\"fileName\":\"SourceFile\",\"lineNumber\":29,\"methodName\":\"executeTask\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.TaskQueueRunner\",\"fileName\":\"SourceFile\",\"lineNumber\":39,\"methodName\":\"run\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.WorkerThread\",\"fileName\":\"SourceFile\",\"lineNumber\":265,\"methodName\":\"run\",\"nativeMethod\":false}]}}",
+      "methodGroup" : {
+        "methods" : [
+          {
+            "binaryClassName" : "com.paritytrading.parity.file.taq.TAQWriter",
+            "descriptor" : "()V",
+            "methodName" : "close"
+          }
+        ]
+      }
+    },
+    {
+      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.limitation.NoNonThrowingInputsMessage\",\"serializableCause\":{\"cause\":null,\"message\":null,\"originalClassName\":\"java.lang.NullPointerException\",\"stackTrace\":[{\"className\":\"java.io.BufferedOutputStream\",\"fileName\":\"BufferedOutputStream.java\",\"lineNumber\":122,\"methodName\":\"write\",\"nativeMethod\":false},{\"className\":\"sun.nio.cs.StreamEncoder\",\"fileName\":\"StreamEncoder.java\",\"lineNumber\":221,\"methodName\":\"writeBytes\",\"nativeMethod\":false},{\"className\":\"sun.nio.cs.StreamEncoder\",\"fileName\":\"StreamEncoder.java\",\"lineNumber\":291,\"methodName\":\"implFlushBuffer\",\"nativeMethod\":false},{\"className\":\"sun.nio.cs.StreamEncoder\",\"fileName\":\"StreamEncoder.java\",\"lineNumber\":295,\"methodName\":\"implFlush\",\"nativeMethod\":false},{\"className\":\"sun.nio.cs.StreamEncoder\",\"fileName\":\"StreamEncoder.java\",\"lineNumber\":141,\"methodName\":\"flush\",\"nativeMethod\":false},{\"className\":\"java.io.OutputStreamWriter\",\"fileName\":\"OutputStreamWriter.java\",\"lineNumber\":229,\"methodName\":\"flush\",\"nativeMethod\":false},{\"className\":\"java.io.PrintWriter\",\"fileName\":\"PrintWriter.java\",\"lineNumber\":320,\"methodName\":\"flush\",\"nativeMethod\":false},{\"className\":\"com.paritytrading.parity.file.taq.TAQWriter\",\"fileName\":\"TAQWriter.java\",\"lineNumber\":201,\"methodName\":\"flush\",\"nativeMethod\":false},{\"className\":\"sun.reflect.GeneratedMethodAccessor171\",\"fileName\":null,\"lineNumber\":-1,\"methodName\":\"invoke\",\"nativeMethod\":false},{\"className\":\"sun.reflect.DelegatingMethodAccessorImpl\",\"fileName\":\"DelegatingMethodAccessorImpl.java\",\"lineNumber\":43,\"methodName\":\"invoke\",\"nativeMethod\":false},{\"className\":\"java.lang.reflect.Method\",\"fileName\":\"Method.java\",\"lineNumber\":498,\"methodName\":\"invoke\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.h\",\"fileName\":\"SourceFile\",\"lineNumber\":140,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.h\",\"fileName\":\"SourceFile\",\"lineNumber\":77,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.a.f\",\"fileName\":\"SourceFile\",\"lineNumber\":852,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.f\",\"fileName\":\"SourceFile\",\"lineNumber\":463,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.f\",\"fileName\":\"SourceFile\",\"lineNumber\":99,\"methodName\":\"b\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.g.d\",\"fileName\":\"SourceFile\",\"lineNumber\":51,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.g\",\"fileName\":\"SourceFile\",\"lineNumber\":368,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.g\",\"fileName\":\"SourceFile\",\"lineNumber\":261,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.fuzztest.b.f\",\"fileName\":\"SourceFile\",\"lineNumber\":1105,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.SafeTimedExecutor\",\"fileName\":\"SourceFile\",\"lineNumber\":171,\"methodName\":\"lambda$runWithLoopIterationLimit$5\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.TimedCallableExecutor$CallableFuture\",\"fileName\":\"SourceFile\",\"lineNumber\":29,\"methodName\":\"executeTask\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.TaskQueueRunner\",\"fileName\":\"SourceFile\",\"lineNumber\":39,\"methodName\":\"run\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.WorkerThread\",\"fileName\":\"SourceFile\",\"lineNumber\":265,\"methodName\":\"run\",\"nativeMethod\":false}]}}",
+      "methodGroup" : {
+        "methods" : [
+          {
+            "binaryClassName" : "com.paritytrading.parity.file.taq.TAQWriter",
+            "descriptor" : "()V",
+            "methodName" : "flush"
+          }
+        ]
+      }
+    },
+    {
+      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.limitation.NoNonThrowingInputsMessage\",\"serializableCause\":{\"cause\":null,\"message\":\"Invalid value for NanoOfDay (valid values 0 - 86399999999999): -1000000\",\"originalClassName\":\"java.time.DateTimeException\",\"stackTrace\":[{\"className\":\"java.time.temporal.ValueRange\",\"fileName\":\"ValueRange.java\",\"lineNumber\":311,\"methodName\":\"checkValidValue\",\"nativeMethod\":false},{\"className\":\"java.time.temporal.ChronoField\",\"fileName\":\"ChronoField.java\",\"lineNumber\":703,\"methodName\":\"checkValidValue\",\"nativeMethod\":false},{\"className\":\"java.time.LocalTime\",\"fileName\":\"LocalTime.java\",\"lineNumber\":376,\"methodName\":\"ofNanoOfDay\",\"nativeMethod\":false},{\"className\":\"com.paritytrading.parity.file.taq.TAQWriter\",\"fileName\":\"TAQWriter.java\",\"lineNumber\":205,\"methodName\":\"writeTimestamp\",\"nativeMethod\":false},{\"className\":\"com.paritytrading.parity.file.taq.TAQWriter\",\"fileName\":\"TAQWriter.java\",\"lineNumber\":160,\"methodName\":\"write\",\"nativeMethod\":false},{\"className\":\"sun.reflect.GeneratedMethodAccessor173\",\"fileName\":null,\"lineNumber\":-1,\"methodName\":\"invoke\",\"nativeMethod\":false},{\"className\":\"sun.reflect.DelegatingMethodAccessorImpl\",\"fileName\":\"DelegatingMethodAccessorImpl.java\",\"lineNumber\":43,\"methodName\":\"invoke\",\"nativeMethod\":false},{\"className\":\"java.lang.reflect.Method\",\"fileName\":\"Method.java\",\"lineNumber\":498,\"methodName\":\"invoke\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.h\",\"fileName\":\"SourceFile\",\"lineNumber\":140,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.h\",\"fileName\":\"SourceFile\",\"lineNumber\":77,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.a.f\",\"fileName\":\"SourceFile\",\"lineNumber\":852,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.f\",\"fileName\":\"SourceFile\",\"lineNumber\":463,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.f\",\"fileName\":\"SourceFile\",\"lineNumber\":99,\"methodName\":\"b\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.g.d\",\"fileName\":\"SourceFile\",\"lineNumber\":51,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.g\",\"fileName\":\"SourceFile\",\"lineNumber\":368,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.g\",\"fileName\":\"SourceFile\",\"lineNumber\":261,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.fuzztest.b.f\",\"fileName\":\"SourceFile\",\"lineNumber\":1105,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.SafeTimedExecutor\",\"fileName\":\"SourceFile\",\"lineNumber\":171,\"methodName\":\"lambda$runWithLoopIterationLimit$5\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.TimedCallableExecutor$CallableFuture\",\"fileName\":\"SourceFile\",\"lineNumber\":29,\"methodName\":\"executeTask\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.TaskQueueRunner\",\"fileName\":\"SourceFile\",\"lineNumber\":39,\"methodName\":\"run\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.WorkerThread\",\"fileName\":\"SourceFile\",\"lineNumber\":265,\"methodName\":\"run\",\"nativeMethod\":false}]}}",
+      "methodGroup" : {
+        "methods" : [
+          {
+            "binaryClassName" : "com.paritytrading.parity.file.taq.TAQWriter",
+            "descriptor" : "(Lcom/paritytrading/parity/file/taq/TAQ$Quote;)V",
+            "methodName" : "write"
+          }
+        ]
+      }
+    },
+    {
+      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.limitation.NoNonThrowingInputsMessage\",\"serializableCause\":{\"cause\":null,\"message\":\"Invalid value for NanoOfDay (valid values 0 - 86399999999999): -1000000\",\"originalClassName\":\"java.time.DateTimeException\",\"stackTrace\":[{\"className\":\"java.time.temporal.ValueRange\",\"fileName\":\"ValueRange.java\",\"lineNumber\":311,\"methodName\":\"checkValidValue\",\"nativeMethod\":false},{\"className\":\"java.time.temporal.ChronoField\",\"fileName\":\"ChronoField.java\",\"lineNumber\":703,\"methodName\":\"checkValidValue\",\"nativeMethod\":false},{\"className\":\"java.time.LocalTime\",\"fileName\":\"LocalTime.java\",\"lineNumber\":376,\"methodName\":\"ofNanoOfDay\",\"nativeMethod\":false},{\"className\":\"com.paritytrading.parity.file.taq.TAQWriter\",\"fileName\":\"TAQWriter.java\",\"lineNumber\":205,\"methodName\":\"writeTimestamp\",\"nativeMethod\":false},{\"className\":\"com.paritytrading.parity.file.taq.TAQWriter\",\"fileName\":\"TAQWriter.java\",\"lineNumber\":127,\"methodName\":\"write\",\"nativeMethod\":false},{\"className\":\"sun.reflect.GeneratedMethodAccessor190\",\"fileName\":null,\"lineNumber\":-1,\"methodName\":\"invoke\",\"nativeMethod\":false},{\"className\":\"sun.reflect.DelegatingMethodAccessorImpl\",\"fileName\":\"DelegatingMethodAccessorImpl.java\",\"lineNumber\":43,\"methodName\":\"invoke\",\"nativeMethod\":false},{\"className\":\"java.lang.reflect.Method\",\"fileName\":\"Method.java\",\"lineNumber\":498,\"methodName\":\"invoke\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.h\",\"fileName\":\"SourceFile\",\"lineNumber\":140,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.h\",\"fileName\":\"SourceFile\",\"lineNumber\":77,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.a.f\",\"fileName\":\"SourceFile\",\"lineNumber\":852,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.f\",\"fileName\":\"SourceFile\",\"lineNumber\":463,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.f\",\"fileName\":\"SourceFile\",\"lineNumber\":99,\"methodName\":\"b\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.g.d\",\"fileName\":\"SourceFile\",\"lineNumber\":51,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.g\",\"fileName\":\"SourceFile\",\"lineNumber\":368,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.g\",\"fileName\":\"SourceFile\",\"lineNumber\":261,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.fuzztest.b.f\",\"fileName\":\"SourceFile\",\"lineNumber\":1105,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.SafeTimedExecutor\",\"fileName\":\"SourceFile\",\"lineNumber\":171,\"methodName\":\"lambda$runWithLoopIterationLimit$5\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.TimedCallableExecutor$CallableFuture\",\"fileName\":\"SourceFile\",\"lineNumber\":29,\"methodName\":\"executeTask\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.TaskQueueRunner\",\"fileName\":\"SourceFile\",\"lineNumber\":39,\"methodName\":\"run\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.WorkerThread\",\"fileName\":\"SourceFile\",\"lineNumber\":265,\"methodName\":\"run\",\"nativeMethod\":false}]}}",
+      "methodGroup" : {
+        "methods" : [
+          {
+            "binaryClassName" : "com.paritytrading.parity.file.taq.TAQWriter",
+            "descriptor" : "(Lcom/paritytrading/parity/file/taq/TAQ$Trade;)V",
+            "methodName" : "write"
+          }
+        ]
+      }
+    },
+    {
+      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.limitation.MissingObserverMessage\",\"fields\":[{\"className\":{\"descriptor\":\"Lcom/paritytrading/parity/match/OrderBook;\",\"simpleNames\":[\"OrderBook\"]},\"fieldName\":\"asks\"},{\"className\":{\"descriptor\":\"Lcom/paritytrading/parity/match/OrderBook;\",\"simpleNames\":[\"OrderBook\"]},\"fieldName\":\"bids\"},{\"className\":{\"descriptor\":\"Lcom/paritytrading/parity/match/OrderBook;\",\"simpleNames\":[\"OrderBook\"]},\"fieldName\":\"listener\"},{\"className\":{\"descriptor\":\"Lcom/paritytrading/parity/match/OrderBook;\",\"simpleNames\":[\"OrderBook\"]},\"fieldName\":\"nextOrderNumber\"},{\"className\":{\"descriptor\":\"Lcom/paritytrading/parity/match/OrderBook;\",\"simpleNames\":[\"OrderBook\"]},\"fieldName\":\"orders\"}],\"serializableCause\":null}",
+      "methodGroup" : {
+        "methods" : [
+          {
+            "binaryClassName" : "com.paritytrading.parity.match.OrderBook",
+            "descriptor" : "(Lcom/paritytrading/parity/match/OrderBookListener;)V",
+            "methodName" : "<init>"
+          }
+        ]
+      }
+    },
+    {
+      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.limitation.MissingObserverMessage\",\"fields\":[{\"className\":{\"descriptor\":\"Lcom/paritytrading/parity/match/OrderBook;\",\"simpleNames\":[\"OrderBook\"]},\"fieldName\":\"asks\"},{\"className\":{\"descriptor\":\"Lcom/paritytrading/parity/match/OrderBook;\",\"simpleNames\":[\"OrderBook\"]},\"fieldName\":\"bids\"},{\"className\":{\"descriptor\":\"Lcom/paritytrading/parity/match/OrderBook;\",\"simpleNames\":[\"OrderBook\"]},\"fieldName\":\"listener\"},{\"className\":{\"descriptor\":\"Lcom/paritytrading/parity/match/OrderBook;\",\"simpleNames\":[\"OrderBook\"]},\"fieldName\":\"nextOrderNumber\"},{\"className\":{\"descriptor\":\"Lcom/paritytrading/parity/match/OrderBook;\",\"simpleNames\":[\"OrderBook\"]},\"fieldName\":\"orders\"}],\"serializableCause\":null}",
+      "methodGroup" : {
+        "methods" : [
+          {
+            "binaryClassName" : "com.paritytrading.parity.match.OrderBook",
+            "descriptor" : "(JJ)V",
+            "methodName" : "cancel"
+          }
+        ]
+      }
+    },
+    {
+      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.testability.SyntheticMethodMessage\",\"serializableCause\":null}",
+      "methodGroup" : {
+        "methods" : [
+          {
+            "binaryClassName" : "com.paritytrading.parity.match.Side",
+            "descriptor" : "(Ljava/lang/String;)Lcom/paritytrading/parity/match/Side;",
+            "methodName" : "valueOf"
+          }
+        ]
+      }
+    },
+    {
+      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.testability.SyntheticMethodMessage\",\"serializableCause\":null}",
+      "methodGroup" : {
+        "methods" : [
+          {
+            "binaryClassName" : "com.paritytrading.parity.match.Side",
+            "descriptor" : "()[Lcom/paritytrading/parity/match/Side;",
+            "methodName" : "values"
+          }
+        ]
+      }
+    },
+    {
+      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.limitation.NoNonThrowingInputsMessage\",\"serializableCause\":{\"cause\":null,\"message\":null,\"originalClassName\":\"java.nio.BufferUnderflowException\",\"stackTrace\":[{\"className\":\"java.nio.Buffer\",\"fileName\":\"Buffer.java\",\"lineNumber\":510,\"methodName\":\"nextGetIndex\",\"nativeMethod\":false},{\"className\":\"java.nio.HeapByteBuffer\",\"fileName\":\"HeapByteBuffer.java\",\"lineNumber\":427,\"methodName\":\"getLong\",\"nativeMethod\":false},{\"className\":\"com.paritytrading.parity.net.pmd.PMD$OrderAdded\",\"fileName\":\"PMD.java\",\"lineNumber\":84,\"methodName\":\"get\",\"nativeMethod\":false},{\"className\":\"sun.reflect.GeneratedMethodAccessor94\",\"fileName\":null,\"lineNumber\":-1,\"methodName\":\"invoke\",\"nativeMethod\":false},{\"className\":\"sun.reflect.DelegatingMethodAccessorImpl\",\"fileName\":\"DelegatingMethodAccessorImpl.java\",\"lineNumber\":43,\"methodName\":\"invoke\",\"nativeMethod\":false},{\"className\":\"java.lang.reflect.Method\",\"fileName\":\"Method.java\",\"lineNumber\":498,\"methodName\":\"invoke\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.h\",\"fileName\":\"SourceFile\",\"lineNumber\":140,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.h\",\"fileName\":\"SourceFile\",\"lineNumber\":77,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.a.f\",\"fileName\":\"SourceFile\",\"lineNumber\":852,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.f\",\"fileName\":\"SourceFile\",\"lineNumber\":463,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.f\",\"fileName\":\"SourceFile\",\"lineNumber\":99,\"methodName\":\"b\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.g.d\",\"fileName\":\"SourceFile\",\"lineNumber\":51,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.g\",\"fileName\":\"SourceFile\",\"lineNumber\":368,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.g\",\"fileName\":\"SourceFile\",\"lineNumber\":261,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.fuzztest.b.f\",\"fileName\":\"SourceFile\",\"lineNumber\":1105,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.SafeTimedExecutor\",\"fileName\":\"SourceFile\",\"lineNumber\":171,\"methodName\":\"lambda$runWithLoopIterationLimit$5\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.TimedCallableExecutor$CallableFuture\",\"fileName\":\"SourceFile\",\"lineNumber\":29,\"methodName\":\"executeTask\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.TaskQueueRunner\",\"fileName\":\"SourceFile\",\"lineNumber\":39,\"methodName\":\"run\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.WorkerThread\",\"fileName\":\"SourceFile\",\"lineNumber\":265,\"methodName\":\"run\",\"nativeMethod\":false}]}}",
+      "methodGroup" : {
+        "methods" : [
+          {
+            "binaryClassName" : "com.paritytrading.parity.net.pmd.PMD$OrderAdded",
+            "descriptor" : "(Ljava/nio/ByteBuffer;)V",
+            "methodName" : "get"
+          }
+        ]
+      }
+    },
+    {
+      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.limitation.NoNonThrowingInputsMessage\",\"serializableCause\":{\"cause\":null,\"message\":null,\"originalClassName\":\"java.nio.BufferOverflowException\",\"stackTrace\":[{\"className\":\"java.nio.Buffer\",\"fileName\":\"Buffer.java\",\"lineNumber\":533,\"methodName\":\"nextPutIndex\",\"nativeMethod\":false},{\"className\":\"java.nio.HeapByteBuffer\",\"fileName\":\"HeapByteBuffer.java\",\"lineNumber\":438,\"methodName\":\"putLong\",\"nativeMethod\":false},{\"className\":\"com.paritytrading.parity.net.pmd.PMD$OrderAdded\",\"fileName\":\"PMD.java\",\"lineNumber\":95,\"methodName\":\"put\",\"nativeMethod\":false},{\"className\":\"sun.reflect.GeneratedMethodAccessor93\",\"fileName\":null,\"lineNumber\":-1,\"methodName\":\"invoke\",\"nativeMethod\":false},{\"className\":\"sun.reflect.DelegatingMethodAccessorImpl\",\"fileName\":\"DelegatingMethodAccessorImpl.java\",\"lineNumber\":43,\"methodName\":\"invoke\",\"nativeMethod\":false},{\"className\":\"java.lang.reflect.Method\",\"fileName\":\"Method.java\",\"lineNumber\":498,\"methodName\":\"invoke\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.h\",\"fileName\":\"SourceFile\",\"lineNumber\":140,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.h\",\"fileName\":\"SourceFile\",\"lineNumber\":77,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.a.f\",\"fileName\":\"SourceFile\",\"lineNumber\":852,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.f\",\"fileName\":\"SourceFile\",\"lineNumber\":463,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.f\",\"fileName\":\"SourceFile\",\"lineNumber\":99,\"methodName\":\"b\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.g.d\",\"fileName\":\"SourceFile\",\"lineNumber\":51,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.g\",\"fileName\":\"SourceFile\",\"lineNumber\":368,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.g\",\"fileName\":\"SourceFile\",\"lineNumber\":261,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.fuzztest.b.f\",\"fileName\":\"SourceFile\",\"lineNumber\":1105,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.SafeTimedExecutor\",\"fileName\":\"SourceFile\",\"lineNumber\":171,\"methodName\":\"lambda$runWithLoopIterationLimit$5\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.TimedCallableExecutor$CallableFuture\",\"fileName\":\"SourceFile\",\"lineNumber\":29,\"methodName\":\"executeTask\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.TaskQueueRunner\",\"fileName\":\"SourceFile\",\"lineNumber\":39,\"methodName\":\"run\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.WorkerThread\",\"fileName\":\"SourceFile\",\"lineNumber\":265,\"methodName\":\"run\",\"nativeMethod\":false}]}}",
+      "methodGroup" : {
+        "methods" : [
+          {
+            "binaryClassName" : "com.paritytrading.parity.net.pmd.PMD$OrderAdded",
+            "descriptor" : "(Ljava/nio/ByteBuffer;)V",
+            "methodName" : "put"
+          }
+        ]
+      }
+    },
+    {
+      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.limitation.NoNonThrowingInputsMessage\",\"serializableCause\":{\"cause\":null,\"message\":null,\"originalClassName\":\"java.nio.BufferOverflowException\",\"stackTrace\":[{\"className\":\"java.nio.Buffer\",\"fileName\":\"Buffer.java\",\"lineNumber\":533,\"methodName\":\"nextPutIndex\",\"nativeMethod\":false},{\"className\":\"java.nio.HeapByteBuffer\",\"fileName\":\"HeapByteBuffer.java\",\"lineNumber\":438,\"methodName\":\"putLong\",\"nativeMethod\":false},{\"className\":\"com.paritytrading.parity.net.pmd.PMD$OrderCanceled\",\"fileName\":\"PMD.java\",\"lineNumber\":148,\"methodName\":\"put\",\"nativeMethod\":false},{\"className\":\"sun.reflect.GeneratedMethodAccessor116\",\"fileName\":null,\"lineNumber\":-1,\"methodName\":\"invoke\",\"nativeMethod\":false},{\"className\":\"sun.reflect.DelegatingMethodAccessorImpl\",\"fileName\":\"DelegatingMethodAccessorImpl.java\",\"lineNumber\":43,\"methodName\":\"invoke\",\"nativeMethod\":false},{\"className\":\"java.lang.reflect.Method\",\"fileName\":\"Method.java\",\"lineNumber\":498,\"methodName\":\"invoke\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.h\",\"fileName\":\"SourceFile\",\"lineNumber\":140,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.h\",\"fileName\":\"SourceFile\",\"lineNumber\":77,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.a.f\",\"fileName\":\"SourceFile\",\"lineNumber\":852,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.f\",\"fileName\":\"SourceFile\",\"lineNumber\":463,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.f\",\"fileName\":\"SourceFile\",\"lineNumber\":99,\"methodName\":\"b\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.g.d\",\"fileName\":\"SourceFile\",\"lineNumber\":51,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.g\",\"fileName\":\"SourceFile\",\"lineNumber\":368,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.g\",\"fileName\":\"SourceFile\",\"lineNumber\":261,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.fuzztest.b.f\",\"fileName\":\"SourceFile\",\"lineNumber\":1105,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.SafeTimedExecutor\",\"fileName\":\"SourceFile\",\"lineNumber\":171,\"methodName\":\"lambda$runWithLoopIterationLimit$5\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.TimedCallableExecutor$CallableFuture\",\"fileName\":\"SourceFile\",\"lineNumber\":29,\"methodName\":\"executeTask\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.TaskQueueRunner\",\"fileName\":\"SourceFile\",\"lineNumber\":39,\"methodName\":\"run\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.WorkerThread\",\"fileName\":\"SourceFile\",\"lineNumber\":265,\"methodName\":\"run\",\"nativeMethod\":false}]}}",
+      "methodGroup" : {
+        "methods" : [
+          {
+            "binaryClassName" : "com.paritytrading.parity.net.pmd.PMD$OrderCanceled",
+            "descriptor" : "(Ljava/nio/ByteBuffer;)V",
+            "methodName" : "put"
+          }
+        ]
+      }
+    },
+    {
+      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.limitation.NoNonThrowingInputsMessage\",\"serializableCause\":{\"cause\":null,\"message\":null,\"originalClassName\":\"java.nio.BufferUnderflowException\",\"stackTrace\":[{\"className\":\"java.nio.Buffer\",\"fileName\":\"Buffer.java\",\"lineNumber\":510,\"methodName\":\"nextGetIndex\",\"nativeMethod\":false},{\"className\":\"java.nio.HeapByteBuffer\",\"fileName\":\"HeapByteBuffer.java\",\"lineNumber\":375,\"methodName\":\"getInt\",\"nativeMethod\":false},{\"className\":\"com.paritytrading.parity.net.pmd.PMD\",\"fileName\":\"PMD.java\",\"lineNumber\":153,\"methodName\":\"getUnsignedInt\",\"nativeMethod\":false},{\"className\":\"com.paritytrading.parity.net.pmd.PMD\",\"fileName\":\"PMD.java\",\"lineNumber\":24,\"methodName\":\"access$000\",\"nativeMethod\":false},{\"className\":\"com.paritytrading.parity.net.pmd.PMD$OrderExecuted\",\"fileName\":\"PMD.java\",\"lineNumber\":115,\"methodName\":\"get\",\"nativeMethod\":false},{\"className\":\"sun.reflect.GeneratedMethodAccessor127\",\"fileName\":null,\"lineNumber\":-1,\"methodName\":\"invoke\",\"nativeMethod\":false},{\"className\":\"sun.reflect.DelegatingMethodAccessorImpl\",\"fileName\":\"DelegatingMethodAccessorImpl.java\",\"lineNumber\":43,\"methodName\":\"invoke\",\"nativeMethod\":false},{\"className\":\"java.lang.reflect.Method\",\"fileName\":\"Method.java\",\"lineNumber\":498,\"methodName\":\"invoke\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.h\",\"fileName\":\"SourceFile\",\"lineNumber\":140,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.h\",\"fileName\":\"SourceFile\",\"lineNumber\":77,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.a.f\",\"fileName\":\"SourceFile\",\"lineNumber\":852,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.f\",\"fileName\":\"SourceFile\",\"lineNumber\":463,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.f\",\"fileName\":\"SourceFile\",\"lineNumber\":99,\"methodName\":\"b\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.g.d\",\"fileName\":\"SourceFile\",\"lineNumber\":51,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.g\",\"fileName\":\"SourceFile\",\"lineNumber\":368,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.g\",\"fileName\":\"SourceFile\",\"lineNumber\":261,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.fuzztest.b.f\",\"fileName\":\"SourceFile\",\"lineNumber\":1105,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.SafeTimedExecutor\",\"fileName\":\"SourceFile\",\"lineNumber\":171,\"methodName\":\"lambda$runWithLoopIterationLimit$5\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.TimedCallableExecutor$CallableFuture\",\"fileName\":\"SourceFile\",\"lineNumber\":29,\"methodName\":\"executeTask\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.TaskQueueRunner\",\"fileName\":\"SourceFile\",\"lineNumber\":39,\"methodName\":\"run\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.WorkerThread\",\"fileName\":\"SourceFile\",\"lineNumber\":265,\"methodName\":\"run\",\"nativeMethod\":false}]}}",
+      "methodGroup" : {
+        "methods" : [
+          {
+            "binaryClassName" : "com.paritytrading.parity.net.pmd.PMD$OrderExecuted",
+            "descriptor" : "(Ljava/nio/ByteBuffer;)V",
+            "methodName" : "get"
+          }
+        ]
+      }
+    },
+    {
+      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.limitation.NoNonThrowingInputsMessage\",\"serializableCause\":{\"cause\":null,\"message\":null,\"originalClassName\":\"java.nio.BufferOverflowException\",\"stackTrace\":[{\"className\":\"java.nio.Buffer\",\"fileName\":\"Buffer.java\",\"lineNumber\":533,\"methodName\":\"nextPutIndex\",\"nativeMethod\":false},{\"className\":\"java.nio.HeapByteBuffer\",\"fileName\":\"HeapByteBuffer.java\",\"lineNumber\":438,\"methodName\":\"putLong\",\"nativeMethod\":false},{\"className\":\"com.paritytrading.parity.net.pmd.PMD$OrderExecuted\",\"fileName\":\"PMD.java\",\"lineNumber\":123,\"methodName\":\"put\",\"nativeMethod\":false},{\"className\":\"sun.reflect.GeneratedMethodAccessor126\",\"fileName\":null,\"lineNumber\":-1,\"methodName\":\"invoke\",\"nativeMethod\":false},{\"className\":\"sun.reflect.DelegatingMethodAccessorImpl\",\"fileName\":\"DelegatingMethodAccessorImpl.java\",\"lineNumber\":43,\"methodName\":\"invoke\",\"nativeMethod\":false},{\"className\":\"java.lang.reflect.Method\",\"fileName\":\"Method.java\",\"lineNumber\":498,\"methodName\":\"invoke\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.h\",\"fileName\":\"SourceFile\",\"lineNumber\":140,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.h\",\"fileName\":\"SourceFile\",\"lineNumber\":77,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.a.f\",\"fileName\":\"SourceFile\",\"lineNumber\":852,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.f\",\"fileName\":\"SourceFile\",\"lineNumber\":463,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.f\",\"fileName\":\"SourceFile\",\"lineNumber\":99,\"methodName\":\"b\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.g.d\",\"fileName\":\"SourceFile\",\"lineNumber\":51,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.g\",\"fileName\":\"SourceFile\",\"lineNumber\":368,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.g\",\"fileName\":\"SourceFile\",\"lineNumber\":261,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.fuzztest.b.f\",\"fileName\":\"SourceFile\",\"lineNumber\":1105,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.SafeTimedExecutor\",\"fileName\":\"SourceFile\",\"lineNumber\":171,\"methodName\":\"lambda$runWithLoopIterationLimit$5\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.TimedCallableExecutor$CallableFuture\",\"fileName\":\"SourceFile\",\"lineNumber\":29,\"methodName\":\"executeTask\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.TaskQueueRunner\",\"fileName\":\"SourceFile\",\"lineNumber\":39,\"methodName\":\"run\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.WorkerThread\",\"fileName\":\"SourceFile\",\"lineNumber\":265,\"methodName\":\"run\",\"nativeMethod\":false}]}}",
+      "methodGroup" : {
+        "methods" : [
+          {
+            "binaryClassName" : "com.paritytrading.parity.net.pmd.PMD$OrderExecuted",
+            "descriptor" : "(Ljava/nio/ByteBuffer;)V",
+            "methodName" : "put"
+          }
+        ]
+      }
+    },
+    {
+      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.limitation.NoNonThrowingInputsMessage\",\"serializableCause\":{\"cause\":null,\"message\":null,\"originalClassName\":\"java.nio.BufferOverflowException\",\"stackTrace\":[{\"className\":\"java.nio.Buffer\",\"fileName\":\"Buffer.java\",\"lineNumber\":533,\"methodName\":\"nextPutIndex\",\"nativeMethod\":false},{\"className\":\"java.nio.HeapByteBuffer\",\"fileName\":\"HeapByteBuffer.java\",\"lineNumber\":438,\"methodName\":\"putLong\",\"nativeMethod\":false},{\"className\":\"com.paritytrading.parity.net.pmr.PMR$OrderCanceled\",\"fileName\":\"PMR.java\",\"lineNumber\":150,\"methodName\":\"put\",\"nativeMethod\":false},{\"className\":\"sun.reflect.GeneratedMethodAccessor149\",\"fileName\":null,\"lineNumber\":-1,\"methodName\":\"invoke\",\"nativeMethod\":false},{\"className\":\"sun.reflect.DelegatingMethodAccessorImpl\",\"fileName\":\"DelegatingMethodAccessorImpl.java\",\"lineNumber\":43,\"methodName\":\"invoke\",\"nativeMethod\":false},{\"className\":\"java.lang.reflect.Method\",\"fileName\":\"Method.java\",\"lineNumber\":498,\"methodName\":\"invoke\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.h\",\"fileName\":\"SourceFile\",\"lineNumber\":140,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.h\",\"fileName\":\"SourceFile\",\"lineNumber\":77,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.a.f\",\"fileName\":\"SourceFile\",\"lineNumber\":852,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.f\",\"fileName\":\"SourceFile\",\"lineNumber\":463,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.f\",\"fileName\":\"SourceFile\",\"lineNumber\":99,\"methodName\":\"b\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.g.d\",\"fileName\":\"SourceFile\",\"lineNumber\":51,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.g\",\"fileName\":\"SourceFile\",\"lineNumber\":368,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.g\",\"fileName\":\"SourceFile\",\"lineNumber\":261,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.fuzztest.b.f\",\"fileName\":\"SourceFile\",\"lineNumber\":1105,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.SafeTimedExecutor\",\"fileName\":\"SourceFile\",\"lineNumber\":171,\"methodName\":\"lambda$runWithLoopIterationLimit$5\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.TimedCallableExecutor$CallableFuture\",\"fileName\":\"SourceFile\",\"lineNumber\":29,\"methodName\":\"executeTask\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.TaskQueueRunner\",\"fileName\":\"SourceFile\",\"lineNumber\":39,\"methodName\":\"run\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.WorkerThread\",\"fileName\":\"SourceFile\",\"lineNumber\":265,\"methodName\":\"run\",\"nativeMethod\":false}]}}",
+      "methodGroup" : {
+        "methods" : [
+          {
+            "binaryClassName" : "com.paritytrading.parity.net.pmr.PMR$OrderCanceled",
+            "descriptor" : "(Ljava/nio/ByteBuffer;)V",
+            "methodName" : "put"
+          }
+        ]
+      }
+    },
+    {
+      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.limitation.NoNonThrowingInputsMessage\",\"serializableCause\":{\"cause\":null,\"message\":null,\"originalClassName\":\"java.nio.BufferUnderflowException\",\"stackTrace\":[{\"className\":\"java.nio.Buffer\",\"fileName\":\"Buffer.java\",\"lineNumber\":502,\"methodName\":\"nextGetIndex\",\"nativeMethod\":false},{\"className\":\"java.nio.HeapByteBuffer\",\"fileName\":\"HeapByteBuffer.java\",\"lineNumber\":138,\"methodName\":\"get\",\"nativeMethod\":false},{\"className\":\"com.paritytrading.parity.net.pmr.PMR$OrderEntered\",\"fileName\":\"PMR.java\",\"lineNumber\":90,\"methodName\":\"get\",\"nativeMethod\":false},{\"className\":\"sun.reflect.GeneratedMethodAccessor164\",\"fileName\":null,\"lineNumber\":-1,\"methodName\":\"invoke\",\"nativeMethod\":false},{\"className\":\"sun.reflect.DelegatingMethodAccessorImpl\",\"fileName\":\"DelegatingMethodAccessorImpl.java\",\"lineNumber\":43,\"methodName\":\"invoke\",\"nativeMethod\":false},{\"className\":\"java.lang.reflect.Method\",\"fileName\":\"Method.java\",\"lineNumber\":498,\"methodName\":\"invoke\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.h\",\"fileName\":\"SourceFile\",\"lineNumber\":140,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.h\",\"fileName\":\"SourceFile\",\"lineNumber\":77,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.a.f\",\"fileName\":\"SourceFile\",\"lineNumber\":852,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.f\",\"fileName\":\"SourceFile\",\"lineNumber\":463,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.f\",\"fileName\":\"SourceFile\",\"lineNumber\":99,\"methodName\":\"b\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.g.d\",\"fileName\":\"SourceFile\",\"lineNumber\":51,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.g\",\"fileName\":\"SourceFile\",\"lineNumber\":368,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.g\",\"fileName\":\"SourceFile\",\"lineNumber\":261,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.fuzztest.b.f\",\"fileName\":\"SourceFile\",\"lineNumber\":1105,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.SafeTimedExecutor\",\"fileName\":\"SourceFile\",\"lineNumber\":171,\"methodName\":\"lambda$runWithLoopIterationLimit$5\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.TimedCallableExecutor$CallableFuture\",\"fileName\":\"SourceFile\",\"lineNumber\":29,\"methodName\":\"executeTask\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.TaskQueueRunner\",\"fileName\":\"SourceFile\",\"lineNumber\":39,\"methodName\":\"run\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.WorkerThread\",\"fileName\":\"SourceFile\",\"lineNumber\":265,\"methodName\":\"run\",\"nativeMethod\":false}]}}",
+      "methodGroup" : {
+        "methods" : [
+          {
+            "binaryClassName" : "com.paritytrading.parity.net.pmr.PMR$OrderEntered",
+            "descriptor" : "(Ljava/nio/ByteBuffer;)V",
+            "methodName" : "get"
+          }
+        ]
+      }
+    },
+    {
+      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.limitation.NoNonThrowingInputsMessage\",\"serializableCause\":{\"cause\":null,\"message\":null,\"originalClassName\":\"java.nio.BufferOverflowException\",\"stackTrace\":[{\"className\":\"java.nio.Buffer\",\"fileName\":\"Buffer.java\",\"lineNumber\":533,\"methodName\":\"nextPutIndex\",\"nativeMethod\":false},{\"className\":\"java.nio.HeapByteBuffer\",\"fileName\":\"HeapByteBuffer.java\",\"lineNumber\":438,\"methodName\":\"putLong\",\"nativeMethod\":false},{\"className\":\"com.paritytrading.parity.net.pmr.PMR$OrderEntered\",\"fileName\":\"PMR.java\",\"lineNumber\":101,\"methodName\":\"put\",\"nativeMethod\":false},{\"className\":\"sun.reflect.GeneratedMethodAccessor163\",\"fileName\":null,\"lineNumber\":-1,\"methodName\":\"invoke\",\"nativeMethod\":false},{\"className\":\"sun.reflect.DelegatingMethodAccessorImpl\",\"fileName\":\"DelegatingMethodAccessorImpl.java\",\"lineNumber\":43,\"methodName\":\"invoke\",\"nativeMethod\":false},{\"className\":\"java.lang.reflect.Method\",\"fileName\":\"Method.java\",\"lineNumber\":498,\"methodName\":\"invoke\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.h\",\"fileName\":\"SourceFile\",\"lineNumber\":140,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.h\",\"fileName\":\"SourceFile\",\"lineNumber\":77,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.a.f\",\"fileName\":\"SourceFile\",\"lineNumber\":852,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.f\",\"fileName\":\"SourceFile\",\"lineNumber\":463,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.f\",\"fileName\":\"SourceFile\",\"lineNumber\":99,\"methodName\":\"b\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.g.d\",\"fileName\":\"SourceFile\",\"lineNumber\":51,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.g\",\"fileName\":\"SourceFile\",\"lineNumber\":368,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.g\",\"fileName\":\"SourceFile\",\"lineNumber\":261,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.fuzztest.b.f\",\"fileName\":\"SourceFile\",\"lineNumber\":1105,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.SafeTimedExecutor\",\"fileName\":\"SourceFile\",\"lineNumber\":171,\"methodName\":\"lambda$runWithLoopIterationLimit$5\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.TimedCallableExecutor$CallableFuture\",\"fileName\":\"SourceFile\",\"lineNumber\":29,\"methodName\":\"executeTask\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.TaskQueueRunner\",\"fileName\":\"SourceFile\",\"lineNumber\":39,\"methodName\":\"run\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.WorkerThread\",\"fileName\":\"SourceFile\",\"lineNumber\":265,\"methodName\":\"run\",\"nativeMethod\":false}]}}",
+      "methodGroup" : {
+        "methods" : [
+          {
+            "binaryClassName" : "com.paritytrading.parity.net.pmr.PMR$OrderEntered",
+            "descriptor" : "(Ljava/nio/ByteBuffer;)V",
+            "methodName" : "put"
+          }
+        ]
+      }
+    },
+    {
+      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.limitation.NoNonThrowingInputsMessage\",\"serializableCause\":{\"cause\":null,\"message\":null,\"originalClassName\":\"java.nio.BufferUnderflowException\",\"stackTrace\":[{\"className\":\"java.nio.Buffer\",\"fileName\":\"Buffer.java\",\"lineNumber\":510,\"methodName\":\"nextGetIndex\",\"nativeMethod\":false},{\"className\":\"java.nio.HeapByteBuffer\",\"fileName\":\"HeapByteBuffer.java\",\"lineNumber\":427,\"methodName\":\"getLong\",\"nativeMethod\":false},{\"className\":\"com.paritytrading.parity.net.pmr.PMR$Trade\",\"fileName\":\"PMR.java\",\"lineNumber\":169,\"methodName\":\"get\",\"nativeMethod\":false},{\"className\":\"sun.reflect.GeneratedMethodAccessor171\",\"fileName\":null,\"lineNumber\":-1,\"methodName\":\"invoke\",\"nativeMethod\":false},{\"className\":\"sun.reflect.DelegatingMethodAccessorImpl\",\"fileName\":\"DelegatingMethodAccessorImpl.java\",\"lineNumber\":43,\"methodName\":\"invoke\",\"nativeMethod\":false},{\"className\":\"java.lang.reflect.Method\",\"fileName\":\"Method.java\",\"lineNumber\":498,\"methodName\":\"invoke\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.h\",\"fileName\":\"SourceFile\",\"lineNumber\":140,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.h\",\"fileName\":\"SourceFile\",\"lineNumber\":77,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.a.f\",\"fileName\":\"SourceFile\",\"lineNumber\":852,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.f\",\"fileName\":\"SourceFile\",\"lineNumber\":463,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.f\",\"fileName\":\"SourceFile\",\"lineNumber\":99,\"methodName\":\"b\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.g.d\",\"fileName\":\"SourceFile\",\"lineNumber\":51,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.g\",\"fileName\":\"SourceFile\",\"lineNumber\":368,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.g\",\"fileName\":\"SourceFile\",\"lineNumber\":261,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.fuzztest.b.f\",\"fileName\":\"SourceFile\",\"lineNumber\":1105,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.SafeTimedExecutor\",\"fileName\":\"SourceFile\",\"lineNumber\":171,\"methodName\":\"lambda$runWithLoopIterationLimit$5\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.TimedCallableExecutor$CallableFuture\",\"fileName\":\"SourceFile\",\"lineNumber\":29,\"methodName\":\"executeTask\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.TaskQueueRunner\",\"fileName\":\"SourceFile\",\"lineNumber\":39,\"methodName\":\"run\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.WorkerThread\",\"fileName\":\"SourceFile\",\"lineNumber\":265,\"methodName\":\"run\",\"nativeMethod\":false}]}}",
+      "methodGroup" : {
+        "methods" : [
+          {
+            "binaryClassName" : "com.paritytrading.parity.net.pmr.PMR$Trade",
+            "descriptor" : "(Ljava/nio/ByteBuffer;)V",
+            "methodName" : "get"
+          }
+        ]
+      }
+    },
+    {
+      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.limitation.NoNonThrowingInputsMessage\",\"serializableCause\":{\"cause\":null,\"message\":null,\"originalClassName\":\"java.nio.BufferOverflowException\",\"stackTrace\":[{\"className\":\"java.nio.Buffer\",\"fileName\":\"Buffer.java\",\"lineNumber\":533,\"methodName\":\"nextPutIndex\",\"nativeMethod\":false},{\"className\":\"java.nio.HeapByteBuffer\",\"fileName\":\"HeapByteBuffer.java\",\"lineNumber\":438,\"methodName\":\"putLong\",\"nativeMethod\":false},{\"className\":\"com.paritytrading.parity.net.pmr.PMR$Trade\",\"fileName\":\"PMR.java\",\"lineNumber\":178,\"methodName\":\"put\",\"nativeMethod\":false},{\"className\":\"sun.reflect.GeneratedMethodAccessor170\",\"fileName\":null,\"lineNumber\":-1,\"methodName\":\"invoke\",\"nativeMethod\":false},{\"className\":\"sun.reflect.DelegatingMethodAccessorImpl\",\"fileName\":\"DelegatingMethodAccessorImpl.java\",\"lineNumber\":43,\"methodName\":\"invoke\",\"nativeMethod\":false},{\"className\":\"java.lang.reflect.Method\",\"fileName\":\"Method.java\",\"lineNumber\":498,\"methodName\":\"invoke\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.h\",\"fileName\":\"SourceFile\",\"lineNumber\":140,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.h\",\"fileName\":\"SourceFile\",\"lineNumber\":77,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.a.f\",\"fileName\":\"SourceFile\",\"lineNumber\":852,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.f\",\"fileName\":\"SourceFile\",\"lineNumber\":463,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.f\",\"fileName\":\"SourceFile\",\"lineNumber\":99,\"methodName\":\"b\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.g.d\",\"fileName\":\"SourceFile\",\"lineNumber\":51,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.g\",\"fileName\":\"SourceFile\",\"lineNumber\":368,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.g\",\"fileName\":\"SourceFile\",\"lineNumber\":261,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.fuzztest.b.f\",\"fileName\":\"SourceFile\",\"lineNumber\":1105,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.SafeTimedExecutor\",\"fileName\":\"SourceFile\",\"lineNumber\":171,\"methodName\":\"lambda$runWithLoopIterationLimit$5\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.TimedCallableExecutor$CallableFuture\",\"fileName\":\"SourceFile\",\"lineNumber\":29,\"methodName\":\"executeTask\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.TaskQueueRunner\",\"fileName\":\"SourceFile\",\"lineNumber\":39,\"methodName\":\"run\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.WorkerThread\",\"fileName\":\"SourceFile\",\"lineNumber\":265,\"methodName\":\"run\",\"nativeMethod\":false}]}}",
+      "methodGroup" : {
+        "methods" : [
+          {
+            "binaryClassName" : "com.paritytrading.parity.net.pmr.PMR$Trade",
+            "descriptor" : "(Ljava/nio/ByteBuffer;)V",
+            "methodName" : "put"
+          }
+        ]
+      }
+    },
+    {
+      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.limitation.NoNonThrowingInputsMessage\",\"serializableCause\":{\"cause\":null,\"message\":null,\"originalClassName\":\"java.nio.BufferOverflowException\",\"stackTrace\":[{\"className\":\"java.nio.Buffer\",\"fileName\":\"Buffer.java\",\"lineNumber\":533,\"methodName\":\"nextPutIndex\",\"nativeMethod\":false},{\"className\":\"java.nio.HeapByteBuffer\",\"fileName\":\"HeapByteBuffer.java\",\"lineNumber\":438,\"methodName\":\"putLong\",\"nativeMethod\":false},{\"className\":\"com.paritytrading.parity.net.poe.POE$CancelOrder\",\"fileName\":\"POE.java\",\"lineNumber\":126,\"methodName\":\"put\",\"nativeMethod\":false},{\"className\":\"sun.reflect.GeneratedMethodAccessor189\",\"fileName\":null,\"lineNumber\":-1,\"methodName\":\"invoke\",\"nativeMethod\":false},{\"className\":\"sun.reflect.DelegatingMethodAccessorImpl\",\"fileName\":\"DelegatingMethodAccessorImpl.java\",\"lineNumber\":43,\"methodName\":\"invoke\",\"nativeMethod\":false},{\"className\":\"java.lang.reflect.Method\",\"fileName\":\"Method.java\",\"lineNumber\":498,\"methodName\":\"invoke\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.h\",\"fileName\":\"SourceFile\",\"lineNumber\":140,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.h\",\"fileName\":\"SourceFile\",\"lineNumber\":77,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.a.f\",\"fileName\":\"SourceFile\",\"lineNumber\":852,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.f\",\"fileName\":\"SourceFile\",\"lineNumber\":463,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.f\",\"fileName\":\"SourceFile\",\"lineNumber\":99,\"methodName\":\"b\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.g.d\",\"fileName\":\"SourceFile\",\"lineNumber\":51,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.g\",\"fileName\":\"SourceFile\",\"lineNumber\":368,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.g\",\"fileName\":\"SourceFile\",\"lineNumber\":261,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.fuzztest.b.f\",\"fileName\":\"SourceFile\",\"lineNumber\":1105,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.SafeTimedExecutor\",\"fileName\":\"SourceFile\",\"lineNumber\":171,\"methodName\":\"lambda$runWithLoopIterationLimit$5\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.TimedCallableExecutor$CallableFuture\",\"fileName\":\"SourceFile\",\"lineNumber\":29,\"methodName\":\"executeTask\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.TaskQueueRunner\",\"fileName\":\"SourceFile\",\"lineNumber\":39,\"methodName\":\"run\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.WorkerThread\",\"fileName\":\"SourceFile\",\"lineNumber\":265,\"methodName\":\"run\",\"nativeMethod\":false}]}}",
+      "methodGroup" : {
+        "methods" : [
+          {
+            "binaryClassName" : "com.paritytrading.parity.net.poe.POE$CancelOrder",
+            "descriptor" : "(Ljava/nio/ByteBuffer;)V",
+            "methodName" : "put"
+          }
+        ]
+      }
+    },
+    {
+      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.limitation.NoNonThrowingInputsMessage\",\"serializableCause\":{\"cause\":null,\"message\":null,\"originalClassName\":\"java.nio.BufferUnderflowException\",\"stackTrace\":[{\"className\":\"java.nio.Buffer\",\"fileName\":\"Buffer.java\",\"lineNumber\":510,\"methodName\":\"nextGetIndex\",\"nativeMethod\":false},{\"className\":\"java.nio.HeapByteBuffer\",\"fileName\":\"HeapByteBuffer.java\",\"lineNumber\":427,\"methodName\":\"getLong\",\"nativeMethod\":false},{\"className\":\"com.paritytrading.parity.net.poe.POE$EnterOrder\",\"fileName\":\"POE.java\",\"lineNumber\":86,\"methodName\":\"get\",\"nativeMethod\":false},{\"className\":\"sun.reflect.GeneratedMethodAccessor192\",\"fileName\":null,\"lineNumber\":-1,\"methodName\":\"invoke\",\"nativeMethod\":false},{\"className\":\"sun.reflect.DelegatingMethodAccessorImpl\",\"fileName\":\"DelegatingMethodAccessorImpl.java\",\"lineNumber\":43,\"methodName\":\"invoke\",\"nativeMethod\":false},{\"className\":\"java.lang.reflect.Method\",\"fileName\":\"Method.java\",\"lineNumber\":498,\"methodName\":\"invoke\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.h\",\"fileName\":\"SourceFile\",\"lineNumber\":140,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.h\",\"fileName\":\"SourceFile\",\"lineNumber\":77,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.a.f\",\"fileName\":\"SourceFile\",\"lineNumber\":852,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.f\",\"fileName\":\"SourceFile\",\"lineNumber\":463,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.f\",\"fileName\":\"SourceFile\",\"lineNumber\":99,\"methodName\":\"b\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.g.d\",\"fileName\":\"SourceFile\",\"lineNumber\":51,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.g\",\"fileName\":\"SourceFile\",\"lineNumber\":368,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.g\",\"fileName\":\"SourceFile\",\"lineNumber\":261,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.fuzztest.b.f\",\"fileName\":\"SourceFile\",\"lineNumber\":1105,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.SafeTimedExecutor\",\"fileName\":\"SourceFile\",\"lineNumber\":171,\"methodName\":\"lambda$runWithLoopIterationLimit$5\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.TimedCallableExecutor$CallableFuture\",\"fileName\":\"SourceFile\",\"lineNumber\":29,\"methodName\":\"executeTask\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.TaskQueueRunner\",\"fileName\":\"SourceFile\",\"lineNumber\":39,\"methodName\":\"run\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.WorkerThread\",\"fileName\":\"SourceFile\",\"lineNumber\":265,\"methodName\":\"run\",\"nativeMethod\":false}]}}",
+      "methodGroup" : {
+        "methods" : [
+          {
+            "binaryClassName" : "com.paritytrading.parity.net.poe.POE$EnterOrder",
+            "descriptor" : "(Ljava/nio/ByteBuffer;)V",
+            "methodName" : "get"
+          }
+        ]
+      }
+    },
+    {
+      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.limitation.NoNonThrowingInputsMessage\",\"serializableCause\":{\"cause\":null,\"message\":null,\"originalClassName\":\"java.nio.BufferOverflowException\",\"stackTrace\":[{\"className\":\"java.nio.Buffer\",\"fileName\":\"Buffer.java\",\"lineNumber\":533,\"methodName\":\"nextPutIndex\",\"nativeMethod\":false},{\"className\":\"java.nio.HeapByteBuffer\",\"fileName\":\"HeapByteBuffer.java\",\"lineNumber\":438,\"methodName\":\"putLong\",\"nativeMethod\":false},{\"className\":\"com.paritytrading.parity.net.poe.POE$EnterOrder\",\"fileName\":\"POE.java\",\"lineNumber\":96,\"methodName\":\"put\",\"nativeMethod\":false},{\"className\":\"sun.reflect.GeneratedMethodAccessor191\",\"fileName\":null,\"lineNumber\":-1,\"methodName\":\"invoke\",\"nativeMethod\":false},{\"className\":\"sun.reflect.DelegatingMethodAccessorImpl\",\"fileName\":\"DelegatingMethodAccessorImpl.java\",\"lineNumber\":43,\"methodName\":\"invoke\",\"nativeMethod\":false},{\"className\":\"java.lang.reflect.Method\",\"fileName\":\"Method.java\",\"lineNumber\":498,\"methodName\":\"invoke\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.h\",\"fileName\":\"SourceFile\",\"lineNumber\":140,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.h\",\"fileName\":\"SourceFile\",\"lineNumber\":77,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.a.f\",\"fileName\":\"SourceFile\",\"lineNumber\":852,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.f\",\"fileName\":\"SourceFile\",\"lineNumber\":463,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.f\",\"fileName\":\"SourceFile\",\"lineNumber\":99,\"methodName\":\"b\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.g.d\",\"fileName\":\"SourceFile\",\"lineNumber\":51,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.g\",\"fileName\":\"SourceFile\",\"lineNumber\":368,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.g\",\"fileName\":\"SourceFile\",\"lineNumber\":261,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.fuzztest.b.f\",\"fileName\":\"SourceFile\",\"lineNumber\":1105,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.SafeTimedExecutor\",\"fileName\":\"SourceFile\",\"lineNumber\":171,\"methodName\":\"lambda$runWithLoopIterationLimit$5\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.TimedCallableExecutor$CallableFuture\",\"fileName\":\"SourceFile\",\"lineNumber\":29,\"methodName\":\"executeTask\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.TaskQueueRunner\",\"fileName\":\"SourceFile\",\"lineNumber\":39,\"methodName\":\"run\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.WorkerThread\",\"fileName\":\"SourceFile\",\"lineNumber\":265,\"methodName\":\"run\",\"nativeMethod\":false}]}}",
+      "methodGroup" : {
+        "methods" : [
+          {
+            "binaryClassName" : "com.paritytrading.parity.net.poe.POE$EnterOrder",
+            "descriptor" : "(Ljava/nio/ByteBuffer;)V",
+            "methodName" : "put"
+          }
+        ]
+      }
+    },
+    {
+      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.limitation.NoNonThrowingInputsMessage\",\"serializableCause\":{\"cause\":null,\"message\":null,\"originalClassName\":\"java.nio.BufferUnderflowException\",\"stackTrace\":[{\"className\":\"java.nio.Buffer\",\"fileName\":\"Buffer.java\",\"lineNumber\":502,\"methodName\":\"nextGetIndex\",\"nativeMethod\":false},{\"className\":\"java.nio.HeapByteBuffer\",\"fileName\":\"HeapByteBuffer.java\",\"lineNumber\":138,\"methodName\":\"get\",\"nativeMethod\":false},{\"className\":\"com.paritytrading.parity.net.poe.POE$OrderAccepted\",\"fileName\":\"POE.java\",\"lineNumber\":169,\"methodName\":\"get\",\"nativeMethod\":false},{\"className\":\"sun.reflect.GeneratedMethodAccessor194\",\"fileName\":null,\"lineNumber\":-1,\"methodName\":\"invoke\",\"nativeMethod\":false},{\"className\":\"sun.reflect.DelegatingMethodAccessorImpl\",\"fileName\":\"DelegatingMethodAccessorImpl.java\",\"lineNumber\":43,\"methodName\":\"invoke\",\"nativeMethod\":false},{\"className\":\"java.lang.reflect.Method\",\"fileName\":\"Method.java\",\"lineNumber\":498,\"methodName\":\"invoke\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.h\",\"fileName\":\"SourceFile\",\"lineNumber\":140,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.h\",\"fileName\":\"SourceFile\",\"lineNumber\":77,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.a.f\",\"fileName\":\"SourceFile\",\"lineNumber\":852,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.f\",\"fileName\":\"SourceFile\",\"lineNumber\":463,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.f\",\"fileName\":\"SourceFile\",\"lineNumber\":99,\"methodName\":\"b\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.g.d\",\"fileName\":\"SourceFile\",\"lineNumber\":51,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.g\",\"fileName\":\"SourceFile\",\"lineNumber\":368,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.g\",\"fileName\":\"SourceFile\",\"lineNumber\":261,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.fuzztest.b.f\",\"fileName\":\"SourceFile\",\"lineNumber\":1105,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.SafeTimedExecutor\",\"fileName\":\"SourceFile\",\"lineNumber\":171,\"methodName\":\"lambda$runWithLoopIterationLimit$5\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.TimedCallableExecutor$CallableFuture\",\"fileName\":\"SourceFile\",\"lineNumber\":29,\"methodName\":\"executeTask\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.TaskQueueRunner\",\"fileName\":\"SourceFile\",\"lineNumber\":39,\"methodName\":\"run\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.WorkerThread\",\"fileName\":\"SourceFile\",\"lineNumber\":265,\"methodName\":\"run\",\"nativeMethod\":false}]}}",
+      "methodGroup" : {
+        "methods" : [
+          {
+            "binaryClassName" : "com.paritytrading.parity.net.poe.POE$OrderAccepted",
+            "descriptor" : "(Ljava/nio/ByteBuffer;)V",
+            "methodName" : "get"
+          }
+        ]
+      }
+    },
+    {
+      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.limitation.NoNonThrowingInputsMessage\",\"serializableCause\":{\"cause\":null,\"message\":null,\"originalClassName\":\"java.nio.BufferOverflowException\",\"stackTrace\":[{\"className\":\"java.nio.HeapByteBuffer\",\"fileName\":\"HeapByteBuffer.java\",\"lineNumber\":194,\"methodName\":\"put\",\"nativeMethod\":false},{\"className\":\"java.nio.ByteBuffer\",\"fileName\":\"ByteBuffer.java\",\"lineNumber\":867,\"methodName\":\"put\",\"nativeMethod\":false},{\"className\":\"com.paritytrading.parity.net.poe.POE$OrderAccepted\",\"fileName\":\"POE.java\",\"lineNumber\":180,\"methodName\":\"put\",\"nativeMethod\":false},{\"className\":\"sun.reflect.GeneratedMethodAccessor193\",\"fileName\":null,\"lineNumber\":-1,\"methodName\":\"invoke\",\"nativeMethod\":false},{\"className\":\"sun.reflect.DelegatingMethodAccessorImpl\",\"fileName\":\"DelegatingMethodAccessorImpl.java\",\"lineNumber\":43,\"methodName\":\"invoke\",\"nativeMethod\":false},{\"className\":\"java.lang.reflect.Method\",\"fileName\":\"Method.java\",\"lineNumber\":498,\"methodName\":\"invoke\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.h\",\"fileName\":\"SourceFile\",\"lineNumber\":140,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.h\",\"fileName\":\"SourceFile\",\"lineNumber\":77,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.a.f\",\"fileName\":\"SourceFile\",\"lineNumber\":852,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.f\",\"fileName\":\"SourceFile\",\"lineNumber\":463,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.f\",\"fileName\":\"SourceFile\",\"lineNumber\":99,\"methodName\":\"b\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.g.d\",\"fileName\":\"SourceFile\",\"lineNumber\":51,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.g\",\"fileName\":\"SourceFile\",\"lineNumber\":368,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.g\",\"fileName\":\"SourceFile\",\"lineNumber\":261,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.fuzztest.b.f\",\"fileName\":\"SourceFile\",\"lineNumber\":1105,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.SafeTimedExecutor\",\"fileName\":\"SourceFile\",\"lineNumber\":171,\"methodName\":\"lambda$runWithLoopIterationLimit$5\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.TimedCallableExecutor$CallableFuture\",\"fileName\":\"SourceFile\",\"lineNumber\":29,\"methodName\":\"executeTask\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.TaskQueueRunner\",\"fileName\":\"SourceFile\",\"lineNumber\":39,\"methodName\":\"run\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.WorkerThread\",\"fileName\":\"SourceFile\",\"lineNumber\":265,\"methodName\":\"run\",\"nativeMethod\":false}]}}",
+      "methodGroup" : {
+        "methods" : [
+          {
+            "binaryClassName" : "com.paritytrading.parity.net.poe.POE$OrderAccepted",
+            "descriptor" : "(Ljava/nio/ByteBuffer;)V",
+            "methodName" : "put"
+          }
+        ]
+      }
+    },
+    {
+      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.limitation.NoNonThrowingInputsMessage\",\"serializableCause\":{\"cause\":null,\"message\":null,\"originalClassName\":\"java.nio.BufferUnderflowException\",\"stackTrace\":[{\"className\":\"java.nio.Buffer\",\"fileName\":\"Buffer.java\",\"lineNumber\":510,\"methodName\":\"nextGetIndex\",\"nativeMethod\":false},{\"className\":\"java.nio.HeapByteBuffer\",\"fileName\":\"HeapByteBuffer.java\",\"lineNumber\":427,\"methodName\":\"getLong\",\"nativeMethod\":false},{\"className\":\"com.paritytrading.parity.net.poe.POE$OrderCanceled\",\"fileName\":\"POE.java\",\"lineNumber\":280,\"methodName\":\"get\",\"nativeMethod\":false},{\"className\":\"sun.reflect.GeneratedMethodAccessor196\",\"fileName\":null,\"lineNumber\":-1,\"methodName\":\"invoke\",\"nativeMethod\":false},{\"className\":\"sun.reflect.DelegatingMethodAccessorImpl\",\"fileName\":\"DelegatingMethodAccessorImpl.java\",\"lineNumber\":43,\"methodName\":\"invoke\",\"nativeMethod\":false},{\"className\":\"java.lang.reflect.Method\",\"fileName\":\"Method.java\",\"lineNumber\":498,\"methodName\":\"invoke\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.h\",\"fileName\":\"SourceFile\",\"lineNumber\":140,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.h\",\"fileName\":\"SourceFile\",\"lineNumber\":77,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.a.f\",\"fileName\":\"SourceFile\",\"lineNumber\":852,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.f\",\"fileName\":\"SourceFile\",\"lineNumber\":463,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.f\",\"fileName\":\"SourceFile\",\"lineNumber\":99,\"methodName\":\"b\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.g.d\",\"fileName\":\"SourceFile\",\"lineNumber\":51,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.g\",\"fileName\":\"SourceFile\",\"lineNumber\":368,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.g\",\"fileName\":\"SourceFile\",\"lineNumber\":261,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.fuzztest.b.f\",\"fileName\":\"SourceFile\",\"lineNumber\":1105,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.SafeTimedExecutor\",\"fileName\":\"SourceFile\",\"lineNumber\":171,\"methodName\":\"lambda$runWithLoopIterationLimit$5\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.TimedCallableExecutor$CallableFuture\",\"fileName\":\"SourceFile\",\"lineNumber\":29,\"methodName\":\"executeTask\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.TaskQueueRunner\",\"fileName\":\"SourceFile\",\"lineNumber\":39,\"methodName\":\"run\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.WorkerThread\",\"fileName\":\"SourceFile\",\"lineNumber\":265,\"methodName\":\"run\",\"nativeMethod\":false}]}}",
+      "methodGroup" : {
+        "methods" : [
+          {
+            "binaryClassName" : "com.paritytrading.parity.net.poe.POE$OrderCanceled",
+            "descriptor" : "(Ljava/nio/ByteBuffer;)V",
+            "methodName" : "get"
+          }
+        ]
+      }
+    },
+    {
+      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.limitation.NoNonThrowingInputsMessage\",\"serializableCause\":{\"cause\":null,\"message\":null,\"originalClassName\":\"java.nio.BufferOverflowException\",\"stackTrace\":[{\"className\":\"java.nio.HeapByteBuffer\",\"fileName\":\"HeapByteBuffer.java\",\"lineNumber\":194,\"methodName\":\"put\",\"nativeMethod\":false},{\"className\":\"java.nio.ByteBuffer\",\"fileName\":\"ByteBuffer.java\",\"lineNumber\":867,\"methodName\":\"put\",\"nativeMethod\":false},{\"className\":\"com.paritytrading.parity.net.poe.POE$OrderCanceled\",\"fileName\":\"POE.java\",\"lineNumber\":288,\"methodName\":\"put\",\"nativeMethod\":false},{\"className\":\"sun.reflect.GeneratedMethodAccessor195\",\"fileName\":null,\"lineNumber\":-1,\"methodName\":\"invoke\",\"nativeMethod\":false},{\"className\":\"sun.reflect.DelegatingMethodAccessorImpl\",\"fileName\":\"DelegatingMethodAccessorImpl.java\",\"lineNumber\":43,\"methodName\":\"invoke\",\"nativeMethod\":false},{\"className\":\"java.lang.reflect.Method\",\"fileName\":\"Method.java\",\"lineNumber\":498,\"methodName\":\"invoke\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.h\",\"fileName\":\"SourceFile\",\"lineNumber\":140,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.h\",\"fileName\":\"SourceFile\",\"lineNumber\":77,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.a.f\",\"fileName\":\"SourceFile\",\"lineNumber\":852,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.f\",\"fileName\":\"SourceFile\",\"lineNumber\":463,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.f\",\"fileName\":\"SourceFile\",\"lineNumber\":99,\"methodName\":\"b\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.g.d\",\"fileName\":\"SourceFile\",\"lineNumber\":51,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.g\",\"fileName\":\"SourceFile\",\"lineNumber\":368,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.g\",\"fileName\":\"SourceFile\",\"lineNumber\":261,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.fuzztest.b.f\",\"fileName\":\"SourceFile\",\"lineNumber\":1105,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.SafeTimedExecutor\",\"fileName\":\"SourceFile\",\"lineNumber\":171,\"methodName\":\"lambda$runWithLoopIterationLimit$5\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.TimedCallableExecutor$CallableFuture\",\"fileName\":\"SourceFile\",\"lineNumber\":29,\"methodName\":\"executeTask\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.TaskQueueRunner\",\"fileName\":\"SourceFile\",\"lineNumber\":39,\"methodName\":\"run\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.WorkerThread\",\"fileName\":\"SourceFile\",\"lineNumber\":265,\"methodName\":\"run\",\"nativeMethod\":false}]}}",
+      "methodGroup" : {
+        "methods" : [
+          {
+            "binaryClassName" : "com.paritytrading.parity.net.poe.POE$OrderCanceled",
+            "descriptor" : "(Ljava/nio/ByteBuffer;)V",
+            "methodName" : "put"
+          }
+        ]
+      }
+    },
+    {
+      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.limitation.NoNonThrowingInputsMessage\",\"serializableCause\":{\"cause\":null,\"message\":null,\"originalClassName\":\"java.nio.BufferUnderflowException\",\"stackTrace\":[{\"className\":\"java.nio.Buffer\",\"fileName\":\"Buffer.java\",\"lineNumber\":510,\"methodName\":\"nextGetIndex\",\"nativeMethod\":false},{\"className\":\"java.nio.HeapByteBuffer\",\"fileName\":\"HeapByteBuffer.java\",\"lineNumber\":427,\"methodName\":\"getLong\",\"nativeMethod\":false},{\"className\":\"com.paritytrading.parity.net.poe.POE$OrderExecuted\",\"fileName\":\"POE.java\",\"lineNumber\":242,\"methodName\":\"get\",\"nativeMethod\":false},{\"className\":\"sun.reflect.GeneratedMethodAccessor211\",\"fileName\":null,\"lineNumber\":-1,\"methodName\":\"invoke\",\"nativeMethod\":false},{\"className\":\"sun.reflect.DelegatingMethodAccessorImpl\",\"fileName\":\"DelegatingMethodAccessorImpl.java\",\"lineNumber\":43,\"methodName\":\"invoke\",\"nativeMethod\":false},{\"className\":\"java.lang.reflect.Method\",\"fileName\":\"Method.java\",\"lineNumber\":498,\"methodName\":\"invoke\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.h\",\"fileName\":\"SourceFile\",\"lineNumber\":140,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.h\",\"fileName\":\"SourceFile\",\"lineNumber\":77,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.a.f\",\"fileName\":\"SourceFile\",\"lineNumber\":852,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.f\",\"fileName\":\"SourceFile\",\"lineNumber\":463,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.f\",\"fileName\":\"SourceFile\",\"lineNumber\":99,\"methodName\":\"b\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.g.d\",\"fileName\":\"SourceFile\",\"lineNumber\":51,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.g\",\"fileName\":\"SourceFile\",\"lineNumber\":368,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.g\",\"fileName\":\"SourceFile\",\"lineNumber\":261,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.fuzztest.b.f\",\"fileName\":\"SourceFile\",\"lineNumber\":1105,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.SafeTimedExecutor\",\"fileName\":\"SourceFile\",\"lineNumber\":171,\"methodName\":\"lambda$runWithLoopIterationLimit$5\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.TimedCallableExecutor$CallableFuture\",\"fileName\":\"SourceFile\",\"lineNumber\":29,\"methodName\":\"executeTask\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.TaskQueueRunner\",\"fileName\":\"SourceFile\",\"lineNumber\":39,\"methodName\":\"run\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.WorkerThread\",\"fileName\":\"SourceFile\",\"lineNumber\":265,\"methodName\":\"run\",\"nativeMethod\":false}]}}",
+      "methodGroup" : {
+        "methods" : [
+          {
+            "binaryClassName" : "com.paritytrading.parity.net.poe.POE$OrderExecuted",
+            "descriptor" : "(Ljava/nio/ByteBuffer;)V",
+            "methodName" : "get"
+          }
+        ]
+      }
+    },
+    {
+      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.limitation.NoNonThrowingInputsMessage\",\"serializableCause\":{\"cause\":null,\"message\":null,\"originalClassName\":\"java.nio.BufferOverflowException\",\"stackTrace\":[{\"className\":\"java.nio.HeapByteBuffer\",\"fileName\":\"HeapByteBuffer.java\",\"lineNumber\":194,\"methodName\":\"put\",\"nativeMethod\":false},{\"className\":\"java.nio.ByteBuffer\",\"fileName\":\"ByteBuffer.java\",\"lineNumber\":867,\"methodName\":\"put\",\"nativeMethod\":false},{\"className\":\"com.paritytrading.parity.net.poe.POE$OrderExecuted\",\"fileName\":\"POE.java\",\"lineNumber\":252,\"methodName\":\"put\",\"nativeMethod\":false},{\"className\":\"sun.reflect.GeneratedMethodAccessor210\",\"fileName\":null,\"lineNumber\":-1,\"methodName\":\"invoke\",\"nativeMethod\":false},{\"className\":\"sun.reflect.DelegatingMethodAccessorImpl\",\"fileName\":\"DelegatingMethodAccessorImpl.java\",\"lineNumber\":43,\"methodName\":\"invoke\",\"nativeMethod\":false},{\"className\":\"java.lang.reflect.Method\",\"fileName\":\"Method.java\",\"lineNumber\":498,\"methodName\":\"invoke\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.h\",\"fileName\":\"SourceFile\",\"lineNumber\":140,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.h\",\"fileName\":\"SourceFile\",\"lineNumber\":77,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.a.f\",\"fileName\":\"SourceFile\",\"lineNumber\":852,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.f\",\"fileName\":\"SourceFile\",\"lineNumber\":463,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.f\",\"fileName\":\"SourceFile\",\"lineNumber\":99,\"methodName\":\"b\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.g.d\",\"fileName\":\"SourceFile\",\"lineNumber\":51,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.g\",\"fileName\":\"SourceFile\",\"lineNumber\":368,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.g\",\"fileName\":\"SourceFile\",\"lineNumber\":261,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.fuzztest.b.f\",\"fileName\":\"SourceFile\",\"lineNumber\":1105,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.SafeTimedExecutor\",\"fileName\":\"SourceFile\",\"lineNumber\":171,\"methodName\":\"lambda$runWithLoopIterationLimit$5\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.TimedCallableExecutor$CallableFuture\",\"fileName\":\"SourceFile\",\"lineNumber\":29,\"methodName\":\"executeTask\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.TaskQueueRunner\",\"fileName\":\"SourceFile\",\"lineNumber\":39,\"methodName\":\"run\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.WorkerThread\",\"fileName\":\"SourceFile\",\"lineNumber\":265,\"methodName\":\"run\",\"nativeMethod\":false}]}}",
+      "methodGroup" : {
+        "methods" : [
+          {
+            "binaryClassName" : "com.paritytrading.parity.net.poe.POE$OrderExecuted",
+            "descriptor" : "(Ljava/nio/ByteBuffer;)V",
+            "methodName" : "put"
+          }
+        ]
+      }
+    },
+    {
+      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.limitation.NoNonThrowingInputsMessage\",\"serializableCause\":{\"cause\":null,\"message\":null,\"originalClassName\":\"java.nio.BufferUnderflowException\",\"stackTrace\":[{\"className\":\"java.nio.Buffer\",\"fileName\":\"Buffer.java\",\"lineNumber\":502,\"methodName\":\"nextGetIndex\",\"nativeMethod\":false},{\"className\":\"java.nio.HeapByteBuffer\",\"fileName\":\"HeapByteBuffer.java\",\"lineNumber\":138,\"methodName\":\"get\",\"nativeMethod\":false},{\"className\":\"com.paritytrading.parity.net.poe.POE$OrderRejected\",\"fileName\":\"POE.java\",\"lineNumber\":208,\"methodName\":\"get\",\"nativeMethod\":false},{\"className\":\"sun.reflect.GeneratedMethodAccessor213\",\"fileName\":null,\"lineNumber\":-1,\"methodName\":\"invoke\",\"nativeMethod\":false},{\"className\":\"sun.reflect.DelegatingMethodAccessorImpl\",\"fileName\":\"DelegatingMethodAccessorImpl.java\",\"lineNumber\":43,\"methodName\":\"invoke\",\"nativeMethod\":false},{\"className\":\"java.lang.reflect.Method\",\"fileName\":\"Method.java\",\"lineNumber\":498,\"methodName\":\"invoke\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.h\",\"fileName\":\"SourceFile\",\"lineNumber\":140,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.h\",\"fileName\":\"SourceFile\",\"lineNumber\":77,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.a.f\",\"fileName\":\"SourceFile\",\"lineNumber\":852,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.f\",\"fileName\":\"SourceFile\",\"lineNumber\":463,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.f\",\"fileName\":\"SourceFile\",\"lineNumber\":99,\"methodName\":\"b\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.g.d\",\"fileName\":\"SourceFile\",\"lineNumber\":51,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.g\",\"fileName\":\"SourceFile\",\"lineNumber\":368,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.g\",\"fileName\":\"SourceFile\",\"lineNumber\":261,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.fuzztest.b.f\",\"fileName\":\"SourceFile\",\"lineNumber\":1105,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.SafeTimedExecutor\",\"fileName\":\"SourceFile\",\"lineNumber\":171,\"methodName\":\"lambda$runWithLoopIterationLimit$5\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.TimedCallableExecutor$CallableFuture\",\"fileName\":\"SourceFile\",\"lineNumber\":29,\"methodName\":\"executeTask\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.TaskQueueRunner\",\"fileName\":\"SourceFile\",\"lineNumber\":39,\"methodName\":\"run\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.WorkerThread\",\"fileName\":\"SourceFile\",\"lineNumber\":265,\"methodName\":\"run\",\"nativeMethod\":false}]}}",
+      "methodGroup" : {
+        "methods" : [
+          {
+            "binaryClassName" : "com.paritytrading.parity.net.poe.POE$OrderRejected",
+            "descriptor" : "(Ljava/nio/ByteBuffer;)V",
+            "methodName" : "get"
+          }
+        ]
+      }
+    },
+    {
+      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.limitation.NoNonThrowingInputsMessage\",\"serializableCause\":{\"cause\":null,\"message\":null,\"originalClassName\":\"java.nio.BufferOverflowException\",\"stackTrace\":[{\"className\":\"java.nio.HeapByteBuffer\",\"fileName\":\"HeapByteBuffer.java\",\"lineNumber\":194,\"methodName\":\"put\",\"nativeMethod\":false},{\"className\":\"java.nio.ByteBuffer\",\"fileName\":\"ByteBuffer.java\",\"lineNumber\":867,\"methodName\":\"put\",\"nativeMethod\":false},{\"className\":\"com.paritytrading.parity.net.poe.POE$OrderRejected\",\"fileName\":\"POE.java\",\"lineNumber\":215,\"methodName\":\"put\",\"nativeMethod\":false},{\"className\":\"sun.reflect.GeneratedMethodAccessor212\",\"fileName\":null,\"lineNumber\":-1,\"methodName\":\"invoke\",\"nativeMethod\":false},{\"className\":\"sun.reflect.DelegatingMethodAccessorImpl\",\"fileName\":\"DelegatingMethodAccessorImpl.java\",\"lineNumber\":43,\"methodName\":\"invoke\",\"nativeMethod\":false},{\"className\":\"java.lang.reflect.Method\",\"fileName\":\"Method.java\",\"lineNumber\":498,\"methodName\":\"invoke\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.h\",\"fileName\":\"SourceFile\",\"lineNumber\":140,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.h\",\"fileName\":\"SourceFile\",\"lineNumber\":77,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.a.f\",\"fileName\":\"SourceFile\",\"lineNumber\":852,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.f\",\"fileName\":\"SourceFile\",\"lineNumber\":463,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.f\",\"fileName\":\"SourceFile\",\"lineNumber\":99,\"methodName\":\"b\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.g.d\",\"fileName\":\"SourceFile\",\"lineNumber\":51,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.g\",\"fileName\":\"SourceFile\",\"lineNumber\":368,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.g\",\"fileName\":\"SourceFile\",\"lineNumber\":261,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.fuzztest.b.f\",\"fileName\":\"SourceFile\",\"lineNumber\":1105,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.SafeTimedExecutor\",\"fileName\":\"SourceFile\",\"lineNumber\":171,\"methodName\":\"lambda$runWithLoopIterationLimit$5\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.TimedCallableExecutor$CallableFuture\",\"fileName\":\"SourceFile\",\"lineNumber\":29,\"methodName\":\"executeTask\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.TaskQueueRunner\",\"fileName\":\"SourceFile\",\"lineNumber\":39,\"methodName\":\"run\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.WorkerThread\",\"fileName\":\"SourceFile\",\"lineNumber\":265,\"methodName\":\"run\",\"nativeMethod\":false}]}}",
+      "methodGroup" : {
+        "methods" : [
+          {
+            "binaryClassName" : "com.paritytrading.parity.net.poe.POE$OrderRejected",
+            "descriptor" : "(Ljava/nio/ByteBuffer;)V",
+            "methodName" : "put"
+          }
+        ]
+      }
+    },
+    {
+      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.internalexception.UnexpectedMessage\",\"reason\":\"Code generation failed\",\"serializableCause\":{\"cause\":null,\"message\":\"Step #2446769: POEClientParser(#2446768) has no expression\",\"originalClassName\":\"java.lang.AssertionError\",\"stackTrace\":[{\"className\":\"com.diffblue.cover.tir2jdt.a.i.c\",\"fileName\":\"SourceFile\",\"lineNumber\":668,\"methodName\":\"c\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.tir2jdt.a.i.e\",\"fileName\":\"SourceFile\",\"lineNumber\":21855,\"methodName\":\"b\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.g.d\",\"fileName\":\"SourceFile\",\"lineNumber\":51,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.tir2jdt.a.i.g\",\"fileName\":\"SourceFile\",\"lineNumber\":70,\"methodName\":\"run\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.tir2jdt.a.b\",\"fileName\":\"SourceFile\",\"lineNumber\":1168,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.tir2jdt.a.a.b\",\"fileName\":\"SourceFile\",\"lineNumber\":37,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.tir2jdt.c\",\"fileName\":\"SourceFile\",\"lineNumber\":1147,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.tir2jdt.a.a\",\"fileName\":\"SourceFile\",\"lineNumber\":289,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.tir2jdt.a.a\",\"fileName\":\"SourceFile\",\"lineNumber\":125,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.tir2jdt.a.a\",\"fileName\":\"SourceFile\",\"lineNumber\":85,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.tir2jdt.c\",\"fileName\":\"SourceFile\",\"lineNumber\":122,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.service.analyzer.a.c$a\",\"fileName\":\"SourceFile\",\"lineNumber\":402,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.analysis.e\",\"fileName\":\"SourceFile\",\"lineNumber\":223,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.service.analyzer.a.c$a\",\"fileName\":\"SourceFile\",\"lineNumber\":1436,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.service.analyzer.a.a.m$h\",\"fileName\":\"SourceFile\",\"lineNumber\":719,\"methodName\":\"invoke\",\"nativeMethod\":false},{\"className\":\"io.grpc.stub.ServerCalls$UnaryServerCallHandler$UnaryServerCallListener\",\"fileName\":\"SourceFile\",\"lineNumber\":182,\"methodName\":\"onHalfClose\",\"nativeMethod\":false},{\"className\":\"io.grpc.internal.ServerCallImpl$ServerStreamListenerImpl\",\"fileName\":\"SourceFile\",\"lineNumber\":355,\"methodName\":\"halfClosed\",\"nativeMethod\":false},{\"className\":\"io.grpc.internal.ServerImpl$JumpToApplicationThreadServerStreamListener$1HalfClosed\",\"fileName\":\"SourceFile\",\"lineNumber\":867,\"methodName\":\"runInContext\",\"nativeMethod\":false},{\"className\":\"io.grpc.internal.ContextRunnable\",\"fileName\":\"SourceFile\",\"lineNumber\":37,\"methodName\":\"run\",\"nativeMethod\":false},{\"className\":\"io.grpc.internal.SerializingExecutor\",\"fileName\":\"SourceFile\",\"lineNumber\":133,\"methodName\":\"run\",\"nativeMethod\":false},{\"className\":\"java.util.concurrent.ThreadPoolExecutor\",\"fileName\":\"ThreadPoolExecutor.java\",\"lineNumber\":1149,\"methodName\":\"runWorker\",\"nativeMethod\":false},{\"className\":\"java.util.concurrent.ThreadPoolExecutor$Worker\",\"fileName\":\"ThreadPoolExecutor.java\",\"lineNumber\":624,\"methodName\":\"run\",\"nativeMethod\":false},{\"className\":\"java.lang.Thread\",\"fileName\":\"Thread.java\",\"lineNumber\":750,\"methodName\":\"run\",\"nativeMethod\":false}]}}",
+      "methodGroup" : {
+        "methods" : [
+          {
+            "binaryClassName" : "com.paritytrading.parity.net.poe.POEClientParser",
+            "descriptor" : "(Lcom/paritytrading/parity/net/poe/POEClientListener;)V",
+            "methodName" : "<init>"
+          }
+        ]
+      }
+    },
+    {
+      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.internalexception.UnexpectedMessage\",\"reason\":\"Code generation failed\",\"serializableCause\":{\"cause\":null,\"message\":\"Step #2530441: POEServerParser(#2530440) has no expression\",\"originalClassName\":\"java.lang.AssertionError\",\"stackTrace\":[{\"className\":\"com.diffblue.cover.tir2jdt.a.i.c\",\"fileName\":\"SourceFile\",\"lineNumber\":668,\"methodName\":\"c\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.tir2jdt.a.i.e\",\"fileName\":\"SourceFile\",\"lineNumber\":21855,\"methodName\":\"b\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.g.d\",\"fileName\":\"SourceFile\",\"lineNumber\":51,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.tir2jdt.a.i.g\",\"fileName\":\"SourceFile\",\"lineNumber\":70,\"methodName\":\"run\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.tir2jdt.a.b\",\"fileName\":\"SourceFile\",\"lineNumber\":1168,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.tir2jdt.a.a.b\",\"fileName\":\"SourceFile\",\"lineNumber\":37,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.tir2jdt.c\",\"fileName\":\"SourceFile\",\"lineNumber\":1147,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.tir2jdt.a.a\",\"fileName\":\"SourceFile\",\"lineNumber\":289,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.tir2jdt.a.a\",\"fileName\":\"SourceFile\",\"lineNumber\":125,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.tir2jdt.a.a\",\"fileName\":\"SourceFile\",\"lineNumber\":85,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.tir2jdt.c\",\"fileName\":\"SourceFile\",\"lineNumber\":122,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.service.analyzer.a.c$a\",\"fileName\":\"SourceFile\",\"lineNumber\":402,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.analysis.e\",\"fileName\":\"SourceFile\",\"lineNumber\":223,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.service.analyzer.a.c$a\",\"fileName\":\"SourceFile\",\"lineNumber\":1436,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.service.analyzer.a.a.m$h\",\"fileName\":\"SourceFile\",\"lineNumber\":719,\"methodName\":\"invoke\",\"nativeMethod\":false},{\"className\":\"io.grpc.stub.ServerCalls$UnaryServerCallHandler$UnaryServerCallListener\",\"fileName\":\"SourceFile\",\"lineNumber\":182,\"methodName\":\"onHalfClose\",\"nativeMethod\":false},{\"className\":\"io.grpc.internal.ServerCallImpl$ServerStreamListenerImpl\",\"fileName\":\"SourceFile\",\"lineNumber\":355,\"methodName\":\"halfClosed\",\"nativeMethod\":false},{\"className\":\"io.grpc.internal.ServerImpl$JumpToApplicationThreadServerStreamListener$1HalfClosed\",\"fileName\":\"SourceFile\",\"lineNumber\":867,\"methodName\":\"runInContext\",\"nativeMethod\":false},{\"className\":\"io.grpc.internal.ContextRunnable\",\"fileName\":\"SourceFile\",\"lineNumber\":37,\"methodName\":\"run\",\"nativeMethod\":false},{\"className\":\"io.grpc.internal.SerializingExecutor\",\"fileName\":\"SourceFile\",\"lineNumber\":133,\"methodName\":\"run\",\"nativeMethod\":false},{\"className\":\"java.util.concurrent.ThreadPoolExecutor\",\"fileName\":\"ThreadPoolExecutor.java\",\"lineNumber\":1149,\"methodName\":\"runWorker\",\"nativeMethod\":false},{\"className\":\"java.util.concurrent.ThreadPoolExecutor$Worker\",\"fileName\":\"ThreadPoolExecutor.java\",\"lineNumber\":624,\"methodName\":\"run\",\"nativeMethod\":false},{\"className\":\"java.lang.Thread\",\"fileName\":\"Thread.java\",\"lineNumber\":750,\"methodName\":\"run\",\"nativeMethod\":false}]}}",
+      "methodGroup" : {
+        "methods" : [
+          {
+            "binaryClassName" : "com.paritytrading.parity.net.poe.POEServerParser",
+            "descriptor" : "(Lcom/paritytrading/parity/net/poe/POEServerListener;)V",
+            "methodName" : "<init>"
+          }
+        ]
+      }
+    }
+  ]
+}
