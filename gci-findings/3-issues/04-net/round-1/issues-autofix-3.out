@@ -1,0 +1,270 @@
+INFO  Diffblue Cover 2025.12.02-74144f0-licensed
+INFO  
+INFO  Command: issues
+INFO  Output a prioritized list of issues.
+INFO  
+INFO  Selected modules:
+INFO  - com.paritytrading.parity:parity-net
+INFO  
+INFO  
+INFO  [1/1] Diagnosing issues for module: com.paritytrading.parity:parity-net
+INFO  =======================================================================
+INFO  
+INFO  Detected Java version 1.8.0_472
+INFO  Selected build system: Maven
+INFO  Reading report file '/home/jbergqvist/diffblue/paritytrading-parity/libraries/net/.diffblue/reports/report.json'
+INFO  Copied report file to '/home/jbergqvist/diffblue/paritytrading-parity/libraries/net/.diffblue/reports/report-20260120T105443.json'
+INFO  
+INFO  R013: No inputs found that don't throw a trivial exception
+      Diffblue Cover tried to run the arrange/act section, but the test threw
+      java.nio.BufferOverflowException
+          at java.nio.Buffer.nextPutIndex(Buffer.java:533)
+          at java.nio.HeapByteBuffer.putLong(HeapByteBuffer.java:438)
+          at com.paritytrading.parity.net.poe.POE$CancelOrder.put(POE.java:126)
+      In order to prevent the method under test
+      from throwing BufferOverflowException, add constructors or factory
+      methods that make it easier to construct fully initialized objects used in
+      the method under test.
+      See https://diff.blue/R013 to resolve this issue.
+      
+INFO  Affected methods:
+      com.paritytrading.parity.net.poe.POE$CancelOrder.put:(Ljava/nio/ByteBuffer;)V
+      
+INFO  To resolve the issue, use the following prompt with your AI assistant:
+      
+      We are unit testing `com.paritytrading.parity.net.poe.POE$CancelOrder.put:(Ljava/nio/ByteBuffer;)V`.
+      
+      Create a parameterless factory method for the problematic
+      parameter/this object, determining which by reading the error message below.
+      The new factory method should be in the test classpath, not production.
+      Create a new factory class if there isn't already one for the class under test.
+      Do not create a test yourself, only a factory (don't test the factory either).
+      The factory must be annotated with `@com.diffblue.cover.annotations.InterestingTestFactory`.
+      Avoid using mocks, these tend to produce unused stubbing errors or a
+      `java.lang.NullPointerException`.
+      If your environment has internet access then further documentation on
+      factory methods for Cover can be found here:
+      https://docs.diffblue.com/features/tutorials/increase-code-coverage#test-factory-pattern
+      
+      The factory should produce a parameter/this object such that
+      the following exception does not occur:
+      
+      ```
+      java.nio.BufferOverflowException
+        at java.nio.Buffer.nextPutIndex(Buffer.java:533)
+        at java.nio.HeapByteBuffer.putLong(HeapByteBuffer.java:438)
+        at com.paritytrading.parity.net.poe.POE$CancelOrder.put(POE.java:126)
+      ```
+      
+      Recompile the project to make sure the new factory is available to Cover.
+      For example run `mvn install -DskipTests` or `gradle install -x test`.
+      
+INFO  
+INFO  R013: No inputs found that don't throw a trivial exception
+      Diffblue Cover tried to run the arrange/act section, but the test threw
+      java.nio.BufferUnderflowException
+          at java.nio.Buffer.nextGetIndex(Buffer.java:510)
+          at java.nio.HeapByteBuffer.getLong(HeapByteBuffer.java:427)
+          at com.paritytrading.parity.net.poe.POE$EnterOrder.get(POE.java:86)
+      In order to prevent the method under test
+      from throwing BufferUnderflowException, add constructors or factory
+      methods that make it easier to construct fully initialized objects used in
+      the method under test.
+      See https://diff.blue/R013 to resolve this issue.
+      
+INFO  Affected methods:
+      com.paritytrading.parity.net.poe.POE$EnterOrder.get:(Ljava/nio/ByteBuffer;)V
+      
+INFO  To resolve the issue, use the following prompt with your AI assistant:
+      
+      We are unit testing `com.paritytrading.parity.net.poe.POE$EnterOrder.get:(Ljava/nio/ByteBuffer;)V`.
+      
+      Create a parameterless factory method for the problematic
+      parameter/this object, determining which by reading the error message below.
+      The new factory method should be in the test classpath, not production.
+      Create a new factory class if there isn't already one for the class under test.
+      Do not create a test yourself, only a factory (don't test the factory either).
+      The factory must be annotated with `@com.diffblue.cover.annotations.InterestingTestFactory`.
+      Avoid using mocks, these tend to produce unused stubbing errors or a
+      `java.lang.NullPointerException`.
+      If your environment has internet access then further documentation on
+      factory methods for Cover can be found here:
+      https://docs.diffblue.com/features/tutorials/increase-code-coverage#test-factory-pattern
+      
+      The factory should produce a parameter/this object such that
+      the following exception does not occur:
+      
+      ```
+      java.nio.BufferUnderflowException
+        at java.nio.Buffer.nextGetIndex(Buffer.java:510)
+        at java.nio.HeapByteBuffer.getLong(HeapByteBuffer.java:427)
+        at com.paritytrading.parity.net.poe.POE$EnterOrder.get(POE.java:86)
+      ```
+      
+      Recompile the project to make sure the new factory is available to Cover.
+      For example run `mvn install -DskipTests` or `gradle install -x test`.
+      
+INFO  
+INFO  R013: No inputs found that don't throw a trivial exception
+      Diffblue Cover tried to run the arrange/act section, but the test threw
+      java.nio.BufferOverflowException
+          at java.nio.Buffer.nextPutIndex(Buffer.java:533)
+          at java.nio.HeapByteBuffer.putLong(HeapByteBuffer.java:438)
+          at com.paritytrading.parity.net.poe.POE$EnterOrder.put(POE.java:96)
+      In order to prevent the method under test
+      from throwing BufferOverflowException, add constructors or factory
+      methods that make it easier to construct fully initialized objects used in
+      the method under test.
+      See https://diff.blue/R013 to resolve this issue.
+      
+INFO  Affected methods:
+      com.paritytrading.parity.net.poe.POE$EnterOrder.put:(Ljava/nio/ByteBuffer;)V
+      
+INFO  To resolve the issue, use the following prompt with your AI assistant:
+      
+      We are unit testing `com.paritytrading.parity.net.poe.POE$EnterOrder.put:(Ljava/nio/ByteBuffer;)V`.
+      
+      Create a parameterless factory method for the problematic
+      parameter/this object, determining which by reading the error message below.
+      The new factory method should be in the test classpath, not production.
+      Create a new factory class if there isn't already one for the class under test.
+      Do not create a test yourself, only a factory (don't test the factory either).
+      The factory must be annotated with `@com.diffblue.cover.annotations.InterestingTestFactory`.
+      Avoid using mocks, these tend to produce unused stubbing errors or a
+      `java.lang.NullPointerException`.
+      If your environment has internet access then further documentation on
+      factory methods for Cover can be found here:
+      https://docs.diffblue.com/features/tutorials/increase-code-coverage#test-factory-pattern
+      
+      The factory should produce a parameter/this object such that
+      the following exception does not occur:
+      
+      ```
+      java.nio.BufferOverflowException
+        at java.nio.Buffer.nextPutIndex(Buffer.java:533)
+        at java.nio.HeapByteBuffer.putLong(HeapByteBuffer.java:438)
+        at com.paritytrading.parity.net.poe.POE$EnterOrder.put(POE.java:96)
+      ```
+      
+      Recompile the project to make sure the new factory is available to Cover.
+      For example run `mvn install -DskipTests` or `gradle install -x test`.
+      
+INFO  
+INFO  R013: No inputs found that don't throw a trivial exception
+      Diffblue Cover tried to run the arrange/act section, but the test threw
+      java.nio.BufferUnderflowException
+          at java.nio.Buffer.nextGetIndex(Buffer.java:502)
+          at java.nio.HeapByteBuffer.get(HeapByteBuffer.java:138)
+          at com.paritytrading.parity.net.poe.POE$OrderAccepted.get(POE.java:169)
+      In order to prevent the method under test
+      from throwing BufferUnderflowException, add constructors or factory
+      methods that make it easier to construct fully initialized objects used in
+      the method under test.
+      See https://diff.blue/R013 to resolve this issue.
+      
+INFO  Affected methods:
+      com.paritytrading.parity.net.poe.POE$OrderAccepted.get:(Ljava/nio/ByteBuffer;)V
+      
+INFO  To resolve the issue, use the following prompt with your AI assistant:
+      
+      We are unit testing `com.paritytrading.parity.net.poe.POE$OrderAccepted.get:(Ljava/nio/ByteBuffer;)V`.
+      
+      Create a parameterless factory method for the problematic
+      parameter/this object, determining which by reading the error message below.
+      The new factory method should be in the test classpath, not production.
+      Create a new factory class if there isn't already one for the class under test.
+      Do not create a test yourself, only a factory (don't test the factory either).
+      The factory must be annotated with `@com.diffblue.cover.annotations.InterestingTestFactory`.
+      Avoid using mocks, these tend to produce unused stubbing errors or a
+      `java.lang.NullPointerException`.
+      If your environment has internet access then further documentation on
+      factory methods for Cover can be found here:
+      https://docs.diffblue.com/features/tutorials/increase-code-coverage#test-factory-pattern
+      
+      The factory should produce a parameter/this object such that
+      the following exception does not occur:
+      
+      ```
+      java.nio.BufferUnderflowException
+        at java.nio.Buffer.nextGetIndex(Buffer.java:502)
+        at java.nio.HeapByteBuffer.get(HeapByteBuffer.java:138)
+        at com.paritytrading.parity.net.poe.POE$OrderAccepted.get(POE.java:169)
+      ```
+      
+      Recompile the project to make sure the new factory is available to Cover.
+      For example run `mvn install -DskipTests` or `gradle install -x test`.
+      
+INFO  
+INFO  R013: No inputs found that don't throw a trivial exception
+      Diffblue Cover tried to run the arrange/act section, but the test threw
+      java.nio.BufferOverflowException
+          at java.nio.HeapByteBuffer.put(HeapByteBuffer.java:194)
+          at java.nio.ByteBuffer.put(ByteBuffer.java:867)
+          at com.paritytrading.parity.net.poe.POE$OrderAccepted.put(POE.java:180)
+      In order to prevent the method under test
+      from throwing BufferOverflowException, add constructors or factory
+      methods that make it easier to construct fully initialized objects used in
+      the method under test.
+      See https://diff.blue/R013 to resolve this issue.
+      
+INFO  Affected methods:
+      com.paritytrading.parity.net.poe.POE$OrderAccepted.put:(Ljava/nio/ByteBuffer;)V
+      
+INFO  To resolve the issue, use the following prompt with your AI assistant:
+      
+      We are unit testing `com.paritytrading.parity.net.poe.POE$OrderAccepted.put:(Ljava/nio/ByteBuffer;)V`.
+      
+      Create a parameterless factory method for the problematic
+      parameter/this object, determining which by reading the error message below.
+      The new factory method should be in the test classpath, not production.
+      Create a new factory class if there isn't already one for the class under test.
+      Do not create a test yourself, only a factory (don't test the factory either).
+      The factory must be annotated with `@com.diffblue.cover.annotations.InterestingTestFactory`.
+      Avoid using mocks, these tend to produce unused stubbing errors or a
+      `java.lang.NullPointerException`.
+      If your environment has internet access then further documentation on
+      factory methods for Cover can be found here:
+      https://docs.diffblue.com/features/tutorials/increase-code-coverage#test-factory-pattern
+      
+      The factory should produce a parameter/this object such that
+      the following exception does not occur:
+      
+      ```
+      java.nio.BufferOverflowException
+        at java.nio.HeapByteBuffer.put(HeapByteBuffer.java:194)
+        at java.nio.ByteBuffer.put(ByteBuffer.java:867)
+        at com.paritytrading.parity.net.poe.POE$OrderAccepted.put(POE.java:180)
+      ```
+      
+      Recompile the project to make sure the new factory is available to Cover.
+      For example run `mvn install -DskipTests` or `gradle install -x test`.
+      
+INFO  
+INFO  21 issues were found, numbers 11-15 were displayed
+INFO  Rerun with --prompts --skip 15 to see the next set of issues
+INFO  Rerun without --prompts to summarise all the issues
+INFO  Actioning all 5 listed issues via agent
+INFO  Executing prompt with Claude Code agent...
+INFO  [Claude Code] Perfect! I have successfully resolved all 5 issues by creating a test factory class for the POE (Parity Order Entry) protocol. Here's a summary of what was done:
+INFO  [Claude Code] 
+INFO  [Claude Code] ## Summary
+INFO  [Claude Code] 
+INFO  [Claude Code] I created `/home/jbergqvist/diffblue/paritytrading-parity/libraries/net/src/test/java/com/paritytrading/parity/net/poe/POETestFactory.java` with factory methods to provide appropriately-sized ByteBuffer instances for the Cover test generation tool.
+INFO  [Claude Code] 
+INFO  [Claude Code] ### Factory Methods Created:
+INFO  [Claude Code] 
+INFO  [Claude Code] 1. **`createByteBufferForCancelOrderPut()`** - Returns a 25-byte buffer for `CancelOrder.put()` (Issue 1)
+INFO  [Claude Code] 2. **`createByteBufferForEnterOrderGet()`** - Returns a 41-byte buffer for `EnterOrder.get()` (Issue 2)
+INFO  [Claude Code] 3. **`createByteBufferForEnterOrderPut()`** - Returns a 42-byte buffer for `EnterOrder.put()` (Issue 3)
+INFO  [Claude Code] 4. **`createByteBufferForOrderAcceptedGet()`** - Returns a 57-byte buffer for `OrderAccepted.get()` (Issue 4)
+INFO  [Claude Code] 5. **`createByteBufferForOrderAcceptedPut()`** - Returns a 58-byte buffer for `OrderAccepted.put()` (Issue 5)
+INFO  [Claude Code] 
+INFO  [Claude Code] Each factory method is annotated with `@InterestingTestFactory` as required by the Cover tool, and the buffer sizes were calculated based on the message structure defined in `POE.java`:
+INFO  [Claude Code] - The `put()` methods write the full message including the message type byte
+INFO  [Claude Code] - The `get()` methods read the message content (without the message type byte which was already consumed)
+INFO  [Claude Code] 
+INFO  [Claude Code] The project has been successfully compiled with `mvn install -DskipTests`, and the new factory class is now available in the test classpath for Cover to use when generating test cases.
+INFO  Claude Code agent completed successfully.
+INFO  
+INFO  Log file: /home/jbergqvist/diffblue/paritytrading-parity/.diffblue/log/user-20260120T110320.log
+INFO  Finished in 1m 7s

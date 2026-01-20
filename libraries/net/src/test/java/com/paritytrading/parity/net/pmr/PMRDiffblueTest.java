@@ -2,7 +2,6 @@ package com.paritytrading.parity.net.pmr;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
 import com.diffblue.cover.annotations.ManagedByDiffblue;
 import com.diffblue.cover.annotations.MethodsUnderTest;
 import com.paritytrading.parity.net.pmr.PMR.OrderAdded;
@@ -10,7 +9,7 @@ import com.paritytrading.parity.net.pmr.PMR.OrderCanceled;
 import com.paritytrading.parity.net.pmr.PMR.OrderEntered;
 import com.paritytrading.parity.net.pmr.PMR.Trade;
 import com.paritytrading.parity.net.pmr.PMR.Version;
-import java.io.UnsupportedEncodingException;
+import com.paritytrading.parity.net.poe.POETestFactory;
 import java.nio.ByteBuffer;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
@@ -21,31 +20,26 @@ class PMRDiffblueTest {
    * Test OrderAdded {@link OrderAdded#get(ByteBuffer)}.
    *
    * <ul>
-   *   <li>Then {@link OrderAdded} (default constructor) {@link OrderAdded#orderNumber} is {@code
-   *       4708585257725083992}.
+   *   <li>Then createByteBufferForOrderRejectedPut position is {@link Short#SIZE}.
    * </ul>
    *
    * <p>Method under test: {@link OrderAdded#get(ByteBuffer)}
    */
   @Test
   @DisplayName(
-      "Test OrderAdded get(ByteBuffer); then OrderAdded (default constructor) orderNumber is '4708585257725083992'")
+      "Test OrderAdded get(ByteBuffer); then createByteBufferForOrderRejectedPut position is SIZE")
   @Tag("ContributionFromDiffblue")
   @ManagedByDiffblue
   @MethodsUnderTest({"void OrderAdded.get(ByteBuffer)"})
-  void testOrderAddedGet_thenOrderAddedOrderNumberIs4708585257725083992()
-      throws UnsupportedEncodingException {
+  void testOrderAddedGet_thenCreateByteBufferForOrderRejectedPutPositionIsSize() {
     // Arrange
     OrderAdded orderAdded = new OrderAdded();
-    ByteBuffer buffer = ByteBuffer.wrap("AXAXAXAXAXAXAXAX".getBytes("UTF-8"));
+    ByteBuffer buffer = POETestFactory.createByteBufferForOrderRejectedPut();
 
     // Act
     orderAdded.get(buffer);
 
     // Assert
-    assertEquals(4708585257725083992L, orderAdded.orderNumber);
-    assertEquals(4708585257725083992L, orderAdded.timestamp);
-    assertFalse(buffer.hasRemaining());
     assertEquals(Short.SIZE, buffer.position());
   }
 
@@ -72,22 +66,21 @@ class PMRDiffblueTest {
    * Test OrderAdded {@link OrderAdded#put(ByteBuffer)}.
    *
    * <ul>
-   *   <li>Then wrap {@code AXAXAXAXAXAXAXAXAXAXAXAX} Bytes is {@code UTF-8} position is seventeen.
+   *   <li>Then createByteBufferForOrderRejectedPut position is seventeen.
    * </ul>
    *
    * <p>Method under test: {@link OrderAdded#put(ByteBuffer)}
    */
   @Test
   @DisplayName(
-      "Test OrderAdded put(ByteBuffer); then wrap 'AXAXAXAXAXAXAXAXAXAXAXAX' Bytes is 'UTF-8' position is seventeen")
+      "Test OrderAdded put(ByteBuffer); then createByteBufferForOrderRejectedPut position is seventeen")
   @Tag("ContributionFromDiffblue")
   @ManagedByDiffblue
   @MethodsUnderTest({"void OrderAdded.put(ByteBuffer)"})
-  void testOrderAddedPut_thenWrapAxaxaxaxaxaxaxaxaxaxaxaxBytesIsUtf8PositionIsSeventeen()
-      throws UnsupportedEncodingException {
+  void testOrderAddedPut_thenCreateByteBufferForOrderRejectedPutPositionIsSeventeen() {
     // Arrange
     OrderAdded orderAdded = new OrderAdded();
-    ByteBuffer buffer = ByteBuffer.wrap("AXAXAXAXAXAXAXAXAXAXAXAX".getBytes("UTF-8"));
+    ByteBuffer buffer = POETestFactory.createByteBufferForOrderRejectedPut();
 
     // Act
     orderAdded.put(buffer);
@@ -95,36 +88,35 @@ class PMRDiffblueTest {
     // Assert
     assertEquals(17, buffer.position());
     assertArrayEquals(
-        new byte[] {
-          'A', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'X', 'A', 'X', 'A', 'X', 'A', 'X'
-        },
+        new byte[] {'A', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
         buffer.array());
   }
 
   /**
    * Test OrderCanceled {@link OrderCanceled#get(ByteBuffer)}.
    *
+   * <ul>
+   *   <li>Then createByteBufferForOrderRejectedPut position is twenty-four.
+   * </ul>
+   *
    * <p>Method under test: {@link OrderCanceled#get(ByteBuffer)}
    */
   @Test
-  @DisplayName("Test OrderCanceled get(ByteBuffer)")
+  @DisplayName(
+      "Test OrderCanceled get(ByteBuffer); then createByteBufferForOrderRejectedPut position is twenty-four")
   @Tag("ContributionFromDiffblue")
   @ManagedByDiffblue
   @MethodsUnderTest({"void OrderCanceled.get(ByteBuffer)"})
-  void testOrderCanceledGet() throws UnsupportedEncodingException {
+  void testOrderCanceledGet_thenCreateByteBufferForOrderRejectedPutPositionIsTwentyFour() {
     // Arrange
     OrderCanceled orderCanceled = new OrderCanceled();
-    ByteBuffer buffer = ByteBuffer.wrap("AXAXAXAXAXAXAXAXAXAXAXAX".getBytes("UTF-8"));
+    ByteBuffer buffer = POETestFactory.createByteBufferForOrderRejectedPut();
 
     // Act
     orderCanceled.get(buffer);
 
     // Assert
     assertEquals(24, buffer.position());
-    assertEquals(4708585257725083992L, orderCanceled.canceledQuantity);
-    assertEquals(4708585257725083992L, orderCanceled.orderNumber);
-    assertEquals(4708585257725083992L, orderCanceled.timestamp);
-    assertFalse(buffer.hasRemaining());
   }
 
   /**
@@ -145,6 +137,63 @@ class PMRDiffblueTest {
     assertEquals(0L, actualOrderCanceled.canceledQuantity);
     assertEquals(0L, actualOrderCanceled.orderNumber);
     assertEquals(0L, actualOrderCanceled.timestamp);
+  }
+
+  /**
+   * Test OrderCanceled {@link OrderCanceled#put(ByteBuffer)}.
+   *
+   * <ul>
+   *   <li>Then createByteBufferForOrderRejectedPut position is twenty-five.
+   * </ul>
+   *
+   * <p>Method under test: {@link OrderCanceled#put(ByteBuffer)}
+   */
+  @Test
+  @DisplayName(
+      "Test OrderCanceled put(ByteBuffer); then createByteBufferForOrderRejectedPut position is twenty-five")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"void OrderCanceled.put(ByteBuffer)"})
+  void testOrderCanceledPut_thenCreateByteBufferForOrderRejectedPutPositionIsTwentyFive() {
+    // Arrange
+    OrderCanceled orderCanceled = new OrderCanceled();
+    ByteBuffer buffer = POETestFactory.createByteBufferForOrderRejectedPut();
+
+    // Act
+    orderCanceled.put(buffer);
+
+    // Assert
+    assertEquals(25, buffer.position());
+    assertArrayEquals(
+        new byte[] {'X', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+        buffer.array());
+  }
+
+  /**
+   * Test OrderEntered {@link OrderEntered#get(ByteBuffer)}.
+   *
+   * <ul>
+   *   <li>Then createByteBufferForOrderAcceptedPut position is forty-nine.
+   * </ul>
+   *
+   * <p>Method under test: {@link OrderEntered#get(ByteBuffer)}
+   */
+  @Test
+  @DisplayName(
+      "Test OrderEntered get(ByteBuffer); then createByteBufferForOrderAcceptedPut position is forty-nine")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"void OrderEntered.get(ByteBuffer)"})
+  void testOrderEnteredGet_thenCreateByteBufferForOrderAcceptedPutPositionIsFortyNine() {
+    // Arrange
+    OrderEntered orderEntered = new OrderEntered();
+    ByteBuffer buffer = POETestFactory.createByteBufferForOrderAcceptedPut();
+
+    // Act
+    orderEntered.get(buffer);
+
+    // Assert
+    assertEquals(49, buffer.position());
   }
 
   /**
@@ -172,6 +221,66 @@ class PMRDiffblueTest {
   }
 
   /**
+   * Test OrderEntered {@link OrderEntered#put(ByteBuffer)}.
+   *
+   * <ul>
+   *   <li>Then createByteBufferForOrderAcceptedPut position is fifty.
+   * </ul>
+   *
+   * <p>Method under test: {@link OrderEntered#put(ByteBuffer)}
+   */
+  @Test
+  @DisplayName(
+      "Test OrderEntered put(ByteBuffer); then createByteBufferForOrderAcceptedPut position is fifty")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"void OrderEntered.put(ByteBuffer)"})
+  void testOrderEnteredPut_thenCreateByteBufferForOrderAcceptedPutPositionIsFifty() {
+    // Arrange
+    OrderEntered orderEntered = new OrderEntered();
+    ByteBuffer buffer = POETestFactory.createByteBufferForOrderAcceptedPut();
+
+    // Act
+    orderEntered.put(buffer);
+
+    // Assert
+    assertEquals(50, buffer.position());
+    assertArrayEquals(
+        new byte[] {
+          'E', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+          0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+        },
+        buffer.array());
+  }
+
+  /**
+   * Test Trade {@link Trade#get(ByteBuffer)}.
+   *
+   * <ul>
+   *   <li>Then createByteBufferForOrderExecutedPut position is thirty-six.
+   * </ul>
+   *
+   * <p>Method under test: {@link Trade#get(ByteBuffer)}
+   */
+  @Test
+  @DisplayName(
+      "Test Trade get(ByteBuffer); then createByteBufferForOrderExecutedPut position is thirty-six")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"void Trade.get(ByteBuffer)"})
+  void testTradeGet_thenCreateByteBufferForOrderExecutedPutPositionIsThirtySix() {
+    // Arrange
+    Trade trade = new Trade();
+    ByteBuffer buffer = POETestFactory.createByteBufferForOrderExecutedPut();
+
+    // Act
+    trade.get(buffer);
+
+    // Assert
+    assertEquals(36, buffer.position());
+  }
+
+  /**
    * Test Trade new {@link Trade} (default constructor).
    *
    * <p>Method under test: default or parameterless constructor of {@link Trade}
@@ -194,32 +303,62 @@ class PMRDiffblueTest {
   }
 
   /**
+   * Test Trade {@link Trade#put(ByteBuffer)}.
+   *
+   * <ul>
+   *   <li>Then createByteBufferForOrderExecutedPut position is thirty-seven.
+   * </ul>
+   *
+   * <p>Method under test: {@link Trade#put(ByteBuffer)}
+   */
+  @Test
+  @DisplayName(
+      "Test Trade put(ByteBuffer); then createByteBufferForOrderExecutedPut position is thirty-seven")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"void Trade.put(ByteBuffer)"})
+  void testTradePut_thenCreateByteBufferForOrderExecutedPutPositionIsThirtySeven() {
+    // Arrange
+    Trade trade = new Trade();
+    ByteBuffer buffer = POETestFactory.createByteBufferForOrderExecutedPut();
+
+    // Act
+    trade.put(buffer);
+
+    // Assert
+    assertEquals(37, buffer.position());
+    assertArrayEquals(
+        new byte[] {
+          'T', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+          0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+        },
+        buffer.array());
+  }
+
+  /**
    * Test Version {@link Version#get(ByteBuffer)}.
    *
    * <ul>
-   *   <li>When wrap {@code AXAXAXAX} Bytes is {@code UTF-8}.
-   *   <li>Then {@link Version} (default constructor) {@link Version#version} is {@code 1096302936}.
+   *   <li>Then createByteBufferForOrderRejectedPut position is four.
    * </ul>
    *
    * <p>Method under test: {@link Version#get(ByteBuffer)}
    */
   @Test
   @DisplayName(
-      "Test Version get(ByteBuffer); when wrap 'AXAXAXAX' Bytes is 'UTF-8'; then Version (default constructor) version is '1096302936'")
+      "Test Version get(ByteBuffer); then createByteBufferForOrderRejectedPut position is four")
   @Tag("ContributionFromDiffblue")
   @ManagedByDiffblue
   @MethodsUnderTest({"void Version.get(ByteBuffer)"})
-  void testVersionGet_whenWrapAxaxaxaxBytesIsUtf8_thenVersionVersionIs1096302936()
-      throws UnsupportedEncodingException {
+  void testVersionGet_thenCreateByteBufferForOrderRejectedPutPositionIsFour() {
     // Arrange
     Version version = new Version();
-    ByteBuffer buffer = ByteBuffer.wrap("AXAXAXAX".getBytes("UTF-8"));
+    ByteBuffer buffer = POETestFactory.createByteBufferForOrderRejectedPut();
 
     // Act
     version.get(buffer);
 
     // Assert
-    assertEquals(1096302936L, version.version);
     assertEquals(4, buffer.position());
   }
 
@@ -242,28 +381,29 @@ class PMRDiffblueTest {
    * Test Version {@link Version#put(ByteBuffer)}.
    *
    * <ul>
-   *   <li>Then wrap {@code AXAXAXAX} Bytes is {@code UTF-8} position is five.
+   *   <li>Then createByteBufferForOrderRejectedPut position is five.
    * </ul>
    *
    * <p>Method under test: {@link Version#put(ByteBuffer)}
    */
   @Test
   @DisplayName(
-      "Test Version put(ByteBuffer); then wrap 'AXAXAXAX' Bytes is 'UTF-8' position is five")
+      "Test Version put(ByteBuffer); then createByteBufferForOrderRejectedPut position is five")
   @Tag("ContributionFromDiffblue")
   @ManagedByDiffblue
   @MethodsUnderTest({"void Version.put(ByteBuffer)"})
-  void testVersionPut_thenWrapAxaxaxaxBytesIsUtf8PositionIsFive()
-      throws UnsupportedEncodingException {
+  void testVersionPut_thenCreateByteBufferForOrderRejectedPutPositionIsFive() {
     // Arrange
     Version version = new Version();
-    ByteBuffer buffer = ByteBuffer.wrap("AXAXAXAX".getBytes("UTF-8"));
+    ByteBuffer buffer = POETestFactory.createByteBufferForOrderRejectedPut();
 
     // Act
     version.put(buffer);
 
     // Assert
     assertEquals(5, buffer.position());
-    assertArrayEquals(new byte[] {'V', 0, 0, 0, 0, 'X', 'A', 'X'}, buffer.array());
+    assertArrayEquals(
+        new byte[] {'V', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+        buffer.array());
   }
 }
