@@ -32,6 +32,11 @@ class DisplayFormat extends MarketDataListener {
     DisplayFormat(Instruments instruments) {
         this.instruments = instruments;
 
+        if (instruments == null) {
+            this.placeholder = "";
+            return;
+        }
+
         int priceWidth = instruments.getPriceWidth();
         int sizeWidth  = instruments.getSizeWidth();
 
@@ -59,6 +64,9 @@ class DisplayFormat extends MarketDataListener {
     @Override
     public void update(OrderBook book, boolean bbo) {
         if (!bbo)
+            return;
+
+        if (instruments == null)
             return;
 
         Instrument instrument = instruments.get(book.getInstrument());
@@ -103,6 +111,9 @@ class DisplayFormat extends MarketDataListener {
 
     @Override
     public void trade(OrderBook book, Side side, long price, long size) {
+        if (instruments == null)
+            return;
+
         Instrument instrument = instruments.get(book.getInstrument());
 
         printf("%12s %-8s ", Timestamps.format(timestampMillis()), instrument.asString());

@@ -20,17 +20,17 @@ class DisplayFormatDiffblueTest {
    * Test {@link DisplayFormat#DisplayFormat(Instruments)}.
    *
    * <ul>
-   *   <li>Then return timestampMillis is zero.
+   *   <li>Then calls {@link Instruments#getPricePlaceholder()}.
    * </ul>
    *
    * <p>Method under test: {@link DisplayFormat#DisplayFormat(Instruments)}
    */
   @Test
-  @DisplayName("Test new DisplayFormat(Instruments); then return timestampMillis is zero")
+  @DisplayName("Test new DisplayFormat(Instruments); then calls getPricePlaceholder()")
   @Tag("ContributionFromDiffblue")
   @ManagedByDiffblue
   @MethodsUnderTest({"void DisplayFormat.<init>(Instruments)"})
-  void testNewDisplayFormat_thenReturnTimestampMillisIsZero() {
+  void testNewDisplayFormat_thenCallsGetPricePlaceholder() {
     // Arrange
     Instruments instruments = mock(Instruments.class);
     when(instruments.getPricePlaceholder()).thenReturn("Price Placeholder");
@@ -47,6 +47,27 @@ class DisplayFormatDiffblueTest {
     verify(instruments).getSizePlaceholder();
     verify(instruments).getSizeWidth();
     assertEquals(0L, actualDisplayFormat.timestampMillis());
+  }
+
+  /**
+   * Test {@link DisplayFormat#DisplayFormat(Instruments)}.
+   *
+   * <ul>
+   *   <li>When {@code null}.
+   *   <li>Then return timestampMillis is zero.
+   * </ul>
+   *
+   * <p>Method under test: {@link DisplayFormat#DisplayFormat(Instruments)}
+   */
+  @Test
+  @DisplayName(
+      "Test new DisplayFormat(Instruments); when 'null'; then return timestampMillis is zero")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"void DisplayFormat.<init>(Instruments)"})
+  void testNewDisplayFormat_whenNull_thenReturnTimestampMillisIsZero() {
+    // Arrange, Act and Assert
+    assertEquals(0L, new DisplayFormat(null).timestampMillis());
   }
 
   /**

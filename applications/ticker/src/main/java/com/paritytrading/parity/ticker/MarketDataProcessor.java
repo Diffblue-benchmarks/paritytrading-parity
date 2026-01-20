@@ -33,6 +33,16 @@ class MarketDataProcessor implements PMDListener {
         this.listener = listener;
     }
 
+  /** For testing purposes only */
+  public MarketDataListener getListener() {
+    return listener;
+  }
+
+  /** For testing purposes only */
+  public Market getMarket() {
+    return market;
+  }
+
     @Override
     public void version(PMD.Version message) {
         if (message.version != PMD.VERSION)

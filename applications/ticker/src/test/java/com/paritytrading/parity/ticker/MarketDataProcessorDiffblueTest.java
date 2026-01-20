@@ -1,5 +1,7 @@
 package com.paritytrading.parity.ticker;
 
+import static org.junit.jupiter.api.Assertions.assertSame;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
@@ -16,6 +18,41 @@ import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 class MarketDataProcessorDiffblueTest {
+  /**
+   * Test getters and setters.
+   *
+   * <p>Methods under test:
+   *
+   * <ul>
+   *   <li>{@link MarketDataProcessor#MarketDataProcessor(Market, MarketDataListener)}
+   *   <li>{@link MarketDataProcessor#getListener()}
+   *   <li>{@link MarketDataProcessor#getMarket()}
+   * </ul>
+   */
+  @Test
+  @DisplayName("Test getters and setters")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({
+    "void MarketDataProcessor.<init>(Market, MarketDataListener)",
+    "MarketDataListener MarketDataProcessor.getListener()",
+    "Market MarketDataProcessor.getMarket()"
+  })
+  void testGettersAndSetters() {
+    // Arrange
+    Market market = new Market(new DisplayFormat(null));
+    DisplayFormat listener = new DisplayFormat(null);
+
+    // Act
+    MarketDataProcessor actualMarketDataProcessor = new MarketDataProcessor(market, listener);
+    MarketDataListener actualListener = actualMarketDataProcessor.getListener();
+
+    // Assert
+    assertTrue(actualListener instanceof DisplayFormat);
+    assertSame(market, actualMarketDataProcessor.getMarket());
+    assertSame(listener, actualListener);
+  }
+
   /**
    * Test {@link MarketDataProcessor#orderAdded(OrderAdded)}.
    *
