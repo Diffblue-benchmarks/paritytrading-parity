@@ -4,22 +4,22 @@
   },
   "run" : {
     "version" : "2025.12.02-74144f0-licensed",
-    "creationTimestamp" : "2026-01-20T09:13:08.676Z",
-    "command" : "dcover create -B --coverage-reports --upload http://localhost:8080 --project-name paritytrading-parity --name baseline-with-diffblue-tests",
-    "totalTime" : 51.223,
-    "environmentDetectionTime" : 1.02,
-    "indexingTime" : 0.266,
-    "entryPointsTime" : 0.996,
-    "generationTime" : 25.899,
-    "timeToFirstTest" : 19.793,
-    "timeToLastTest" : 36.087,
-    "indexQueryTime" : 2.072,
-    "verificationTime" : 3.063,
-    "validationTime" : 6.291
+    "creationTimestamp" : "2026-01-20T09:33:51.083Z",
+    "command" : "dcover create -B --coverage-reports --upload http://localhost:8080 --project-name paritytrading-parity --name post-refactoring",
+    "totalTime" : 51.601,
+    "environmentDetectionTime" : 1.0,
+    "indexingTime" : 0.237,
+    "entryPointsTime" : 0.973,
+    "generationTime" : 26.734,
+    "timeToFirstTest" : 19.068,
+    "timeToLastTest" : 37.442,
+    "indexQueryTime" : 2.078,
+    "verificationTime" : 3.216,
+    "validationTime" : 5.332
   },
   "codes" : {
     "R000" : "Success",
-    "R002" : "Missing observers",
+    "R004" : "No meaningful assertions found",
     "T000" : "Method eligible for test creation",
     "T001" : "Trivial getter",
     "T002" : "Trivial setter",
@@ -30,53 +30,54 @@
   },
   "summary" : {
     "classesCount" : 5,
-    "methodsCount" : 35,
-    "cumulativeDiffblueTestCount" : 82,
+    "methodsCount" : 38,
+    "cumulativeDiffblueTestCount" : 83,
     "cumulativeManualTestCount" : 10,
-    "completeTestCount" : 82,
+    "completeTestCount" : 83,
     "incompleteTestCount" : 0,
     "skeletonTestCount" : 0,
-    "totalPhysicalLineCount" : 197,
+    "totalPhysicalLineCount" : 206,
     "perMethodTestability" : {
       "T000" : 19,
-      "T001" : 5,
+      "T001" : 8,
       "T002" : 2,
       "T003" : 4,
       "T010" : 2,
       "T012" : 3
     },
     "perMethodOutcome" : {
-      "R000" : 23,
-      "R002" : 3,
+      "R000" : 26,
+      "R004" : 3,
       "T003" : 4,
       "T010" : 2,
       "T012" : 3
     },
     "perTestOutcome" : {
-      "R000" : 82
+      "R000" : 83
     },
     "perTestValidation" : {
-      "V000" : 82
+      "V000" : 83
     }
   },
   "classes" : {
     "com.paritytrading.parity.book.Market" : {
-      "methodsCount" : 12,
-      "completeTestCount" : 19,
+      "methodsCount" : 15,
+      "completeTestCount" : 20,
       "incompleteTestCount" : 0,
       "perMethodTestability" : {
         "T000" : 9,
+        "T001" : 3,
         "T003" : 2,
         "T012" : 1
       },
       "perMethodOutcome" : {
-        "R000" : 6,
-        "R002" : 3,
+        "R000" : 9,
+        "R004" : 3,
         "T003" : 2,
         "T012" : 1
       },
       "perTestOutcome" : {
-        "R000" : 19
+        "R000" : 20
       }
     },
     "com.paritytrading.parity.book.MarketListener" : {
@@ -158,18 +159,18 @@
       "completeTestCount" : 0,
       "incompleteTestCount" : 0,
       "perMethodTestability" : "T000",
-      "perMethodOutcome" : "R002",
+      "perMethodOutcome" : "R004",
       "lineNumbers" : [
-        81,
-        82,
-        84,
-        85,
-        86,
-        88,
-        90,
-        92,
-        94,
-        95
+        96,
+        97,
+        99,
+        100,
+        101,
+        103,
+        105,
+        107,
+        109,
+        110
       ]
     },
     "com.paritytrading.parity.book.Market.cancel:(JJ)J" : {
@@ -181,18 +182,18 @@
         "R000" : 5
       },
       "lineNumbers" : [
-        206,
-        207,
-        208,
-        210,
-        212,
-        214,
-        216,
-        218,
-        219,
         221,
+        222,
         223,
-        225
+        225,
+        227,
+        229,
+        231,
+        233,
+        234,
+        236,
+        238,
+        240
       ]
     },
     "com.paritytrading.parity.book.Market.contra:(Lcom/paritytrading/parity/book/Side;)Lcom/paritytrading/parity/book/Side;" : {
@@ -201,23 +202,23 @@
       "perMethodTestability" : "T003",
       "perMethodOutcome" : "T003",
       "lineNumbers" : [
-        252
+        267
       ]
     },
     "com.paritytrading.parity.book.Market.delete:(J)V" : {
       "completeTestCount" : 0,
       "incompleteTestCount" : 0,
       "perMethodTestability" : "T000",
-      "perMethodOutcome" : "R002",
+      "perMethodOutcome" : "R004",
       "lineNumbers" : [
-        238,
-        239,
-        240,
-        242,
-        244,
-        246,
-        248,
-        249
+        253,
+        254,
+        255,
+        257,
+        259,
+        261,
+        263,
+        264
       ]
     },
     "com.paritytrading.parity.book.Market.execute:(JJ)J" : {
@@ -229,10 +230,10 @@
         "R000" : 5
       },
       "lineNumbers" : [
-        142,
-        143,
-        144,
-        146
+        157,
+        158,
+        159,
+        161
       ]
     },
     "com.paritytrading.parity.book.Market.execute:(JJJ)J" : {
@@ -244,10 +245,10 @@
         "R000" : 5
       },
       "lineNumbers" : [
-        163,
-        164,
-        165,
-        167
+        178,
+        179,
+        180,
+        182
       ]
     },
     "com.paritytrading.parity.book.Market.execute:(JLcom/paritytrading/parity/book/Order;JJ)J" : {
@@ -256,17 +257,17 @@
       "perMethodTestability" : "T003",
       "perMethodOutcome" : "T003",
       "lineNumbers" : [
-        171,
-        173,
-        175,
-        177,
-        179,
-        181,
-        183,
-        184,
         186,
         188,
-        190
+        190,
+        192,
+        194,
+        196,
+        198,
+        199,
+        201,
+        203,
+        205
       ]
     },
     "com.paritytrading.parity.book.Market.find:(J)Lcom/paritytrading/parity/book/Order;" : {
@@ -278,7 +279,43 @@
         "R000" : 2
       },
       "lineNumbers" : [
-        63
+        78
+      ]
+    },
+    "com.paritytrading.parity.book.Market.getBooks:()Lit/unimi/dsi/fastutil/longs/Long2ObjectArrayMap;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        46
+      ]
+    },
+    "com.paritytrading.parity.book.Market.getListener:()Lcom/paritytrading/parity/book/MarketListener;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        51
+      ]
+    },
+    "com.paritytrading.parity.book.Market.getOrders:()Lit/unimi/dsi/fastutil/longs/Long2ObjectOpenHashMap;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        56
       ]
     },
     "com.paritytrading.parity.book.Market.lambda$open$0:(J)Lcom/paritytrading/parity/book/OrderBook;" : {
@@ -287,28 +324,28 @@
       "perMethodTestability" : "T012",
       "perMethodOutcome" : "T012",
       "lineNumbers" : [
-        53
+        68
       ]
     },
     "com.paritytrading.parity.book.Market.modify:(JJ)V" : {
       "completeTestCount" : 0,
       "incompleteTestCount" : 0,
       "perMethodTestability" : "T000",
-      "perMethodOutcome" : "R002",
+      "perMethodOutcome" : "R004",
       "lineNumbers" : [
-        110,
-        111,
-        112,
-        114,
-        116,
-        118,
-        119,
-        118,
-        121,
-        122,
-        124,
+        125,
         126,
-        127
+        127,
+        129,
+        131,
+        133,
+        134,
+        133,
+        136,
+        137,
+        139,
+        141,
+        142
       ]
     },
     "com.paritytrading.parity.book.Market.open:(J)Lcom/paritytrading/parity/book/OrderBook;" : {
@@ -320,7 +357,7 @@
         "R000" : 1
       },
       "lineNumbers" : [
-        53
+        68
       ]
     },
     "com.paritytrading.parity.book.MarketListener.trade:(Lcom/paritytrading/parity/book/OrderBook;Lcom/paritytrading/parity/book/Side;JJ)V" : {
@@ -603,7 +640,7 @@
   "validationMetrics" : { },
   "outputCodes" : [
     {
-      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.limitation.MissingObserverMessage\",\"fields\":[{\"className\":{\"descriptor\":\"Lcom/paritytrading/parity/book/Market;\",\"simpleNames\":[\"Market\"]},\"fieldName\":\"books\"},{\"className\":{\"descriptor\":\"Lcom/paritytrading/parity/book/Market;\",\"simpleNames\":[\"Market\"]},\"fieldName\":\"listener\"},{\"className\":{\"descriptor\":\"Lcom/paritytrading/parity/book/Market;\",\"simpleNames\":[\"Market\"]},\"fieldName\":\"orders\"}],\"serializableCause\":null}",
+      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.limitation.NoMeaningfulAssertionMessage\",\"serializableCause\":null}",
       "methodGroup" : {
         "methods" : [
           {
@@ -615,7 +652,7 @@
       }
     },
     {
-      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.limitation.MissingObserverMessage\",\"fields\":[{\"className\":{\"descriptor\":\"Lcom/paritytrading/parity/book/Market;\",\"simpleNames\":[\"Market\"]},\"fieldName\":\"books\"},{\"className\":{\"descriptor\":\"Lcom/paritytrading/parity/book/Market;\",\"simpleNames\":[\"Market\"]},\"fieldName\":\"listener\"},{\"className\":{\"descriptor\":\"Lcom/paritytrading/parity/book/Market;\",\"simpleNames\":[\"Market\"]},\"fieldName\":\"orders\"}],\"serializableCause\":null}",
+      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.limitation.NoMeaningfulAssertionMessage\",\"serializableCause\":null}",
       "methodGroup" : {
         "methods" : [
           {
@@ -627,7 +664,7 @@
       }
     },
     {
-      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.limitation.MissingObserverMessage\",\"fields\":[{\"className\":{\"descriptor\":\"Lcom/paritytrading/parity/book/Market;\",\"simpleNames\":[\"Market\"]},\"fieldName\":\"books\"},{\"className\":{\"descriptor\":\"Lcom/paritytrading/parity/book/Market;\",\"simpleNames\":[\"Market\"]},\"fieldName\":\"listener\"},{\"className\":{\"descriptor\":\"Lcom/paritytrading/parity/book/Market;\",\"simpleNames\":[\"Market\"]},\"fieldName\":\"orders\"}],\"serializableCause\":null}",
+      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.limitation.NoMeaningfulAssertionMessage\",\"serializableCause\":null}",
       "methodGroup" : {
         "methods" : [
           {

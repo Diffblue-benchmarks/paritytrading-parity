@@ -4,24 +4,23 @@
   },
   "run" : {
     "version" : "2025.12.02-74144f0-licensed",
-    "creationTimestamp" : "2026-01-20T09:13:08.676Z",
-    "command" : "dcover create -B --coverage-reports --upload http://localhost:8080 --project-name paritytrading-parity --name baseline-with-diffblue-tests",
-    "totalTime" : 50.154,
+    "creationTimestamp" : "2026-01-20T09:33:51.083Z",
+    "command" : "dcover create -B --coverage-reports --upload http://localhost:8080 --project-name paritytrading-parity --name post-refactoring",
+    "totalTime" : 52.163,
     "environmentDetectionTime" : 0.07,
-    "indexingTime" : 0.273,
-    "entryPointsTime" : 0.061,
-    "generationTime" : 137.204,
-    "timeToFirstTest" : 213.031,
-    "timeToLastTest" : 171.934,
-    "indexQueryTime" : 0.341,
-    "verificationTime" : 6.991,
-    "validationTime" : 4.653
+    "indexingTime" : 0.243,
+    "entryPointsTime" : 0.062,
+    "generationTime" : 139.718,
+    "timeToFirstTest" : 215.558,
+    "timeToLastTest" : 175.736,
+    "indexQueryTime" : 0.47000000000000003,
+    "verificationTime" : 7.365,
+    "validationTime" : 4.934
   },
   "codes" : {
+    "F009" : "Internal error",
     "R000" : "Success",
-    "R002" : "Missing observers",
     "R013" : "No inputs found that don't throw a trivial exception",
-    "R031" : "Method may be time-sensitive",
     "R081" : "Exception in arrange section",
     "T000" : "Method eligible for test creation",
     "T001" : "Trivial getter",
@@ -33,26 +32,25 @@
   },
   "summary" : {
     "classesCount" : 7,
-    "methodsCount" : 41,
-    "cumulativeDiffblueTestCount" : 17,
+    "methodsCount" : 44,
+    "cumulativeDiffblueTestCount" : 21,
     "cumulativeManualTestCount" : 22,
-    "completeTestCount" : 17,
+    "completeTestCount" : 21,
     "incompleteTestCount" : 0,
     "skeletonTestCount" : 0,
-    "totalPhysicalLineCount" : 239,
+    "totalPhysicalLineCount" : 248,
     "perMethodTestability" : {
       "T000" : 16,
-      "T001" : 12,
+      "T001" : 15,
       "T003" : 8,
       "T005" : 2,
       "T008" : 1,
       "T012" : 2
     },
     "perMethodOutcome" : {
-      "R000" : 15,
-      "R002" : 3,
+      "F009" : 1,
+      "R000" : 21,
       "R013" : 4,
-      "R031" : 1,
       "R081" : 6,
       "T003" : 8,
       "T005" : 1,
@@ -60,10 +58,10 @@
       "T012" : 2
     },
     "perTestOutcome" : {
-      "R000" : 17
+      "R000" : 21
     },
     "perTestValidation" : {
-      "V000" : 17
+      "V000" : 21
     }
   },
   "classes" : {
@@ -102,15 +100,18 @@
       }
     },
     "com.paritytrading.parity.util.OrderIDGenerator" : {
-      "methodsCount" : 3,
-      "completeTestCount" : 0,
+      "methodsCount" : 5,
+      "completeTestCount" : 4,
       "incompleteTestCount" : 0,
       "perMethodTestability" : {
-        "T000" : 3
+        "T000" : 3,
+        "T001" : 2
       },
       "perMethodOutcome" : {
-        "R002" : 2,
-        "R031" : 1
+        "R000" : 5
+      },
+      "perTestOutcome" : {
+        "R000" : 4
       }
     },
     "com.paritytrading.parity.util.Strings" : {
@@ -130,17 +131,18 @@
       }
     },
     "com.paritytrading.parity.util.TableHeader" : {
-      "methodsCount" : 4,
+      "methodsCount" : 5,
       "completeTestCount" : 4,
       "incompleteTestCount" : 0,
       "perMethodTestability" : {
         "T000" : 2,
+        "T001" : 1,
         "T003" : 1,
         "T005" : 1
       },
       "perMethodOutcome" : {
-        "R000" : 2,
-        "R002" : 1,
+        "F009" : 1,
+        "R000" : 3,
         "T003" : 1
       },
       "perTestOutcome" : {
@@ -522,20 +524,26 @@
       ]
     },
     "com.paritytrading.parity.util.OrderIDGenerator.<init>:()V" : {
-      "completeTestCount" : 0,
+      "completeTestCount" : 1,
       "incompleteTestCount" : 0,
       "perMethodTestability" : "T000",
-      "perMethodOutcome" : "R002",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
       "lineNumbers" : [
         36,
         37
       ]
     },
     "com.paritytrading.parity.util.OrderIDGenerator.<init>:(Ljava/time/LocalTime;)V" : {
-      "completeTestCount" : 0,
+      "completeTestCount" : 1,
       "incompleteTestCount" : 0,
       "perMethodTestability" : "T000",
-      "perMethodOutcome" : "R002",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
       "lineNumbers" : [
         44,
         45,
@@ -543,13 +551,40 @@
         47
       ]
     },
+    "com.paritytrading.parity.util.OrderIDGenerator.getCount:()I" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        51
+      ]
+    },
+    "com.paritytrading.parity.util.OrderIDGenerator.getPrefix:()Ljava/lang/String;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        56
+      ]
+    },
     "com.paritytrading.parity.util.OrderIDGenerator.next:()Ljava/lang/String;" : {
-      "completeTestCount" : 0,
+      "completeTestCount" : 1,
       "incompleteTestCount" : 0,
       "perMethodTestability" : "T000",
-      "perMethodOutcome" : "R031",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
       "lineNumbers" : [
-        55
+        65
       ]
     },
     "com.paritytrading.parity.util.Strings.<init>:()V" : {
@@ -581,17 +616,20 @@
       "perMethodTestability" : "T003",
       "perMethodOutcome" : "T003",
       "lineNumbers" : [
-        76,
-        77,
-        78,
-        79
+        81,
+        82,
+        83,
+        84
       ]
     },
     "com.paritytrading.parity.util.TableHeader.<init>:()V" : {
-      "completeTestCount" : 0,
+      "completeTestCount" : 1,
       "incompleteTestCount" : 0,
       "perMethodTestability" : "T005",
-      "perMethodOutcome" : "R002",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
       "lineNumbers" : [
         33,
         34,
@@ -599,16 +637,13 @@
       ]
     },
     "com.paritytrading.parity.util.TableHeader.add:(Ljava/lang/String;I)V" : {
-      "completeTestCount" : 1,
+      "completeTestCount" : 0,
       "incompleteTestCount" : 0,
       "perMethodTestability" : "T000",
-      "perMethodOutcome" : "R000",
-      "perTestOutcome" : {
-        "R000" : 1
-      },
+      "perMethodOutcome" : "F009",
       "lineNumbers" : [
-        44,
-        45
+        49,
+        50
       ]
     },
     "com.paritytrading.parity.util.TableHeader.format:()Ljava/lang/String;" : {
@@ -620,18 +655,18 @@
         "R000" : 3
       },
       "lineNumbers" : [
-        53,
-        55,
-        56,
         58,
-        59,
-        55,
-        62,
+        60,
+        61,
         63,
-        65,
-        66,
-        62,
-        69
+        64,
+        60,
+        67,
+        68,
+        70,
+        71,
+        67,
+        74
       ]
     },
     "com.paritytrading.parity.util.TableHeader.format:(Ljava/lang/String;I)Ljava/lang/String;" : {
@@ -640,7 +675,19 @@
       "perMethodTestability" : "T003",
       "perMethodOutcome" : "T003",
       "lineNumbers" : [
-        83
+        88
+      ]
+    },
+    "com.paritytrading.parity.util.TableHeader.getColumns:()Ljava/util/List;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        39
       ]
     },
     "com.paritytrading.parity.util.Timestamps.<init>:()V" : {
@@ -669,7 +716,7 @@
   "validationMetrics" : { },
   "outputCodes" : [
     {
-      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.limitation.MissingObserverMessage\",\"fields\":[{\"className\":{\"descriptor\":\"Lcom/paritytrading/parity/book/Market;\",\"simpleNames\":[\"Market\"]},\"fieldName\":\"books\"},{\"className\":{\"descriptor\":\"Lcom/paritytrading/parity/book/Market;\",\"simpleNames\":[\"Market\"]},\"fieldName\":\"listener\"},{\"className\":{\"descriptor\":\"Lcom/paritytrading/parity/book/Market;\",\"simpleNames\":[\"Market\"]},\"fieldName\":\"orders\"}],\"serializableCause\":null}",
+      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.limitation.NoMeaningfulAssertionMessage\",\"serializableCause\":null}",
       "methodGroup" : {
         "methods" : [
           {
@@ -681,7 +728,7 @@
       }
     },
     {
-      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.limitation.MissingObserverMessage\",\"fields\":[{\"className\":{\"descriptor\":\"Lcom/paritytrading/parity/book/Market;\",\"simpleNames\":[\"Market\"]},\"fieldName\":\"books\"},{\"className\":{\"descriptor\":\"Lcom/paritytrading/parity/book/Market;\",\"simpleNames\":[\"Market\"]},\"fieldName\":\"listener\"},{\"className\":{\"descriptor\":\"Lcom/paritytrading/parity/book/Market;\",\"simpleNames\":[\"Market\"]},\"fieldName\":\"orders\"}],\"serializableCause\":null}",
+      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.limitation.NoMeaningfulAssertionMessage\",\"serializableCause\":null}",
       "methodGroup" : {
         "methods" : [
           {
@@ -693,7 +740,7 @@
       }
     },
     {
-      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.limitation.MissingObserverMessage\",\"fields\":[{\"className\":{\"descriptor\":\"Lcom/paritytrading/parity/book/Market;\",\"simpleNames\":[\"Market\"]},\"fieldName\":\"books\"},{\"className\":{\"descriptor\":\"Lcom/paritytrading/parity/book/Market;\",\"simpleNames\":[\"Market\"]},\"fieldName\":\"listener\"},{\"className\":{\"descriptor\":\"Lcom/paritytrading/parity/book/Market;\",\"simpleNames\":[\"Market\"]},\"fieldName\":\"orders\"}],\"serializableCause\":null}",
+      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.limitation.NoMeaningfulAssertionMessage\",\"serializableCause\":null}",
       "methodGroup" : {
         "methods" : [
           {
@@ -746,6 +793,114 @@
         "methods" : [
           {
             "binaryClassName" : "com.paritytrading.parity.file.taq.TAQWriter",
+            "descriptor" : "()Ljava/lang/StringBuffer;",
+            "methodName" : "getBuffer"
+          },
+          {
+            "binaryClassName" : "com.paritytrading.parity.file.taq.TAQWriter",
+            "descriptor" : "()Lcom/paritytrading/parity/file/taq/TAQConfig;",
+            "methodName" : "getConfig"
+          },
+          {
+            "binaryClassName" : "com.paritytrading.parity.file.taq.TAQWriter",
+            "descriptor" : "()Ljava/text/FieldPosition;",
+            "methodName" : "getPosition"
+          },
+          {
+            "binaryClassName" : "com.paritytrading.parity.file.taq.TAQWriter",
+            "descriptor" : "()Ljava/io/PrintWriter;",
+            "methodName" : "getSink"
+          }
+        ]
+      }
+    },
+    {
+      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.environment.TemporaryFilesCreatedButNotDeletedMessage\",\"serializableCause\":null,\"temporaryFiles\":[\"file:///tmp/test.txt\"]}",
+      "methodGroup" : {
+        "methods" : [
+          {
+            "binaryClassName" : "com.paritytrading.parity.file.taq.TAQWriter",
+            "descriptor" : "()Ljava/lang/StringBuffer;",
+            "methodName" : "getBuffer"
+          },
+          {
+            "binaryClassName" : "com.paritytrading.parity.file.taq.TAQWriter",
+            "descriptor" : "()Lcom/paritytrading/parity/file/taq/TAQConfig;",
+            "methodName" : "getConfig"
+          },
+          {
+            "binaryClassName" : "com.paritytrading.parity.file.taq.TAQWriter",
+            "descriptor" : "()Ljava/text/FieldPosition;",
+            "methodName" : "getPosition"
+          },
+          {
+            "binaryClassName" : "com.paritytrading.parity.file.taq.TAQWriter",
+            "descriptor" : "()Ljava/io/PrintWriter;",
+            "methodName" : "getSink"
+          }
+        ]
+      }
+    },
+    {
+      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.environment.TemporaryFilesCreatedButNotDeletedMessage\",\"serializableCause\":null,\"temporaryFiles\":[\"file:///tmp/test.txt\"]}",
+      "methodGroup" : {
+        "methods" : [
+          {
+            "binaryClassName" : "com.paritytrading.parity.file.taq.TAQWriter",
+            "descriptor" : "()Ljava/lang/StringBuffer;",
+            "methodName" : "getBuffer"
+          },
+          {
+            "binaryClassName" : "com.paritytrading.parity.file.taq.TAQWriter",
+            "descriptor" : "()Lcom/paritytrading/parity/file/taq/TAQConfig;",
+            "methodName" : "getConfig"
+          },
+          {
+            "binaryClassName" : "com.paritytrading.parity.file.taq.TAQWriter",
+            "descriptor" : "()Ljava/text/FieldPosition;",
+            "methodName" : "getPosition"
+          },
+          {
+            "binaryClassName" : "com.paritytrading.parity.file.taq.TAQWriter",
+            "descriptor" : "()Ljava/io/PrintWriter;",
+            "methodName" : "getSink"
+          }
+        ]
+      }
+    },
+    {
+      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.environment.TemporaryFilesCreatedButNotDeletedMessage\",\"serializableCause\":null,\"temporaryFiles\":[\"file:///tmp/test.txt\"]}",
+      "methodGroup" : {
+        "methods" : [
+          {
+            "binaryClassName" : "com.paritytrading.parity.file.taq.TAQWriter",
+            "descriptor" : "()Ljava/lang/StringBuffer;",
+            "methodName" : "getBuffer"
+          },
+          {
+            "binaryClassName" : "com.paritytrading.parity.file.taq.TAQWriter",
+            "descriptor" : "()Lcom/paritytrading/parity/file/taq/TAQConfig;",
+            "methodName" : "getConfig"
+          },
+          {
+            "binaryClassName" : "com.paritytrading.parity.file.taq.TAQWriter",
+            "descriptor" : "()Ljava/text/FieldPosition;",
+            "methodName" : "getPosition"
+          },
+          {
+            "binaryClassName" : "com.paritytrading.parity.file.taq.TAQWriter",
+            "descriptor" : "()Ljava/io/PrintWriter;",
+            "methodName" : "getSink"
+          }
+        ]
+      }
+    },
+    {
+      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.environment.TemporaryFilesCreatedButNotDeletedMessage\",\"serializableCause\":null,\"temporaryFiles\":[\"file:///tmp/test.txt\"]}",
+      "methodGroup" : {
+        "methods" : [
+          {
+            "binaryClassName" : "com.paritytrading.parity.file.taq.TAQWriter",
             "descriptor" : "(Ljava/io/File;)V",
             "methodName" : "<init>"
           }
@@ -765,19 +920,7 @@
       }
     },
     {
-      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.limitation.MissingObserverMessage\",\"fields\":[{\"className\":{\"descriptor\":\"Lcom/paritytrading/parity/file/taq/TAQWriter;\",\"simpleNames\":[\"TAQWriter\"]},\"fieldName\":\"buffer\"},{\"className\":{\"descriptor\":\"Lcom/paritytrading/parity/file/taq/TAQWriter;\",\"simpleNames\":[\"TAQWriter\"]},\"fieldName\":\"config\"},{\"className\":{\"descriptor\":\"Lcom/paritytrading/parity/file/taq/TAQWriter;\",\"simpleNames\":[\"TAQWriter\"]},\"fieldName\":\"position\"},{\"className\":{\"descriptor\":\"Lcom/paritytrading/parity/file/taq/TAQWriter;\",\"simpleNames\":[\"TAQWriter\"]},\"fieldName\":\"sink\"}],\"serializableCause\":null}",
-      "methodGroup" : {
-        "methods" : [
-          {
-            "binaryClassName" : "com.paritytrading.parity.file.taq.TAQWriter",
-            "descriptor" : "(Ljava/io/OutputStream;)V",
-            "methodName" : "<init>"
-          }
-        ]
-      }
-    },
-    {
-      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.limitation.NoNonThrowingInputsMessage\",\"serializableCause\":{\"cause\":null,\"message\":null,\"originalClassName\":\"java.lang.NullPointerException\",\"stackTrace\":[{\"className\":\"java.io.BufferedOutputStream\",\"fileName\":\"BufferedOutputStream.java\",\"lineNumber\":122,\"methodName\":\"write\",\"nativeMethod\":false},{\"className\":\"sun.nio.cs.StreamEncoder\",\"fileName\":\"StreamEncoder.java\",\"lineNumber\":221,\"methodName\":\"writeBytes\",\"nativeMethod\":false},{\"className\":\"sun.nio.cs.StreamEncoder\",\"fileName\":\"StreamEncoder.java\",\"lineNumber\":316,\"methodName\":\"implClose\",\"nativeMethod\":false},{\"className\":\"sun.nio.cs.StreamEncoder\",\"fileName\":\"StreamEncoder.java\",\"lineNumber\":149,\"methodName\":\"close\",\"nativeMethod\":false},{\"className\":\"java.io.OutputStreamWriter\",\"fileName\":\"OutputStreamWriter.java\",\"lineNumber\":233,\"methodName\":\"close\",\"nativeMethod\":false},{\"className\":\"java.io.PrintWriter\",\"fileName\":\"PrintWriter.java\",\"lineNumber\":339,\"methodName\":\"close\",\"nativeMethod\":false},{\"className\":\"com.paritytrading.parity.file.taq.TAQWriter\",\"fileName\":\"TAQWriter.java\",\"lineNumber\":196,\"methodName\":\"close\",\"nativeMethod\":false},{\"className\":\"sun.reflect.GeneratedMethodAccessor162\",\"fileName\":null,\"lineNumber\":-1,\"methodName\":\"invoke\",\"nativeMethod\":false},{\"className\":\"sun.reflect.DelegatingMethodAccessorImpl\",\"fileName\":\"DelegatingMethodAccessorImpl.java\",\"lineNumber\":43,\"methodName\":\"invoke\",\"nativeMethod\":false},{\"className\":\"java.lang.reflect.Method\",\"fileName\":\"Method.java\",\"lineNumber\":498,\"methodName\":\"invoke\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.h\",\"fileName\":\"SourceFile\",\"lineNumber\":140,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.h\",\"fileName\":\"SourceFile\",\"lineNumber\":77,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.a.f\",\"fileName\":\"SourceFile\",\"lineNumber\":852,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.f\",\"fileName\":\"SourceFile\",\"lineNumber\":463,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.f\",\"fileName\":\"SourceFile\",\"lineNumber\":99,\"methodName\":\"b\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.g.d\",\"fileName\":\"SourceFile\",\"lineNumber\":51,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.g\",\"fileName\":\"SourceFile\",\"lineNumber\":368,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.g\",\"fileName\":\"SourceFile\",\"lineNumber\":261,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.fuzztest.b.f\",\"fileName\":\"SourceFile\",\"lineNumber\":1105,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.SafeTimedExecutor\",\"fileName\":\"SourceFile\",\"lineNumber\":171,\"methodName\":\"lambda$runWithLoopIterationLimit$5\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.TimedCallableExecutor$CallableFuture\",\"fileName\":\"SourceFile\",\"lineNumber\":29,\"methodName\":\"executeTask\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.TaskQueueRunner\",\"fileName\":\"SourceFile\",\"lineNumber\":39,\"methodName\":\"run\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.WorkerThread\",\"fileName\":\"SourceFile\",\"lineNumber\":265,\"methodName\":\"run\",\"nativeMethod\":false}]}}",
+      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.limitation.NoNonThrowingInputsMessage\",\"serializableCause\":{\"cause\":null,\"message\":null,\"originalClassName\":\"java.lang.NullPointerException\",\"stackTrace\":[{\"className\":\"java.io.BufferedOutputStream\",\"fileName\":\"BufferedOutputStream.java\",\"lineNumber\":122,\"methodName\":\"write\",\"nativeMethod\":false},{\"className\":\"sun.nio.cs.StreamEncoder\",\"fileName\":\"StreamEncoder.java\",\"lineNumber\":221,\"methodName\":\"writeBytes\",\"nativeMethod\":false},{\"className\":\"sun.nio.cs.StreamEncoder\",\"fileName\":\"StreamEncoder.java\",\"lineNumber\":316,\"methodName\":\"implClose\",\"nativeMethod\":false},{\"className\":\"sun.nio.cs.StreamEncoder\",\"fileName\":\"StreamEncoder.java\",\"lineNumber\":149,\"methodName\":\"close\",\"nativeMethod\":false},{\"className\":\"java.io.OutputStreamWriter\",\"fileName\":\"OutputStreamWriter.java\",\"lineNumber\":233,\"methodName\":\"close\",\"nativeMethod\":false},{\"className\":\"java.io.PrintWriter\",\"fileName\":\"PrintWriter.java\",\"lineNumber\":339,\"methodName\":\"close\",\"nativeMethod\":false},{\"className\":\"com.paritytrading.parity.file.taq.TAQWriter\",\"fileName\":\"TAQWriter.java\",\"lineNumber\":216,\"methodName\":\"close\",\"nativeMethod\":false},{\"className\":\"sun.reflect.GeneratedMethodAccessor169\",\"fileName\":null,\"lineNumber\":-1,\"methodName\":\"invoke\",\"nativeMethod\":false},{\"className\":\"sun.reflect.DelegatingMethodAccessorImpl\",\"fileName\":\"DelegatingMethodAccessorImpl.java\",\"lineNumber\":43,\"methodName\":\"invoke\",\"nativeMethod\":false},{\"className\":\"java.lang.reflect.Method\",\"fileName\":\"Method.java\",\"lineNumber\":498,\"methodName\":\"invoke\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.h\",\"fileName\":\"SourceFile\",\"lineNumber\":140,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.h\",\"fileName\":\"SourceFile\",\"lineNumber\":77,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.a.f\",\"fileName\":\"SourceFile\",\"lineNumber\":852,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.f\",\"fileName\":\"SourceFile\",\"lineNumber\":463,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.f\",\"fileName\":\"SourceFile\",\"lineNumber\":99,\"methodName\":\"b\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.g.d\",\"fileName\":\"SourceFile\",\"lineNumber\":51,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.g\",\"fileName\":\"SourceFile\",\"lineNumber\":368,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.g\",\"fileName\":\"SourceFile\",\"lineNumber\":261,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.fuzztest.b.f\",\"fileName\":\"SourceFile\",\"lineNumber\":1105,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.SafeTimedExecutor\",\"fileName\":\"SourceFile\",\"lineNumber\":171,\"methodName\":\"lambda$runWithLoopIterationLimit$5\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.TimedCallableExecutor$CallableFuture\",\"fileName\":\"SourceFile\",\"lineNumber\":29,\"methodName\":\"executeTask\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.TaskQueueRunner\",\"fileName\":\"SourceFile\",\"lineNumber\":39,\"methodName\":\"run\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.WorkerThread\",\"fileName\":\"SourceFile\",\"lineNumber\":265,\"methodName\":\"run\",\"nativeMethod\":false}]}}",
       "methodGroup" : {
         "methods" : [
           {
@@ -789,7 +932,7 @@
       }
     },
     {
-      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.limitation.NoNonThrowingInputsMessage\",\"serializableCause\":{\"cause\":null,\"message\":null,\"originalClassName\":\"java.lang.NullPointerException\",\"stackTrace\":[{\"className\":\"java.io.BufferedOutputStream\",\"fileName\":\"BufferedOutputStream.java\",\"lineNumber\":122,\"methodName\":\"write\",\"nativeMethod\":false},{\"className\":\"sun.nio.cs.StreamEncoder\",\"fileName\":\"StreamEncoder.java\",\"lineNumber\":221,\"methodName\":\"writeBytes\",\"nativeMethod\":false},{\"className\":\"sun.nio.cs.StreamEncoder\",\"fileName\":\"StreamEncoder.java\",\"lineNumber\":291,\"methodName\":\"implFlushBuffer\",\"nativeMethod\":false},{\"className\":\"sun.nio.cs.StreamEncoder\",\"fileName\":\"StreamEncoder.java\",\"lineNumber\":295,\"methodName\":\"implFlush\",\"nativeMethod\":false},{\"className\":\"sun.nio.cs.StreamEncoder\",\"fileName\":\"StreamEncoder.java\",\"lineNumber\":141,\"methodName\":\"flush\",\"nativeMethod\":false},{\"className\":\"java.io.OutputStreamWriter\",\"fileName\":\"OutputStreamWriter.java\",\"lineNumber\":229,\"methodName\":\"flush\",\"nativeMethod\":false},{\"className\":\"java.io.PrintWriter\",\"fileName\":\"PrintWriter.java\",\"lineNumber\":320,\"methodName\":\"flush\",\"nativeMethod\":false},{\"className\":\"com.paritytrading.parity.file.taq.TAQWriter\",\"fileName\":\"TAQWriter.java\",\"lineNumber\":201,\"methodName\":\"flush\",\"nativeMethod\":false},{\"className\":\"sun.reflect.GeneratedMethodAccessor171\",\"fileName\":null,\"lineNumber\":-1,\"methodName\":\"invoke\",\"nativeMethod\":false},{\"className\":\"sun.reflect.DelegatingMethodAccessorImpl\",\"fileName\":\"DelegatingMethodAccessorImpl.java\",\"lineNumber\":43,\"methodName\":\"invoke\",\"nativeMethod\":false},{\"className\":\"java.lang.reflect.Method\",\"fileName\":\"Method.java\",\"lineNumber\":498,\"methodName\":\"invoke\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.h\",\"fileName\":\"SourceFile\",\"lineNumber\":140,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.h\",\"fileName\":\"SourceFile\",\"lineNumber\":77,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.a.f\",\"fileName\":\"SourceFile\",\"lineNumber\":852,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.f\",\"fileName\":\"SourceFile\",\"lineNumber\":463,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.f\",\"fileName\":\"SourceFile\",\"lineNumber\":99,\"methodName\":\"b\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.g.d\",\"fileName\":\"SourceFile\",\"lineNumber\":51,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.g\",\"fileName\":\"SourceFile\",\"lineNumber\":368,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.g\",\"fileName\":\"SourceFile\",\"lineNumber\":261,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.fuzztest.b.f\",\"fileName\":\"SourceFile\",\"lineNumber\":1105,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.SafeTimedExecutor\",\"fileName\":\"SourceFile\",\"lineNumber\":171,\"methodName\":\"lambda$runWithLoopIterationLimit$5\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.TimedCallableExecutor$CallableFuture\",\"fileName\":\"SourceFile\",\"lineNumber\":29,\"methodName\":\"executeTask\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.TaskQueueRunner\",\"fileName\":\"SourceFile\",\"lineNumber\":39,\"methodName\":\"run\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.WorkerThread\",\"fileName\":\"SourceFile\",\"lineNumber\":265,\"methodName\":\"run\",\"nativeMethod\":false}]}}",
+      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.limitation.NoNonThrowingInputsMessage\",\"serializableCause\":{\"cause\":null,\"message\":null,\"originalClassName\":\"java.lang.NullPointerException\",\"stackTrace\":[{\"className\":\"java.io.BufferedOutputStream\",\"fileName\":\"BufferedOutputStream.java\",\"lineNumber\":122,\"methodName\":\"write\",\"nativeMethod\":false},{\"className\":\"sun.nio.cs.StreamEncoder\",\"fileName\":\"StreamEncoder.java\",\"lineNumber\":221,\"methodName\":\"writeBytes\",\"nativeMethod\":false},{\"className\":\"sun.nio.cs.StreamEncoder\",\"fileName\":\"StreamEncoder.java\",\"lineNumber\":291,\"methodName\":\"implFlushBuffer\",\"nativeMethod\":false},{\"className\":\"sun.nio.cs.StreamEncoder\",\"fileName\":\"StreamEncoder.java\",\"lineNumber\":295,\"methodName\":\"implFlush\",\"nativeMethod\":false},{\"className\":\"sun.nio.cs.StreamEncoder\",\"fileName\":\"StreamEncoder.java\",\"lineNumber\":141,\"methodName\":\"flush\",\"nativeMethod\":false},{\"className\":\"java.io.OutputStreamWriter\",\"fileName\":\"OutputStreamWriter.java\",\"lineNumber\":229,\"methodName\":\"flush\",\"nativeMethod\":false},{\"className\":\"java.io.PrintWriter\",\"fileName\":\"PrintWriter.java\",\"lineNumber\":320,\"methodName\":\"flush\",\"nativeMethod\":false},{\"className\":\"com.paritytrading.parity.file.taq.TAQWriter\",\"fileName\":\"TAQWriter.java\",\"lineNumber\":221,\"methodName\":\"flush\",\"nativeMethod\":false},{\"className\":\"sun.reflect.GeneratedMethodAccessor177\",\"fileName\":null,\"lineNumber\":-1,\"methodName\":\"invoke\",\"nativeMethod\":false},{\"className\":\"sun.reflect.DelegatingMethodAccessorImpl\",\"fileName\":\"DelegatingMethodAccessorImpl.java\",\"lineNumber\":43,\"methodName\":\"invoke\",\"nativeMethod\":false},{\"className\":\"java.lang.reflect.Method\",\"fileName\":\"Method.java\",\"lineNumber\":498,\"methodName\":\"invoke\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.h\",\"fileName\":\"SourceFile\",\"lineNumber\":140,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.h\",\"fileName\":\"SourceFile\",\"lineNumber\":77,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.a.f\",\"fileName\":\"SourceFile\",\"lineNumber\":852,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.f\",\"fileName\":\"SourceFile\",\"lineNumber\":463,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.f\",\"fileName\":\"SourceFile\",\"lineNumber\":99,\"methodName\":\"b\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.g.d\",\"fileName\":\"SourceFile\",\"lineNumber\":51,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.g\",\"fileName\":\"SourceFile\",\"lineNumber\":368,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.g\",\"fileName\":\"SourceFile\",\"lineNumber\":261,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.fuzztest.b.f\",\"fileName\":\"SourceFile\",\"lineNumber\":1105,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.SafeTimedExecutor\",\"fileName\":\"SourceFile\",\"lineNumber\":171,\"methodName\":\"lambda$runWithLoopIterationLimit$5\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.TimedCallableExecutor$CallableFuture\",\"fileName\":\"SourceFile\",\"lineNumber\":29,\"methodName\":\"executeTask\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.TaskQueueRunner\",\"fileName\":\"SourceFile\",\"lineNumber\":39,\"methodName\":\"run\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.WorkerThread\",\"fileName\":\"SourceFile\",\"lineNumber\":265,\"methodName\":\"run\",\"nativeMethod\":false}]}}",
       "methodGroup" : {
         "methods" : [
           {
@@ -801,43 +944,7 @@
       }
     },
     {
-      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.limitation.NoNonThrowingInputsMessage\",\"serializableCause\":{\"cause\":null,\"message\":\"Invalid value for NanoOfDay (valid values 0 - 86399999999999): -1000000\",\"originalClassName\":\"java.time.DateTimeException\",\"stackTrace\":[{\"className\":\"java.time.temporal.ValueRange\",\"fileName\":\"ValueRange.java\",\"lineNumber\":311,\"methodName\":\"checkValidValue\",\"nativeMethod\":false},{\"className\":\"java.time.temporal.ChronoField\",\"fileName\":\"ChronoField.java\",\"lineNumber\":703,\"methodName\":\"checkValidValue\",\"nativeMethod\":false},{\"className\":\"java.time.LocalTime\",\"fileName\":\"LocalTime.java\",\"lineNumber\":376,\"methodName\":\"ofNanoOfDay\",\"nativeMethod\":false},{\"className\":\"com.paritytrading.parity.file.taq.TAQWriter\",\"fileName\":\"TAQWriter.java\",\"lineNumber\":205,\"methodName\":\"writeTimestamp\",\"nativeMethod\":false},{\"className\":\"com.paritytrading.parity.file.taq.TAQWriter\",\"fileName\":\"TAQWriter.java\",\"lineNumber\":160,\"methodName\":\"write\",\"nativeMethod\":false},{\"className\":\"sun.reflect.GeneratedMethodAccessor173\",\"fileName\":null,\"lineNumber\":-1,\"methodName\":\"invoke\",\"nativeMethod\":false},{\"className\":\"sun.reflect.DelegatingMethodAccessorImpl\",\"fileName\":\"DelegatingMethodAccessorImpl.java\",\"lineNumber\":43,\"methodName\":\"invoke\",\"nativeMethod\":false},{\"className\":\"java.lang.reflect.Method\",\"fileName\":\"Method.java\",\"lineNumber\":498,\"methodName\":\"invoke\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.h\",\"fileName\":\"SourceFile\",\"lineNumber\":140,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.h\",\"fileName\":\"SourceFile\",\"lineNumber\":77,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.a.f\",\"fileName\":\"SourceFile\",\"lineNumber\":852,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.f\",\"fileName\":\"SourceFile\",\"lineNumber\":463,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.f\",\"fileName\":\"SourceFile\",\"lineNumber\":99,\"methodName\":\"b\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.g.d\",\"fileName\":\"SourceFile\",\"lineNumber\":51,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.g\",\"fileName\":\"SourceFile\",\"lineNumber\":368,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.g\",\"fileName\":\"SourceFile\",\"lineNumber\":261,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.fuzztest.b.f\",\"fileName\":\"SourceFile\",\"lineNumber\":1105,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.SafeTimedExecutor\",\"fileName\":\"SourceFile\",\"lineNumber\":171,\"methodName\":\"lambda$runWithLoopIterationLimit$5\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.TimedCallableExecutor$CallableFuture\",\"fileName\":\"SourceFile\",\"lineNumber\":29,\"methodName\":\"executeTask\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.TaskQueueRunner\",\"fileName\":\"SourceFile\",\"lineNumber\":39,\"methodName\":\"run\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.WorkerThread\",\"fileName\":\"SourceFile\",\"lineNumber\":265,\"methodName\":\"run\",\"nativeMethod\":false}]}}",
-      "methodGroup" : {
-        "methods" : [
-          {
-            "binaryClassName" : "com.paritytrading.parity.file.taq.TAQWriter",
-            "descriptor" : "(Lcom/paritytrading/parity/file/taq/TAQ$Quote;)V",
-            "methodName" : "write"
-          }
-        ]
-      }
-    },
-    {
-      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.limitation.NoNonThrowingInputsMessage\",\"serializableCause\":{\"cause\":null,\"message\":\"Invalid value for NanoOfDay (valid values 0 - 86399999999999): -1000000\",\"originalClassName\":\"java.time.DateTimeException\",\"stackTrace\":[{\"className\":\"java.time.temporal.ValueRange\",\"fileName\":\"ValueRange.java\",\"lineNumber\":311,\"methodName\":\"checkValidValue\",\"nativeMethod\":false},{\"className\":\"java.time.temporal.ChronoField\",\"fileName\":\"ChronoField.java\",\"lineNumber\":703,\"methodName\":\"checkValidValue\",\"nativeMethod\":false},{\"className\":\"java.time.LocalTime\",\"fileName\":\"LocalTime.java\",\"lineNumber\":376,\"methodName\":\"ofNanoOfDay\",\"nativeMethod\":false},{\"className\":\"com.paritytrading.parity.file.taq.TAQWriter\",\"fileName\":\"TAQWriter.java\",\"lineNumber\":205,\"methodName\":\"writeTimestamp\",\"nativeMethod\":false},{\"className\":\"com.paritytrading.parity.file.taq.TAQWriter\",\"fileName\":\"TAQWriter.java\",\"lineNumber\":127,\"methodName\":\"write\",\"nativeMethod\":false},{\"className\":\"sun.reflect.GeneratedMethodAccessor190\",\"fileName\":null,\"lineNumber\":-1,\"methodName\":\"invoke\",\"nativeMethod\":false},{\"className\":\"sun.reflect.DelegatingMethodAccessorImpl\",\"fileName\":\"DelegatingMethodAccessorImpl.java\",\"lineNumber\":43,\"methodName\":\"invoke\",\"nativeMethod\":false},{\"className\":\"java.lang.reflect.Method\",\"fileName\":\"Method.java\",\"lineNumber\":498,\"methodName\":\"invoke\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.h\",\"fileName\":\"SourceFile\",\"lineNumber\":140,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.h\",\"fileName\":\"SourceFile\",\"lineNumber\":77,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.a.f\",\"fileName\":\"SourceFile\",\"lineNumber\":852,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.f\",\"fileName\":\"SourceFile\",\"lineNumber\":463,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.f\",\"fileName\":\"SourceFile\",\"lineNumber\":99,\"methodName\":\"b\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.g.d\",\"fileName\":\"SourceFile\",\"lineNumber\":51,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.g\",\"fileName\":\"SourceFile\",\"lineNumber\":368,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.b.g\",\"fileName\":\"SourceFile\",\"lineNumber\":261,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.fuzztest.b.f\",\"fileName\":\"SourceFile\",\"lineNumber\":1105,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.SafeTimedExecutor\",\"fileName\":\"SourceFile\",\"lineNumber\":171,\"methodName\":\"lambda$runWithLoopIterationLimit$5\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.TimedCallableExecutor$CallableFuture\",\"fileName\":\"SourceFile\",\"lineNumber\":29,\"methodName\":\"executeTask\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.TaskQueueRunner\",\"fileName\":\"SourceFile\",\"lineNumber\":39,\"methodName\":\"run\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.WorkerThread\",\"fileName\":\"SourceFile\",\"lineNumber\":265,\"methodName\":\"run\",\"nativeMethod\":false}]}}",
-      "methodGroup" : {
-        "methods" : [
-          {
-            "binaryClassName" : "com.paritytrading.parity.file.taq.TAQWriter",
-            "descriptor" : "(Lcom/paritytrading/parity/file/taq/TAQ$Trade;)V",
-            "methodName" : "write"
-          }
-        ]
-      }
-    },
-    {
-      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.limitation.MissingObserverMessage\",\"fields\":[{\"className\":{\"descriptor\":\"Lcom/paritytrading/parity/match/OrderBook;\",\"simpleNames\":[\"OrderBook\"]},\"fieldName\":\"asks\"},{\"className\":{\"descriptor\":\"Lcom/paritytrading/parity/match/OrderBook;\",\"simpleNames\":[\"OrderBook\"]},\"fieldName\":\"bids\"},{\"className\":{\"descriptor\":\"Lcom/paritytrading/parity/match/OrderBook;\",\"simpleNames\":[\"OrderBook\"]},\"fieldName\":\"listener\"},{\"className\":{\"descriptor\":\"Lcom/paritytrading/parity/match/OrderBook;\",\"simpleNames\":[\"OrderBook\"]},\"fieldName\":\"nextOrderNumber\"},{\"className\":{\"descriptor\":\"Lcom/paritytrading/parity/match/OrderBook;\",\"simpleNames\":[\"OrderBook\"]},\"fieldName\":\"orders\"}],\"serializableCause\":null}",
-      "methodGroup" : {
-        "methods" : [
-          {
-            "binaryClassName" : "com.paritytrading.parity.match.OrderBook",
-            "descriptor" : "(Lcom/paritytrading/parity/match/OrderBookListener;)V",
-            "methodName" : "<init>"
-          }
-        ]
-      }
-    },
-    {
-      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.limitation.MissingObserverMessage\",\"fields\":[{\"className\":{\"descriptor\":\"Lcom/paritytrading/parity/match/OrderBook;\",\"simpleNames\":[\"OrderBook\"]},\"fieldName\":\"asks\"},{\"className\":{\"descriptor\":\"Lcom/paritytrading/parity/match/OrderBook;\",\"simpleNames\":[\"OrderBook\"]},\"fieldName\":\"bids\"},{\"className\":{\"descriptor\":\"Lcom/paritytrading/parity/match/OrderBook;\",\"simpleNames\":[\"OrderBook\"]},\"fieldName\":\"listener\"},{\"className\":{\"descriptor\":\"Lcom/paritytrading/parity/match/OrderBook;\",\"simpleNames\":[\"OrderBook\"]},\"fieldName\":\"nextOrderNumber\"},{\"className\":{\"descriptor\":\"Lcom/paritytrading/parity/match/OrderBook;\",\"simpleNames\":[\"OrderBook\"]},\"fieldName\":\"orders\"}],\"serializableCause\":null}",
+      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.limitation.NoMeaningfulAssertionMessage\",\"serializableCause\":null}",
       "methodGroup" : {
         "methods" : [
           {
@@ -1467,42 +1574,6 @@
       }
     },
     {
-      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.limitation.MissingObserverMessage\",\"fields\":[{\"className\":{\"descriptor\":\"Lcom/paritytrading/parity/util/OrderIDGenerator;\",\"simpleNames\":[\"OrderIDGenerator\"]},\"fieldName\":\"count\"},{\"className\":{\"descriptor\":\"Lcom/paritytrading/parity/util/OrderIDGenerator;\",\"simpleNames\":[\"OrderIDGenerator\"]},\"fieldName\":\"prefix\"}],\"serializableCause\":null}",
-      "methodGroup" : {
-        "methods" : [
-          {
-            "binaryClassName" : "com.paritytrading.parity.util.OrderIDGenerator",
-            "descriptor" : "()V",
-            "methodName" : "<init>"
-          }
-        ]
-      }
-    },
-    {
-      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.limitation.MissingObserverMessage\",\"fields\":[{\"className\":{\"descriptor\":\"Lcom/paritytrading/parity/util/OrderIDGenerator;\",\"simpleNames\":[\"OrderIDGenerator\"]},\"fieldName\":\"count\"},{\"className\":{\"descriptor\":\"Lcom/paritytrading/parity/util/OrderIDGenerator;\",\"simpleNames\":[\"OrderIDGenerator\"]},\"fieldName\":\"prefix\"}],\"serializableCause\":null}",
-      "methodGroup" : {
-        "methods" : [
-          {
-            "binaryClassName" : "com.paritytrading.parity.util.OrderIDGenerator",
-            "descriptor" : "(Ljava/time/LocalTime;)V",
-            "methodName" : "<init>"
-          }
-        ]
-      }
-    },
-    {
-      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.limitation.TimeSensitiveAssertionMessage\",\"serializableCause\":null}",
-      "methodGroup" : {
-        "methods" : [
-          {
-            "binaryClassName" : "com.paritytrading.parity.util.OrderIDGenerator",
-            "descriptor" : "()Ljava/lang/String;",
-            "methodName" : "next"
-          }
-        ]
-      }
-    },
-    {
       "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.testability.TrivialConstructorMessage\",\"serializableCause\":null}",
       "methodGroup" : {
         "methods" : [
@@ -1515,13 +1586,13 @@
       }
     },
     {
-      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.limitation.MissingObserverMessage\",\"fields\":[{\"className\":{\"descriptor\":\"Lcom/paritytrading/parity/util/TableHeader;\",\"simpleNames\":[\"TableHeader\"]},\"fieldName\":\"columns\"}],\"serializableCause\":null}",
+      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.internalexception.UnexpectedMessage\",\"reason\":\"java.lang.NoSuchFieldException: Couldn't find field name in java.lang.Object\",\"serializableCause\":{\"cause\":null,\"message\":\"Couldn't find field name in java.lang.Object\",\"originalClassName\":\"java.lang.NoSuchFieldException\",\"stackTrace\":[{\"className\":\"com.diffblue.cover.commons.reflect.q\",\"fileName\":\"SourceFile\",\"lineNumber\":592,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.h.c.a.f\",\"fileName\":\"SourceFile\",\"lineNumber\":31,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.h.c.a.b\",\"fileName\":\"SourceFile\",\"lineNumber\":378,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.g.c.a\",\"fileName\":\"SourceFile\",\"lineNumber\":33,\"methodName\":\"<init>\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.aa\",\"fileName\":\"SourceFile\",\"lineNumber\":819,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.aa\",\"fileName\":\"SourceFile\",\"lineNumber\":790,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.utils.l$b\",\"fileName\":\"SourceFile\",\"lineNumber\":18399,\"methodName\":\"b\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.g.c.a\",\"fileName\":\"SourceFile\",\"lineNumber\":89,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.k\",\"fileName\":\"SourceFile\",\"lineNumber\":67,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.utils.l\",\"fileName\":\"SourceFile\",\"lineNumber\":143,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.tir.utils.l\",\"fileName\":\"SourceFile\",\"lineNumber\":106,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.b.a.l\",\"fileName\":\"SourceFile\",\"lineNumber\":50,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.b.a.h\",\"fileName\":\"SourceFile\",\"lineNumber\":88,\"methodName\":\"a\",\"nativeMethod\":false},{\"className\":\"com.diffblue.fuzztest.g.e\",\"fileName\":\"SourceFile\",\"lineNumber\":2389,\"methodName\":\"r\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.WorkerThread\",\"fileName\":\"SourceFile\",\"lineNumber\":164,\"methodName\":\"lambda$callWorkerThread$3\",\"nativeMethod\":false},{\"className\":\"com.diffblue.cover.sandbox.execution.WorkerThread\",\"fileName\":\"SourceFile\",\"lineNumber\":265,\"methodName\":\"run\",\"nativeMethod\":false}]}}",
       "methodGroup" : {
         "methods" : [
           {
             "binaryClassName" : "com.paritytrading.parity.util.TableHeader",
-            "descriptor" : "()V",
-            "methodName" : "<init>"
+            "descriptor" : "(Ljava/lang/String;I)V",
+            "methodName" : "add"
           }
         ]
       }

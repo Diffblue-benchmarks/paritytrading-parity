@@ -116,6 +116,26 @@ public class TAQWriter implements Closeable, Flushable {
         sink.print(HEADER);
     }
 
+    /** For testing purposes only */
+    public StringBuffer getBuffer() {
+        return buffer;
+    }
+
+    /** For testing purposes only */
+    public TAQConfig getConfig() {
+        return config;
+    }
+
+    /** For testing purposes only */
+    public FieldPosition getPosition() {
+        return position;
+    }
+
+    /** For testing purposes only */
+    public PrintWriter getSink() {
+        return sink;
+    }
+
     /**
      * Write a Trade record.
      *

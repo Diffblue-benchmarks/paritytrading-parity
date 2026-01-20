@@ -2,9 +2,12 @@ package com.paritytrading.parity.book;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import com.diffblue.cover.annotations.ManagedByDiffblue;
 import com.diffblue.cover.annotations.MethodsUnderTest;
+import it.unimi.dsi.fastutil.longs.Long2ObjectArrayMap;
+import it.unimi.dsi.fastutil.longs.Long2ObjectOpenHashMap;
 import it.unimi.dsi.fastutil.longs.LongSortedSet;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
@@ -22,18 +25,56 @@ class MarketDiffblueTest {
   @ManagedByDiffblue
   @MethodsUnderTest({"void Market.<init>(MarketListener)"})
   void testNewMarket() {
-    // Arrange and Act
-    Market actualMarket = new Market(new MarketEvents());
+    // Arrange
+    MarketEvents listener = new MarketEvents();
+
+    // Act
+    Market actualMarket = new Market(listener);
 
     // Assert
-    assertNull(actualMarket.find(1L));
-    OrderBook openResult = actualMarket.open(1L);
-    assertEquals(0L, openResult.getBestAskPrice());
-    assertEquals(0L, openResult.getBestBidPrice());
-    assertEquals(1L, openResult.getInstrument());
-    LongSortedSet askPrices = openResult.getAskPrices();
-    assertTrue(askPrices.isEmpty());
-    assertEquals(askPrices, openResult.getBidPrices());
+    MarketListener listener2 = actualMarket.getListener();
+    assertTrue(listener2 instanceof MarketEvents);
+    Long2ObjectArrayMap books = actualMarket.getBooks();
+    assertTrue(books.isEmpty());
+    assertEquals(books, actualMarket.getOrders());
+    assertSame(listener, listener2);
+  }
+
+  /**
+   * Test getters and setters.
+   *
+   * <p>Methods under test:
+   *
+   * <ul>
+   *   <li>{@link Market#getBooks()}
+   *   <li>{@link Market#getListener()}
+   *   <li>{@link Market#getOrders()}
+   * </ul>
+   */
+  @Test
+  @DisplayName("Test getters and setters")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({
+    "Long2ObjectArrayMap Market.getBooks()",
+    "MarketListener Market.getListener()",
+    "Long2ObjectOpenHashMap Market.getOrders()"
+  })
+  void testGettersAndSetters() {
+    // Arrange
+    MarketEvents listener = new MarketEvents();
+    Market market = new Market(listener);
+
+    // Act
+    Long2ObjectArrayMap actualBooks = market.getBooks();
+    MarketListener actualListener = market.getListener();
+    Long2ObjectOpenHashMap actualOrders = market.getOrders();
+
+    // Assert
+    assertTrue(actualListener instanceof MarketEvents);
+    assertTrue(actualBooks.isEmpty());
+    assertTrue(actualOrders.isEmpty());
+    assertSame(listener, actualListener);
   }
 
   /**
@@ -47,13 +88,19 @@ class MarketDiffblueTest {
   @ManagedByDiffblue
   @MethodsUnderTest({"OrderBook Market.open(long)"})
   void testOpen() {
-    // Arrange and Act
-    OrderBook actualOpenResult = new Market(new MarketEvents()).open(1L);
+    // Arrange
+    Market market = new Market(new MarketEvents());
+
+    // Act
+    OrderBook actualOpenResult = market.open(1L);
 
     // Assert
     assertEquals(0L, actualOpenResult.getBestAskPrice());
     assertEquals(0L, actualOpenResult.getBestBidPrice());
+    Long2ObjectArrayMap books = market.getBooks();
+    assertEquals(1, books.size());
     assertEquals(1L, actualOpenResult.getInstrument());
+    assertTrue(books.containsKey((Object) 1L));
     LongSortedSet askPrices = actualOpenResult.getAskPrices();
     assertTrue(askPrices.isEmpty());
     assertEquals(askPrices, actualOpenResult.getBidPrices());

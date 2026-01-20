@@ -26,6 +26,11 @@ class Orders {
         orders = new ArrayList<>();
     }
 
+    /** For testing purposes only */
+    public List getOrders() {
+        return orders;
+    }
+
     void add(Order order) {
         orders.add(order);
     }

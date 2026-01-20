@@ -1,6 +1,7 @@
 package com.paritytrading.parity.util;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import com.diffblue.cover.annotations.ManagedByDiffblue;
 import com.diffblue.cover.annotations.MethodsUnderTest;
 import org.junit.jupiter.api.DisplayName;
@@ -9,24 +10,23 @@ import org.junit.jupiter.api.Test;
 
 class TableHeaderDiffblueTest {
   /**
-   * Test {@link TableHeader#add(String, int)}.
+   * Test getters and setters.
    *
-   * <p>Method under test: {@link TableHeader#add(String, int)}
+   * <p>Methods under test:
+   *
+   * <ul>
+   *   <li>default or parameterless constructor of {@link TableHeader}
+   *   <li>{@link TableHeader#getColumns()}
+   * </ul>
    */
   @Test
-  @DisplayName("Test add(String, int)")
+  @DisplayName("Test getters and setters")
   @Tag("ContributionFromDiffblue")
   @ManagedByDiffblue
-  @MethodsUnderTest({"void TableHeader.add(String, int)"})
-  void testAdd() {
-    // Arrange
-    TableHeader tableHeader = new TableHeader();
-
-    // Act
-    tableHeader.add("Name", 1);
-
-    // Assert
-    assertEquals("N\n-\n", tableHeader.format());
+  @MethodsUnderTest({"void TableHeader.<init>()", "java.util.List TableHeader.getColumns()"})
+  void testGettersAndSetters() {
+    // Arrange, Act and Assert
+    assertTrue(new TableHeader().getColumns().isEmpty());
   }
 
   /**
@@ -44,7 +44,7 @@ class TableHeaderDiffblueTest {
       "Test format(); given TableHeader (default constructor) add '.' and two; then return '. N -- -'")
   @Tag("ContributionFromDiffblue")
   @ManagedByDiffblue
-  @MethodsUnderTest({"String TableHeader.format()"})
+  @MethodsUnderTest({"java.lang.String TableHeader.format()"})
   void testFormat_givenTableHeaderAddDotAndTwo_thenReturnN() {
     // Arrange
     TableHeader tableHeader = new TableHeader();
@@ -70,7 +70,7 @@ class TableHeaderDiffblueTest {
       "Test format(); given TableHeader (default constructor) add 'Name' and one; then return 'N -'")
   @Tag("ContributionFromDiffblue")
   @ManagedByDiffblue
-  @MethodsUnderTest({"String TableHeader.format()"})
+  @MethodsUnderTest({"java.lang.String TableHeader.format()"})
   void testFormat_givenTableHeaderAddNameAndOne_thenReturnN() {
     // Arrange
     TableHeader tableHeader = new TableHeader();
@@ -94,7 +94,7 @@ class TableHeaderDiffblueTest {
   @DisplayName("Test format(); given TableHeader (default constructor); then return empty string")
   @Tag("ContributionFromDiffblue")
   @ManagedByDiffblue
-  @MethodsUnderTest({"String TableHeader.format()"})
+  @MethodsUnderTest({"java.lang.String TableHeader.format()"})
   void testFormat_givenTableHeader_thenReturnEmptyString() {
     // Arrange, Act and Assert
     assertEquals("", new TableHeader().format());

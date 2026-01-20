@@ -48,6 +48,31 @@ public class OrderBook {
         this.nextOrderNumber = 0;
     }
 
+    /** For testing purposes only */
+    public TreeSet getAsks() {
+        return asks;
+    }
+
+    /** For testing purposes only */
+    public TreeSet getBids() {
+        return bids;
+    }
+
+    /** For testing purposes only */
+    public OrderBookListener getListener() {
+        return listener;
+    }
+
+    /** For testing purposes only */
+    public long getNextOrderNumber() {
+        return nextOrderNumber;
+    }
+
+    /** For testing purposes only */
+    public Long2ObjectOpenHashMap getOrders() {
+        return orders;
+    }
+
     /**
      * Enter an order to this order book.
      *

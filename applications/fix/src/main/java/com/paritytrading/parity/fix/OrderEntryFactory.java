@@ -33,6 +33,11 @@ class OrderEntryFactory {
         this.address = address;
     }
 
+    /** For testing purposes only */
+    public InetSocketAddress getAddress() {
+        return address;
+    }
+
     SoupBinTCPClient create(POEClientListener listener,
             SoupBinTCPClientStatusListener statusListener) throws IOException {
         SocketChannel channel = SocketChannel.open();

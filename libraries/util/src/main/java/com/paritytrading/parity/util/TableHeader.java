@@ -34,6 +34,11 @@ public class TableHeader {
         columns = new ArrayList<>();
     }
 
+    /** For testing purposes only */
+    public List getColumns() {
+        return columns;
+    }
+
     /**
      * Add a column.
      *

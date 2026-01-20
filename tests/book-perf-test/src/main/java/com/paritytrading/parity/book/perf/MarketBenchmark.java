@@ -102,4 +102,14 @@ public class MarketBenchmark {
         market.delete(orderId);
     }
 
+  /** For testing purposes only */
+  public Market getMarket() {
+    return market;
+  }
+
+  /** For testing purposes only */
+  public long getNextOrderId() {
+    return nextOrderId;
+  }
+
 }

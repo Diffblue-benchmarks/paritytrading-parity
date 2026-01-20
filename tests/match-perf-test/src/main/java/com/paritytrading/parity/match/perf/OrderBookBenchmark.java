@@ -78,4 +78,14 @@ public class OrderBookBenchmark {
         book.cancel(orderId, 0);
     }
 
+  /** For testing purposes only */
+  public OrderBook getBook() {
+    return book;
+  }
+
+  /** For testing purposes only */
+  public long getNextOrderId() {
+    return nextOrderId;
+  }
+
 }

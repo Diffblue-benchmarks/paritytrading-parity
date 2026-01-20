@@ -1,0 +1,2 @@
+[0m Cover Reports API stats: Total Lines=4749, Coverable Lines=4838, Number of Existing Tests=49, Existing Line Coverage=2.85%, Number of Diffblue Tests=280, Diffblue Line Coverage=18.71%, Combined Number of Tests=329, Combined Line Coverage=21.56%
+[0m Diffblue Line Coverage=18.71%, Combined Line Coverage=21.56%

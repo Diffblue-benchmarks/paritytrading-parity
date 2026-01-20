@@ -41,6 +41,21 @@ public class Market {
         this.listener = listener;
     }
 
+  /** For testing purposes only */
+  public Long2ObjectArrayMap getBooks() {
+    return books;
+  }
+
+  /** For testing purposes only */
+  public MarketListener getListener() {
+    return listener;
+  }
+
+  /** For testing purposes only */
+  public Long2ObjectOpenHashMap getOrders() {
+    return orders;
+  }
+
     /**
      * Open an order book.
      *

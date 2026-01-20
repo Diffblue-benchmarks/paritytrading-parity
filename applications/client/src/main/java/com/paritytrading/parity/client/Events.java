@@ -28,6 +28,11 @@ class Events implements POEClientListener {
         events = new ArrayList<>();
     }
 
+    /** For testing purposes only */
+    public List getEvents() {
+        return events;
+    }
+
     synchronized void accept(EventVisitor visitor) {
         for (Event event : events)
             event.accept(visitor);

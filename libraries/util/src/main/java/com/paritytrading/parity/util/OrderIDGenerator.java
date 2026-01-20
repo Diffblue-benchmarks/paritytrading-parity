@@ -46,6 +46,16 @@ public class OrderIDGenerator {
         count  = 1;
     }
 
+    /** For testing purposes only */
+    public int getCount() {
+        return count;
+    }
+
+    /** For testing purposes only */
+    public String getPrefix() {
+        return prefix;
+    }
+
     /**
      * Generate an order identifier.
      *
