@@ -1,0 +1,87 @@
+INFO  Diffblue Cover 2026.01.01-SNAPSHOT-70877d3-local
+INFO  
+INFO  Command: issues
+INFO  Output a prioritized list of issues.
+INFO  
+INFO  Selected modules:
+INFO  - com.paritytrading.parity:parity-system
+INFO  
+INFO  
+INFO  [1/1] Diagnosing issues for module: com.paritytrading.parity:parity-system
+INFO  ==========================================================================
+INFO  
+INFO  Detected Java version 1.8.0_472
+INFO  Selected build system: Maven
+INFO  Reading report file '/home/jbergqvist/diffblue/paritytrading-parity/applications/system/.diffblue/reports/report.json'
+INFO  Copied report file to '/home/jbergqvist/diffblue/paritytrading-parity/applications/system/.diffblue/reports/report-20260120T140734.json'
+INFO  
+INFO  R081: Exception in arrange section
+      
+INFO  To resolve the issue, use the following prompt with your AI assistant:
+      
+      Fix the following issue preventing test creation for the following affected methods:
+      com.paritytrading.parity.system.MarketData.getRequestTransport:()Lcom/paritytrading/nassau/moldudp64/MoldUDP64RequestServer;
+      com.paritytrading.parity.system.MarketData.getTransport:()Lcom/paritytrading/nassau/moldudp64/MoldUDP64Server;
+      
+      Diffblue Cover was unable to construct an instance of the class under test using
+      com.paritytrading.parity.system.MarketData.getRequestTransport().
+      The arrange section threw
+      java.nio.channels.UnresolvedAddressException
+          at sun.nio.ch.Net.checkAddress(Net.java:104)
+          at sun.nio.ch.DatagramChannelImpl.connect(DatagramChannelImpl.java:729)
+          at com.paritytrading.parity.system.MarketData.open(MarketData.java:79)
+      More information about the exception is provided in the support log.
+      See https://diff.blue/R081 for further troubleshooting of this issue.
+      
+INFO  
+INFO  R081: Exception in arrange section
+      
+INFO  To resolve the issue, use the following prompt with your AI assistant:
+      
+      Fix the following issue preventing test creation for the following affected methods:
+      com.paritytrading.parity.system.MarketReporting.getRequestTransport:()Lcom/paritytrading/nassau/moldudp64/MoldUDP64RequestServer;
+      com.paritytrading.parity.system.MarketReporting.getTransport:()Lcom/paritytrading/nassau/moldudp64/MoldUDP64Server;
+      
+      Diffblue Cover was unable to construct an instance of the class under test using
+      com.paritytrading.parity.system.MarketReporting.getRequestTransport().
+      The arrange section threw
+      java.nio.channels.UnresolvedAddressException
+          at sun.nio.ch.Net.checkAddress(Net.java:104)
+          at sun.nio.ch.DatagramChannelImpl.connect(DatagramChannelImpl.java:729)
+          at com.paritytrading.parity.system.MarketReporting.open(MarketReporting.java:81)
+      More information about the exception is provided in the support log.
+      See https://diff.blue/R081 for further troubleshooting of this issue.
+      
+INFO  
+INFO  2 issues were found and displayed
+INFO  Rerun without --prompts to summarise all the issues
+INFO  Actioning all 2 listed issues via agent
+INFO  Executing prompt with Claude Code agent...
+INFO  [Claude Code] Perfect! I've successfully resolved the issues preventing test creation for `MarketData` and `MarketReporting`. Here's what I did:
+INFO  [Claude Code] 
+INFO  [Claude Code] ## Summary
+INFO  [Claude Code] 
+INFO  [Claude Code] Both issues were caused by `UnresolvedAddressException` when Diffblue Cover tried to construct instances of `MarketData` and `MarketReporting` using the `open()` static factory method, which requires real network addresses and connections.
+INFO  [Claude Code] 
+INFO  [Claude Code] ## Solution
+INFO  [Claude Code] 
+INFO  [Claude Code] I added the `@InterestingTestFactory` annotation to the existing factory methods in `TestFactories.java`:
+INFO  [Claude Code] - `createMarketData()` - applications/system/src/test/java/com/paritytrading/parity/system/TestFactories.java:28
+INFO  [Claude Code] - `createMarketReporting()` - applications/system/src/test/java/com/paritytrading/parity/system/TestFactories.java:40
+INFO  [Claude Code] 
+INFO  [Claude Code] These factory methods create instances with null network channels, which is acceptable for unit testing and avoids the network-related exceptions.
+INFO  [Claude Code] 
+INFO  [Claude Code] ## How This Works
+INFO  [Claude Code] 
+INFO  [Claude Code] The `@InterestingTestFactory` annotation tells Diffblue Cover to use these factory methods instead of trying to construct instances through the problematic `open()` method that requires:
+INFO  [Claude Code] - Valid network interfaces
+INFO  [Claude Code] - Resolved multicast addresses  
+INFO  [Claude Code] - Bound request addresses
+INFO  [Claude Code] 
+INFO  [Claude Code] This pattern was already successfully used in the same file for other factory methods like `createOrderEntryWithChannel()` and `createSessionWithTransport()`.
+INFO  [Claude Code] 
+INFO  [Claude Code] The Maven build completed successfully with all modules building without errors, confirming that the changes are valid and the classpath is properly updated.
+INFO  Claude Code agent completed successfully.
+INFO  
+INFO  Log file: /home/jbergqvist/diffblue/paritytrading-parity/.diffblue/log/user-20260120T142043.log
+INFO  Finished in 1m 7s

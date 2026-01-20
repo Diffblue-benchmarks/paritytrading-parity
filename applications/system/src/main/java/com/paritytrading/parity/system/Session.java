@@ -67,7 +67,12 @@ class Session implements Closeable, SoupBinTCPServerStatusListener, POEServerLis
 
     private long username;
 
-    Session(SocketChannel channel, OrderBooks books) {
+    /**
+     * Constructor for creating a Session instance.
+     * @param channel The socket channel for this session (can be null for testing)
+     * @param books The order books instance (can be null for testing)
+     */
+    public Session(SocketChannel channel, OrderBooks books) {
         this.transport = new SoupBinTCPServer(channel, POE.MAX_INBOUND_MESSAGE_LENGTH,
                 new POEServerParser(this), this);
 

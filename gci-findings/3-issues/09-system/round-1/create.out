@@ -1,0 +1,65 @@
+INFO  Diffblue Cover 2025.12.02-74144f0-licensed
+INFO  
+INFO  Command: create
+INFO  Create tests for the specified package/class/method.
+INFO  
+INFO  Selected modules:
+INFO  - com.paritytrading.parity:parity-system
+INFO  
+INFO  
+INFO  [1/1] Creating tests for module: com.paritytrading.parity:parity-system
+INFO  =======================================================================
+INFO  
+INFO  Detecting environment:
+INFO  ----------------------
+INFO  Detected Java version 1.8.0_472
+INFO  Selected build system: Maven
+INFO  Selected classpath from build system maven
+INFO  Selected test framework: JUnit Jupiter API
+INFO  Selected Java language compliance level: 1.8
+INFO  Selected test validation: enabled
+INFO  Prefixes for filtering classes/methods:
+INFO  - com.paritytrading.parity.system
+INFO  Gathering methods to test...
+INFO  Found 49 callable methods in 8 classes
+INFO  
+INFO  Creating tests:
+INFO  ---------------
+INFO  [1/8] com.paritytrading.parity.system.Events
+INFO  [1/8]   Tests created: 0
+INFO  [2/8] com.paritytrading.parity.system.MarketData
+INFO  [2/8]   Tests created: 0
+INFO  [3/8] com.paritytrading.parity.system.MarketReporting
+INFO  [3/8]   Tests created: 0
+INFO  [4/8] com.paritytrading.parity.system.Order
+INFO  [4/8]   Tests created: 0
+INFO  [5/8] com.paritytrading.parity.system.OrderBooks
+INFO  [5/8]   Tests created: 0
+INFO  [6/8] com.paritytrading.parity.system.OrderEntry
+INFO  [6/8]   Tests created: 0
+INFO  [7/8] com.paritytrading.parity.system.Session
+INFO  [7/8]   Tests created: 0
+INFO  [8/8] com.paritytrading.parity.system.TradingSystem
+INFO  [8/8]   Tests created: 0
+INFO  
+INFO  Test creation summary for module: com.paritytrading.parity:parity-system
+INFO  ------------------------------------------------------------------------
+INFO  Total:                                              49 methods
+INFO  
+INFO  Tested indirectly via other methods:                 1 method
+INFO      1 T005: Trivial constructor
+INFO  Not unit-testable:                                   1 method
+INFO      1 T006: Main method
+INFO  No tests created for:                               47 methods
+INFO     14 R081: Exception in arrange section
+INFO  Calculating coverage from Diffblue tests.
+INFO  JaCoCo report file created in /home/jbergqvist/diffblue/paritytrading-parity/applications/system/.diffblue/reports/diffblue-tests-jacoco-report.xml
+INFO  Calculating coverage from manual tests.
+INFO  JaCoCo report file created in /home/jbergqvist/diffblue/paritytrading-parity/applications/system/.diffblue/reports/manual-tests-jacoco-report.xml
+INFO  
+INFO  Diffblue tests cover 0 of 429 lines to cover (0.0%)
+INFO  Manual tests cover 0 of 429 lines to cover (0.0%)
+INFO  Writing JSON report to /home/jbergqvist/diffblue/paritytrading-parity/applications/system/.diffblue/reports/report.json
+INFO  
+INFO  Log file: /home/jbergqvist/diffblue/paritytrading-parity/.diffblue/log/user-20260120T133852.log
+INFO  Finished in 1m 39s

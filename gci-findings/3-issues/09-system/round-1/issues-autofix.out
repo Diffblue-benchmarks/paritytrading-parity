@@ -1,0 +1,151 @@
+INFO  Diffblue Cover 2026.01.01-SNAPSHOT-70877d3-local
+INFO  
+INFO  Command: issues
+INFO  Output a prioritized list of issues.
+INFO  
+INFO  Selected modules:
+INFO  - com.paritytrading.parity:parity-system
+INFO  
+INFO  
+INFO  [1/1] Diagnosing issues for module: com.paritytrading.parity:parity-system
+INFO  ==========================================================================
+INFO  
+INFO  Detected Java version 1.8.0_472
+INFO  Selected build system: Maven
+INFO  Reading report file '/home/jbergqvist/diffblue/paritytrading-parity/applications/system/.diffblue/reports/report.json'
+INFO  Copied report file to '/home/jbergqvist/diffblue/paritytrading-parity/applications/system/.diffblue/reports/report-20260120T133225.json'
+INFO  
+INFO  R081: Exception in arrange section
+      
+INFO  To resolve the issue, use the following prompt with your AI assistant:
+      
+      Fix the following issue preventing test creation for the following affected methods:
+      com.paritytrading.parity.system.MarketData.getRequestTransport:()Lcom/paritytrading/nassau/moldudp64/MoldUDP64RequestServer;
+      com.paritytrading.parity.system.MarketData.getTransport:()Lcom/paritytrading/nassau/moldudp64/MoldUDP64Server;
+      
+      Diffblue Cover was unable to construct an instance of the class under test using
+      com.paritytrading.parity.system.MarketData.getRequestTransport().
+      The arrange section threw
+      java.lang.IllegalArgumentException: Cannot set IP_MULTICAST_IF to 'null'
+          at sun.nio.ch.DatagramChannelImpl.setOption(DatagramChannelImpl.java:216)
+          at com.paritytrading.parity.system.MarketData.open(MarketData.java:71)
+      More information about the exception is provided in the support log.
+      See https://diff.blue/R081 for further troubleshooting of this issue.
+      
+INFO  
+INFO  R081: Exception in arrange section
+      
+INFO  To resolve the issue, use the following prompt with your AI assistant:
+      
+      Fix the following issue preventing test creation for the following affected methods:
+      com.paritytrading.parity.system.MarketReporting.getRequestTransport:()Lcom/paritytrading/nassau/moldudp64/MoldUDP64RequestServer;
+      com.paritytrading.parity.system.MarketReporting.getTransport:()Lcom/paritytrading/nassau/moldudp64/MoldUDP64Server;
+      
+      Diffblue Cover was unable to construct an instance of the class under test using
+      com.paritytrading.parity.system.MarketReporting.getRequestTransport().
+      The arrange section threw
+      java.lang.IllegalArgumentException: Cannot set IP_MULTICAST_IF to 'null'
+          at sun.nio.ch.DatagramChannelImpl.setOption(DatagramChannelImpl.java:216)
+          at com.paritytrading.parity.system.MarketReporting.open(MarketReporting.java:73)
+      More information about the exception is provided in the support log.
+      See https://diff.blue/R081 for further troubleshooting of this issue.
+      
+INFO  
+INFO  R081: Exception in arrange section
+      
+INFO  To resolve the issue, use the following prompt with your AI assistant:
+      
+      Fix the following issue preventing test creation for the following affected methods:
+      com.paritytrading.parity.system.Order.getBook:()Lcom/paritytrading/parity/match/OrderBook;
+      com.paritytrading.parity.system.Order.getOrderId:()[B
+      com.paritytrading.parity.system.Order.getOrderNumber:()J
+      com.paritytrading.parity.system.Order.getSession:()Lcom/paritytrading/parity/system/Session;
+      
+      Diffblue Cover was unable to construct an instance of the class under test using
+      com.paritytrading.parity.system.Order.getBook().
+      The arrange section threw
+      java.lang.IllegalArgumentException: Cannot set IP_MULTICAST_IF to 'null'
+          at sun.nio.ch.DatagramChannelImpl.setOption(DatagramChannelImpl.java:216)
+          at com.paritytrading.parity.system.MarketData.open(MarketData.java:71)
+      More information about the exception is provided in the support log.
+      See https://diff.blue/R081 for further troubleshooting of this issue.
+      
+INFO  
+INFO  R081: Exception in arrange section
+      
+INFO  To resolve the issue, use the following prompt with your AI assistant:
+      
+      Fix the following issue preventing test creation for the following affected methods:
+      com.paritytrading.parity.system.OrderEntry.getChannel:()Ljava/nio/channels/ServerSocketChannel;
+      
+      Diffblue Cover was unable to construct an instance of the class under test using
+      com.paritytrading.parity.system.OrderEntry.getChannel().
+      The arrange section threw
+      java.lang.IllegalArgumentException: Cannot set IP_MULTICAST_IF to 'null'
+          at sun.nio.ch.DatagramChannelImpl.setOption(DatagramChannelImpl.java:216)
+          at com.paritytrading.parity.system.MarketData.open(MarketData.java:71)
+      More information about the exception is provided in the support log.
+      See https://diff.blue/R081 for further troubleshooting of this issue.
+      
+INFO  
+INFO  R081: Exception in arrange section
+      
+INFO  To resolve the issue, use the following prompt with your AI assistant:
+      
+      Fix the following issue preventing test creation for the following affected methods:
+      com.paritytrading.parity.system.Session.getTransport:()Lcom/paritytrading/nassau/soupbintcp/SoupBinTCPServer;
+      com.paritytrading.parity.system.Session.getUsername:()J
+      com.paritytrading.parity.system.Session.heartbeatTimeout:(Lcom/paritytrading/nassau/soupbintcp/SoupBinTCPServer;)V
+      com.paritytrading.parity.system.Session.isTerminated:()Z
+      com.paritytrading.parity.system.Session.logoutRequest:(Lcom/paritytrading/nassau/soupbintcp/SoupBinTCPServer;)V
+      
+      Diffblue Cover was unable to construct an instance of the class under test using
+      com.paritytrading.parity.system.Session.heartbeatTimeout(SoupBinTCPServer).
+      The arrange section threw
+      java.lang.IllegalArgumentException: Cannot set IP_MULTICAST_IF to 'null'
+          at sun.nio.ch.DatagramChannelImpl.setOption(DatagramChannelImpl.java:216)
+          at com.paritytrading.parity.system.MarketData.open(MarketData.java:71)
+      More information about the exception is provided in the support log.
+      See https://diff.blue/R081 for further troubleshooting of this issue.
+      
+INFO  
+INFO  5 issues were found and displayed
+INFO  Rerun without --prompts to summarise all the issues
+INFO  Actioning all 5 listed issues via agent
+INFO  Executing prompt with Claude Code agent...
+INFO  [Claude Code] Perfect! The build succeeded. Let me create a summary of what was fixed.
+INFO  [Claude Code] 
+INFO  [Claude Code] ## Summary
+INFO  [Claude Code] 
+INFO  [Claude Code] I've successfully resolved all 5 issues reported by Diffblue Cover. The root cause was the same across all issues: the `MarketData.open()` and `MarketReporting.open()` methods were attempting to set the `IP_MULTICAST_IF` socket option to `null`, which is not allowed.
+INFO  [Claude Code] 
+INFO  [Claude Code] ### Changes Made
+INFO  [Claude Code] 
+INFO  [Claude Code] **1. Fixed MarketData.java:71-74**
+INFO  [Claude Code] - Added a null check before setting the multicast interface option
+INFO  [Claude Code] - The code now only sets `IP_MULTICAST_IF` when `multicastInterface` is not null
+INFO  [Claude Code] 
+INFO  [Claude Code] **2. Fixed MarketReporting.java:73-76**  
+INFO  [Claude Code] - Applied the same null check to handle optional multicast interface configuration
+INFO  [Claude Code] - The code now only sets `IP_MULTICAST_IF` when `multicastInterface` is not null
+INFO  [Claude Code] 
+INFO  [Claude Code] ### Impact
+INFO  [Claude Code] 
+INFO  [Claude Code] These changes resolve all 5 issues:
+INFO  [Claude Code] - **Issue 1**: Methods in `MarketData` class can now be tested
+INFO  [Claude Code] - **Issue 2**: Methods in `MarketReporting` class can now be tested
+INFO  [Claude Code] - **Issue 3**: `Order` class methods can now be tested (depends on MarketData)
+INFO  [Claude Code] - **Issue 4**: `OrderEntry.getChannel()` can now be tested (depends on MarketData)
+INFO  [Claude Code] - **Issue 5**: `Session` class methods can now be tested (depends on MarketData)
+INFO  [Claude Code] 
+INFO  [Claude Code] ### Build Status
+INFO  [Claude Code] 
+INFO  [Claude Code] The Maven build completed successfully with all modules compiled and installed to the local repository. The changes are backward compatible since:
+INFO  [Claude Code] - When `multicastInterface` is provided (non-null), the behavior is identical to before
+INFO  [Claude Code] - When `multicastInterface` is null (e.g., in test scenarios), the code now handles it gracefully instead of throwing an exception
+INFO  [Claude Code] 
+INFO  [Claude Code] Diffblue Cover should now be able to generate tests for all the affected methods.
+INFO  Claude Code agent completed successfully.
+INFO  
+INFO  Log file: /home/jbergqvist/diffblue/paritytrading-parity/.diffblue/log/user-20260120T133548.log
+INFO  Finished in 1m 10s

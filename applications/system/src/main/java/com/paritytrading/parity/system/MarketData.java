@@ -47,7 +47,12 @@ class MarketData {
 
     private final ByteBuffer buffer;
 
-    private MarketData(MoldUDP64Server transport, MoldUDP64RequestServer requestTransport) {
+    /**
+     * Constructor for creating a MarketData instance. Primarily used for testing.
+     * @param transport The MoldUDP64 server transport (can be null for testing)
+     * @param requestTransport The MoldUDP64 request server transport (can be null for testing)
+     */
+    public MarketData(MoldUDP64Server transport, MoldUDP64RequestServer requestTransport) {
         this.version       = new PMD.Version();
         this.orderAdded    = new PMD.OrderAdded();
         this.orderExecuted = new PMD.OrderExecuted();
@@ -68,7 +73,9 @@ class MarketData {
             InetSocketAddress requestAddress) throws IOException {
         DatagramChannel channel = DatagramChannel.open(StandardProtocolFamily.INET);
 
-        channel.setOption(StandardSocketOptions.IP_MULTICAST_IF, multicastInterface);
+        if (multicastInterface != null) {
+            channel.setOption(StandardSocketOptions.IP_MULTICAST_IF, multicastInterface);
+        }
         channel.connect(multicastGroup);
 
         MoldUDP64Server transport = new MoldUDP64Server(channel, session);

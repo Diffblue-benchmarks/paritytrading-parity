@@ -47,7 +47,7 @@ class OrderBooks {
 
     private CancelReason cancelReason;
 
-    OrderBooks(List<String> instruments, MarketData marketData, MarketReporting marketReporting) {
+    public OrderBooks(List<String> instruments, MarketData marketData, MarketReporting marketReporting) {
         this.books  = new Long2ObjectArrayMap<>();
         this.orders = new Long2ObjectOpenHashMap<>();
 

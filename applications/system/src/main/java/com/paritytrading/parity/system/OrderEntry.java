@@ -27,7 +27,12 @@ class OrderEntry {
 
     private final OrderBooks books;
 
-    private OrderEntry(ServerSocketChannel serverChannel, OrderBooks books) {
+    /**
+     * Constructor for creating an OrderEntry instance.
+     * @param serverChannel The server socket channel (can be null for testing)
+     * @param books The order books instance (can be null for testing)
+     */
+    public OrderEntry(ServerSocketChannel serverChannel, OrderBooks books) {
         this.serverChannel = serverChannel;
 
         this.books = books;

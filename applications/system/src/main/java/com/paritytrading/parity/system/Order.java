@@ -24,7 +24,14 @@ class Order {
     private final Session   session;
     private final OrderBook book;
 
-    Order(byte[] orderId, long orderNumber, Session session, OrderBook book) {
+    /**
+     * Constructor for creating an Order instance.
+     * @param orderId The order identifier
+     * @param orderNumber The order number
+     * @param session The session associated with this order (can be null for testing)
+     * @param book The order book associated with this order (can be null for testing)
+     */
+    public Order(byte[] orderId, long orderNumber, Session session, OrderBook book) {
         this.orderId     = orderId.clone();
         this.orderNumber = orderNumber;
         this.session     = session;

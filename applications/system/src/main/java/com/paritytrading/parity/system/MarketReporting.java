@@ -48,7 +48,12 @@ class MarketReporting {
 
     private final ByteBuffer buffer;
 
-    private MarketReporting(MoldUDP64Server transport, MoldUDP64RequestServer requestTransport) {
+    /**
+     * Constructor for creating a MarketReporting instance. Primarily used for testing.
+     * @param transport The MoldUDP64 server transport (can be null for testing)
+     * @param requestTransport The MoldUDP64 request server transport (can be null for testing)
+     */
+    public MarketReporting(MoldUDP64Server transport, MoldUDP64RequestServer requestTransport) {
         this.version       = new PMR.Version();
         this.orderEntered  = new PMR.OrderEntered();
         this.orderAdded    = new PMR.OrderAdded();
@@ -70,7 +75,9 @@ class MarketReporting {
             InetSocketAddress requestAddress) throws IOException {
         DatagramChannel channel = DatagramChannel.open(StandardProtocolFamily.INET);
 
-        channel.setOption(StandardSocketOptions.IP_MULTICAST_IF, multicastInterface);
+        if (multicastInterface != null) {
+            channel.setOption(StandardSocketOptions.IP_MULTICAST_IF, multicastInterface);
+        }
         channel.connect(multicastGroup);
 
         MoldUDP64Server transport = new MoldUDP64Server(channel, session);
