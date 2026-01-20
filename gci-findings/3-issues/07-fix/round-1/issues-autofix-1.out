@@ -1,0 +1,292 @@
+INFO  Diffblue Cover 2025.12.02-74144f0-licensed
+INFO  
+INFO  Command: issues
+INFO  Output a prioritized list of issues.
+INFO  
+INFO  Selected modules:
+INFO  - com.paritytrading.parity:parity-fix
+INFO  
+INFO  
+INFO  [1/1] Diagnosing issues for module: com.paritytrading.parity:parity-fix
+INFO  =======================================================================
+INFO  
+INFO  Detected Java version 1.8.0_472
+INFO  Selected build system: Maven
+INFO  Reading report file '/home/jbergqvist/diffblue/paritytrading-parity/applications/fix/.diffblue/reports/report.json'
+INFO  Copied report file to '/home/jbergqvist/diffblue/paritytrading-parity/applications/fix/.diffblue/reports/report-20260120T123545.json'
+INFO  
+INFO  R013: No inputs found that don't throw a trivial exception
+      Diffblue Cover tried to run the arrange/act section, but the test threw
+      java.lang.NullPointerException
+          at com.paritytrading.parity.fix.Events.process(Events.java:35)
+      In order to prevent the method under test
+      from throwing NullPointerException, add constructors or factory
+      methods that make it easier to construct fully initialized objects used in
+      the method under test.
+      See https://diff.blue/R013 to resolve this issue.
+      
+INFO  Affected methods:
+      com.paritytrading.parity.fix.Events.process:(Lcom/paritytrading/parity/fix/FIXAcceptor;)V
+      
+INFO  To resolve the issue, use the following prompt with your AI assistant:
+      
+      We are unit testing `com.paritytrading.parity.fix.Events.process:(Lcom/paritytrading/parity/fix/FIXAcceptor;)V`.
+      
+      Create a parameterless factory method for the problematic
+      parameter/this object, determining which by reading the error message below.
+      The new factory method should be in the test classpath, not production.
+      Create a new factory class if there isn't already one for the class under test.
+      Do not create a test yourself, only a factory (don't test the factory either).
+      The factory must be annotated with `@com.diffblue.cover.annotations.InterestingTestFactory`.
+      Avoid using mocks, these tend to produce unused stubbing errors or a
+      `java.lang.NullPointerException`.
+      If your environment has internet access then further documentation on
+      factory methods for Cover can be found here:
+      https://docs.diffblue.com/features/tutorials/increase-code-coverage#test-factory-pattern
+      
+      The factory should produce a parameter/this object such that
+      the following exception does not occur:
+      
+      ```
+      java.lang.NullPointerException
+        at com.paritytrading.parity.fix.Events.process(Events.java:35)
+      ```
+      
+      Recompile the project to make sure the new factory is available to Cover.
+      For example run `mvn install -DskipTests` or `gradle install -x test`.
+      
+INFO  
+INFO  R013: No inputs found that don't throw a trivial exception
+      Diffblue Cover tried to run the arrange/act section, but the test threw
+      java.nio.channels.UnresolvedAddressException
+          at sun.nio.ch.Net.checkAddress(Net.java:104)
+          at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:217)
+          at java.nio.channels.ServerSocketChannel.bind(ServerSocketChannel.java:157)
+          at com.paritytrading.parity.fix.FIXAcceptor.open(FIXAcceptor.java:58)
+      In order to prevent the method under test
+      from throwing UnresolvedAddressException, add constructors or factory
+      methods that make it easier to construct fully initialized objects used in
+      the method under test.
+      See https://diff.blue/R013 to resolve this issue.
+      
+INFO  Affected methods:
+      com.paritytrading.parity.fix.FIXAcceptor.accept:()Lcom/paritytrading/parity/fix/Session;
+      
+INFO  To resolve the issue, use the following prompt with your AI assistant:
+      
+      We are unit testing `com.paritytrading.parity.fix.FIXAcceptor.accept:()Lcom/paritytrading/parity/fix/Session;`.
+      
+      Create a parameterless factory method for the problematic
+      parameter/this object, determining which by reading the error message below.
+      The new factory method should be in the test classpath, not production.
+      Create a new factory class if there isn't already one for the class under test.
+      Do not create a test yourself, only a factory (don't test the factory either).
+      The factory must be annotated with `@com.diffblue.cover.annotations.InterestingTestFactory`.
+      Avoid using mocks, these tend to produce unused stubbing errors or a
+      `java.lang.NullPointerException`.
+      If your environment has internet access then further documentation on
+      factory methods for Cover can be found here:
+      https://docs.diffblue.com/features/tutorials/increase-code-coverage#test-factory-pattern
+      
+      The factory should produce a parameter/this object such that
+      the following exception does not occur:
+      
+      ```
+      java.nio.channels.UnresolvedAddressException
+        at sun.nio.ch.Net.checkAddress(Net.java:104)
+        at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:217)
+        at java.nio.channels.ServerSocketChannel.bind(ServerSocketChannel.java:157)
+        at com.paritytrading.parity.fix.FIXAcceptor.open(FIXAcceptor.java:58)
+      ```
+      
+      Recompile the project to make sure the new factory is available to Cover.
+      For example run `mvn install -DskipTests` or `gradle install -x test`.
+      
+INFO  
+INFO  R013: No inputs found that don't throw a trivial exception
+      Diffblue Cover tried to run the arrange/act section, but the test threw
+      java.nio.channels.UnresolvedAddressException
+          at sun.nio.ch.Net.checkAddress(Net.java:104)
+          at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:217)
+          at java.nio.channels.ServerSocketChannel.bind(ServerSocketChannel.java:157)
+          at com.paritytrading.parity.fix.FIXAcceptor.open(FIXAcceptor.java:58)
+      In order to prevent the method under test
+      from throwing UnresolvedAddressException, add constructors or factory
+      methods that make it easier to construct fully initialized objects used in
+      the method under test.
+      See https://diff.blue/R013 to resolve this issue.
+      
+INFO  Affected methods:
+      com.paritytrading.parity.fix.FIXAcceptor.open:(Lcom/paritytrading/parity/fix/OrderEntryFactory;Ljava/net/InetSocketAddress;Ljava/lang/String;Lcom/paritytrading/parity/util/Instruments;)Lcom/paritytrading/parity/fix/FIXAcceptor;
+      
+INFO  To resolve the issue, use the following prompt with your AI assistant:
+      
+      We are unit testing `com.paritytrading.parity.fix.FIXAcceptor.open:(Lcom/paritytrading/parity/fix/OrderEntryFactory;Ljava/net/InetSocketAddress;Ljava/lang/String;Lcom/paritytrading/parity/util/Instruments;)Lcom/paritytrading/parity/fix/FIXAcceptor;`.
+      
+      Create a parameterless factory method for the problematic
+      parameter/this object, determining which by reading the error message below.
+      The new factory method should be in the test classpath, not production.
+      Create a new factory class if there isn't already one for the class under test.
+      Do not create a test yourself, only a factory (don't test the factory either).
+      The factory must be annotated with `@com.diffblue.cover.annotations.InterestingTestFactory`.
+      Avoid using mocks, these tend to produce unused stubbing errors or a
+      `java.lang.NullPointerException`.
+      If your environment has internet access then further documentation on
+      factory methods for Cover can be found here:
+      https://docs.diffblue.com/features/tutorials/increase-code-coverage#test-factory-pattern
+      
+      The factory should produce a parameter/this object such that
+      the following exception does not occur:
+      
+      ```
+      java.nio.channels.UnresolvedAddressException
+        at sun.nio.ch.Net.checkAddress(Net.java:104)
+        at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:217)
+        at java.nio.channels.ServerSocketChannel.bind(ServerSocketChannel.java:157)
+        at com.paritytrading.parity.fix.FIXAcceptor.open(FIXAcceptor.java:58)
+      ```
+      
+      Recompile the project to make sure the new factory is available to Cover.
+      For example run `mvn install -DskipTests` or `gradle install -x test`.
+      
+INFO  
+INFO  R013: No inputs found that don't throw a trivial exception
+      Diffblue Cover tried to run the arrange/act section, but the test threw
+      java.nio.channels.UnresolvedAddressException
+          at sun.nio.ch.Net.checkAddress(Net.java:104)
+          at sun.nio.ch.SocketChannelImpl.connect(SocketChannelImpl.java:621)
+          at com.paritytrading.parity.fix.OrderEntryFactory.create(OrderEntryFactory.java:45)
+      In order to prevent the method under test
+      from throwing UnresolvedAddressException, add constructors or factory
+      methods that make it easier to construct fully initialized objects used in
+      the method under test.
+      See https://diff.blue/R013 to resolve this issue.
+      
+INFO  Affected methods:
+      com.paritytrading.parity.fix.OrderEntryFactory.create:(Lcom/paritytrading/parity/net/poe/POEClientListener;Lcom/paritytrading/nassau/soupbintcp/SoupBinTCPClientStatusListener;)Lcom/paritytrading/nassau/soupbintcp/SoupBinTCPClient;
+      
+INFO  To resolve the issue, use the following prompt with your AI assistant:
+      
+      We are unit testing `com.paritytrading.parity.fix.OrderEntryFactory.create:(Lcom/paritytrading/parity/net/poe/POEClientListener;Lcom/paritytrading/nassau/soupbintcp/SoupBinTCPClientStatusListener;)Lcom/paritytrading/nassau/soupbintcp/SoupBinTCPClient;`.
+      
+      Create a parameterless factory method for the problematic
+      parameter/this object, determining which by reading the error message below.
+      The new factory method should be in the test classpath, not production.
+      Create a new factory class if there isn't already one for the class under test.
+      Do not create a test yourself, only a factory (don't test the factory either).
+      The factory must be annotated with `@com.diffblue.cover.annotations.InterestingTestFactory`.
+      Avoid using mocks, these tend to produce unused stubbing errors or a
+      `java.lang.NullPointerException`.
+      If your environment has internet access then further documentation on
+      factory methods for Cover can be found here:
+      https://docs.diffblue.com/features/tutorials/increase-code-coverage#test-factory-pattern
+      
+      The factory should produce a parameter/this object such that
+      the following exception does not occur:
+      
+      ```
+      java.nio.channels.UnresolvedAddressException
+        at sun.nio.ch.Net.checkAddress(Net.java:104)
+        at sun.nio.ch.SocketChannelImpl.connect(SocketChannelImpl.java:621)
+        at com.paritytrading.parity.fix.OrderEntryFactory.create(OrderEntryFactory.java:45)
+      ```
+      
+      Recompile the project to make sure the new factory is available to Cover.
+      For example run `mvn install -DskipTests` or `gradle install -x test`.
+      
+INFO  
+INFO  R013: No inputs found that don't throw a trivial exception
+      Diffblue Cover tried to run the arrange/act section, but the test threw
+      java.lang.NullPointerException
+      In order to prevent the method under test
+      from throwing NullPointerException, add constructors or factory
+      methods that make it easier to construct fully initialized objects used in
+      the method under test.
+      See https://diff.blue/R013 to resolve this issue.
+      
+INFO  Affected methods:
+      com.paritytrading.parity.fix.Session.<init>:(Lcom/paritytrading/parity/fix/OrderEntryFactory;Ljava/nio/channels/SocketChannel;Lcom/paritytrading/philadelphia/FIXConfig;Lcom/paritytrading/parity/util/Instruments;)V
+      
+INFO  To resolve the issue, use the following prompt with your AI assistant:
+      
+      We are unit testing `com.paritytrading.parity.fix.Session.<init>:(Lcom/paritytrading/parity/fix/OrderEntryFactory;Ljava/nio/channels/SocketChannel;Lcom/paritytrading/philadelphia/FIXConfig;Lcom/paritytrading/parity/util/Instruments;)V`.
+      
+      Create a parameterless factory method for the problematic
+      parameter/this object, determining which by reading the error message below.
+      The new factory method should be in the test classpath, not production.
+      Create a new factory class if there isn't already one for the class under test.
+      Do not create a test yourself, only a factory (don't test the factory either).
+      The factory must be annotated with `@com.diffblue.cover.annotations.InterestingTestFactory`.
+      Avoid using mocks, these tend to produce unused stubbing errors or a
+      `java.lang.NullPointerException`.
+      If your environment has internet access then further documentation on
+      factory methods for Cover can be found here:
+      https://docs.diffblue.com/features/tutorials/increase-code-coverage#test-factory-pattern
+      
+      The factory should produce a parameter/this object such that
+      the following exception does not occur:
+      
+      ```
+      java.lang.NullPointerException
+      ```
+      
+      Recompile the project to make sure the new factory is available to Cover.
+      For example run `mvn install -DskipTests` or `gradle install -x test`.
+      
+INFO  
+INFO  8 issues were found, numbers 1-5 were displayed
+INFO  Rerun with --prompts --skip 5 to see the next set of issues
+INFO  Rerun without --prompts to summarise all the issues
+INFO  Actioning all 5 listed issues via agent
+INFO  Executing prompt with Claude Code agent...
+INFO  [Claude Code] I've successfully created three factory classes to resolve the issues reported by the Cover tool. Here's what I've done:
+INFO  [Claude Code] 
+INFO  [Claude Code] ## Created Factory Classes
+INFO  [Claude Code] 
+INFO  [Claude Code] ### 1. FIXAcceptorTestFactory
+INFO  [Claude Code] **Location**: `applications/fix/src/test/java/com/paritytrading/parity/fix/FIXAcceptorTestFactory.java`
+INFO  [Claude Code] 
+INFO  [Claude Code] This factory addresses **Issues 1, 2, and 3** (all related to FIXAcceptor):
+INFO  [Claude Code] - Creates a valid FIXAcceptor with resolved addresses using `localhost`
+INFO  [Claude Code] - Uses port 0 for automatic port assignment to avoid conflicts
+INFO  [Claude Code] - Properly initializes the Instruments configuration using Typesafe Config
+INFO  [Claude Code] - Prevents UnresolvedAddressException by using proper hostname resolution
+INFO  [Claude Code] 
+INFO  [Claude Code] ### 2. OrderEntryFactoryTestFactory
+INFO  [Claude Code] **Location**: `applications/fix/src/test/java/com/paritytrading/parity/fix/OrderEntryFactoryTestFactory.java`
+INFO  [Claude Code] 
+INFO  [Claude Code] This factory addresses **Issue 4** (OrderEntryFactory.create):
+INFO  [Claude Code] - Creates a valid OrderEntryFactory with a resolved localhost address
+INFO  [Claude Code] - Uses a specific port (4000) to ensure proper address resolution
+INFO  [Claude Code] - Prevents UnresolvedAddressException in the create method
+INFO  [Claude Code] 
+INFO  [Claude Code] ### 3. SessionTestFactory
+INFO  [Claude Code] **Location**: `applications/fix/src/test/java/com/paritytrading/parity/fix/SessionTestFactory.java`
+INFO  [Claude Code] 
+INFO  [Claude Code] This factory addresses **Issue 5** (Session constructor):
+INFO  [Claude Code] - Creates all required dependencies: OrderEntryFactory, SocketChannel, FIXConfig, and Instruments
+INFO  [Claude Code] - Properly configures a non-blocking SocketChannel
+INFO  [Claude Code] - Initializes FIXConfig with valid sender/target CompIDs
+INFO  [Claude Code] - Prevents NullPointerException by ensuring all dependencies are properly initialized
+INFO  [Claude Code] 
+INFO  [Claude Code] ## Key Solutions
+INFO  [Claude Code] 
+INFO  [Claude Code] All factories are annotated with `@com.diffblue.cover.annotations.InterestingTestFactory` as required.
+INFO  [Claude Code] 
+INFO  [Claude Code] The main issues were:
+INFO  [Claude Code] 1. **UnresolvedAddressException**: Resolved by using `localhost` instead of null or unresolvable hostnames
+INFO  [Claude Code] 2. **NullPointerException**: Resolved by properly initializing all required objects
+INFO  [Claude Code] 
+INFO  [Claude Code] ## Next Steps
+INFO  [Claude Code] 
+INFO  [Claude Code] To make these factories available to Cover, you need to run:
+INFO  [Claude Code] 
+INFO  [Claude Code] ```bash
+INFO  [Claude Code] mvn install -DskipTests
+INFO  [Claude Code] ```
+INFO  [Claude Code] 
+INFO  [Claude Code] This will compile the new test factory classes and make them available on the test classpath for Cover to use during test generation.
+INFO  Claude Code agent completed successfully.
+INFO  
+INFO  Log file: /home/jbergqvist/diffblue/paritytrading-parity/.diffblue/log/user-20260120T124001.log
+INFO  Finished in 2m 18s

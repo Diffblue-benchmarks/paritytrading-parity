@@ -1,0 +1,82 @@
+INFO  Diffblue Cover 2026.01.01-SNAPSHOT-70877d3-local
+INFO  
+INFO  Command: issues
+INFO  Output a prioritized list of issues.
+INFO  
+INFO  Selected modules:
+INFO  - com.paritytrading.parity:parity-fix
+INFO  
+INFO  
+INFO  [1/1] Diagnosing issues for module: com.paritytrading.parity:parity-fix
+INFO  =======================================================================
+INFO  
+INFO  Detected Java version 1.8.0_472
+INFO  Selected build system: Maven
+INFO  Reading report file '/home/jbergqvist/diffblue/paritytrading-parity/applications/fix/.diffblue/reports/report.json'
+INFO  Copied report file to '/home/jbergqvist/diffblue/paritytrading-parity/applications/fix/.diffblue/reports/report-20260120T124521.json'
+INFO  
+INFO  R081: Exception in arrange section
+      
+INFO  To resolve the issue, use the following prompt with your AI assistant:
+      
+      Fix the following issue preventing test creation for the following affected methods:
+      com.paritytrading.parity.fix.FIXAcceptor.getServerChannel:()Ljava/nio/channels/ServerSocketChannel;
+      
+      Diffblue Cover was unable to construct an instance of the class under test using
+      com.paritytrading.parity.fix.FIXAcceptor.getServerChannel().
+      The arrange section threw
+      com.diffblue.cover.sandbox.execution.ForbiddenByPolicyException: Sandboxing policy violation
+      More information about the exception is provided in the support log.
+      See https://diff.blue/R081 for further troubleshooting of this issue.
+      
+INFO  
+INFO  R081: Exception in arrange section
+      
+INFO  To resolve the issue, use the following prompt with your AI assistant:
+      
+      Fix the following issue preventing test creation for the following affected methods:
+      com.paritytrading.parity.fix.Session.getFIX:()Lcom/paritytrading/philadelphia/FIXConnection;
+      com.paritytrading.parity.fix.Session.getOrderEntry:()Lcom/paritytrading/nassau/soupbintcp/SoupBinTCPClient;
+      
+      Diffblue Cover was unable to construct an instance of the class under test using
+      com.paritytrading.parity.fix.Session.getFIX().
+      The arrange section threw
+      com.diffblue.cover.sandbox.execution.ForbiddenByPolicyException: Sandboxing policy violation
+      More information about the exception is provided in the support log.
+      See https://diff.blue/R081 for further troubleshooting of this issue.
+      
+INFO  
+INFO  2 issues were found and displayed
+INFO  Rerun without --prompts to summarise all the issues
+INFO  Actioning all 2 listed issues via agent
+INFO  Executing prompt with Claude Code agent...
+INFO  [Claude Code] The Maven command requires approval. Let me explain what I've done and what needs to be tested:
+INFO  [Claude Code] 
+INFO  [Claude Code] ## Summary of Changes
+INFO  [Claude Code] 
+INFO  [Claude Code] I've updated the three test factory files to avoid sandboxing violations:
+INFO  [Claude Code] 
+INFO  [Claude Code] ### 1. **OrderEntryFactoryTestFactory.java** (applications/fix/src/test/java/com/paritytrading/parity/fix/OrderEntryFactoryTestFactory.java)
+INFO  [Claude Code] - **Issue**: Was opening and closing a ServerSocketChannel during factory creation
+INFO  [Claude Code] - **Fix**: Now simply creates an InetSocketAddress with a hardcoded IP (127.0.0.1) and port, avoiding any actual network operations
+INFO  [Claude Code] 
+INFO  [Claude Code] ### 2. **FIXAcceptorTestFactory.java** (applications/fix/src/test/java/com/paritytrading/parity/fix/FIXAcceptorTestFactory.java)
+INFO  [Claude Code] - **Issue**: Was calling `FIXAcceptor.open()` which opens and binds a ServerSocketChannel
+INFO  [Claude Code] - **Fix**: Now uses reflection to access the private constructor and passes a mocked ServerSocketChannel (using Mockito) instead of a real one
+INFO  [Claude Code] 
+INFO  [Claude Code] ### 3. **SessionTestFactory.java** (applications/fix/src/test/java/com/paritytrading/parity/fix/SessionTestFactory.java)
+INFO  [Claude Code] - **Issue**: The Session constructor calls `orderEntry.create()` which opens and connects a SocketChannel
+INFO  [Claude Code] - **Fix**: Created an anonymous subclass of OrderEntryFactory that overrides the `create()` method to return a mocked SoupBinTCPClient, and uses a mocked SocketChannel for the FIX connection
+INFO  [Claude Code] 
+INFO  [Claude Code] These changes ensure that no actual network I/O operations are performed during test object construction, which should resolve the sandboxing policy violations reported by Diffblue Cover.
+INFO  [Claude Code] 
+INFO  [Claude Code] To complete the task, you need to run:
+INFO  [Claude Code] ```bash
+INFO  [Claude Code] mvn install -DskipTests -pl applications/fix -am
+INFO  [Claude Code] ```
+INFO  [Claude Code] 
+INFO  [Claude Code] This will compile the updated test factories and install them so Diffblue Cover can use them during test generation.
+INFO  Claude Code agent completed successfully.
+INFO  
+INFO  Log file: /home/jbergqvist/diffblue/paritytrading-parity/.diffblue/log/user-20260120T125917.log
+INFO  Finished in 1m 59s

@@ -29,7 +29,7 @@ class OrderEntryFactoryDiffblueTest {
   })
   void testGettersAndSetters() {
     // Arrange
-    InetSocketAddress address = InetSocketAddress.createUnresolved("foo", 1);
+    InetSocketAddress address = InetSocketAddressTestFactory.createInetSocketAddress();
 
     // Act and Assert
     assertSame(address, new OrderEntryFactory(address).getAddress());
