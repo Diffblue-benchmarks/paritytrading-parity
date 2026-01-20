@@ -1,0 +1,71 @@
+INFO  Diffblue Cover 2025.12.02-74144f0-licensed
+INFO  
+INFO  Command: create
+INFO  Create tests for the specified package/class/method.
+INFO  
+INFO  Selected modules:
+INFO  - com.paritytrading.parity:parity-book-perf-test
+INFO  
+INFO  
+INFO  [1/1] Creating tests for module: com.paritytrading.parity:parity-book-perf-test
+INFO  ===============================================================================
+INFO  
+INFO  Detecting environment:
+INFO  ----------------------
+INFO  Detected Java version 1.8.0_472
+INFO  Selected build system: Maven
+INFO  Selected classpath from build system maven
+INFO  Selected test framework: JUnit Jupiter API
+INFO  Selected Java language compliance level: 1.8
+INFO  Selected test validation: enabled
+INFO  Prefixes for filtering classes/methods:
+INFO  - com.paritytrading.parity.book.perf
+INFO  - com.paritytrading.parity.book.perf.generated
+INFO  Gathering methods to test...
+INFO  Found 63 callable methods in 10 classes
+INFO  
+INFO  Creating tests:
+INFO  ---------------
+INFO   [1/10] com.paritytrading.parity.book.perf.MarketBenchmark
+INFO   [1/10]   Tests created: 7
+INFO   [2/10] com.paritytrading.parity.book.perf.generated.MarketBenchmark_addAndCancel_jmhTest
+INFO   [2/10]   Tests created: 1
+INFO   [3/10] com.paritytrading.parity.book.perf.generated.MarketBenchmark_addAndDelete_jmhTest
+INFO   [3/10]   Tests created: 1
+INFO   [4/10] com.paritytrading.parity.book.perf.generated.MarketBenchmark_addAndExecute_jmhTest
+INFO   [4/10]   Tests created: 1
+INFO   [5/10] com.paritytrading.parity.book.perf.generated.MarketBenchmark_addAndModify_jmhTest
+INFO   [5/10]   Tests created: 1
+INFO   [6/10] com.paritytrading.parity.book.perf.generated.MarketBenchmark_add_jmhTest
+INFO   [6/10]   Tests created: 1
+INFO   [7/10] com.paritytrading.parity.book.perf.generated.MarketBenchmark_jmhType
+INFO   [7/10]   Tests created: 1
+INFO   [8/10] com.paritytrading.parity.book.perf.generated.MarketBenchmark_jmhType_B1
+INFO   [8/10]   Tests created: 1
+INFO   [9/10] com.paritytrading.parity.book.perf.generated.MarketBenchmark_jmhType_B2
+INFO   [9/10]   Tests created: 1
+INFO  [10/10] com.paritytrading.parity.book.perf.generated.MarketBenchmark_jmhType_B3
+INFO  [10/10]   Tests created: 1
+INFO  
+INFO  Test creation summary for module: com.paritytrading.parity:parity-book-perf-test
+INFO  --------------------------------------------------------------------------------
+INFO  Total:                                              63 methods
+INFO  16 tests created for:                               18 methods
+INFO  
+INFO  No tests created for:                               45 methods
+INFO     45 R011: Sandboxing policy violation
+INFO  
+INFO  Running validation command.
+INFO  This can take a couple of minutes.
+INFO  All 16 created tests were successfully validated.
+INFO  Calculating coverage from Diffblue tests.
+INFO  JaCoCo report file created in /home/jbergqvist/diffblue/paritytrading-parity/tests/book-perf-test/.diffblue/reports/diffblue-tests-jacoco-report.xml
+INFO  Calculating coverage from manual tests.
+INFO  JaCoCo report file created in /home/jbergqvist/diffblue/paritytrading-parity/tests/book-perf-test/.diffblue/reports/manual-tests-jacoco-report.xml
+INFO  
+INFO  Diffblue tests cover 40 of 1637 lines to cover (2.4%)
+INFO  Manual tests cover 0 of 1637 lines to cover (0.0%)
+INFO  Writing JSON report to /home/jbergqvist/diffblue/paritytrading-parity/tests/book-perf-test/.diffblue/reports/report.json
+INFO  
+INFO  Log file: /home/jbergqvist/diffblue/paritytrading-parity/.diffblue/log/user-20260120T145334.log
+INFO  Finished in 1m 34s
