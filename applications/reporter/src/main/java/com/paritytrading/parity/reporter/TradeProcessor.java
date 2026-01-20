@@ -40,6 +40,21 @@ class TradeProcessor implements PMRListener {
         this.listener = listener;
     }
 
+    /** For testing purposes only */
+    public TradeListener getListener() {
+        return listener;
+    }
+
+    /** For testing purposes only */
+    public Map getOrders() {
+        return orders;
+    }
+
+    /** For testing purposes only */
+    public Trade getTrade() {
+        return trade;
+    }
+
     @Override
     public void version(PMR.Version message) {
         if (message.version != PMR.VERSION)

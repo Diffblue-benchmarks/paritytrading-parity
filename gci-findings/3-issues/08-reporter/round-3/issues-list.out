@@ -1,0 +1,26 @@
+INFO  Diffblue Cover 2026.01.01-SNAPSHOT-70877d3-local
+INFO  
+INFO  Command: issues
+INFO  Output a prioritized list of issues.
+INFO  
+INFO  Selected modules:
+INFO  - com.paritytrading.parity:parity-reporter
+INFO  
+INFO  
+INFO  [1/1] Diagnosing issues for module: com.paritytrading.parity:parity-reporter
+INFO  ============================================================================
+INFO  
+INFO  Detected Java version 1.8.0_472
+INFO  Selected build system: Maven
+INFO  Reading report file '/home/jbergqvist/diffblue/paritytrading-parity/applications/reporter/.diffblue/reports/report.json'
+INFO  Copied report file to '/home/jbergqvist/diffblue/paritytrading-parity/applications/reporter/.diffblue/reports/report-20260120T132706.json'
+INFO  
+INFO  R081: Exception in arrange section
+INFO  Issues: 1
+INFO  Affected methods: 4
+INFO  
+INFO  1 issues were found, rerun with --prompts to list with actionable advice
+INFO  Rerun with --prompts --limit 10 --skip 10 to restrict which issues are displayed
+INFO  
+INFO  Log file: /home/jbergqvist/diffblue/paritytrading-parity/.diffblue/log/user-20260120T132817.log
+INFO  Finished in 3s

@@ -1,0 +1,72 @@
+INFO  Diffblue Cover 2025.12.02-74144f0-licensed
+INFO  
+INFO  Command: create
+INFO  Create tests for the specified package/class/method.
+INFO  
+INFO  Selected modules:
+INFO  - com.paritytrading.parity:parity-reporter
+INFO  
+INFO  
+INFO  [1/1] Creating tests for module: com.paritytrading.parity:parity-reporter
+INFO  =========================================================================
+INFO  
+INFO  Detecting environment:
+INFO  ----------------------
+INFO  Detected Java version 1.8.0_472
+INFO  Selected build system: Maven
+INFO  Selected classpath from build system maven
+INFO  Selected test framework: JUnit Jupiter API
+INFO  Selected Java language compliance level: 1.8
+INFO  Selected test validation: enabled
+INFO  Prefixes for filtering classes/methods:
+INFO  - com.paritytrading.parity.reporter
+INFO  Gathering methods to test...
+INFO  Found 17 callable methods in 6 classes
+INFO  
+INFO  Creating tests:
+INFO  ---------------
+INFO  [1/6] com.paritytrading.parity.reporter.DisplayFormat
+INFO  [1/6]   Tests created: 2
+INFO  [2/6] com.paritytrading.parity.reporter.TSVFormat
+INFO  [2/6]   Tests created: 2
+INFO  [3/6] com.paritytrading.parity.reporter.Trade
+INFO  [3/6]   Tests created: 1
+INFO  [4/6] com.paritytrading.parity.reporter.TradeListener
+INFO  [4/6]   Tests created: 1
+INFO  [5/6] com.paritytrading.parity.reporter.TradeProcessor
+INFO  [5/6]   Tests created: 5
+INFO  [6/6] com.paritytrading.parity.reporter.TradeReporter
+INFO  [6/6]   Tests created: 0
+INFO  
+INFO  Test creation summary for module: com.paritytrading.parity:parity-reporter
+INFO  --------------------------------------------------------------------------
+INFO  Total:                                              17 methods
+INFO  11 tests created for:                                9 methods
+INFO  
+INFO  Tested indirectly via other methods:                 1 method
+INFO      1 T005: Trivial constructor
+INFO  Not unit-testable:                                   1 method
+INFO      1 T006: Main method
+INFO  No tests created for:                                6 methods
+INFO      4 R081: Exception in arrange section
+INFO  
+INFO  Running validation command.
+INFO  This can take a couple of minutes.
+INFO  Test execution failed, analyzing...
+INFO  1 individual tests did not pass and were removed.
+INFO    
+INFO  Number of tests discarded during validation since they didn't compile, run or pass
+INFO    1 for com.paritytrading.parity.reporter.TSVFormat.trade
+INFO  To skip discarding these tests please re-run DCover with --skip-test-validation
+INFO  Test validation was able to validate 10 out of 11 complete tests, the remainder were discarded.
+INFO  Calculating coverage from Diffblue tests.
+INFO  JaCoCo report file created in /home/jbergqvist/diffblue/paritytrading-parity/applications/reporter/.diffblue/reports/diffblue-tests-jacoco-report.xml
+INFO  Calculating coverage from manual tests.
+INFO  JaCoCo report file created in /home/jbergqvist/diffblue/paritytrading-parity/applications/reporter/.diffblue/reports/manual-tests-jacoco-report.xml
+INFO  
+INFO  Diffblue tests cover 74 of 125 lines to cover (59.2%)
+INFO  Manual tests cover 0 of 125 lines to cover (0.0%)
+INFO  Writing JSON report to /home/jbergqvist/diffblue/paritytrading-parity/applications/reporter/.diffblue/reports/report.json
+INFO  
+INFO  Log file: /home/jbergqvist/diffblue/paritytrading-parity/.diffblue/log/user-20260120T132705.log
+INFO  Finished in 47s
