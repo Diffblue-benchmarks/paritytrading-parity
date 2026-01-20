@@ -1,0 +1,60 @@
+INFO  Diffblue Cover 2025.12.02-74144f0-licensed
+INFO  
+INFO  Command: create
+INFO  Create tests for the specified package/class/method.
+INFO  
+INFO  Selected modules:
+INFO  - com.paritytrading.parity:parity-file
+INFO  
+INFO  
+INFO  [1/1] Creating tests for module: com.paritytrading.parity:parity-file
+INFO  =====================================================================
+INFO  
+INFO  Detecting environment:
+INFO  ----------------------
+INFO  Detected Java version 1.8.0_472
+INFO  Selected build system: Maven
+INFO  Selected classpath from build system maven
+INFO  Selected test framework: JUnit Jupiter API
+INFO  Selected Java language compliance level: 1.8
+INFO  Selected test validation: enabled
+INFO  Prefixes for filtering classes/methods:
+INFO  - com.paritytrading.parity.file.taq
+INFO  Gathering methods to test...
+INFO  Found 24 callable methods in 5 classes
+INFO  
+INFO  Creating tests:
+INFO  ---------------
+INFO  [1/5] com.paritytrading.parity.file.taq.TAQ$Quote
+INFO  [1/5]   Tests created: 1
+INFO  [2/5] com.paritytrading.parity.file.taq.TAQ$Trade
+INFO  [2/5]   Tests created: 1
+INFO  [3/5] com.paritytrading.parity.file.taq.TAQConfig
+INFO  [3/5]   Tests created: 3
+INFO  [4/5] com.paritytrading.parity.file.taq.TAQConfig$Builder
+INFO  [4/5]   Tests created: 6
+INFO  [5/5] com.paritytrading.parity.file.taq.TAQWriter
+INFO  [5/5]   Tests created: 6
+INFO  
+INFO  Test creation summary for module: com.paritytrading.parity:parity-file
+INFO  ----------------------------------------------------------------------
+INFO  Total:                                              24 methods
+INFO  17 tests created for:                               15 methods
+INFO  
+INFO  No tests created for:                                9 methods
+INFO      6 R020: Temporary files were created but not deleted
+INFO  
+INFO  Running validation command.
+INFO  This can take a couple of minutes.
+INFO  All 17 created tests were successfully validated.
+INFO  Calculating coverage from Diffblue tests.
+INFO  JaCoCo report file created in /home/jbergqvist/diffblue/paritytrading-parity/libraries/file/.diffblue/reports/diffblue-tests-jacoco-report.xml
+INFO  Calculating coverage from manual tests.
+INFO  JaCoCo report file created in /home/jbergqvist/diffblue/paritytrading-parity/libraries/file/.diffblue/reports/manual-tests-jacoco-report.xml
+INFO  
+INFO  Diffblue tests cover 108 of 117 lines to cover (92.3%)
+INFO  Manual tests cover 103 of 117 lines to cover (88.0%)
+INFO  Writing JSON report to /home/jbergqvist/diffblue/paritytrading-parity/libraries/file/.diffblue/reports/report.json
+INFO  
+INFO  Log file: /home/jbergqvist/diffblue/paritytrading-parity/.diffblue/log/user-20260120T102105.log
+INFO  Finished in 44s

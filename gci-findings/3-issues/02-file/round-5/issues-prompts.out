@@ -1,0 +1,77 @@
+INFO  Diffblue Cover 2026.01.01-SNAPSHOT-acf7615-local
+INFO  
+INFO  Command: issues
+INFO  Output a prioritized list of issues.
+INFO  
+INFO  Selected modules:
+INFO  - com.paritytrading.parity:parity-file
+INFO  
+INFO  
+INFO  [1/1] Diagnosing issues for module: com.paritytrading.parity:parity-file
+INFO  ========================================================================
+INFO  
+INFO  Detected Java version 1.8.0_472
+INFO  Selected build system: Maven
+INFO  Selected classpath from build system maven
+INFO  Reading report file '/home/jbergqvist/diffblue/paritytrading-parity/libraries/file/.diffblue/reports/report.json'
+INFO  Copied report file to '/home/jbergqvist/diffblue/paritytrading-parity/libraries/file/.diffblue/reports/report-20260120T103915.json'
+INFO  
+INFO  R020: Temporary files were created but not deleted
+      The method under test created the following temporary files without deleting
+      them:
+      - '/tmp/test.txt'
+      Please ensure that temporary files are deleted in the method under test.
+      See https://diff.blue/R020
+      
+INFO  Affected methods:
+      com.paritytrading.parity.file.taq.TAQWriter.getBuffer:()Ljava/lang/StringBuffer;
+      com.paritytrading.parity.file.taq.TAQWriter.getConfig:()Lcom/paritytrading/parity/file/taq/TAQConfig;
+      com.paritytrading.parity.file.taq.TAQWriter.getPosition:()Ljava/text/FieldPosition;
+      com.paritytrading.parity.file.taq.TAQWriter.getSink:()Ljava/io/PrintWriter;
+      com.paritytrading.parity.file.taq.TAQWriter.<init>:(Ljava/io/File;)V
+      com.paritytrading.parity.file.taq.TAQWriter.<init>:(Ljava/io/File;Lcom/paritytrading/parity/file/taq/TAQConfig;)V
+      
+INFO  To resolve the issue, use the following prompt with your AI assistant:
+      
+      Fix the following issue preventing test creation for:
+      com.paritytrading.parity.file.taq.TAQWriter.getBuffer:()Ljava/lang/StringBuffer;
+      com.paritytrading.parity.file.taq.TAQWriter.getConfig:()Lcom/paritytrading/parity/file/taq/TAQConfig;
+      com.paritytrading.parity.file.taq.TAQWriter.getPosition:()Ljava/text/FieldPosition;
+      com.paritytrading.parity.file.taq.TAQWriter.getSink:()Ljava/io/PrintWriter;
+      com.paritytrading.parity.file.taq.TAQWriter.<init>:(Ljava/io/File;)V
+      com.paritytrading.parity.file.taq.TAQWriter.<init>:(Ljava/io/File;Lcom/paritytrading/parity/file/taq/TAQConfig;)V
+      
+      The method under test created the following temporary files without deleting
+      them:
+      - '/tmp/test.txt'
+      Please ensure that temporary files are deleted in the method under test.
+      See https://diff.blue/R020
+      
+INFO  
+INFO  R020: Temporary files were created but not deleted
+      The method under test created the following temporary files without deleting
+      them:
+      - '/tmp/taq-test-1055076983424009624.txt'
+      Please ensure that temporary files are deleted in the method under test.
+      See https://diff.blue/R020
+      
+INFO  Affected methods:
+      com.paritytrading.parity.file.taq.TAQWriter.flush:()V
+      
+INFO  To resolve the issue, use the following prompt with your AI assistant:
+      
+      Fix the following issue preventing test creation for:
+      com.paritytrading.parity.file.taq.TAQWriter.flush:()V
+      
+      The method under test created the following temporary files without deleting
+      them:
+      - '/tmp/taq-test-1055076983424009624.txt'
+      Please ensure that temporary files are deleted in the method under test.
+      See https://diff.blue/R020
+      
+INFO  
+INFO  2 issues were found and displayed
+INFO  Rerun without --prompts to summarise all the issues
+INFO  
+INFO  Log file: /home/jbergqvist/diffblue/paritytrading-parity/.diffblue/log/user-20260120T104105.log
+INFO  Finished in 3s

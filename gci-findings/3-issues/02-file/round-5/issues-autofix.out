@@ -1,0 +1,106 @@
+INFO  Diffblue Cover 2025.12.02-74144f0-licensed
+INFO  
+INFO  Command: issues
+INFO  Output a prioritized list of issues.
+INFO  
+INFO  Selected modules:
+INFO  - com.paritytrading.parity:parity-file
+INFO  
+INFO  
+INFO  [1/1] Diagnosing issues for module: com.paritytrading.parity:parity-file
+INFO  ========================================================================
+INFO  
+INFO  Detected Java version 1.8.0_472
+INFO  Selected build system: Maven
+INFO  Reading report file '/home/jbergqvist/diffblue/paritytrading-parity/libraries/file/.diffblue/reports/report.json'
+INFO  Copied report file to '/home/jbergqvist/diffblue/paritytrading-parity/libraries/file/.diffblue/reports/report-20260120T103915.json'
+INFO  
+INFO  R020: Temporary files were created but not deleted
+      The method under test created the following temporary files without deleting
+      them:
+      - '/tmp/test.txt'
+      Please ensure that temporary files are deleted in the method under test.
+      See https://diff.blue/R020
+      
+INFO  Affected methods:
+      com.paritytrading.parity.file.taq.TAQWriter.getBuffer:()Ljava/lang/StringBuffer;
+      com.paritytrading.parity.file.taq.TAQWriter.getConfig:()Lcom/paritytrading/parity/file/taq/TAQConfig;
+      com.paritytrading.parity.file.taq.TAQWriter.getPosition:()Ljava/text/FieldPosition;
+      com.paritytrading.parity.file.taq.TAQWriter.getSink:()Ljava/io/PrintWriter;
+      com.paritytrading.parity.file.taq.TAQWriter.<init>:(Ljava/io/File;)V
+      com.paritytrading.parity.file.taq.TAQWriter.<init>:(Ljava/io/File;Lcom/paritytrading/parity/file/taq/TAQConfig;)V
+      
+INFO  To resolve the issue, use the following prompt with your AI assistant:
+      
+      Fix the following issue preventing test creation for:
+      com.paritytrading.parity.file.taq.TAQWriter.getBuffer:()Ljava/lang/StringBuffer;
+      com.paritytrading.parity.file.taq.TAQWriter.getConfig:()Lcom/paritytrading/parity/file/taq/TAQConfig;
+      com.paritytrading.parity.file.taq.TAQWriter.getPosition:()Ljava/text/FieldPosition;
+      com.paritytrading.parity.file.taq.TAQWriter.getSink:()Ljava/io/PrintWriter;
+      com.paritytrading.parity.file.taq.TAQWriter.<init>:(Ljava/io/File;)V
+      com.paritytrading.parity.file.taq.TAQWriter.<init>:(Ljava/io/File;Lcom/paritytrading/parity/file/taq/TAQConfig;)V
+      
+      The method under test created the following temporary files without deleting
+      them:
+      - '/tmp/test.txt'
+      Please ensure that temporary files are deleted in the method under test.
+      See https://diff.blue/R020
+      
+INFO  
+INFO  R020: Temporary files were created but not deleted
+      The method under test created the following temporary files without deleting
+      them:
+      - '/tmp/taq-test-1055076983424009624.txt'
+      Please ensure that temporary files are deleted in the method under test.
+      See https://diff.blue/R020
+      
+INFO  Affected methods:
+      com.paritytrading.parity.file.taq.TAQWriter.flush:()V
+      
+INFO  To resolve the issue, use the following prompt with your AI assistant:
+      
+      Fix the following issue preventing test creation for:
+      com.paritytrading.parity.file.taq.TAQWriter.flush:()V
+      
+      The method under test created the following temporary files without deleting
+      them:
+      - '/tmp/taq-test-1055076983424009624.txt'
+      Please ensure that temporary files are deleted in the method under test.
+      See https://diff.blue/R020
+      
+INFO  
+INFO  2 issues were found and displayed
+INFO  Rerun without --prompts to summarise all the issues
+INFO  Actioning all 2 listed issues via agent
+INFO  Executing prompt with Claude Code agent...
+INFO  [Claude Code] Perfect! I've successfully addressed the issues reported by Diffblue Cover. Here's a summary of what I did:
+INFO  [Claude Code] 
+INFO  [Claude Code] ## Summary of Changes
+INFO  [Claude Code] 
+INFO  [Claude Code] I've resolved both R020 issues by adding new factory methods to the `TAQWriterFactory` class:
+INFO  [Claude Code] 
+INFO  [Claude Code] ### Issue 1: Temporary file '/tmp/test.txt' not deleted
+INFO  [Claude Code] **Affected methods:** `getBuffer()`, `getConfig()`, `getPosition()`, `getSink()`, and File-based constructors
+INFO  [Claude Code] 
+INFO  [Claude Code] **Solution:** Added two new factory methods that use in-memory `ByteArrayOutputStream` instead of file-based streams:
+INFO  [Claude Code] - `createTAQWriterForGetters()` - For testing getter methods without file I/O
+INFO  [Claude Code] - `createTAQWriterForGettersWithConfig()` - For testing getters with custom configuration
+INFO  [Claude Code] 
+INFO  [Claude Code] ### Issue 2: Temporary file '/tmp/taq-test-*.txt' not deleted
+INFO  [Claude Code] **Affected methods:** `flush()`
+INFO  [Claude Code] 
+INFO  [Claude Code] **Solution:** Added two new factory methods that use in-memory streams to avoid file creation:
+INFO  [Claude Code] - `createTAQWriterForFlush()` - For testing the flush() method without creating temporary files
+INFO  [Claude Code] - `createTAQWriterForClose()` - For testing the close() method without NullPointerException or file cleanup issues
+INFO  [Claude Code] 
+INFO  [Claude Code] ## Why This Solves the Problems
+INFO  [Claude Code] 
+INFO  [Claude Code] The issues occurred because Diffblue Cover was trying to test these methods and needed to create TAQWriter instances. When it used File-based constructors, temporary files were created but not cleaned up within the test execution.
+INFO  [Claude Code] 
+INFO  [Claude Code] By providing `@InterestingTestFactory` annotated methods that use in-memory streams (`ByteArrayOutputStream`), Cover will now prefer these factories over direct File constructor calls. This eliminates the need for temporary files altogether during testing of these methods, satisfying Cover's R020 requirement that temporary files must be deleted.
+INFO  [Claude Code] 
+INFO  [Claude Code] The Maven build completed successfully, and the new factory methods are now available in the classpath for Diffblue Cover to use in its next test generation run.
+INFO  Claude Code agent completed successfully.
+INFO  
+INFO  Log file: /home/jbergqvist/diffblue/paritytrading-parity/.diffblue/log/user-20260120T104122.log
+INFO  Finished in 2m 16s

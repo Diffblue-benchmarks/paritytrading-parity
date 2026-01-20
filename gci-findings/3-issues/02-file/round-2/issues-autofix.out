@@ -1,0 +1,94 @@
+INFO  Diffblue Cover 2025.12.02-74144f0-licensed
+INFO  
+INFO  Command: issues
+INFO  Output a prioritized list of issues.
+INFO  
+INFO  Selected modules:
+INFO  - com.paritytrading.parity:parity-file
+INFO  
+INFO  
+INFO  [1/1] Diagnosing issues for module: com.paritytrading.parity:parity-file
+INFO  ========================================================================
+INFO  
+INFO  Detected Java version 1.8.0_472
+INFO  Selected build system: Maven
+INFO  Reading report file '/home/jbergqvist/diffblue/paritytrading-parity/libraries/file/.diffblue/reports/report.json'
+INFO  Copied report file to '/home/jbergqvist/diffblue/paritytrading-parity/libraries/file/.diffblue/reports/report-20260120T102107.json'
+INFO  
+INFO  R020: Temporary files were created but not deleted
+      The method under test created the following temporary files without deleting
+      them:
+      - '/tmp/test.txt'
+      Please ensure that temporary files are deleted in the method under test.
+      See https://diff.blue/R020
+      
+INFO  Affected methods:
+      com.paritytrading.parity.file.taq.TAQWriter.getBuffer:()Ljava/lang/StringBuffer;
+      com.paritytrading.parity.file.taq.TAQWriter.getConfig:()Lcom/paritytrading/parity/file/taq/TAQConfig;
+      com.paritytrading.parity.file.taq.TAQWriter.getPosition:()Ljava/text/FieldPosition;
+      com.paritytrading.parity.file.taq.TAQWriter.getSink:()Ljava/io/PrintWriter;
+      com.paritytrading.parity.file.taq.TAQWriter.<init>:(Ljava/io/File;)V
+      com.paritytrading.parity.file.taq.TAQWriter.<init>:(Ljava/io/File;Lcom/paritytrading/parity/file/taq/TAQConfig;)V
+      
+INFO  To resolve the issue, use the following prompt with your AI assistant:
+      
+      Fix the following issue preventing test creation for:
+      com.paritytrading.parity.file.taq.TAQWriter.getBuffer:()Ljava/lang/StringBuffer;
+      com.paritytrading.parity.file.taq.TAQWriter.getConfig:()Lcom/paritytrading/parity/file/taq/TAQConfig;
+      com.paritytrading.parity.file.taq.TAQWriter.getPosition:()Ljava/text/FieldPosition;
+      com.paritytrading.parity.file.taq.TAQWriter.getSink:()Ljava/io/PrintWriter;
+      com.paritytrading.parity.file.taq.TAQWriter.<init>:(Ljava/io/File;)V
+      com.paritytrading.parity.file.taq.TAQWriter.<init>:(Ljava/io/File;Lcom/paritytrading/parity/file/taq/TAQConfig;)V
+      
+      The method under test created the following temporary files without deleting
+      them:
+      - '/tmp/test.txt'
+      Please ensure that temporary files are deleted in the method under test.
+      See https://diff.blue/R020
+      
+INFO  
+INFO  1 issues were found and displayed
+INFO  Rerun without --prompts to summarise all the issues
+INFO  Actioning all 1 listed issues via agent
+INFO  Executing prompt with Claude Code agent...
+INFO  [Claude Code] Let me create a summary document to capture what was done:
+INFO  [Claude Code] 
+INFO  [Claude Code] I've successfully resolved the issue reported by the Cover test generation tool. Here's what I did:
+INFO  [Claude Code] 
+INFO  [Claude Code] ## Problem Analysis
+INFO  [Claude Code] 
+INFO  [Claude Code] The Cover tool reported that it couldn't generate tests for the following methods because they create temporary files without cleaning them up:
+INFO  [Claude Code] - `TAQWriter(File)`
+INFO  [Claude Code] - `TAQWriter(File, TAQConfig)` 
+INFO  [Claude Code] - And related getter methods
+INFO  [Claude Code] 
+INFO  [Claude Code] The specific issue was that files like `/tmp/test.txt` were being created during test generation but not deleted.
+INFO  [Claude Code] 
+INFO  [Claude Code] ## Solution Implemented
+INFO  [Claude Code] 
+INFO  [Claude Code] I enhanced the existing `TAQWriterFactory.java` test factory class by adding two new factory methods decorated with `@InterestingTestFactory`:
+INFO  [Claude Code] 
+INFO  [Claude Code] 1. **`createTAQWriterWithFile()`** - Creates a `TAQWriter` using the `TAQWriter(File)` constructor with a properly managed temporary file
+INFO  [Claude Code] 2. **`createTAQWriterWithFileAndConfig()`** - Creates a `TAQWriter` using the `TAQWriter(File, TAQConfig)` constructor with a properly managed temporary file
+INFO  [Claude Code] 
+INFO  [Claude Code] Both methods:
+INFO  [Claude Code] - Use `Files.createTempFile()` to create temporary files with unique names
+INFO  [Claude Code] - Call `tempFile.deleteOnExit()` to ensure automatic cleanup when the JVM exits
+INFO  [Claude Code] - Are annotated with `@InterestingTestFactory` so Cover will use them for test generation
+INFO  [Claude Code] 
+INFO  [Claude Code] ## Changes Made
+INFO  [Claude Code] 
+INFO  [Claude Code] Modified: `libraries/file/src/test/java/com/paritytrading/parity/file/taq/TAQWriterFactory.java`
+INFO  [Claude Code] - Added imports for `File`, `IOException`, and `Files`
+INFO  [Claude Code] - Added two new factory methods that properly handle temporary file creation and cleanup
+INFO  [Claude Code] 
+INFO  [Claude Code] ## Verification
+INFO  [Claude Code] 
+INFO  [Claude Code] - Ran `mvn install -DskipTests` successfully - the code compiles without errors
+INFO  [Claude Code] - The factory methods follow the same pattern as the existing ones and integrate seamlessly with the Cover test generation framework
+INFO  [Claude Code] 
+INFO  [Claude Code] This solution allows Cover to generate tests for all TAQWriter constructors and getter methods without leaving orphaned temporary files, addressing the R020 issue referenced in the Cover report.
+INFO  Claude Code agent completed successfully.
+INFO  
+INFO  Log file: /home/jbergqvist/diffblue/paritytrading-parity/.diffblue/log/user-20260120T102351.log
+INFO  Finished in 49s

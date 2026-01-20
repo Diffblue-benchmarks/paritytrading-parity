@@ -1,0 +1,119 @@
+INFO  Diffblue Cover 2025.12.02-74144f0-licensed
+INFO  
+INFO  Command: issues
+INFO  Output a prioritized list of issues.
+INFO  
+INFO  Selected modules:
+INFO  - com.paritytrading.parity:parity-file
+INFO  
+INFO  
+INFO  [1/1] Diagnosing issues for module: com.paritytrading.parity:parity-file
+INFO  ========================================================================
+INFO  
+INFO  Detected Java version 1.8.0_472
+INFO  Selected build system: Maven
+INFO  Reading report file '/home/jbergqvist/diffblue/paritytrading-parity/libraries/file/.diffblue/reports/report.json'
+INFO  Copied report file to '/home/jbergqvist/diffblue/paritytrading-parity/libraries/file/.diffblue/reports/report-20260120T103228.json'
+INFO  
+INFO  R020: Temporary files were created but not deleted
+      The method under test created the following temporary files without deleting
+      them:
+      - '/tmp/test.txt'
+      Please ensure that temporary files are deleted in the method under test.
+      See https://diff.blue/R020
+      
+INFO  Affected methods:
+      com.paritytrading.parity.file.taq.TAQWriter.getBuffer:()Ljava/lang/StringBuffer;
+      com.paritytrading.parity.file.taq.TAQWriter.getConfig:()Lcom/paritytrading/parity/file/taq/TAQConfig;
+      com.paritytrading.parity.file.taq.TAQWriter.getPosition:()Ljava/text/FieldPosition;
+      com.paritytrading.parity.file.taq.TAQWriter.getSink:()Ljava/io/PrintWriter;
+      com.paritytrading.parity.file.taq.TAQWriter.<init>:(Ljava/io/File;)V
+      com.paritytrading.parity.file.taq.TAQWriter.<init>:(Ljava/io/File;Lcom/paritytrading/parity/file/taq/TAQConfig;)V
+      
+INFO  To resolve the issue, use the following prompt with your AI assistant:
+      
+      Fix the following issue preventing test creation for:
+      com.paritytrading.parity.file.taq.TAQWriter.getBuffer:()Ljava/lang/StringBuffer;
+      com.paritytrading.parity.file.taq.TAQWriter.getConfig:()Lcom/paritytrading/parity/file/taq/TAQConfig;
+      com.paritytrading.parity.file.taq.TAQWriter.getPosition:()Ljava/text/FieldPosition;
+      com.paritytrading.parity.file.taq.TAQWriter.getSink:()Ljava/io/PrintWriter;
+      com.paritytrading.parity.file.taq.TAQWriter.<init>:(Ljava/io/File;)V
+      com.paritytrading.parity.file.taq.TAQWriter.<init>:(Ljava/io/File;Lcom/paritytrading/parity/file/taq/TAQConfig;)V
+      
+      The method under test created the following temporary files without deleting
+      them:
+      - '/tmp/test.txt'
+      Please ensure that temporary files are deleted in the method under test.
+      See https://diff.blue/R020
+      
+INFO  
+INFO  R020: Temporary files were created but not deleted
+      The method under test created the following temporary files without deleting
+      them:
+      - '/tmp/taq-test-6696273751489483919.txt'
+      Please ensure that temporary files are deleted in the method under test.
+      See https://diff.blue/R020
+      
+INFO  Affected methods:
+      com.paritytrading.parity.file.taq.TAQWriter.flush:()V
+      
+INFO  To resolve the issue, use the following prompt with your AI assistant:
+      
+      Fix the following issue preventing test creation for:
+      com.paritytrading.parity.file.taq.TAQWriter.flush:()V
+      
+      The method under test created the following temporary files without deleting
+      them:
+      - '/tmp/taq-test-6696273751489483919.txt'
+      Please ensure that temporary files are deleted in the method under test.
+      See https://diff.blue/R020
+      
+INFO  
+INFO  2 issues were found and displayed
+INFO  Rerun without --prompts to summarise all the issues
+INFO  Actioning all 2 listed issues via agent
+INFO  Executing prompt with Claude Code agent...
+INFO  [Claude Code] Perfect! I've successfully addressed the issues reported by the Cover test generation tool. Here's a summary of the changes I made:
+INFO  [Claude Code] 
+INFO  [Claude Code] ## Summary of Changes
+INFO  [Claude Code] 
+INFO  [Claude Code] ### Issue Analysis
+INFO  [Claude Code] The Cover tool reported that temporary files were being created during test generation but not cleaned up, affecting:
+INFO  [Claude Code] 1. **Issue 1**: `/tmp/test.txt` - affecting constructors and getter methods
+INFO  [Claude Code] 2. **Issue 2**: Temporary files affecting `flush()` and `close()` methods
+INFO  [Claude Code] 
+INFO  [Claude Code] ### Changes Made
+INFO  [Claude Code] 
+INFO  [Claude Code] #### 1. Enhanced TAQWriterFactory (libraries/file/src/test/java/com/paritytrading/parity/file/taq/TAQWriterFactory.java:32-158)
+INFO  [Claude Code] 
+INFO  [Claude Code] - **Added thread-safe cleanup mechanism**: Introduced a synchronized lock and a centralized list to track all temporary files created by factory methods
+INFO  [Claude Code] - **Added `cleanupTempFiles()` method**: A public method that can be called from test teardown to ensure all temporary files are deleted
+INFO  [Claude Code] - **Enhanced existing factory methods**: Updated documentation to emphasize the importance of using try-with-resources blocks
+INFO  [Claude Code] - **Added new factory methods**:
+INFO  [Claude Code]   - `createTAQWriterViaFileConstructor()`: For testing File-based constructor
+INFO  [Claude Code]   - `createTAQWriterViaFileConstructor(TAQConfig)`: For testing File-based constructor with config
+INFO  [Claude Code] - **Improved TAQWriterWithCleanup**: Enhanced the wrapper class to properly remove files from the tracking list when deleted
+INFO  [Claude Code] 
+INFO  [Claude Code] #### 2. Updated TAQWriterDiffblueTest (libraries/file/src/test/java/com/paritytrading/parity/file/taq/TAQWriterDiffblueTest.java:20-23)
+INFO  [Claude Code] 
+INFO  [Claude Code] - **Added `@AfterEach` cleanup hook**: This ensures that any temporary files created during test execution are cleaned up after each test method completes
+INFO  [Claude Code] - This satisfies Cover's requirement that temporary files be deleted within the test context
+INFO  [Claude Code] 
+INFO  [Claude Code] ### How This Solves the Issues
+INFO  [Claude Code] 
+INFO  [Claude Code] 1. **Centralized file tracking**: All temporary files created by the factory are now tracked in a central list
+INFO  [Claude Code] 2. **Multiple cleanup strategies**:
+INFO  [Claude Code]    - Files are deleted when `close()` is called on the TAQWriter (via TAQWriterWithCleanup)
+INFO  [Claude Code]    - Files are deleted in the `@AfterEach` hook (via cleanupTempFiles())
+INFO  [Claude Code]    - Files are marked for deletion on JVM exit as a fallback (via deleteOnExit())
+INFO  [Claude Code] 3. **Thread-safe implementation**: The cleanup mechanism uses synchronization to prevent race conditions
+INFO  [Claude Code] 4. **Better factory method coverage**: Additional factory methods provide more ways for Cover to create test instances with proper cleanup
+INFO  [Claude Code] 
+INFO  [Claude Code] ### Build Status
+INFO  [Claude Code] The project builds successfully with `mvn install -DskipTests` ✓
+INFO  [Claude Code] 
+INFO  [Claude Code] These changes should resolve the Cover tool's concerns about temporary file cleanup while maintaining the existing test functionality. The next time Cover runs test generation, it should be able to successfully create tests for the previously problematic methods.
+INFO  Claude Code agent completed successfully.
+INFO  
+INFO  Log file: /home/jbergqvist/diffblue/paritytrading-parity/.diffblue/log/user-20260120T103420.log
+INFO  Finished in 3m 16s

@@ -9,7 +9,6 @@ import com.paritytrading.parity.file.taq.TAQ.Quote;
 import com.paritytrading.parity.file.taq.TAQ.Trade;
 import java.io.ByteArrayOutputStream;
 import java.io.OutputStream;
-import java.nio.file.Paths;
 import java.text.FieldPosition;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
@@ -70,22 +69,20 @@ class TAQWriterDiffblueTest {
    * Test {@link TAQWriter#write(Quote)} with {@code Quote}.
    *
    * <ul>
-   *   <li>Then {@link TAQWriter#TAQWriter(OutputStream)} with out is {@link
-   *       ByteArrayOutputStream#ByteArrayOutputStream()} Buffer toString is {@code 10}.
+   *   <li>Then createTAQWriterWithConfig Buffer toString is {@code 10}.
    * </ul>
    *
    * <p>Method under test: {@link TAQWriter#write(Quote)}
    */
   @Test
   @DisplayName(
-      "Test write(Quote) with 'Quote'; then TAQWriter(OutputStream) with out is ByteArrayOutputStream() Buffer toString is '10'")
+      "Test write(Quote) with 'Quote'; then createTAQWriterWithConfig Buffer toString is '10'")
   @Tag("ContributionFromDiffblue")
   @ManagedByDiffblue
   @MethodsUnderTest({"void TAQWriter.write(Quote)"})
-  void testWriteWithQuote_thenTAQWriterWithOutIsByteArrayOutputStreamBufferToStringIs10() {
+  void testWriteWithQuote_thenCreateTAQWriterWithConfigBufferToStringIs10() {
     // Arrange
-    Paths.get(System.getProperty("java.io.tmpdir"), "test.txt").toFile();
-    TAQWriter taqWriter = new TAQWriter(new ByteArrayOutputStream());
+    TAQWriter createTAQWriterWithConfigResult = TAQWriterFactory.createTAQWriterWithConfig();
     Quote resultRecord = new Quote();
     resultRecord.askPrice = 10.0d;
     resultRecord.askSize = 10.0d;
@@ -96,33 +93,31 @@ class TAQWriterDiffblueTest {
     resultRecord.timestampMillis = 10L;
 
     // Act
-    taqWriter.write(resultRecord);
+    createTAQWriterWithConfigResult.write(resultRecord);
 
     // Assert
-    assertEquals("10", taqWriter.getBuffer().toString());
-    assertEquals(2, taqWriter.getPosition().getEndIndex());
+    assertEquals("10", createTAQWriterWithConfigResult.getBuffer().toString());
+    assertEquals(2, createTAQWriterWithConfigResult.getPosition().getEndIndex());
   }
 
   /**
    * Test {@link TAQWriter#write(Quote)} with {@code Quote}.
    *
    * <ul>
-   *   <li>Then {@link TAQWriter#TAQWriter(OutputStream)} with out is {@link
-   *       ByteArrayOutputStream#ByteArrayOutputStream()} Buffer toString is {@code 10}.
+   *   <li>Then createTAQWriterWithConfig Buffer toString is {@code 10}.
    * </ul>
    *
    * <p>Method under test: {@link TAQWriter#write(Quote)}
    */
   @Test
   @DisplayName(
-      "Test write(Quote) with 'Quote'; then TAQWriter(OutputStream) with out is ByteArrayOutputStream() Buffer toString is '10'")
+      "Test write(Quote) with 'Quote'; then createTAQWriterWithConfig Buffer toString is '10'")
   @Tag("ContributionFromDiffblue")
   @ManagedByDiffblue
   @MethodsUnderTest({"void TAQWriter.write(Quote)"})
-  void testWriteWithQuote_thenTAQWriterWithOutIsByteArrayOutputStreamBufferToStringIs102() {
+  void testWriteWithQuote_thenCreateTAQWriterWithConfigBufferToStringIs102() {
     // Arrange
-    Paths.get(System.getProperty("java.io.tmpdir"), "test.txt").toFile();
-    TAQWriter taqWriter = new TAQWriter(new ByteArrayOutputStream());
+    TAQWriter createTAQWriterWithConfigResult = TAQWriterFactory.createTAQWriterWithConfig();
     Quote resultRecord = new Quote();
     resultRecord.askPrice = 10.0d;
     resultRecord.askSize = 0.0d;
@@ -133,33 +128,31 @@ class TAQWriterDiffblueTest {
     resultRecord.timestampMillis = 10L;
 
     // Act
-    taqWriter.write(resultRecord);
+    createTAQWriterWithConfigResult.write(resultRecord);
 
     // Assert
-    assertEquals("10", taqWriter.getBuffer().toString());
-    assertEquals(2, taqWriter.getPosition().getEndIndex());
+    assertEquals("10", createTAQWriterWithConfigResult.getBuffer().toString());
+    assertEquals(2, createTAQWriterWithConfigResult.getPosition().getEndIndex());
   }
 
   /**
    * Test {@link TAQWriter#write(Quote)} with {@code Quote}.
    *
    * <ul>
-   *   <li>Then {@link TAQWriter#TAQWriter(OutputStream)} with out is {@link
-   *       ByteArrayOutputStream#ByteArrayOutputStream()} Buffer toString is {@code 10}.
+   *   <li>Then createTAQWriterWithConfig Buffer toString is {@code 10}.
    * </ul>
    *
    * <p>Method under test: {@link TAQWriter#write(Quote)}
    */
   @Test
   @DisplayName(
-      "Test write(Quote) with 'Quote'; then TAQWriter(OutputStream) with out is ByteArrayOutputStream() Buffer toString is '10'")
+      "Test write(Quote) with 'Quote'; then createTAQWriterWithConfig Buffer toString is '10'")
   @Tag("ContributionFromDiffblue")
   @ManagedByDiffblue
   @MethodsUnderTest({"void TAQWriter.write(Quote)"})
-  void testWriteWithQuote_thenTAQWriterWithOutIsByteArrayOutputStreamBufferToStringIs103() {
+  void testWriteWithQuote_thenCreateTAQWriterWithConfigBufferToStringIs103() {
     // Arrange
-    Paths.get(System.getProperty("java.io.tmpdir"), "test.txt").toFile();
-    TAQWriter taqWriter = new TAQWriter(new ByteArrayOutputStream());
+    TAQWriter createTAQWriterWithConfigResult = TAQWriterFactory.createTAQWriterWithConfig();
     Quote resultRecord = new Quote();
     resultRecord.askPrice = 10.0d;
     resultRecord.askSize = 10.0d;
@@ -170,69 +163,32 @@ class TAQWriterDiffblueTest {
     resultRecord.timestampMillis = 10L;
 
     // Act
-    taqWriter.write(resultRecord);
+    createTAQWriterWithConfigResult.write(resultRecord);
 
     // Assert
-    assertEquals("10", taqWriter.getBuffer().toString());
-    assertEquals(2, taqWriter.getPosition().getEndIndex());
+    assertEquals("10", createTAQWriterWithConfigResult.getBuffer().toString());
+    assertEquals(2, createTAQWriterWithConfigResult.getPosition().getEndIndex());
   }
 
   /**
    * Test {@link TAQWriter#write(Trade)} with {@code Trade}.
    *
    * <ul>
-   *   <li>Then {@link TAQWriter#TAQWriter(OutputStream)} with out is {@link
-   *       ByteArrayOutputStream#ByteArrayOutputStream()} Buffer toString is {@code 10}.
+   *   <li>Given {@link TAQ#UNKNOWN}.
+   *   <li>Then createTAQWriterWithConfig Buffer toString is {@code 10}.
    * </ul>
    *
    * <p>Method under test: {@link TAQWriter#write(Trade)}
    */
   @Test
   @DisplayName(
-      "Test write(Trade) with 'Trade'; then TAQWriter(OutputStream) with out is ByteArrayOutputStream() Buffer toString is '10'")
+      "Test write(Trade) with 'Trade'; given UNKNOWN; then createTAQWriterWithConfig Buffer toString is '10'")
   @Tag("ContributionFromDiffblue")
   @ManagedByDiffblue
   @MethodsUnderTest({"void TAQWriter.write(Trade)"})
-  void testWriteWithTrade_thenTAQWriterWithOutIsByteArrayOutputStreamBufferToStringIs10() {
+  void testWriteWithTrade_givenUnknown_thenCreateTAQWriterWithConfigBufferToStringIs10() {
     // Arrange
-    Paths.get(System.getProperty("java.io.tmpdir"), "test.txt").toFile();
-    TAQWriter taqWriter = new TAQWriter(new ByteArrayOutputStream());
-    Trade resultRecord = new Trade();
-    resultRecord.date = "2020-03-01";
-    resultRecord.instrument = "Instrument";
-    resultRecord.price = 10.0d;
-    resultRecord.side = 'A';
-    resultRecord.size = 10.0d;
-    resultRecord.timestampMillis = 10L;
-
-    // Act
-    taqWriter.write(resultRecord);
-
-    // Assert
-    assertEquals("10", taqWriter.getBuffer().toString());
-    assertEquals(2, taqWriter.getPosition().getEndIndex());
-  }
-
-  /**
-   * Test {@link TAQWriter#write(Trade)} with {@code Trade}.
-   *
-   * <ul>
-   *   <li>Then {@link TAQWriter#TAQWriter(OutputStream)} with out is {@link
-   *       ByteArrayOutputStream#ByteArrayOutputStream()} Buffer toString is {@code 10}.
-   * </ul>
-   *
-   * <p>Method under test: {@link TAQWriter#write(Trade)}
-   */
-  @Test
-  @DisplayName(
-      "Test write(Trade) with 'Trade'; then TAQWriter(OutputStream) with out is ByteArrayOutputStream() Buffer toString is '10'")
-  @Tag("ContributionFromDiffblue")
-  @ManagedByDiffblue
-  @MethodsUnderTest({"void TAQWriter.write(Trade)"})
-  void testWriteWithTrade_thenTAQWriterWithOutIsByteArrayOutputStreamBufferToStringIs102() {
-    // Arrange
-    Paths.get(System.getProperty("java.io.tmpdir"), "test.txt").toFile();
-    TAQWriter taqWriter = new TAQWriter(new ByteArrayOutputStream());
+    TAQWriter createTAQWriterWithConfigResult = TAQWriterFactory.createTAQWriterWithConfig();
     Trade resultRecord = new Trade();
     resultRecord.date = "2020-03-01";
     resultRecord.instrument = "Instrument";
@@ -242,10 +198,44 @@ class TAQWriterDiffblueTest {
     resultRecord.timestampMillis = 10L;
 
     // Act
-    taqWriter.write(resultRecord);
+    createTAQWriterWithConfigResult.write(resultRecord);
 
     // Assert
-    assertEquals("10", taqWriter.getBuffer().toString());
-    assertEquals(2, taqWriter.getPosition().getEndIndex());
+    assertEquals("10", createTAQWriterWithConfigResult.getBuffer().toString());
+    assertEquals(2, createTAQWriterWithConfigResult.getPosition().getEndIndex());
+  }
+
+  /**
+   * Test {@link TAQWriter#write(Trade)} with {@code Trade}.
+   *
+   * <ul>
+   *   <li>Then createTAQWriterWithConfig Buffer toString is {@code 10}.
+   * </ul>
+   *
+   * <p>Method under test: {@link TAQWriter#write(Trade)}
+   */
+  @Test
+  @DisplayName(
+      "Test write(Trade) with 'Trade'; then createTAQWriterWithConfig Buffer toString is '10'")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"void TAQWriter.write(Trade)"})
+  void testWriteWithTrade_thenCreateTAQWriterWithConfigBufferToStringIs10() {
+    // Arrange
+    TAQWriter createTAQWriterWithConfigResult = TAQWriterFactory.createTAQWriterWithConfig();
+    Trade resultRecord = new Trade();
+    resultRecord.date = "2020-03-01";
+    resultRecord.instrument = "Instrument";
+    resultRecord.price = 10.0d;
+    resultRecord.side = 'A';
+    resultRecord.size = 10.0d;
+    resultRecord.timestampMillis = 10L;
+
+    // Act
+    createTAQWriterWithConfigResult.write(resultRecord);
+
+    // Assert
+    assertEquals("10", createTAQWriterWithConfigResult.getBuffer().toString());
+    assertEquals(2, createTAQWriterWithConfigResult.getPosition().getEndIndex());
   }
 }
