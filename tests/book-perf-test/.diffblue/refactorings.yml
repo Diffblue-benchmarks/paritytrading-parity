@@ -1,0 +1,11 @@
+name: com.diffblue.cover.refactoring.Recipe
+recipeList:
+- com.diffblue.cover.refactoring.recipes.AddGetter: {className: com.paritytrading.parity.book.perf.MarketBenchmark,
+    fieldName: market}
+- com.diffblue.cover.refactoring.recipes.AddGetter: {className: com.paritytrading.parity.book.perf.MarketBenchmark,
+    fieldName: nextOrderId}
+- com.diffblue.cover.refactoring.recipes.AddGetter: {className: com.paritytrading.parity.book.perf.MarketBenchmark,
+    fieldName: market}
+- com.diffblue.cover.refactoring.recipes.AddGetter: {className: com.paritytrading.parity.book.perf.MarketBenchmark,
+    fieldName: nextOrderId}
+type: specs.openrewrite.org/v1beta/recipe

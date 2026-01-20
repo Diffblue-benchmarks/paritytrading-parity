@@ -1,0 +1,15 @@
+name: com.diffblue.cover.refactoring.Recipe
+recipeList:
+- com.diffblue.cover.refactoring.recipes.AddGetter: {className: com.paritytrading.parity.client.Events,
+    fieldName: events}
+- com.diffblue.cover.refactoring.recipes.AddGetter: {className: com.paritytrading.parity.client.Events,
+    fieldName: events}
+- com.diffblue.cover.refactoring.recipes.AddGetter: {className: com.paritytrading.parity.client.Events,
+    fieldName: events}
+- com.diffblue.cover.refactoring.recipes.AddGetter: {className: com.paritytrading.parity.client.Events,
+    fieldName: events}
+- com.diffblue.cover.refactoring.recipes.AddGetter: {className: com.paritytrading.parity.client.Events,
+    fieldName: events}
+- com.diffblue.cover.refactoring.recipes.AddGetter: {className: com.paritytrading.parity.client.Events,
+    fieldName: events}
+type: specs.openrewrite.org/v1beta/recipe

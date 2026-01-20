@@ -1,0 +1,13 @@
+name: com.diffblue.cover.refactoring.Recipe
+recipeList:
+- com.diffblue.cover.refactoring.recipes.AddGetter: {className: com.paritytrading.parity.util.OrderIDGenerator,
+    fieldName: count}
+- com.diffblue.cover.refactoring.recipes.AddGetter: {className: com.paritytrading.parity.util.OrderIDGenerator,
+    fieldName: prefix}
+- com.diffblue.cover.refactoring.recipes.AddGetter: {className: com.paritytrading.parity.util.OrderIDGenerator,
+    fieldName: count}
+- com.diffblue.cover.refactoring.recipes.AddGetter: {className: com.paritytrading.parity.util.OrderIDGenerator,
+    fieldName: prefix}
+- com.diffblue.cover.refactoring.recipes.AddGetter: {className: com.paritytrading.parity.util.TableHeader,
+    fieldName: columns}
+type: specs.openrewrite.org/v1beta/recipe

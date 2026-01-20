@@ -1,0 +1,21 @@
+name: com.diffblue.cover.refactoring.Recipe
+recipeList:
+- com.diffblue.cover.refactoring.recipes.AddGetter: {className: com.paritytrading.parity.book.Market,
+    fieldName: books}
+- com.diffblue.cover.refactoring.recipes.AddGetter: {className: com.paritytrading.parity.book.Market,
+    fieldName: listener}
+- com.diffblue.cover.refactoring.recipes.AddGetter: {className: com.paritytrading.parity.book.Market,
+    fieldName: orders}
+- com.diffblue.cover.refactoring.recipes.AddGetter: {className: com.paritytrading.parity.book.Market,
+    fieldName: books}
+- com.diffblue.cover.refactoring.recipes.AddGetter: {className: com.paritytrading.parity.book.Market,
+    fieldName: listener}
+- com.diffblue.cover.refactoring.recipes.AddGetter: {className: com.paritytrading.parity.book.Market,
+    fieldName: orders}
+- com.diffblue.cover.refactoring.recipes.AddGetter: {className: com.paritytrading.parity.book.Market,
+    fieldName: books}
+- com.diffblue.cover.refactoring.recipes.AddGetter: {className: com.paritytrading.parity.book.Market,
+    fieldName: listener}
+- com.diffblue.cover.refactoring.recipes.AddGetter: {className: com.paritytrading.parity.book.Market,
+    fieldName: orders}
+type: specs.openrewrite.org/v1beta/recipe

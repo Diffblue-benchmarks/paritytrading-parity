@@ -1,0 +1,7 @@
+name: com.diffblue.cover.refactoring.Recipe
+recipeList:
+- com.diffblue.cover.refactoring.recipes.AddGetter: {className: com.paritytrading.parity.fix.OrderEntryFactory,
+    fieldName: address}
+- com.diffblue.cover.refactoring.recipes.AddGetter: {className: com.paritytrading.parity.fix.Orders,
+    fieldName: orders}
+type: specs.openrewrite.org/v1beta/recipe

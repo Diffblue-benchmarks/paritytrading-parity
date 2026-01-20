@@ -57,21 +57,6 @@ class TAQConfigDiffblueTest {
   }
 
   /**
-   * Test Builder new {@link Builder} (default constructor).
-   *
-   * <p>Method under test: default or parameterless constructor of {@link Builder}
-   */
-  @Test
-  @DisplayName("Test Builder new Builder (default constructor)")
-  @Tag("ContributionFromDiffblue")
-  @ManagedByDiffblue
-  @MethodsUnderTest({"void Builder.<init>()"})
-  void testBuilderNewBuilder() {
-    // Arrange, Act and Assert
-    assertEquals("US-ASCII", new Builder().build().getEncoding().name());
-  }
-
-  /**
    * Test Builder {@link Builder#setPriceFractionDigits(int)} with {@code fractionDigits}.
    *
    * <p>Method under test: {@link Builder#setPriceFractionDigits(int)}

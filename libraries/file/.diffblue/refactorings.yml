@@ -1,0 +1,11 @@
+name: com.diffblue.cover.refactoring.Recipe
+recipeList:
+- com.diffblue.cover.refactoring.recipes.AddGetter: {className: com.paritytrading.parity.file.taq.TAQWriter,
+    fieldName: buffer}
+- com.diffblue.cover.refactoring.recipes.AddGetter: {className: com.paritytrading.parity.file.taq.TAQWriter,
+    fieldName: config}
+- com.diffblue.cover.refactoring.recipes.AddGetter: {className: com.paritytrading.parity.file.taq.TAQWriter,
+    fieldName: position}
+- com.diffblue.cover.refactoring.recipes.AddGetter: {className: com.paritytrading.parity.file.taq.TAQWriter,
+    fieldName: sink}
+type: specs.openrewrite.org/v1beta/recipe

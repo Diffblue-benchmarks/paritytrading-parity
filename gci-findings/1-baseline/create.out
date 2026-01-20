@@ -1,0 +1,812 @@
+INFO  Diffblue Cover 2025.12.02-74144f0-licensed
+INFO  
+INFO  Command: create
+INFO  Create tests for the specified package/class/method.
+INFO  
+INFO  Discovered modules:
+INFO  - com.paritytrading.parity:parity-book
+INFO  - com.paritytrading.parity:parity-file
+INFO  - com.paritytrading.parity:parity-match
+INFO  - com.paritytrading.parity:parity-net
+INFO  - com.paritytrading.parity:parity-util
+INFO  - com.paritytrading.parity:parity-client
+INFO  - com.paritytrading.parity:parity-fix
+INFO  - com.paritytrading.parity:parity-reporter
+INFO  - com.paritytrading.parity:parity-system
+INFO  - com.paritytrading.parity:parity-ticker
+INFO  - com.paritytrading.parity:parity-book-perf-test
+INFO  - com.paritytrading.parity:parity-match-perf-test
+INFO  
+INFO  
+INFO   [1/12] Creating tests for module: com.paritytrading.parity:parity-book
+INFO  =======================================================================
+INFO  
+INFO  Detecting environment:
+INFO  ----------------------
+INFO  Detected Java version 1.8.0_472
+INFO  Selected build system: Maven
+INFO  Selected classpath from build system maven
+INFO  Selected test framework: JUnit Jupiter API
+INFO  Selected Java language compliance level: 1.8
+INFO  Selected test validation: enabled
+INFO  Prefixes for filtering classes/methods:
+INFO  - com.paritytrading.parity.book
+INFO  Gathering methods to test...
+INFO  Found 28 callable methods in 4 classes
+INFO  
+INFO  Creating tests:
+INFO  ---------------
+INFO  [1/4] com.paritytrading.parity.book.Market
+INFO  [1/4]   Tests created: 19
+INFO  [2/4] com.paritytrading.parity.book.Order
+INFO  [2/4]   Tests created: 2
+INFO  [3/4] com.paritytrading.parity.book.OrderBook
+INFO  [3/4]   Tests created: 61
+INFO  [4/4] com.paritytrading.parity.book.Side
+INFO  [4/4]   Tests created: 0
+INFO  
+INFO  Test creation summary for module: com.paritytrading.parity:parity-book
+INFO  ----------------------------------------------------------------------
+INFO  Total:                                              28 methods
+INFO  82 tests created for:                               23 methods
+INFO  
+INFO  No tests created for:                                3 methods
+INFO      3 R002: Missing observers
+INFO  
+INFO  Running validation command.
+INFO  This can take a couple of minutes.
+INFO  All 82 created tests were successfully validated.
+INFO  Refactorings have been generated - run `dcover refactor` to apply them
+INFO  Calculating coverage from Diffblue tests.
+INFO  JaCoCo report file created in /home/jbergqvist/diffblue/paritytrading-parity/libraries/book/.diffblue/reports/diffblue-tests-jacoco-report.xml
+INFO  Calculating coverage from manual tests.
+INFO  JaCoCo report file created in /home/jbergqvist/diffblue/paritytrading-parity/libraries/book/.diffblue/reports/manual-tests-jacoco-report.xml
+INFO  
+INFO  Diffblue tests cover 61 of 114 lines to cover (53.5%)
+INFO  Manual tests cover 99 of 114 lines to cover (86.8%)
+INFO  Writing JSON report to /home/jbergqvist/diffblue/paritytrading-parity/libraries/book/.diffblue/reports/report.json
+INFO  Coverage reports upload successful
+      Total count of Diffblue tests: 82
+      Diffblue test coverage: 61 of 114 lines to cover
+      Manual test coverage: 99 of 114 lines to cover
+      View this run on the dashboard at http://localhost:8080/ui/project/Projects/paritytrading-parity/parity-book?runId=1000026
+INFO  
+INFO   [2/12] Creating tests for module: com.paritytrading.parity:parity-file
+INFO  =======================================================================
+INFO  
+INFO  Detecting environment:
+INFO  ----------------------
+INFO  Detected Java version 1.8.0_472
+INFO  Selected build system: Maven
+INFO  Selected classpath from build system maven
+INFO  Selected test framework: JUnit Jupiter API
+INFO  Selected Java language compliance level: 1.8
+INFO  Selected test validation: enabled
+INFO  Prefixes for filtering classes/methods:
+INFO  - com.paritytrading.parity.file.taq
+INFO  Gathering methods to test...
+INFO  Found 20 callable methods in 5 classes
+INFO  
+INFO  Creating tests:
+INFO  ---------------
+INFO  [1/5] com.paritytrading.parity.file.taq.TAQ$Quote
+INFO  [1/5]   Tests created: 1
+INFO  [2/5] com.paritytrading.parity.file.taq.TAQ$Trade
+INFO  [2/5]   Tests created: 1
+INFO  [3/5] com.paritytrading.parity.file.taq.TAQConfig
+INFO  [3/5]   Tests created: 3
+INFO  [4/5] com.paritytrading.parity.file.taq.TAQConfig$Builder
+INFO  [4/5]   Tests created: 6
+INFO  [5/5] com.paritytrading.parity.file.taq.TAQWriter
+INFO  [5/5]   Tests created: 1
+INFO  
+INFO  Test creation summary for module: com.paritytrading.parity:parity-file
+INFO  ----------------------------------------------------------------------
+INFO  Total:                                              20 methods
+INFO  12 tests created for:                               12 methods
+INFO  
+INFO  No tests created for:                                8 methods
+INFO      4 R013: No inputs found that don't throw a trivial exception
+INFO      2 R020: Temporary files were created but not deleted
+INFO      1 R002: Missing observers
+INFO  
+INFO  Running validation command.
+INFO  This can take a couple of minutes.
+INFO  All 12 created tests were successfully validated.
+INFO  Refactorings have been generated - run `dcover refactor` to apply them
+INFO  Calculating coverage from Diffblue tests.
+INFO  JaCoCo report file created in /home/jbergqvist/diffblue/paritytrading-parity/libraries/file/.diffblue/reports/diffblue-tests-jacoco-report.xml
+INFO  Calculating coverage from manual tests.
+INFO  JaCoCo report file created in /home/jbergqvist/diffblue/paritytrading-parity/libraries/file/.diffblue/reports/manual-tests-jacoco-report.xml
+INFO  
+INFO  Diffblue tests cover 49 of 113 lines to cover (43.4%)
+INFO  Manual tests cover 103 of 113 lines to cover (91.2%)
+INFO  Writing JSON report to /home/jbergqvist/diffblue/paritytrading-parity/libraries/file/.diffblue/reports/report.json
+INFO  Coverage reports upload successful
+      Total count of Diffblue tests: 12
+      Diffblue test coverage: 49 of 113 lines to cover
+      Manual test coverage: 103 of 113 lines to cover
+      View this run on the dashboard at http://localhost:8080/ui/project/Projects/paritytrading-parity/parity-file?runId=1000027
+INFO  
+INFO   [3/12] Creating tests for module: com.paritytrading.parity:parity-match
+INFO  ========================================================================
+INFO  
+INFO  Detecting environment:
+INFO  ----------------------
+INFO  Detected Java version 1.8.0_472
+INFO  Selected build system: Maven
+INFO  Selected classpath from build system maven
+INFO  Selected test framework: JUnit Jupiter API
+INFO  Selected Java language compliance level: 1.8
+INFO  Selected test validation: enabled
+INFO  Prefixes for filtering classes/methods:
+INFO  - com.paritytrading.parity.match
+INFO  Gathering methods to test...
+INFO  Found 13 callable methods in 3 classes
+INFO  
+INFO  Creating tests:
+INFO  ---------------
+INFO  [1/3] com.paritytrading.parity.match.Order
+INFO  [1/3]   Tests created: 2
+INFO  [2/3] com.paritytrading.parity.match.OrderBook
+INFO  [2/3]   Tests created: 3
+INFO  [3/3] com.paritytrading.parity.match.Side
+INFO  [3/3]   Tests created: 0
+INFO  
+INFO  Test creation summary for module: com.paritytrading.parity:parity-match
+INFO  -----------------------------------------------------------------------
+INFO  Total:                                              13 methods
+INFO  5 tests created for:                                 9 methods
+INFO  
+INFO  No tests created for:                                2 methods
+INFO      2 R002: Missing observers
+INFO  
+INFO  Running validation command.
+INFO  This can take a couple of minutes.
+INFO  All 5 created tests were successfully validated.
+INFO  Refactorings have been generated - run `dcover refactor` to apply them
+INFO  Calculating coverage from Diffblue tests.
+INFO  JaCoCo report file created in /home/jbergqvist/diffblue/paritytrading-parity/libraries/match/.diffblue/reports/diffblue-tests-jacoco-report.xml
+INFO  Calculating coverage from manual tests.
+INFO  JaCoCo report file created in /home/jbergqvist/diffblue/paritytrading-parity/libraries/match/.diffblue/reports/manual-tests-jacoco-report.xml
+INFO  
+INFO  Diffblue tests cover 48 of 98 lines to cover (49.0%)
+INFO  Manual tests cover 95 of 98 lines to cover (96.9%)
+INFO  Writing JSON report to /home/jbergqvist/diffblue/paritytrading-parity/libraries/match/.diffblue/reports/report.json
+INFO  Coverage reports upload successful
+      Total count of Diffblue tests: 5
+      Diffblue test coverage: 48 of 98 lines to cover
+      Manual test coverage: 95 of 98 lines to cover
+      View this run on the dashboard at http://localhost:8080/ui/project/Projects/paritytrading-parity/parity-match?runId=1000028
+INFO  
+INFO   [4/12] Creating tests for module: com.paritytrading.parity:parity-net
+INFO  ======================================================================
+INFO  
+INFO  Detecting environment:
+INFO  ----------------------
+INFO  Detected Java version 1.8.0_472
+INFO  Selected build system: Maven
+INFO  Selected classpath from build system maven
+INFO  Selected test framework: JUnit Jupiter API
+INFO  Selected Java language compliance level: 1.8
+INFO  Selected test validation: enabled
+INFO  Prefixes for filtering classes/methods:
+INFO  - com.paritytrading.parity.net
+INFO  - com.paritytrading.parity.net.pmd
+INFO  - com.paritytrading.parity.net.pmr
+INFO  - com.paritytrading.parity.net.poe
+INFO  Gathering methods to test...
+INFO  Found 59 callable methods in 23 classes
+INFO  
+INFO  Creating tests:
+INFO  ---------------
+INFO   [1/23] com.paritytrading.parity.net.ProtocolException
+INFO   [1/23]   Tests created: 3
+INFO   [2/23] com.paritytrading.parity.net.pmd.PMD$OrderAdded
+INFO   [2/23]   Tests created: 1
+INFO   [3/23] com.paritytrading.parity.net.pmd.PMD$OrderCanceled
+INFO   [3/23]   Tests created: 2
+INFO   [4/23] com.paritytrading.parity.net.pmd.PMD$OrderExecuted
+INFO   [4/23]   Tests created: 1
+INFO   [5/23] com.paritytrading.parity.net.pmd.PMD$Version
+INFO   [5/23]   Tests created: 3
+INFO   [6/23] com.paritytrading.parity.net.pmd.PMDException
+INFO   [6/23]   Tests created: 1
+INFO   [7/23] com.paritytrading.parity.net.pmd.PMDParser
+INFO   [7/23]   Tests created: 1
+INFO   [8/23] com.paritytrading.parity.net.pmr.PMR$OrderAdded
+INFO   [8/23]   Tests created: 3
+INFO   [9/23] com.paritytrading.parity.net.pmr.PMR$OrderCanceled
+INFO   [9/23]   Tests created: 2
+INFO  [10/23] com.paritytrading.parity.net.pmr.PMR$OrderEntered
+INFO  [10/23]   Tests created: 1
+INFO  [11/23] com.paritytrading.parity.net.pmr.PMR$Trade
+INFO  [11/23]   Tests created: 1
+INFO  [12/23] com.paritytrading.parity.net.pmr.PMR$Version
+INFO  [12/23]   Tests created: 3
+INFO  [13/23] com.paritytrading.parity.net.pmr.PMRException
+INFO  [13/23]   Tests created: 1
+INFO  [14/23] com.paritytrading.parity.net.pmr.PMRParser
+INFO  [14/23]   Tests created: 2
+INFO  [15/23] com.paritytrading.parity.net.poe.POE$CancelOrder
+INFO  [15/23]   Tests created: 2
+INFO  [16/23] com.paritytrading.parity.net.poe.POE$EnterOrder
+INFO  [16/23]   Tests created: 1
+INFO  [17/23] com.paritytrading.parity.net.poe.POE$OrderAccepted
+INFO  [17/23]   Tests created: 1
+INFO  [18/23] com.paritytrading.parity.net.poe.POE$OrderCanceled
+INFO  [18/23]   Tests created: 1
+INFO  [19/23] com.paritytrading.parity.net.poe.POE$OrderExecuted
+INFO  [19/23]   Tests created: 1
+INFO  [20/23] com.paritytrading.parity.net.poe.POE$OrderRejected
+INFO  [20/23]   Tests created: 1
+INFO  [21/23] com.paritytrading.parity.net.poe.POEClientParser
+INFO  [21/23]   Tests created: 0
+INFO  [22/23] com.paritytrading.parity.net.poe.POEException
+INFO  [22/23]   Tests created: 1
+INFO  [23/23] com.paritytrading.parity.net.poe.POEServerParser
+INFO  [23/23]   Tests created: 0
+INFO  
+INFO  Test creation summary for module: com.paritytrading.parity:parity-net
+INFO  ---------------------------------------------------------------------
+INFO  Total:                                              59 methods
+INFO  33 tests created for:                               32 methods
+INFO  
+INFO  No tests created for:                               27 methods
+INFO     21 R013: No inputs found that don't throw a trivial exception
+INFO  
+INFO  Running validation command.
+INFO  This can take a couple of minutes.
+INFO  All 33 created tests were successfully validated.
+INFO  Calculating coverage from Diffblue tests.
+INFO  JaCoCo report file created in /home/jbergqvist/diffblue/paritytrading-parity/libraries/net/.diffblue/reports/diffblue-tests-jacoco-report.xml
+INFO  Calculating coverage from manual tests.
+INFO  JaCoCo report file created in /home/jbergqvist/diffblue/paritytrading-parity/libraries/net/.diffblue/reports/manual-tests-jacoco-report.xml
+INFO  
+INFO  Diffblue tests cover 110 of 345 lines to cover (31.9%)
+INFO  Manual tests cover 0 of 345 lines to cover (0.0%)
+INFO  Writing JSON report to /home/jbergqvist/diffblue/paritytrading-parity/libraries/net/.diffblue/reports/report.json
+INFO  Coverage reports upload successful
+      Total count of Diffblue tests: 33
+      Diffblue test coverage: 110 of 345 lines to cover
+      Manual test coverage: 0 of 345 lines to cover
+      View this run on the dashboard at http://localhost:8080/ui/project/Projects/paritytrading-parity/parity-net?runId=1000029
+INFO  
+INFO   [5/12] Creating tests for module: com.paritytrading.parity:parity-util
+INFO  =======================================================================
+INFO  
+INFO  Detecting environment:
+INFO  ----------------------
+INFO  Detected Java version 1.8.0_472
+INFO  Selected build system: Maven
+INFO  Selected classpath from build system maven
+INFO  Selected test framework: JUnit Jupiter API
+INFO  Selected Java language compliance level: 1.8
+INFO  Selected test validation: enabled
+INFO  Prefixes for filtering classes/methods:
+INFO  - com.paritytrading.parity.util
+INFO  Gathering methods to test...
+INFO  Found 30 callable methods in 6 classes
+INFO  
+INFO  Creating tests:
+INFO  ---------------
+INFO  [1/6] com.paritytrading.parity.util.Instrument
+INFO  [1/6]   Tests created: 11
+INFO  [2/6] com.paritytrading.parity.util.Instruments
+INFO  [2/6]   Tests created: 0
+INFO  [3/6] com.paritytrading.parity.util.OrderIDGenerator
+INFO  [3/6]   Tests created: 0
+INFO  [4/6] com.paritytrading.parity.util.Strings
+INFO  [4/6]   Tests created: 1
+INFO  [5/6] com.paritytrading.parity.util.TableHeader
+INFO  [5/6]   Tests created: 4
+INFO  [6/6] com.paritytrading.parity.util.Timestamps
+INFO  [6/6]   Tests created: 1
+INFO  
+INFO  Test creation summary for module: com.paritytrading.parity:parity-util
+INFO  ----------------------------------------------------------------------
+INFO  Total:                                              30 methods
+INFO  17 tests created for:                               15 methods
+INFO  
+INFO  Tested indirectly via other methods:                 1 method
+INFO      1 T005: Trivial constructor
+INFO  No tests created for:                               14 methods
+INFO      6 R081: Exception in arrange section
+INFO      4 R013: No inputs found that don't throw a trivial exception
+INFO      3 R002: Missing observers
+INFO      1 R031: Method may be time-sensitive
+INFO  
+INFO  Running validation command.
+INFO  This can take a couple of minutes.
+INFO  All 17 created tests were successfully validated.
+INFO  Refactorings have been generated - run `dcover refactor` to apply them
+INFO  Calculating coverage from Diffblue tests.
+INFO  JaCoCo report file created in /home/jbergqvist/diffblue/paritytrading-parity/libraries/util/.diffblue/reports/diffblue-tests-jacoco-report.xml
+INFO  Calculating coverage from manual tests.
+INFO  JaCoCo report file created in /home/jbergqvist/diffblue/paritytrading-parity/libraries/util/.diffblue/reports/manual-tests-jacoco-report.xml
+INFO  
+INFO  Diffblue tests cover 55 of 109 lines to cover (50.5%)
+INFO  Manual tests cover 93 of 109 lines to cover (85.3%)
+INFO  Writing JSON report to /home/jbergqvist/diffblue/paritytrading-parity/libraries/util/.diffblue/reports/report.json
+INFO  Coverage reports upload successful
+      Total count of Diffblue tests: 17
+      Diffblue test coverage: 55 of 109 lines to cover
+      Manual test coverage: 93 of 109 lines to cover
+      View this run on the dashboard at http://localhost:8080/ui/project/Projects/paritytrading-parity/parity-util?runId=1000030
+INFO  
+INFO   [6/12] Creating tests for module: com.paritytrading.parity:parity-client
+INFO  =========================================================================
+INFO  
+INFO  Detecting environment:
+INFO  ----------------------
+INFO  Detected Java version 1.8.0_472
+INFO  Selected build system: Maven
+INFO  Selected classpath from build system maven
+INFO  Selected test framework: JUnit Jupiter API
+INFO  Selected Java language compliance level: 1.8
+INFO  Selected test validation: enabled
+INFO  Prefixes for filtering classes/methods:
+INFO  - com.paritytrading.parity.client
+INFO  Gathering methods to test...
+INFO  Found 91 callable methods in 21 classes
+INFO  
+INFO  Creating tests:
+INFO  ---------------
+INFO   [1/21] com.paritytrading.parity.client.CancelCommand
+INFO   [1/21]   Tests created: 4
+INFO   [2/21] com.paritytrading.parity.client.DefaultEventVisitor
+INFO   [2/21]   Tests created: 0
+INFO   [3/21] com.paritytrading.parity.client.EnterCommand
+INFO   [3/21]   Tests created: 9
+INFO   [4/21] com.paritytrading.parity.client.Error
+INFO   [4/21]   Tests created: 5
+INFO   [5/21] com.paritytrading.parity.client.Errors
+INFO   [5/21]   Tests created: 1
+INFO   [6/21] com.paritytrading.parity.client.ErrorsCommand
+INFO   [6/21]   Tests created: 2
+INFO   [7/21] com.paritytrading.parity.client.Event$OrderAccepted
+INFO   [7/21]   Tests created: 1
+INFO   [8/21] com.paritytrading.parity.client.Event$OrderCanceled
+INFO   [8/21]   Tests created: 1
+INFO   [9/21] com.paritytrading.parity.client.Event$OrderExecuted
+INFO   [9/21]   Tests created: 1
+INFO  [10/21] com.paritytrading.parity.client.Event$OrderRejected
+INFO  [10/21]   Tests created: 1
+INFO  [11/21] com.paritytrading.parity.client.Events
+INFO  [11/21]   Tests created: 0
+INFO  [12/21] com.paritytrading.parity.client.ExitCommand
+INFO  [12/21]   Tests created: 2
+INFO  [13/21] com.paritytrading.parity.client.HelpCommand
+INFO  [13/21]   Tests created: 8
+INFO  [14/21] com.paritytrading.parity.client.Order
+INFO  [14/21]   Tests created: 3
+INFO  [15/21] com.paritytrading.parity.client.OrderEntry
+INFO  [15/21]   Tests created: 0
+INFO  [16/21] com.paritytrading.parity.client.Orders
+INFO  [16/21]   Tests created: 1
+INFO  [17/21] com.paritytrading.parity.client.OrdersCommand
+INFO  [17/21]   Tests created: 2
+INFO  [18/21] com.paritytrading.parity.client.TerminalClient
+INFO  [18/21]   Tests created: 2
+INFO  [19/21] com.paritytrading.parity.client.Trade
+INFO  [19/21]   Tests created: 3
+INFO  [20/21] com.paritytrading.parity.client.Trades
+INFO  [20/21]   Tests created: 1
+INFO  [21/21] com.paritytrading.parity.client.TradesCommand
+INFO  [21/21]   Tests created: 2
+INFO  
+INFO  Test creation summary for module: com.paritytrading.parity:parity-client
+INFO  ------------------------------------------------------------------------
+INFO  Total:                                              91 methods
+INFO  49 tests created for:                               57 methods
+INFO  
+INFO  Not unit-testable:                                   1 method
+INFO      1 T006: Main method
+INFO  No tests created for:                               33 methods
+INFO     11 R002: Missing observers
+INFO      6 R081: Exception in arrange section
+INFO      6 R083: Can't find a suitable constructor
+INFO      5 R013: No inputs found that don't throw a trivial exception
+INFO  
+INFO  Running validation command.
+INFO  This can take a couple of minutes.
+INFO  All 49 created tests were successfully validated.
+INFO  Refactorings have been generated - run `dcover refactor` to apply them
+INFO  Calculating coverage from Diffblue tests.
+INFO  JaCoCo report file created in /home/jbergqvist/diffblue/paritytrading-parity/applications/client/.diffblue/reports/diffblue-tests-jacoco-report.xml
+INFO  Calculating coverage from manual tests.
+INFO  JaCoCo report file created in /home/jbergqvist/diffblue/paritytrading-parity/applications/client/.diffblue/reports/manual-tests-jacoco-report.xml
+INFO  
+INFO  Diffblue tests cover 204 of 423 lines to cover (48.2%)
+INFO  Manual tests cover 0 of 423 lines to cover (0.0%)
+INFO  Writing JSON report to /home/jbergqvist/diffblue/paritytrading-parity/applications/client/.diffblue/reports/report.json
+INFO  Coverage reports upload successful
+      Total count of Diffblue tests: 49
+      Diffblue test coverage: 204 of 423 lines to cover
+      Manual test coverage: 0 of 423 lines to cover
+      View this run on the dashboard at http://localhost:8080/ui/project/Projects/paritytrading-parity/parity-client?runId=1000031
+INFO  
+INFO   [7/12] Creating tests for module: com.paritytrading.parity:parity-fix
+INFO  ======================================================================
+INFO  
+INFO  Detecting environment:
+INFO  ----------------------
+INFO  Detected Java version 1.8.0_472
+INFO  Selected build system: Maven
+INFO  Selected classpath from build system maven
+INFO  Selected test framework: JUnit Jupiter API
+INFO  Selected Java language compliance level: 1.8
+INFO  Selected test validation: enabled
+INFO  Prefixes for filtering classes/methods:
+INFO  - com.paritytrading.parity.fix
+INFO  Gathering methods to test...
+INFO  Found 39 callable methods in 7 classes
+INFO  
+INFO  Creating tests:
+INFO  ---------------
+INFO  [1/7] com.paritytrading.parity.fix.Events
+INFO  [1/7]   Tests created: 0
+INFO  [2/7] com.paritytrading.parity.fix.FIXAcceptor
+INFO  [2/7]   Tests created: 0
+INFO  [3/7] com.paritytrading.parity.fix.FIXGateway
+INFO  [3/7]   Tests created: 0
+INFO  [4/7] com.paritytrading.parity.fix.Order
+INFO  [4/7]   Tests created: 8
+INFO  [5/7] com.paritytrading.parity.fix.OrderEntryFactory
+INFO  [5/7]   Tests created: 0
+INFO  [6/7] com.paritytrading.parity.fix.Orders
+INFO  [6/7]   Tests created: 7
+INFO  [7/7] com.paritytrading.parity.fix.Session
+INFO  [7/7]   Tests created: 0
+INFO  
+INFO  Test creation summary for module: com.paritytrading.parity:parity-fix
+INFO  ---------------------------------------------------------------------
+INFO  Total:                                              39 methods
+INFO  15 tests created for:                               24 methods
+INFO  
+INFO  Tested indirectly via other methods:                 2 methods
+INFO      2 T005: Trivial constructor
+INFO  Not unit-testable:                                   1 method
+INFO      1 T006: Main method
+INFO  No tests created for:                               12 methods
+INFO      7 R013: No inputs found that don't throw a trivial exception
+INFO      3 R081: Exception in arrange section
+INFO      2 R002: Missing observers
+INFO  
+INFO  Running validation command.
+INFO  This can take a couple of minutes.
+INFO  All 15 created tests were successfully validated.
+INFO  Refactorings have been generated - run `dcover refactor` to apply them
+INFO  Calculating coverage from Diffblue tests.
+INFO  JaCoCo report file created in /home/jbergqvist/diffblue/paritytrading-parity/applications/fix/.diffblue/reports/diffblue-tests-jacoco-report.xml
+INFO  Calculating coverage from manual tests.
+INFO  JaCoCo report file created in /home/jbergqvist/diffblue/paritytrading-parity/applications/fix/.diffblue/reports/manual-tests-jacoco-report.xml
+INFO  
+INFO  Diffblue tests cover 60 of 588 lines to cover (10.2%)
+INFO  Manual tests cover 0 of 588 lines to cover (0.0%)
+INFO  Writing JSON report to /home/jbergqvist/diffblue/paritytrading-parity/applications/fix/.diffblue/reports/report.json
+INFO  Coverage reports upload successful
+      Total count of Diffblue tests: 15
+      Diffblue test coverage: 60 of 588 lines to cover
+      Manual test coverage: 0 of 588 lines to cover
+      View this run on the dashboard at http://localhost:8080/ui/project/Projects/paritytrading-parity/parity-fix?runId=1000032
+INFO  
+INFO   [8/12] Creating tests for module: com.paritytrading.parity:parity-reporter
+INFO  ===========================================================================
+INFO  
+INFO  Detecting environment:
+INFO  ----------------------
+INFO  Detected Java version 1.8.0_472
+INFO  Selected build system: Maven
+INFO  Selected classpath from build system maven
+INFO  Selected test framework: JUnit Jupiter API
+INFO  Selected Java language compliance level: 1.8
+INFO  Selected test validation: enabled
+INFO  Prefixes for filtering classes/methods:
+INFO  - com.paritytrading.parity.reporter
+INFO  Gathering methods to test...
+INFO  Found 14 callable methods in 6 classes
+INFO  
+INFO  Creating tests:
+INFO  ---------------
+INFO  [1/6] com.paritytrading.parity.reporter.DisplayFormat
+INFO  [1/6]   Tests created: 2
+INFO  [2/6] com.paritytrading.parity.reporter.TSVFormat
+INFO  [2/6]   Tests created: 2
+INFO  [3/6] com.paritytrading.parity.reporter.Trade
+INFO  [3/6]   Tests created: 1
+INFO  [4/6] com.paritytrading.parity.reporter.TradeListener
+INFO  [4/6]   Tests created: 1
+INFO  [5/6] com.paritytrading.parity.reporter.TradeProcessor
+INFO  [5/6]   Tests created: 3
+INFO  [6/6] com.paritytrading.parity.reporter.TradeReporter
+INFO  [6/6]   Tests created: 0
+INFO  
+INFO  Test creation summary for module: com.paritytrading.parity:parity-reporter
+INFO  --------------------------------------------------------------------------
+INFO  Total:                                              14 methods
+INFO  9 tests created for:                                 9 methods
+INFO  
+INFO  Tested indirectly via other methods:                 1 method
+INFO      1 T005: Trivial constructor
+INFO  Not unit-testable:                                   1 method
+INFO      1 T006: Main method
+INFO  No tests created for:                                3 methods
+INFO      2 R013: No inputs found that don't throw a trivial exception
+INFO      1 R081: Exception in arrange section
+INFO  
+INFO  Running validation command.
+INFO  This can take a couple of minutes.
+INFO  Test execution failed, analyzing...
+INFO  1 individual tests did not pass and were removed.
+INFO    
+INFO  Number of tests discarded during validation since they didn't compile, run or pass
+INFO    1 for com.paritytrading.parity.reporter.TSVFormat.trade
+INFO  To skip discarding these tests please re-run DCover with --skip-test-validation
+INFO  Test validation was able to validate 8 out of 9 complete tests, the remainder were discarded.
+INFO  Calculating coverage from Diffblue tests.
+INFO  JaCoCo report file created in /home/jbergqvist/diffblue/paritytrading-parity/applications/reporter/.diffblue/reports/diffblue-tests-jacoco-report.xml
+INFO  Calculating coverage from manual tests.
+INFO  JaCoCo report file created in /home/jbergqvist/diffblue/paritytrading-parity/applications/reporter/.diffblue/reports/manual-tests-jacoco-report.xml
+INFO  
+INFO  Diffblue tests cover 47 of 122 lines to cover (38.5%)
+INFO  Manual tests cover 0 of 122 lines to cover (0.0%)
+INFO  Writing JSON report to /home/jbergqvist/diffblue/paritytrading-parity/applications/reporter/.diffblue/reports/report.json
+INFO  Coverage reports upload successful
+      Total count of Diffblue tests: 8
+      Diffblue test coverage: 47 of 122 lines to cover
+      Manual test coverage: 0 of 122 lines to cover
+      View this run on the dashboard at http://localhost:8080/ui/project/Projects/paritytrading-parity/parity-reporter?runId=1000033
+INFO  
+INFO   [9/12] Creating tests for module: com.paritytrading.parity:parity-system
+INFO  =========================================================================
+INFO  
+INFO  Detecting environment:
+INFO  ----------------------
+INFO  Detected Java version 1.8.0_472
+INFO  Selected build system: Maven
+INFO  Selected classpath from build system maven
+INFO  Selected test framework: JUnit Jupiter API
+INFO  Selected Java language compliance level: 1.8
+INFO  Selected test validation: enabled
+INFO  Prefixes for filtering classes/methods:
+INFO  - com.paritytrading.parity.system
+INFO  Gathering methods to test...
+INFO  Found 49 callable methods in 8 classes
+INFO  
+INFO  Creating tests:
+INFO  ---------------
+INFO  [1/8] com.paritytrading.parity.system.Events
+INFO  [1/8]   Tests created: 0
+INFO  [2/8] com.paritytrading.parity.system.MarketData
+INFO  [2/8]   Tests created: 0
+INFO  [3/8] com.paritytrading.parity.system.MarketReporting
+INFO  [3/8]   Tests created: 0
+INFO  [4/8] com.paritytrading.parity.system.Order
+INFO  [4/8]   Tests created: 0
+INFO  [5/8] com.paritytrading.parity.system.OrderBooks
+INFO  [5/8]   Tests created: 0
+INFO  [6/8] com.paritytrading.parity.system.OrderEntry
+INFO  [6/8]   Tests created: 0
+INFO  [7/8] com.paritytrading.parity.system.Session
+INFO  [7/8]   Tests created: 0
+INFO  [8/8] com.paritytrading.parity.system.TradingSystem
+INFO  [8/8]   Tests created: 0
+INFO  
+INFO  Test creation summary for module: com.paritytrading.parity:parity-system
+INFO  ------------------------------------------------------------------------
+INFO  Total:                                              49 methods
+INFO  
+INFO  Tested indirectly via other methods:                 1 method
+INFO      1 T005: Trivial constructor
+INFO  Not unit-testable:                                   1 method
+INFO      1 T006: Main method
+INFO  No tests created for:                               47 methods
+INFO     14 R081: Exception in arrange section
+INFO  Calculating coverage from Diffblue tests.
+INFO  JaCoCo report file created in /home/jbergqvist/diffblue/paritytrading-parity/applications/system/.diffblue/reports/diffblue-tests-jacoco-report.xml
+INFO  Calculating coverage from manual tests.
+INFO  JaCoCo report file created in /home/jbergqvist/diffblue/paritytrading-parity/applications/system/.diffblue/reports/manual-tests-jacoco-report.xml
+INFO  
+INFO  Diffblue tests cover 0 of 427 lines to cover (0.0%)
+INFO  Manual tests cover 0 of 427 lines to cover (0.0%)
+INFO  Writing JSON report to /home/jbergqvist/diffblue/paritytrading-parity/applications/system/.diffblue/reports/report.json
+INFO  Coverage reports upload successful
+      Total count of Diffblue tests: 0
+      Diffblue test coverage: 0 of 427 lines to cover
+      Manual test coverage: 0 of 427 lines to cover
+      View this run on the dashboard at http://localhost:8080/ui/project/Projects/paritytrading-parity/parity-system?runId=1000034
+INFO  
+INFO  [10/12] Creating tests for module: com.paritytrading.parity:parity-ticker
+INFO  =========================================================================
+INFO  
+INFO  Detecting environment:
+INFO  ----------------------
+INFO  Detected Java version 1.8.0_472
+INFO  Selected build system: Maven
+INFO  Selected classpath from build system maven
+INFO  Selected test framework: JUnit Jupiter API
+INFO  Selected Java language compliance level: 1.8
+INFO  Selected test validation: enabled
+INFO  Prefixes for filtering classes/methods:
+INFO  - com.paritytrading.parity.ticker
+INFO  Gathering methods to test...
+INFO  Found 15 callable methods in 5 classes
+INFO  
+INFO  Creating tests:
+INFO  ---------------
+INFO  [1/5] com.paritytrading.parity.ticker.DisplayFormat
+INFO  [1/5]   Tests created: 3
+INFO  [2/5] com.paritytrading.parity.ticker.MarketDataListener
+INFO  [2/5]   Tests created: 2
+INFO  [3/5] com.paritytrading.parity.ticker.MarketDataProcessor
+INFO  [3/5]   Tests created: 3
+INFO  [4/5] com.paritytrading.parity.ticker.StockTicker
+INFO  [4/5]   Tests created: 0
+INFO  [5/5] com.paritytrading.parity.ticker.TAQFormat
+INFO  [5/5]   Tests created: 6
+INFO  
+INFO  Test creation summary for module: com.paritytrading.parity:parity-ticker
+INFO  ------------------------------------------------------------------------
+INFO  Total:                                              15 methods
+INFO  14 tests created for:                               11 methods
+INFO  
+INFO  Tested indirectly via other methods:                 1 method
+INFO      1 T005: Trivial constructor
+INFO  Not unit-testable:                                   1 method
+INFO      1 T006: Main method
+INFO  No tests created for:                                2 methods
+INFO      1 R011: Sandboxing policy violation
+INFO      1 R081: Exception in arrange section
+INFO  
+INFO  Running validation command.
+INFO  This can take a couple of minutes.
+INFO  All 14 created tests were successfully validated.
+INFO  Calculating coverage from Diffblue tests.
+INFO  JaCoCo report file created in /home/jbergqvist/diffblue/paritytrading-parity/applications/ticker/.diffblue/reports/diffblue-tests-jacoco-report.xml
+INFO  Calculating coverage from manual tests.
+INFO  JaCoCo report file created in /home/jbergqvist/diffblue/paritytrading-parity/applications/ticker/.diffblue/reports/manual-tests-jacoco-report.xml
+INFO  
+INFO  Diffblue tests cover 117 of 179 lines to cover (65.4%)
+INFO  Manual tests cover 0 of 179 lines to cover (0.0%)
+INFO  Writing JSON report to /home/jbergqvist/diffblue/paritytrading-parity/applications/ticker/.diffblue/reports/report.json
+INFO  Coverage reports upload successful
+      Total count of Diffblue tests: 14
+      Diffblue test coverage: 117 of 179 lines to cover
+      Manual test coverage: 0 of 179 lines to cover
+      View this run on the dashboard at http://localhost:8080/ui/project/Projects/paritytrading-parity/parity-ticker?runId=1000035
+INFO  
+INFO  [11/12] Creating tests for module: com.paritytrading.parity:parity-book-perf-test
+INFO  =================================================================================
+INFO  
+INFO  Detecting environment:
+INFO  ----------------------
+INFO  Detected Java version 1.8.0_472
+INFO  Selected build system: Maven
+INFO  Selected classpath from build system maven
+INFO  Selected test framework: JUnit Jupiter API
+INFO  Selected Java language compliance level: 1.8
+INFO  Selected test validation: enabled
+INFO  Prefixes for filtering classes/methods:
+INFO  - com.paritytrading.parity.book.perf
+INFO  - com.paritytrading.parity.book.perf.generated
+INFO  Gathering methods to test...
+INFO  Found 61 callable methods in 10 classes
+INFO  
+INFO  Creating tests:
+INFO  ---------------
+INFO   [1/10] com.paritytrading.parity.book.perf.MarketBenchmark
+INFO   [1/10]   Tests created: 5
+INFO   [2/10] com.paritytrading.parity.book.perf.generated.MarketBenchmark_addAndCancel_jmhTest
+INFO   [2/10]   Tests created: 1
+INFO   [3/10] com.paritytrading.parity.book.perf.generated.MarketBenchmark_addAndDelete_jmhTest
+INFO   [3/10]   Tests created: 1
+INFO   [4/10] com.paritytrading.parity.book.perf.generated.MarketBenchmark_addAndExecute_jmhTest
+INFO   [4/10]   Tests created: 1
+INFO   [5/10] com.paritytrading.parity.book.perf.generated.MarketBenchmark_addAndModify_jmhTest
+INFO   [5/10]   Tests created: 1
+INFO   [6/10] com.paritytrading.parity.book.perf.generated.MarketBenchmark_add_jmhTest
+INFO   [6/10]   Tests created: 1
+INFO   [7/10] com.paritytrading.parity.book.perf.generated.MarketBenchmark_jmhType
+INFO   [7/10]   Tests created: 1
+INFO   [8/10] com.paritytrading.parity.book.perf.generated.MarketBenchmark_jmhType_B1
+INFO   [8/10]   Tests created: 1
+INFO   [9/10] com.paritytrading.parity.book.perf.generated.MarketBenchmark_jmhType_B2
+INFO   [9/10]   Tests created: 1
+INFO  [10/10] com.paritytrading.parity.book.perf.generated.MarketBenchmark_jmhType_B3
+INFO  [10/10]   Tests created: 1
+INFO  
+INFO  Test creation summary for module: com.paritytrading.parity:parity-book-perf-test
+INFO  --------------------------------------------------------------------------------
+INFO  Total:                                              61 methods
+INFO  14 tests created for:                               14 methods
+INFO  
+INFO  No tests created for:                               47 methods
+INFO     45 R011: Sandboxing policy violation
+INFO      2 R002: Missing observers
+INFO  
+INFO  Running validation command.
+INFO  This can take a couple of minutes.
+INFO  All 14 created tests were successfully validated.
+INFO  Refactorings have been generated - run `dcover refactor` to apply them
+INFO  Calculating coverage from Diffblue tests.
+INFO  JaCoCo report file created in /home/jbergqvist/diffblue/paritytrading-parity/tests/book-perf-test/.diffblue/reports/diffblue-tests-jacoco-report.xml
+INFO  Calculating coverage from manual tests.
+INFO  JaCoCo report file created in /home/jbergqvist/diffblue/paritytrading-parity/tests/book-perf-test/.diffblue/reports/manual-tests-jacoco-report.xml
+INFO  
+INFO  Diffblue tests cover 34 of 1635 lines to cover (2.1%)
+INFO  Manual tests cover 0 of 1635 lines to cover (0.0%)
+INFO  Writing JSON report to /home/jbergqvist/diffblue/paritytrading-parity/tests/book-perf-test/.diffblue/reports/report.json
+INFO  Coverage reports upload successful
+      Total count of Diffblue tests: 14
+      Diffblue test coverage: 34 of 1635 lines to cover
+      Manual test coverage: 0 of 1635 lines to cover
+      View this run on the dashboard at http://localhost:8080/ui/project/Projects/paritytrading-parity/parity-book-perf-test?runId=1000036
+INFO  
+INFO  [12/12] Creating tests for module: com.paritytrading.parity:parity-match-perf-test
+INFO  ==================================================================================
+INFO  
+INFO  Detecting environment:
+INFO  ----------------------
+INFO  Detected Java version 1.8.0_472
+INFO  Selected build system: Maven
+INFO  Selected classpath from build system maven
+INFO  Selected test framework: JUnit Jupiter API
+INFO  Selected Java language compliance level: 1.8
+INFO  Selected test validation: enabled
+INFO  Prefixes for filtering classes/methods:
+INFO  - com.paritytrading.parity.match.perf
+INFO  - com.paritytrading.parity.match.perf.generated
+INFO  Gathering methods to test...
+INFO  Found 28 callable methods in 7 classes
+INFO  
+INFO  Creating tests:
+INFO  ---------------
+INFO  [1/7] com.paritytrading.parity.match.perf.OrderBookBenchmark
+INFO  [1/7]   Tests created: 2
+INFO  [2/7] com.paritytrading.parity.match.perf.generated.OrderBookBenchmark_enterAndCancel_jmhTest
+INFO  [2/7]   Tests created: 1
+INFO  [3/7] com.paritytrading.parity.match.perf.generated.OrderBookBenchmark_enter_jmhTest
+INFO  [3/7]   Tests created: 1
+INFO  [4/7] com.paritytrading.parity.match.perf.generated.OrderBookBenchmark_jmhType
+INFO  [4/7]   Tests created: 1
+INFO  [5/7] com.paritytrading.parity.match.perf.generated.OrderBookBenchmark_jmhType_B1
+INFO  [5/7]   Tests created: 1
+INFO  [6/7] com.paritytrading.parity.match.perf.generated.OrderBookBenchmark_jmhType_B2
+INFO  [6/7]   Tests created: 1
+INFO  [7/7] com.paritytrading.parity.match.perf.generated.OrderBookBenchmark_jmhType_B3
+INFO  [7/7]   Tests created: 1
+INFO  
+INFO  Test creation summary for module: com.paritytrading.parity:parity-match-perf-test
+INFO  ---------------------------------------------------------------------------------
+INFO  Total:                                              28 methods
+INFO  8 tests created for:                                 8 methods
+INFO  
+INFO  No tests created for:                               20 methods
+INFO     18 R011: Sandboxing policy violation
+INFO      2 R002: Missing observers
+INFO  
+INFO  Running validation command.
+INFO  This can take a couple of minutes.
+INFO  All 8 created tests were successfully validated.
+INFO  Refactorings have been generated - run `dcover refactor` to apply them
+INFO  Calculating coverage from Diffblue tests.
+INFO  JaCoCo report file created in /home/jbergqvist/diffblue/paritytrading-parity/tests/match-perf-test/.diffblue/reports/diffblue-tests-jacoco-report.xml
+INFO  Calculating coverage from manual tests.
+INFO  JaCoCo report file created in /home/jbergqvist/diffblue/paritytrading-parity/tests/match-perf-test/.diffblue/reports/manual-tests-jacoco-report.xml
+INFO  
+INFO  Diffblue tests cover 19 of 663 lines to cover (2.9%)
+INFO  Manual tests cover 0 of 663 lines to cover (0.0%)
+INFO  Writing JSON report to /home/jbergqvist/diffblue/paritytrading-parity/tests/match-perf-test/.diffblue/reports/report.json
+INFO  Coverage reports upload successful
+      Total count of Diffblue tests: 8
+      Diffblue test coverage: 19 of 663 lines to cover
+      Manual test coverage: 0 of 663 lines to cover
+      View this run on the dashboard at http://localhost:8080/ui/project/Projects/paritytrading-parity/parity-match-perf-test?runId=1000037
+INFO  
+INFO  Run summary:
+INFO  ------------
+INFO  create                                                      SUCCESS
+INFO  
+INFO  Log file: /home/jbergqvist/diffblue/paritytrading-parity/.diffblue/log/user-20260120T091307.log
+INFO  Finished in 12m 18s
