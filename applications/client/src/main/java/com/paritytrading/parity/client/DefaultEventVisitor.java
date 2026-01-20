@@ -17,20 +17,34 @@ package com.paritytrading.parity.client;
 
 class DefaultEventVisitor implements EventVisitor {
 
+    private int visitCount;
+
+    public DefaultEventVisitor() {
+        this.visitCount = 0;
+    }
+
     @Override
     public void visit(Event.OrderAccepted event) {
+        visitCount++;
     }
 
     @Override
     public void visit(Event.OrderRejected event) {
+        visitCount++;
     }
 
     @Override
     public void visit(Event.OrderExecuted event) {
+        visitCount++;
     }
 
     @Override
     public void visit(Event.OrderCanceled event) {
+        visitCount++;
+    }
+
+    public int getVisitCount() {
+        return visitCount;
     }
 
 }

@@ -71,7 +71,7 @@ class TerminalClient implements Closeable {
 
     private boolean closed;
 
-    private TerminalClient(Events events, OrderEntry orderEntry, Instruments instruments) {
+    TerminalClient(Events events, OrderEntry orderEntry, Instruments instruments) {
         this.events      = events;
         this.orderEntry  = orderEntry;
         this.instruments = instruments;

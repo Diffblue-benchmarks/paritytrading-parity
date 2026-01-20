@@ -50,6 +50,16 @@ public class Trades extends DefaultEventVisitor {
                 .collect(toList());
     }
 
+    /** For testing purposes only */
+    public Map getOrders() {
+        return orders;
+    }
+
+    /** For testing purposes only */
+    public Map getTrades() {
+        return trades;
+    }
+
     @Override
     public void visit(Event.OrderAccepted event) {
         orders.put(event.orderId, new Order(event));

@@ -36,55 +36,25 @@ class CancelCommandDiffblueTest {
    * arguments}.
    *
    * <ul>
-   *   <li>Given empty string.
+   *   <li>Then throw {@link IllegalArgumentException}.
    * </ul>
    *
    * <p>Method under test: {@link CancelCommand#execute(TerminalClient, Scanner)}
    */
   @Test
   @DisplayName(
-      "Test execute(TerminalClient, Scanner) with 'client', 'arguments'; given empty string")
+      "Test execute(TerminalClient, Scanner) with 'client', 'arguments'; then throw IllegalArgumentException")
   @Tag("ContributionFromDiffblue")
   @ManagedByDiffblue
   @MethodsUnderTest({"void CancelCommand.execute(TerminalClient, Scanner)"})
-  void testExecuteWithClientArguments_givenEmptyString() throws IOException {
+  void testExecuteWithClientArguments_thenThrowIllegalArgumentException() throws IOException {
     // Arrange
     CancelCommand cancelCommand = new CancelCommand();
-
-    Scanner arguments = new Scanner("foo");
-    arguments.useDelimiter("");
+    TerminalClient client = TerminalClientTestFactory.createTerminalClient();
 
     // Act and Assert
-    assertThrows(IllegalArgumentException.class, () -> cancelCommand.execute(null, arguments));
-  }
-
-  /**
-   * Test {@link CancelCommand#execute(TerminalClient, Scanner)} with {@code client}, {@code
-   * arguments}.
-   *
-   * <ul>
-   *   <li>Given {@code foo}.
-   *   <li>When {@link Scanner#Scanner(String)} with {@code foo} useDelimiter {@code foo}.
-   * </ul>
-   *
-   * <p>Method under test: {@link CancelCommand#execute(TerminalClient, Scanner)}
-   */
-  @Test
-  @DisplayName(
-      "Test execute(TerminalClient, Scanner) with 'client', 'arguments'; given 'foo'; when Scanner(String) with 'foo' useDelimiter 'foo'")
-  @Tag("ContributionFromDiffblue")
-  @ManagedByDiffblue
-  @MethodsUnderTest({"void CancelCommand.execute(TerminalClient, Scanner)"})
-  void testExecuteWithClientArguments_givenFoo_whenScannerWithFooUseDelimiterFoo()
-      throws IOException {
-    // Arrange
-    CancelCommand cancelCommand = new CancelCommand();
-
-    Scanner arguments = new Scanner("foo");
-    arguments.useDelimiter("foo");
-
-    // Act and Assert
-    assertThrows(IllegalArgumentException.class, () -> cancelCommand.execute(null, arguments));
+    assertThrows(
+        IllegalArgumentException.class, () -> cancelCommand.execute(client, new Scanner("")));
   }
 
   /**

@@ -38,6 +38,11 @@ class Errors extends DefaultEventVisitor {
         return errors;
     }
 
+    /** For testing purposes only */
+    public List getErrors() {
+        return errors;
+    }
+
     @Override
     public void visit(Event.OrderRejected event) {
         errors.add(new Error(event));

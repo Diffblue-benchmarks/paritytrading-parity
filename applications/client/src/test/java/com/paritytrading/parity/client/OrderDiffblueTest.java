@@ -96,7 +96,7 @@ class OrderDiffblueTest {
    * Test {@link Order#format(Instruments)}.
    *
    * <ul>
-   *   <li>Given {@link Instrument} {@link Instrument#getPriceFormat()} return {@code Price Format}.
+   *   <li>Given {@link Instrument} {@link Instrument#getPriceFormat()} return createUsername.
    *   <li>Then return a string.
    * </ul>
    *
@@ -104,19 +104,19 @@ class OrderDiffblueTest {
    */
   @Test
   @DisplayName(
-      "Test format(Instruments); given Instrument getPriceFormat() return 'Price Format'; then return a string")
+      "Test format(Instruments); given Instrument getPriceFormat() return createUsername; then return a string")
   @Tag("ContributionFromDiffblue")
   @ManagedByDiffblue
   @MethodsUnderTest({"String Order.format(Instruments)"})
-  void testFormat_givenInstrumentGetPriceFormatReturnPriceFormat_thenReturnAString() {
+  void testFormat_givenInstrumentGetPriceFormatReturnCreateUsername_thenReturnAString() {
     // Arrange
     Order order = new Order(new OrderAccepted(new POE.OrderAccepted()));
 
     Instrument instrument = mock(Instrument.class);
     when(instrument.getPriceFactor()).thenReturn(10.0d);
     when(instrument.getSizeFactor()).thenReturn(10.0d);
-    when(instrument.getPriceFormat()).thenReturn("Price Format");
-    when(instrument.getSizeFormat()).thenReturn("Size Format");
+    when(instrument.getPriceFormat()).thenReturn(TerminalClientTestFactory.createUsername());
+    when(instrument.getSizeFormat()).thenReturn(TerminalClientTestFactory.createUsername());
 
     Instruments instruments = mock(Instruments.class);
     when(instruments.get(anyLong())).thenReturn(instrument);
@@ -131,7 +131,7 @@ class OrderDiffblueTest {
     verify(instrument).getSizeFormat();
     verify(instruments).get(0L);
     assertEquals(
-        "00:00:00.000 \u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000 \u0000 \u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000 Size Format Price Format",
+        "00:00:00.000 \u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000 \u0000 \u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000 testuser testuser",
         actualFormatResult);
   }
 }

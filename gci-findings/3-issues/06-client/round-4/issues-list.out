@@ -1,0 +1,35 @@
+INFO  Diffblue Cover 2026.01.01-SNAPSHOT-acf7615-local
+INFO  
+INFO  Command: issues
+INFO  Output a prioritized list of issues.
+INFO  
+INFO  Selected modules:
+INFO  - com.paritytrading.parity:parity-client
+INFO  
+INFO  
+INFO  [1/1] Diagnosing issues for module: com.paritytrading.parity:parity-client
+INFO  ==========================================================================
+INFO  
+INFO  Detected Java version 1.8.0_472
+INFO  Selected build system: Maven
+INFO  Selected classpath from build system maven
+INFO  Reading report file '/home/jbergqvist/diffblue/paritytrading-parity/applications/client/.diffblue/reports/report.json'
+INFO  Copied report file to '/home/jbergqvist/diffblue/paritytrading-parity/applications/client/.diffblue/reports/report-20260120T120944.json'
+INFO  
+INFO  R013: No inputs found that don't throw a trivial exception
+INFO  Issues: 2
+INFO  Affected methods: 2
+INFO  
+INFO  R081: Exception in arrange section
+INFO  Issues: 3
+INFO  Affected methods: 7
+INFO  
+INFO  R011: Sandboxing policy violation
+INFO  Issues: 1
+INFO  Affected methods: 1
+INFO  
+INFO  6 issues were found, rerun with --prompts to list with actionable advice
+INFO  Rerun with --prompts --limit 10 --skip 10 to restrict which issues are displayed
+INFO  
+INFO  Log file: /home/jbergqvist/diffblue/paritytrading-parity/.diffblue/log/user-20260120T121910.log
+INFO  Finished in 3s

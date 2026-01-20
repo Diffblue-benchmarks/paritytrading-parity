@@ -1,0 +1,96 @@
+INFO  Diffblue Cover 2025.12.02-74144f0-licensed
+INFO  
+INFO  Command: create
+INFO  Create tests for the specified package/class/method.
+INFO  
+INFO  Selected modules:
+INFO  - com.paritytrading.parity:parity-client
+INFO  
+INFO  
+INFO  [1/1] Creating tests for module: com.paritytrading.parity:parity-client
+INFO  =======================================================================
+INFO  
+INFO  Detecting environment:
+INFO  ----------------------
+INFO  Detected Java version 1.8.0_472
+INFO  Selected build system: Maven
+INFO  Selected classpath from build system maven
+INFO  Selected test framework: JUnit Jupiter API
+INFO  Selected Java language compliance level: 1.8
+INFO  Selected test validation: enabled
+INFO  Prefixes for filtering classes/methods:
+INFO  - com.paritytrading.parity.client
+INFO  Gathering methods to test...
+INFO  Found 99 callable methods in 21 classes
+INFO  
+INFO  Creating tests:
+INFO  ---------------
+INFO   [1/21] com.paritytrading.parity.client.CancelCommand
+INFO   [1/21]   Tests created: 3
+INFO   [2/21] com.paritytrading.parity.client.DefaultEventVisitor
+INFO   [2/21]   Tests created: 1
+INFO   [3/21] com.paritytrading.parity.client.EnterCommand
+INFO   [3/21]   Tests created: 14
+INFO   [4/21] com.paritytrading.parity.client.Error
+INFO   [4/21]   Tests created: 5
+INFO   [5/21] com.paritytrading.parity.client.Errors
+INFO   [5/21]   Tests created: 3
+INFO   [6/21] com.paritytrading.parity.client.ErrorsCommand
+INFO   [6/21]   Tests created: 2
+INFO   [7/21] com.paritytrading.parity.client.Event$OrderAccepted
+INFO   [7/21]   Tests created: 1
+INFO   [8/21] com.paritytrading.parity.client.Event$OrderCanceled
+INFO   [8/21]   Tests created: 1
+INFO   [9/21] com.paritytrading.parity.client.Event$OrderExecuted
+INFO   [9/21]   Tests created: 1
+INFO  [10/21] com.paritytrading.parity.client.Event$OrderRejected
+INFO  [10/21]   Tests created: 1
+INFO  [11/21] com.paritytrading.parity.client.Events
+INFO  [11/21]   Tests created: 1
+INFO  [12/21] com.paritytrading.parity.client.ExitCommand
+INFO  [12/21]   Tests created: 6
+INFO  [13/21] com.paritytrading.parity.client.HelpCommand
+INFO  [13/21]   Tests created: 10
+INFO  [14/21] com.paritytrading.parity.client.Order
+INFO  [14/21]   Tests created: 3
+INFO  [15/21] com.paritytrading.parity.client.OrderEntry
+INFO  [15/21]   Tests created: 2
+INFO  [16/21] com.paritytrading.parity.client.Orders
+INFO  [16/21]   Tests created: 3
+INFO  [17/21] com.paritytrading.parity.client.OrdersCommand
+INFO  [17/21]   Tests created: 5
+INFO  [18/21] com.paritytrading.parity.client.TerminalClient
+INFO  [18/21]   Tests created: 4
+INFO  [19/21] com.paritytrading.parity.client.Trade
+INFO  [19/21]   Tests created: 2
+INFO  [20/21] com.paritytrading.parity.client.Trades
+INFO  [20/21]   Tests created: 3
+INFO  [21/21] com.paritytrading.parity.client.TradesCommand
+INFO  [21/21]   Tests created: 5
+INFO  
+INFO  Test creation summary for module: com.paritytrading.parity:parity-client
+INFO  ------------------------------------------------------------------------
+INFO  Total:                                              99 methods
+INFO  76 tests created for:                               68 methods
+INFO  
+INFO  Not unit-testable:                                   1 method
+INFO      1 T006: Main method
+INFO  No tests created for:                               26 methods
+INFO      7 R081: Exception in arrange section
+INFO      2 R013: No inputs found that don't throw a trivial exception
+INFO      1 R011: Sandboxing policy violation
+INFO  
+INFO  Running validation command.
+INFO  This can take a couple of minutes.
+INFO  All 76 created tests were successfully validated.
+INFO  Calculating coverage from Diffblue tests.
+INFO  JaCoCo report file created in /home/jbergqvist/diffblue/paritytrading-parity/applications/client/.diffblue/reports/diffblue-tests-jacoco-report.xml
+INFO  Calculating coverage from manual tests.
+INFO  JaCoCo report file created in /home/jbergqvist/diffblue/paritytrading-parity/applications/client/.diffblue/reports/manual-tests-jacoco-report.xml
+INFO  
+INFO  Diffblue tests cover 297 of 435 lines to cover (68.3%)
+INFO  Manual tests cover 0 of 435 lines to cover (0.0%)
+INFO  Writing JSON report to /home/jbergqvist/diffblue/paritytrading-parity/applications/client/.diffblue/reports/report.json
+INFO  
+INFO  Log file: /home/jbergqvist/diffblue/paritytrading-parity/.diffblue/log/user-20260120T122422.log
+INFO  Finished in 7m 10s

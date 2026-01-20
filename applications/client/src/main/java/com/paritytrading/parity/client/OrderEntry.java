@@ -41,7 +41,7 @@ class OrderEntry implements Closeable {
 
     private final Object txLock;
 
-    private OrderEntry(Selector selector, SocketChannel channel, POEClientListener listener) {
+    OrderEntry(Selector selector, SocketChannel channel, POEClientListener listener) {
         this.txBuffer = ByteBuffer.allocateDirect(POE.MAX_INBOUND_MESSAGE_LENGTH);
 
         this.selector = selector;

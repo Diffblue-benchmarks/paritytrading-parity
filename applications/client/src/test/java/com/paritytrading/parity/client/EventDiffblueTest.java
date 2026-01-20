@@ -8,6 +8,7 @@ import com.paritytrading.parity.client.Event.OrderCanceled;
 import com.paritytrading.parity.client.Event.OrderExecuted;
 import com.paritytrading.parity.client.Event.OrderRejected;
 import com.paritytrading.parity.net.poe.POE;
+import java.util.Map;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -16,27 +17,45 @@ class EventDiffblueTest {
   /**
    * Test OrderAccepted {@link OrderAccepted#OrderAccepted(OrderAccepted)}.
    *
+   * <ul>
+   *   <li>Then createTrades Orders size is one.
+   * </ul>
+   *
    * <p>Method under test: {@link OrderAccepted#OrderAccepted(POE.OrderAccepted)}
    */
   @Test
-  @DisplayName("Test OrderAccepted new OrderAccepted(OrderAccepted)")
+  @DisplayName(
+      "Test OrderAccepted new OrderAccepted(OrderAccepted); then createTrades Orders size is one")
   @Tag("ContributionFromDiffblue")
   @ManagedByDiffblue
   @MethodsUnderTest({"void OrderAccepted.<init>(POE.OrderAccepted)"})
-  void testOrderAcceptedNewOrderAccepted() {
+  void testOrderAcceptedNewOrderAccepted_thenCreateTradesOrdersSizeIsOne() {
     // Arrange and Act
     OrderAccepted actualOrderAccepted = new OrderAccepted(new POE.OrderAccepted());
-    actualOrderAccepted.accept(new DefaultEventVisitor());
+    Trades visitor = TradesTestFactory.createTrades();
+    actualOrderAccepted.accept(visitor);
 
     // Assert
+    Map orders = visitor.getOrders();
+    assertEquals(1, orders.size());
+    Object getResult =
+        orders.get(
+            "\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000");
+    assertEquals(
+        "\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000",
+        ((Order) getResult).getOrderId());
     assertEquals(
         "\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000",
         actualOrderAccepted.orderId);
+    assertEquals(0L, ((Order) getResult).getInstrument());
+    assertEquals(0L, ((Order) getResult).getQuantity());
+    assertEquals(0L, ((Order) getResult).getTimestamp());
     assertEquals(0L, actualOrderAccepted.instrument);
     assertEquals(0L, actualOrderAccepted.orderNumber);
     assertEquals(0L, actualOrderAccepted.price);
     assertEquals(0L, actualOrderAccepted.quantity);
     assertEquals(0L, actualOrderAccepted.timestamp);
+    assertEquals((byte) 0, ((Order) getResult).getSide());
     assertEquals((byte) 0, actualOrderAccepted.side);
   }
 
@@ -53,7 +72,8 @@ class EventDiffblueTest {
   void testOrderCanceledNewOrderCanceled() {
     // Arrange and Act
     OrderCanceled actualOrderCanceled = new OrderCanceled(new POE.OrderCanceled());
-    actualOrderCanceled.accept(new DefaultEventVisitor());
+    Trades visitor = TradesTestFactory.createTrades();
+    actualOrderCanceled.accept(visitor);
 
     // Assert
     assertEquals(
@@ -62,6 +82,7 @@ class EventDiffblueTest {
     assertEquals(0L, actualOrderCanceled.canceledQuantity);
     assertEquals(0L, actualOrderCanceled.timestamp);
     assertEquals((byte) 0, actualOrderCanceled.reason);
+    assertEquals(1, visitor.getVisitCount());
   }
 
   /**
@@ -77,7 +98,7 @@ class EventDiffblueTest {
   void testOrderExecutedNewOrderExecuted() {
     // Arrange and Act
     OrderExecuted actualOrderExecuted = new OrderExecuted(new POE.OrderExecuted());
-    actualOrderExecuted.accept(new DefaultEventVisitor());
+    actualOrderExecuted.accept(TradesTestFactory.createTrades());
 
     // Assert
     assertEquals(
@@ -103,7 +124,8 @@ class EventDiffblueTest {
   void testOrderRejectedNewOrderRejected() {
     // Arrange and Act
     OrderRejected actualOrderRejected = new OrderRejected(new POE.OrderRejected());
-    actualOrderRejected.accept(new DefaultEventVisitor());
+    Trades visitor = TradesTestFactory.createTrades();
+    actualOrderRejected.accept(visitor);
 
     // Assert
     assertEquals(
@@ -111,5 +133,6 @@ class EventDiffblueTest {
         actualOrderRejected.orderId);
     assertEquals(0L, actualOrderRejected.timestamp);
     assertEquals((byte) 0, actualOrderRejected.reason);
+    assertEquals(1, visitor.getVisitCount());
   }
 }

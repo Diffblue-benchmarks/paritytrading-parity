@@ -1,9 +1,11 @@
 package com.paritytrading.parity.client;
 
+import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import com.diffblue.cover.annotations.ManagedByDiffblue;
 import com.diffblue.cover.annotations.MethodsUnderTest;
+import java.io.IOException;
 import java.util.Scanner;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
@@ -14,7 +16,59 @@ class TradesCommandDiffblueTest {
    * Test {@link TradesCommand#execute(TerminalClient, Scanner)}.
    *
    * <ul>
-   *   <li>When {@link Scanner#Scanner(String)} with {@code foo}.
+   *   <li>Given createUsername.
+   * </ul>
+   *
+   * <p>Method under test: {@link TradesCommand#execute(TerminalClient, Scanner)}
+   */
+  @Test
+  @DisplayName("Test execute(TerminalClient, Scanner); given createUsername")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"void TradesCommand.execute(TerminalClient, Scanner)"})
+  void testExecute_givenCreateUsername() throws IOException {
+    // Arrange
+    TradesCommand tradesCommand = new TradesCommand();
+    TerminalClient client = TerminalClientTestFactory.createTerminalClient();
+
+    Scanner arguments = new Scanner("");
+    arguments.useDelimiter(TerminalClientTestFactory.createUsername());
+
+    // Act and Assert
+    assertDoesNotThrow(() -> tradesCommand.execute(client, arguments));
+  }
+
+  /**
+   * Test {@link TradesCommand#execute(TerminalClient, Scanner)}.
+   *
+   * <ul>
+   *   <li>Given {@code TimestampTimestamp}.
+   * </ul>
+   *
+   * <p>Method under test: {@link TradesCommand#execute(TerminalClient, Scanner)}
+   */
+  @Test
+  @DisplayName("Test execute(TerminalClient, Scanner); given 'TimestampTimestamp'")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"void TradesCommand.execute(TerminalClient, Scanner)"})
+  void testExecute_givenTimestampTimestamp() throws IOException {
+    // Arrange
+    TradesCommand tradesCommand = new TradesCommand();
+    TerminalClient client = TerminalClientTestFactory.createTerminalClient();
+
+    Scanner arguments = new Scanner("");
+    arguments.useDelimiter("TimestampTimestamp");
+
+    // Act and Assert
+    assertDoesNotThrow(() -> tradesCommand.execute(client, arguments));
+  }
+
+  /**
+   * Test {@link TradesCommand#execute(TerminalClient, Scanner)}.
+   *
+   * <ul>
+   *   <li>When {@link Scanner#Scanner(String)} with createUsername.
    *   <li>Then throw {@link IllegalArgumentException}.
    * </ul>
    *
@@ -22,17 +76,46 @@ class TradesCommandDiffblueTest {
    */
   @Test
   @DisplayName(
-      "Test execute(TerminalClient, Scanner); when Scanner(String) with 'foo'; then throw IllegalArgumentException")
+      "Test execute(TerminalClient, Scanner); when Scanner(String) with createUsername; then throw IllegalArgumentException")
   @Tag("ContributionFromDiffblue")
   @ManagedByDiffblue
   @MethodsUnderTest({"void TradesCommand.execute(TerminalClient, Scanner)"})
-  void testExecute_whenScannerWithFoo_thenThrowIllegalArgumentException() {
+  void testExecute_whenScannerWithCreateUsername_thenThrowIllegalArgumentException()
+      throws IOException {
     // Arrange
     TradesCommand tradesCommand = new TradesCommand();
+    TerminalClient client = TerminalClientTestFactory.createTerminalClient();
 
     // Act and Assert
     assertThrows(
-        IllegalArgumentException.class, () -> tradesCommand.execute(null, new Scanner("foo")));
+        IllegalArgumentException.class,
+        () ->
+            tradesCommand.execute(client, new Scanner(TerminalClientTestFactory.createUsername())));
+  }
+
+  /**
+   * Test {@link TradesCommand#execute(TerminalClient, Scanner)}.
+   *
+   * <ul>
+   *   <li>When {@link Scanner#Scanner(String)} with empty string.
+   *   <li>Then does not throw.
+   * </ul>
+   *
+   * <p>Method under test: {@link TradesCommand#execute(TerminalClient, Scanner)}
+   */
+  @Test
+  @DisplayName(
+      "Test execute(TerminalClient, Scanner); when Scanner(String) with empty string; then does not throw")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"void TradesCommand.execute(TerminalClient, Scanner)"})
+  void testExecute_whenScannerWithEmptyString_thenDoesNotThrow() throws IOException {
+    // Arrange
+    TradesCommand tradesCommand = new TradesCommand();
+    TerminalClient client = TerminalClientTestFactory.createTerminalClient();
+
+    // Act and Assert
+    assertDoesNotThrow(() -> tradesCommand.execute(client, new Scanner("")));
   }
 
   /**

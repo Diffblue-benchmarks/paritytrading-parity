@@ -43,66 +43,41 @@ class TradeDiffblueTest {
   }
 
   /**
-   * Test {@link Trade#getTimestamp()}.
-   *
-   * <p>Method under test: {@link Trade#getTimestamp()}
-   */
-  @Test
-  @DisplayName("Test getTimestamp()")
-  @Tag("ContributionFromDiffblue")
-  @ManagedByDiffblue
-  @MethodsUnderTest({"long Trade.getTimestamp()"})
-  void testGetTimestamp() {
-    // Arrange
-    Order order = new Order(new Event.OrderAccepted(new OrderAccepted()));
-    Trade trade = new Trade(order, new OrderExecuted(new POE.OrderExecuted()));
-
-    // Act and Assert
-    assertEquals(0L, trade.getTimestamp());
-  }
-
-  /**
    * Test {@link Trade#format(Instruments)}.
-   *
-   * <ul>
-   *   <li>Given {@link Event.OrderAccepted#OrderAccepted(OrderAccepted)} with message is {@link
-   *       POE.OrderAccepted} (default constructor).
-   *   <li>Then return a string.
-   * </ul>
    *
    * <p>Method under test: {@link Trade#format(Instruments)}
    */
   @Test
-  @DisplayName(
-      "Test format(Instruments); given OrderAccepted(OrderAccepted) with message is OrderAccepted (default constructor); then return a string")
+  @DisplayName("Test format(Instruments)")
   @Tag("ContributionFromDiffblue")
   @ManagedByDiffblue
   @MethodsUnderTest({"String Trade.format(Instruments)"})
-  void testFormat_givenOrderAcceptedWithMessageIsOrderAccepted_thenReturnAString() {
+  void testFormat() {
     // Arrange
-    Order order = new Order(new Event.OrderAccepted(new OrderAccepted()));
-    Trade trade = new Trade(order, new OrderExecuted(new POE.OrderExecuted()));
+    Trade createTradeWithTimestampResult =
+        TradeTestFactory.createTradeWithTimestamp(
+            TerminalClientTestFactory.createUsername(), (byte) 'A', 1L, 1L, 1L, 10L);
 
     Instrument instrument = mock(Instrument.class);
     when(instrument.getPriceFactor()).thenReturn(10.0d);
     when(instrument.getSizeFactor()).thenReturn(10.0d);
-    when(instrument.getPriceFormat()).thenReturn("Price Format");
-    when(instrument.getSizeFormat()).thenReturn("Size Format");
+    when(instrument.getPriceFormat()).thenReturn(TerminalClientTestFactory.createUsername());
+    when(instrument.getSizeFormat()).thenReturn(TerminalClientTestFactory.createUsername());
 
     Instruments instruments = mock(Instruments.class);
     when(instruments.get(anyLong())).thenReturn(instrument);
 
     // Act
-    String actualFormatResult = trade.format(instruments);
+    String actualFormatResult = createTradeWithTimestampResult.format(instruments);
 
     // Assert
     verify(instrument).getPriceFactor();
     verify(instrument).getPriceFormat();
     verify(instrument).getSizeFactor();
     verify(instrument).getSizeFormat();
-    verify(instruments).get(0L);
+    verify(instruments).get(1L);
     assertEquals(
-        "00:00:00.000 \u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000 \u0000 \u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000 Size Format Price Format",
+        "00:00:00.000 testuser         A \u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0001 testuser testuser",
         actualFormatResult);
   }
 }

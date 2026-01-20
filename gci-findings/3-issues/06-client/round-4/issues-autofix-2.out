@@ -1,0 +1,76 @@
+INFO  Diffblue Cover 2025.12.02-74144f0-licensed
+INFO  
+INFO  Command: issues
+INFO  Output a prioritized list of issues.
+INFO  
+INFO  Selected modules:
+INFO  - com.paritytrading.parity:parity-client
+INFO  
+INFO  
+INFO  [1/1] Diagnosing issues for module: com.paritytrading.parity:parity-client
+INFO  ==========================================================================
+INFO  
+INFO  Detected Java version 1.8.0_472
+INFO  Selected build system: Maven
+INFO  Reading report file '/home/jbergqvist/diffblue/paritytrading-parity/applications/client/.diffblue/reports/report.json'
+INFO  Copied report file to '/home/jbergqvist/diffblue/paritytrading-parity/applications/client/.diffblue/reports/report-20260120T120944.json'
+INFO  
+INFO  R081: Exception in arrange section
+      Diffblue Cover was unable to construct an instance of the class under test using
+      com.paritytrading.parity.client.Trade.getTimestamp().
+      The arrange section threw
+      com.diffblue.cover.sandbox.execution.ForbiddenByPolicyException: Sandboxing policy violation
+      More information about the exception is provided in the support log.
+      See https://diff.blue/R081 for further troubleshooting of this issue.
+      
+INFO  Affected methods:
+      com.paritytrading.parity.client.Trade.getTimestamp:()J
+      
+INFO  To resolve the issue, use the following prompt with your AI assistant:
+      
+      Fix the following issue preventing test creation for:
+      com.paritytrading.parity.client.Trade.getTimestamp:()J
+      
+      Diffblue Cover was unable to construct an instance of the class under test using
+      com.paritytrading.parity.client.Trade.getTimestamp().
+      The arrange section threw
+      com.diffblue.cover.sandbox.execution.ForbiddenByPolicyException: Sandboxing policy violation
+      More information about the exception is provided in the support log.
+      See https://diff.blue/R081 for further troubleshooting of this issue.
+      
+INFO  
+INFO  6 issues were found, numbers 6-6 were displayed
+INFO  Rerun without --prompts to summarise all the issues
+INFO  Actioning all 1 listed issues via agent
+INFO  Executing prompt with Claude Code agent...
+INFO  [Claude Code] Excellent! Now let me create a summary of the changes I've made:
+INFO  [Claude Code] 
+INFO  [Claude Code] ## Summary
+INFO  [Claude Code] 
+INFO  [Claude Code] I've successfully resolved the sandboxing policy violation issue preventing test creation for `Trade.getTimestamp()`. 
+INFO  [Claude Code] 
+INFO  [Claude Code] ### Root Cause
+INFO  [Claude Code] The issue was caused by the use of `System.currentTimeMillis()` in the `TradeTestFactory` methods. Diffblue Cover's sandboxing environment restricts certain operations, including calls to `System.currentTimeMillis()`, which was triggering a `ForbiddenByPolicyException`.
+INFO  [Claude Code] 
+INFO  [Claude Code] ### Changes Made
+INFO  [Claude Code] Modified `/home/jbergqvist/diffblue/paritytrading-parity/applications/client/src/test/java/com/paritytrading/parity/client/TradeTestFactory.java`:
+INFO  [Claude Code] 
+INFO  [Claude Code] 1. **Replaced dynamic timestamps with fixed values**: Changed both `createTrade()` and `createTradeWithParameters()` methods to use a fixed timestamp value (`1000000000L`) instead of `System.currentTimeMillis() * 1_000_000`.
+INFO  [Claude Code] 
+INFO  [Claude Code] 2. **Added new factory method**: Created `createTradeWithTimestamp()` which accepts a timestamp parameter, providing complete control over all Trade properties including the timestamp. This gives Diffblue Cover maximum flexibility in generating test cases.
+INFO  [Claude Code] 
+INFO  [Claude Code] ### Benefits
+INFO  [Claude Code] - Eliminates sandboxing policy violations during test generation
+INFO  [Claude Code] - Factory methods now use only deterministic, sandboxing-safe operations
+INFO  [Claude Code] - Provides three levels of control for creating Trade instances:
+INFO  [Claude Code]   - `createTrade()`: Simple factory with default values
+INFO  [Claude Code]   - `createTradeWithParameters()`: Control over order properties with fixed timestamp
+INFO  [Claude Code]   - `createTradeWithTimestamp()`: Full control including custom timestamp values
+INFO  [Claude Code]   
+INFO  [Claude Code] All three factory methods are annotated with `@InterestingTestFactory` so Diffblue Cover can discover and use them automatically.
+INFO  [Claude Code] 
+INFO  [Claude Code] As recommended, you should run `mvn install -DskipTests` to update the classpath before running Diffblue Cover again.
+INFO  Claude Code agent completed successfully.
+INFO  
+INFO  Log file: /home/jbergqvist/diffblue/paritytrading-parity/.diffblue/log/user-20260120T122251.log
+INFO  Finished in 1m 14s

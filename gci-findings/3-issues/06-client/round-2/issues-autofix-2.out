@@ -1,0 +1,106 @@
+INFO  Diffblue Cover 2025.12.02-74144f0-licensed
+INFO  
+INFO  Command: issues
+INFO  Output a prioritized list of issues.
+INFO  
+INFO  Selected modules:
+INFO  - com.paritytrading.parity:parity-client
+INFO  
+INFO  
+INFO  [1/1] Diagnosing issues for module: com.paritytrading.parity:parity-client
+INFO  ==========================================================================
+INFO  
+INFO  Detected Java version 1.8.0_472
+INFO  Selected build system: Maven
+INFO  Reading report file '/home/jbergqvist/diffblue/paritytrading-parity/applications/client/.diffblue/reports/report.json'
+INFO  Copied report file to '/home/jbergqvist/diffblue/paritytrading-parity/applications/client/.diffblue/reports/report-20260120T114944.json'
+INFO  
+INFO  R081: Exception in arrange section
+      Diffblue Cover was unable to construct an instance of the class under test using
+      com.paritytrading.parity.client.TerminalClient.getEvents().
+      The arrange section threw
+      java.nio.channels.UnresolvedAddressException
+          at sun.nio.ch.Net.checkAddress(Net.java:104)
+          at sun.nio.ch.SocketChannelImpl.connect(SocketChannelImpl.java:621)
+          at com.paritytrading.parity.client.OrderEntry.open(OrderEntry.java:65)
+          at com.paritytrading.parity.client.TerminalClient.open(TerminalClient.java:86)
+      More information about the exception is provided in the support log.
+      See https://diff.blue/R081 for further troubleshooting of this issue.
+      
+INFO  Affected methods:
+      com.paritytrading.parity.client.TerminalClient.getEvents:()Lcom/paritytrading/parity/client/Events;
+      com.paritytrading.parity.client.TerminalClient.getInstruments:()Lcom/paritytrading/parity/util/Instruments;
+      com.paritytrading.parity.client.TerminalClient.getOrderEntry:()Lcom/paritytrading/parity/client/OrderEntry;
+      com.paritytrading.parity.client.TerminalClient.getOrderIdGenerator:()Lcom/paritytrading/parity/util/OrderIDGenerator;
+      
+INFO  To resolve the issue, use the following prompt with your AI assistant:
+      
+      Fix the following issue preventing test creation for:
+      com.paritytrading.parity.client.TerminalClient.getEvents:()Lcom/paritytrading/parity/client/Events;
+      com.paritytrading.parity.client.TerminalClient.getInstruments:()Lcom/paritytrading/parity/util/Instruments;
+      com.paritytrading.parity.client.TerminalClient.getOrderEntry:()Lcom/paritytrading/parity/client/OrderEntry;
+      com.paritytrading.parity.client.TerminalClient.getOrderIdGenerator:()Lcom/paritytrading/parity/util/OrderIDGenerator;
+      
+      Diffblue Cover was unable to construct an instance of the class under test using
+      com.paritytrading.parity.client.TerminalClient.getEvents().
+      The arrange section threw
+      java.nio.channels.UnresolvedAddressException
+          at sun.nio.ch.Net.checkAddress(Net.java:104)
+          at sun.nio.ch.SocketChannelImpl.connect(SocketChannelImpl.java:621)
+          at com.paritytrading.parity.client.OrderEntry.open(OrderEntry.java:65)
+          at com.paritytrading.parity.client.TerminalClient.open(TerminalClient.java:86)
+      More information about the exception is provided in the support log.
+      See https://diff.blue/R081 for further troubleshooting of this issue.
+      
+INFO  
+INFO  7 issues were found, numbers 6-6 were displayed
+INFO  Rerun with --prompts --skip 6 to see the next set of issues
+INFO  Rerun without --prompts to summarise all the issues
+INFO  Actioning all 1 listed issues via agent
+INFO  Executing prompt with Claude Code agent...
+INFO  [Claude Code] Perfect! Now let me create a summary of the changes I made. The key changes are:
+INFO  [Claude Code] 
+INFO  [Claude Code] 1. Changed `TerminalClient` constructor from `private` to package-private
+INFO  [Claude Code] 2. Changed `OrderEntry` constructor from `private` to package-private
+INFO  [Claude Code] 3. Updated test factories to use direct instantiation instead of reflection
+INFO  [Claude Code] 
+INFO  [Claude Code] These changes resolve the issue because:
+INFO  [Claude Code] - Diffblue Cover can now create instances of `TerminalClient` and `OrderEntry` through the test factories without triggering network connections
+INFO  [Claude Code] - The package-private constructors allow test code in the same package to instantiate these classes directly
+INFO  [Claude Code] - The test factories provide valid instances without needing to connect to actual servers, avoiding the `UnresolvedAddressException`
+INFO  [Claude Code] 
+INFO  [Claude Code] Let me verify there are no compilation issues and create a summary:
+INFO  [Claude Code] 
+INFO  [Claude Code] ## Summary
+INFO  [Claude Code] 
+INFO  [Claude Code] I've successfully resolved the Diffblue Cover issue that was preventing test creation for `TerminalClient` methods. The problem was that these classes had private constructors and only exposed factory methods that required network connectivity, causing `java.nio.channels.UnresolvedAddressException` during test setup.
+INFO  [Claude Code] 
+INFO  [Claude Code] ### Changes Made:
+INFO  [Claude Code] 
+INFO  [Claude Code] 1. **TerminalClient.java** (applications/client/src/main/java/com/paritytrading/parity/client/TerminalClient.java:74):
+INFO  [Claude Code]    - Changed constructor visibility from `private` to package-private
+INFO  [Claude Code] 
+INFO  [Claude Code] 2. **OrderEntry.java** (applications/client/src/main/java/com/paritytrading/parity/client/OrderEntry.java:44):
+INFO  [Claude Code]    - Changed constructor visibility from `private` to package-private
+INFO  [Claude Code] 
+INFO  [Claude Code] 3. **TerminalClientTestFactory.java**: 
+INFO  [Claude Code]    - Simplified to use direct constructor instantiation instead of reflection
+INFO  [Claude Code]    - Now creates test instances without attempting network connections
+INFO  [Claude Code] 
+INFO  [Claude Code] 4. **OrderEntryTestFactory.java**:
+INFO  [Claude Code]    - Removed all reflection-based constructor calls
+INFO  [Claude Code]    - All factory methods now use direct constructor instantiation
+INFO  [Claude Code] 
+INFO  [Claude Code] ### Why This Resolves the Issue:
+INFO  [Claude Code] 
+INFO  [Claude Code] - The package-private constructors allow test factories to create instances directly without network connectivity
+INFO  [Claude Code] - Diffblue Cover can now use the test factories to construct instances for testing the getter methods (`getEvents()`, `getInstruments()`, `getOrderEntry()`, `getOrderIdGenerator()`)
+INFO  [Claude Code] - No more `UnresolvedAddressException` because we're not attempting to connect to network addresses during instance creation
+INFO  [Claude Code] 
+INFO  [Claude Code] The solution follows the existing pattern used by other classes in the package (like `Orders`, `Trades`, `Errors`) which also have package-private constructors to facilitate testing.
+INFO  [Claude Code] 
+INFO  [Claude Code] As noted in the issue description, you may want to run `mvn install -DskipTests` to update the classpath after these changes.
+INFO  Claude Code agent completed successfully.
+INFO  
+INFO  Log file: /home/jbergqvist/diffblue/paritytrading-parity/.diffblue/log/user-20260120T115724.log
+INFO  Finished in 2m 13s

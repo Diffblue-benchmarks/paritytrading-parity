@@ -5,12 +5,41 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import com.diffblue.cover.annotations.ManagedByDiffblue;
 import com.diffblue.cover.annotations.MethodsUnderTest;
+import java.io.IOException;
 import java.util.Scanner;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 class HelpCommandDiffblueTest {
+  /**
+   * Test {@link HelpCommand#execute(TerminalClient, Scanner)}.
+   *
+   * <ul>
+   *   <li>Then not {@link Scanner#Scanner(String)} with createUsername hasNext.
+   * </ul>
+   *
+   * <p>Method under test: {@link HelpCommand#execute(TerminalClient, Scanner)}
+   */
+  @Test
+  @DisplayName(
+      "Test execute(TerminalClient, Scanner); then not Scanner(String) with createUsername hasNext")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"void HelpCommand.execute(TerminalClient, Scanner)"})
+  void testExecute_thenNotScannerWithCreateUsernameHasNext() throws IOException {
+    // Arrange
+    HelpCommand helpCommand = new HelpCommand();
+    TerminalClient client = TerminalClientTestFactory.createTerminalClient();
+    Scanner arguments = new Scanner(TerminalClientTestFactory.createUsername());
+
+    // Act
+    helpCommand.execute(client, arguments);
+
+    // Assert
+    assertFalse(arguments.hasNext());
+  }
+
   /**
    * Test {@link HelpCommand#execute(TerminalClient, Scanner)}.
    *
@@ -27,13 +56,44 @@ class HelpCommandDiffblueTest {
   @Tag("ContributionFromDiffblue")
   @ManagedByDiffblue
   @MethodsUnderTest({"void HelpCommand.execute(TerminalClient, Scanner)"})
-  void testExecute_whenScannerWithBuy_thenNotScannerWithBuyHasNext() {
+  void testExecute_whenScannerWithBuy_thenNotScannerWithBuyHasNext() throws IOException {
     // Arrange
     HelpCommand helpCommand = new HelpCommand();
+    TerminalClient client = TerminalClientTestFactory.createTerminalClient();
     Scanner arguments = new Scanner("buy");
 
     // Act
-    helpCommand.execute(null, arguments);
+    helpCommand.execute(client, arguments);
+
+    // Assert
+    assertFalse(arguments.hasNext());
+  }
+
+  /**
+   * Test {@link HelpCommand#execute(TerminalClient, Scanner)}.
+   *
+   * <ul>
+   *   <li>When {@link Scanner#Scanner(String)} with {@code buytrades}.
+   *   <li>Then not {@link Scanner#Scanner(String)} with {@code buytrades} hasNext.
+   * </ul>
+   *
+   * <p>Method under test: {@link HelpCommand#execute(TerminalClient, Scanner)}
+   */
+  @Test
+  @DisplayName(
+      "Test execute(TerminalClient, Scanner); when Scanner(String) with 'buytrades'; then not Scanner(String) with 'buytrades' hasNext")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"void HelpCommand.execute(TerminalClient, Scanner)"})
+  void testExecute_whenScannerWithBuytrades_thenNotScannerWithBuytradesHasNext()
+      throws IOException {
+    // Arrange
+    HelpCommand helpCommand = new HelpCommand();
+    TerminalClient client = TerminalClientTestFactory.createTerminalClient();
+    Scanner arguments = new Scanner("buytrades");
+
+    // Act
+    helpCommand.execute(client, arguments);
 
     // Assert
     assertFalse(arguments.hasNext());
@@ -55,13 +115,14 @@ class HelpCommandDiffblueTest {
   @Tag("ContributionFromDiffblue")
   @ManagedByDiffblue
   @MethodsUnderTest({"void HelpCommand.execute(TerminalClient, Scanner)"})
-  void testExecute_whenScannerWithCancel_thenNotScannerWithCancelHasNext() {
+  void testExecute_whenScannerWithCancel_thenNotScannerWithCancelHasNext() throws IOException {
     // Arrange
     HelpCommand helpCommand = new HelpCommand();
+    TerminalClient client = TerminalClientTestFactory.createTerminalClient();
     Scanner arguments = new Scanner("cancel");
 
     // Act
-    helpCommand.execute(null, arguments);
+    helpCommand.execute(client, arguments);
 
     // Assert
     assertFalse(arguments.hasNext());
@@ -83,43 +144,17 @@ class HelpCommandDiffblueTest {
   @Tag("ContributionFromDiffblue")
   @ManagedByDiffblue
   @MethodsUnderTest({"void HelpCommand.execute(TerminalClient, Scanner)"})
-  void testExecute_whenScannerWithEmptyString_thenNotScannerWithEmptyStringHasNext() {
+  void testExecute_whenScannerWithEmptyString_thenNotScannerWithEmptyStringHasNext()
+      throws IOException {
     // Arrange
     HelpCommand helpCommand = new HelpCommand();
+    TerminalClient client = TerminalClientTestFactory.createTerminalClient();
     Scanner arguments = new Scanner("");
 
     // Act
-    helpCommand.execute(null, arguments);
+    helpCommand.execute(client, arguments);
 
     // Assert that nothing has changed
-    assertFalse(arguments.hasNext());
-  }
-
-  /**
-   * Test {@link HelpCommand#execute(TerminalClient, Scanner)}.
-   *
-   * <ul>
-   *   <li>When {@link Scanner#Scanner(String)} with {@code foo}.
-   *   <li>Then not {@link Scanner#Scanner(String)} with {@code foo} hasNext.
-   * </ul>
-   *
-   * <p>Method under test: {@link HelpCommand#execute(TerminalClient, Scanner)}
-   */
-  @Test
-  @DisplayName(
-      "Test execute(TerminalClient, Scanner); when Scanner(String) with 'foo'; then not Scanner(String) with 'foo' hasNext")
-  @Tag("ContributionFromDiffblue")
-  @ManagedByDiffblue
-  @MethodsUnderTest({"void HelpCommand.execute(TerminalClient, Scanner)"})
-  void testExecute_whenScannerWithFoo_thenNotScannerWithFooHasNext() {
-    // Arrange
-    HelpCommand helpCommand = new HelpCommand();
-    Scanner arguments = new Scanner("foo");
-
-    // Act
-    helpCommand.execute(null, arguments);
-
-    // Assert
     assertFalse(arguments.hasNext());
   }
 
@@ -139,13 +174,14 @@ class HelpCommandDiffblueTest {
   @Tag("ContributionFromDiffblue")
   @ManagedByDiffblue
   @MethodsUnderTest({"void HelpCommand.execute(TerminalClient, Scanner)"})
-  void testExecute_whenScannerWithHelp_thenNotScannerWithHelpHasNext() {
+  void testExecute_whenScannerWithHelp_thenNotScannerWithHelpHasNext() throws IOException {
     // Arrange
     HelpCommand helpCommand = new HelpCommand();
+    TerminalClient client = TerminalClientTestFactory.createTerminalClient();
     Scanner arguments = new Scanner("help");
 
     // Act
-    helpCommand.execute(null, arguments);
+    helpCommand.execute(client, arguments);
 
     // Assert
     assertFalse(arguments.hasNext());
@@ -167,13 +203,14 @@ class HelpCommandDiffblueTest {
   @Tag("ContributionFromDiffblue")
   @ManagedByDiffblue
   @MethodsUnderTest({"void HelpCommand.execute(TerminalClient, Scanner)"})
-  void testExecute_whenScannerWithOrders_thenNotScannerWithOrdersHasNext() {
+  void testExecute_whenScannerWithOrders_thenNotScannerWithOrdersHasNext() throws IOException {
     // Arrange
     HelpCommand helpCommand = new HelpCommand();
+    TerminalClient client = TerminalClientTestFactory.createTerminalClient();
     Scanner arguments = new Scanner("orders");
 
     // Act
-    helpCommand.execute(null, arguments);
+    helpCommand.execute(client, arguments);
 
     // Assert
     assertFalse(arguments.hasNext());
@@ -195,13 +232,43 @@ class HelpCommandDiffblueTest {
   @Tag("ContributionFromDiffblue")
   @ManagedByDiffblue
   @MethodsUnderTest({"void HelpCommand.execute(TerminalClient, Scanner)"})
-  void testExecute_whenScannerWithSS_thenThrowIllegalArgumentException() {
+  void testExecute_whenScannerWithSS_thenThrowIllegalArgumentException() throws IOException {
     // Arrange
     HelpCommand helpCommand = new HelpCommand();
+    TerminalClient client = TerminalClientTestFactory.createTerminalClient();
 
     // Act and Assert
     assertThrows(
-        IllegalArgumentException.class, () -> helpCommand.execute(null, new Scanner("s  %s\n")));
+        IllegalArgumentException.class, () -> helpCommand.execute(client, new Scanner("s  %s\n")));
+  }
+
+  /**
+   * Test {@link HelpCommand#execute(TerminalClient, Scanner)}.
+   *
+   * <ul>
+   *   <li>When {@link Scanner#Scanner(String)} with {@code testuser}.
+   *   <li>Then not {@link Scanner#Scanner(String)} with {@code testuser} hasNext.
+   * </ul>
+   *
+   * <p>Method under test: {@link HelpCommand#execute(TerminalClient, Scanner)}
+   */
+  @Test
+  @DisplayName(
+      "Test execute(TerminalClient, Scanner); when Scanner(String) with 'testuser'; then not Scanner(String) with 'testuser' hasNext")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"void HelpCommand.execute(TerminalClient, Scanner)"})
+  void testExecute_whenScannerWithTestuser_thenNotScannerWithTestuserHasNext() throws IOException {
+    // Arrange
+    HelpCommand helpCommand = new HelpCommand();
+    TerminalClient client = TerminalClientTestFactory.createTerminalClient();
+    Scanner arguments = new Scanner("testuser");
+
+    // Act
+    helpCommand.execute(client, arguments);
+
+    // Assert
+    assertFalse(arguments.hasNext());
   }
 
   /**

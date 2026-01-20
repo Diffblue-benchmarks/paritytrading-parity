@@ -45,6 +45,11 @@ class Orders extends DefaultEventVisitor {
                 .collect(toList());
     }
 
+    /** For testing purposes only */
+    public Map getOrders() {
+        return orders;
+    }
+
     @Override
     public void visit(Event.OrderAccepted event) {
         orders.put(event.orderId, new Order(event));

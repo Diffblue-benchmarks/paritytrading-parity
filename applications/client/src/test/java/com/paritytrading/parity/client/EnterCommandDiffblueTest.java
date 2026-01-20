@@ -6,6 +6,7 @@ import com.diffblue.cover.annotations.ManagedByDiffblue;
 import com.diffblue.cover.annotations.MethodsUnderTest;
 import java.io.IOException;
 import java.util.Scanner;
+import java.util.regex.Pattern;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -36,24 +37,27 @@ class EnterCommandDiffblueTest {
    * arguments}.
    *
    * <ul>
-   *   <li>Then throw {@link IllegalArgumentException}.
+   *   <li>Given compile {@code 4242}.
    * </ul>
    *
    * <p>Method under test: {@link EnterCommand#execute(TerminalClient, Scanner)}
    */
   @Test
   @DisplayName(
-      "Test execute(TerminalClient, Scanner) with 'client', 'arguments'; then throw IllegalArgumentException")
+      "Test execute(TerminalClient, Scanner) with 'client', 'arguments'; given compile '4242'")
   @Tag("ContributionFromDiffblue")
   @ManagedByDiffblue
   @MethodsUnderTest({"void EnterCommand.execute(TerminalClient, Scanner)"})
-  void testExecuteWithClientArguments_thenThrowIllegalArgumentException() throws IOException {
+  void testExecuteWithClientArguments_givenCompile4242() throws IOException {
     // Arrange
     EnterCommand enterCommand = new EnterCommand((byte) 'A');
+    TerminalClient client = TerminalClientTestFactory.createTerminalClient();
+
+    Scanner arguments = new Scanner("4242");
+    arguments.useDelimiter(Pattern.compile("4242"));
 
     // Act and Assert
-    assertThrows(
-        IllegalArgumentException.class, () -> enterCommand.execute(null, new Scanner("foo")));
+    assertThrows(IllegalArgumentException.class, () -> enterCommand.execute(client, arguments));
   }
 
   /**
@@ -61,6 +65,7 @@ class EnterCommandDiffblueTest {
    * arguments}.
    *
    * <ul>
+   *   <li>Given {@link EnterCommand#EnterCommand(byte)} with side is {@code A}.
    *   <li>When {@link Scanner#Scanner(String)} with {@code 42}.
    * </ul>
    *
@@ -68,17 +73,159 @@ class EnterCommandDiffblueTest {
    */
   @Test
   @DisplayName(
-      "Test execute(TerminalClient, Scanner) with 'client', 'arguments'; when Scanner(String) with '42'")
+      "Test execute(TerminalClient, Scanner) with 'client', 'arguments'; given EnterCommand(byte) with side is 'A'; when Scanner(String) with '42'")
   @Tag("ContributionFromDiffblue")
   @ManagedByDiffblue
   @MethodsUnderTest({"void EnterCommand.execute(TerminalClient, Scanner)"})
-  void testExecuteWithClientArguments_whenScannerWith42() throws IOException {
+  void testExecuteWithClientArguments_givenEnterCommandWithSideIsA_whenScannerWith42()
+      throws IOException {
     // Arrange
     EnterCommand enterCommand = new EnterCommand((byte) 'A');
+    TerminalClient client = TerminalClientTestFactory.createTerminalClient();
 
     // Act and Assert
     assertThrows(
-        IllegalArgumentException.class, () -> enterCommand.execute(null, new Scanner("42")));
+        IllegalArgumentException.class, () -> enterCommand.execute(client, new Scanner("42")));
+  }
+
+  /**
+   * Test {@link EnterCommand#execute(TerminalClient, Scanner)} with {@code client}, {@code
+   * arguments}.
+   *
+   * <ul>
+   *   <li>Given {@link EnterCommand#EnterCommand(byte)} with side is {@code B}.
+   *   <li>When {@link Scanner#Scanner(String)} with {@code foo}.
+   * </ul>
+   *
+   * <p>Method under test: {@link EnterCommand#execute(TerminalClient, Scanner)}
+   */
+  @Test
+  @DisplayName(
+      "Test execute(TerminalClient, Scanner) with 'client', 'arguments'; given EnterCommand(byte) with side is 'B'; when Scanner(String) with 'foo'")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"void EnterCommand.execute(TerminalClient, Scanner)"})
+  void testExecuteWithClientArguments_givenEnterCommandWithSideIsB_whenScannerWithFoo()
+      throws IOException {
+    // Arrange
+    EnterCommand enterCommand = new EnterCommand((byte) 'B');
+    TerminalClient client = TerminalClientTestFactory.createTerminalClient();
+
+    // Act and Assert
+    assertThrows(
+        IllegalArgumentException.class, () -> enterCommand.execute(client, new Scanner("foo")));
+  }
+
+  /**
+   * Test {@link EnterCommand#execute(TerminalClient, Scanner)} with {@code client}, {@code
+   * arguments}.
+   *
+   * <ul>
+   *   <li>Given {@link EnterCommand#EnterCommand(byte)} with side is zero.
+   * </ul>
+   *
+   * <p>Method under test: {@link EnterCommand#execute(TerminalClient, Scanner)}
+   */
+  @Test
+  @DisplayName(
+      "Test execute(TerminalClient, Scanner) with 'client', 'arguments'; given EnterCommand(byte) with side is zero")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"void EnterCommand.execute(TerminalClient, Scanner)"})
+  void testExecuteWithClientArguments_givenEnterCommandWithSideIsZero() throws IOException {
+    // Arrange
+    EnterCommand enterCommand = new EnterCommand((byte) 0);
+    TerminalClient client = TerminalClientTestFactory.createTerminalClient();
+
+    // Act and Assert
+    assertThrows(
+        IllegalArgumentException.class, () -> enterCommand.execute(client, new Scanner("")));
+  }
+
+  /**
+   * Test {@link EnterCommand#execute(TerminalClient, Scanner)} with {@code client}, {@code
+   * arguments}.
+   *
+   * <ul>
+   *   <li>When {@link Scanner#Scanner(String)} with {@code 42} useDelimiter compile empty string.
+   * </ul>
+   *
+   * <p>Method under test: {@link EnterCommand#execute(TerminalClient, Scanner)}
+   */
+  @Test
+  @DisplayName(
+      "Test execute(TerminalClient, Scanner) with 'client', 'arguments'; when Scanner(String) with '42' useDelimiter compile empty string")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"void EnterCommand.execute(TerminalClient, Scanner)"})
+  void testExecuteWithClientArguments_whenScannerWith42UseDelimiterCompileEmptyString()
+      throws IOException {
+    // Arrange
+    EnterCommand enterCommand = new EnterCommand((byte) 'A');
+    TerminalClient client = TerminalClientTestFactory.createTerminalClient();
+
+    Scanner arguments = new Scanner("42");
+    arguments.useDelimiter(Pattern.compile(""));
+
+    // Act and Assert
+    assertThrows(IllegalArgumentException.class, () -> enterCommand.execute(client, arguments));
+  }
+
+  /**
+   * Test {@link EnterCommand#execute(TerminalClient, Scanner)} with {@code client}, {@code
+   * arguments}.
+   *
+   * <ul>
+   *   <li>When {@link Scanner#Scanner(String)} with {@code 4242} useDelimiter compile empty string.
+   * </ul>
+   *
+   * <p>Method under test: {@link EnterCommand#execute(TerminalClient, Scanner)}
+   */
+  @Test
+  @DisplayName(
+      "Test execute(TerminalClient, Scanner) with 'client', 'arguments'; when Scanner(String) with '4242' useDelimiter compile empty string")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"void EnterCommand.execute(TerminalClient, Scanner)"})
+  void testExecuteWithClientArguments_whenScannerWith4242UseDelimiterCompileEmptyString()
+      throws IOException {
+    // Arrange
+    EnterCommand enterCommand = new EnterCommand((byte) 'A');
+    TerminalClient client = TerminalClientTestFactory.createTerminalClient();
+
+    Scanner arguments = new Scanner("4242");
+    arguments.useDelimiter(Pattern.compile(""));
+
+    // Act and Assert
+    assertThrows(IllegalArgumentException.class, () -> enterCommand.execute(client, arguments));
+  }
+
+  /**
+   * Test {@link EnterCommand#execute(TerminalClient, Scanner)} with {@code client}, {@code
+   * arguments}.
+   *
+   * <ul>
+   *   <li>When {@link Scanner#Scanner(String)} with createUsername.
+   * </ul>
+   *
+   * <p>Method under test: {@link EnterCommand#execute(TerminalClient, Scanner)}
+   */
+  @Test
+  @DisplayName(
+      "Test execute(TerminalClient, Scanner) with 'client', 'arguments'; when Scanner(String) with createUsername")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"void EnterCommand.execute(TerminalClient, Scanner)"})
+  void testExecuteWithClientArguments_whenScannerWithCreateUsername() throws IOException {
+    // Arrange
+    EnterCommand enterCommand = new EnterCommand((byte) 'A');
+    TerminalClient client = TerminalClientTestFactory.createTerminalClient();
+
+    // Act and Assert
+    assertThrows(
+        IllegalArgumentException.class,
+        () ->
+            enterCommand.execute(client, new Scanner(TerminalClientTestFactory.createUsername())));
   }
 
   /**
