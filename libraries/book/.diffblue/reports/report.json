@@ -3,19 +3,19 @@
     "reportVersion" : "2.8"
   },
   "run" : {
-    "version" : "2025.11.01-3385b9f-licensed",
-    "creationTimestamp" : "2025-11-13T00:06:56.847Z",
+    "version" : "2026.01.01-c73dc7d-licensed",
+    "creationTimestamp" : "2026-01-23T11:58:01.875Z",
     "command" : "dcover create --coverage-reports --upload http://localhost:8080 --project-name paritytrading-parity --name with-diffblue-tests",
-    "totalTime" : 65.628,
-    "environmentDetectionTime" : 1.199,
-    "indexingTime" : 0.32,
-    "entryPointsTime" : 1.17,
-    "generationTime" : 31.8,
-    "timeToFirstTest" : 24.696,
-    "timeToLastTest" : 44.868,
-    "indexQueryTime" : 2.642,
-    "verificationTime" : 4.217,
-    "validationTime" : 8.974
+    "totalTime" : 67.823,
+    "environmentDetectionTime" : 1.313,
+    "indexingTime" : 0.365,
+    "entryPointsTime" : 1.284,
+    "generationTime" : 32.521,
+    "timeToFirstTest" : 25.58,
+    "timeToLastTest" : 46.292,
+    "indexQueryTime" : 2.769,
+    "verificationTime" : 4.179,
+    "validationTime" : 8.465
   },
   "codes" : {
     "R000" : "Success",
