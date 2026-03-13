@@ -357,4 +357,80 @@ class EventsTest {
         field.setAccessible(true);
         return (MarketReporting) field.get(events);
     }
+
+    private void invokeReceive(Events events, Session session) throws Exception {
+        Method method = Events.class.getDeclaredMethod("receive", Session.class);
+        method.setAccessible(true);
+        method.invoke(events, session);
+    }
+
+    @Test
+    public void testReceiveAddsSessionToCleanUpWhenReceiveReturnsNegative() throws Exception {
+        Events events = createEventsInstance();
+
+        com.paritytrading.nassau.soupbintcp.SoupBinTCPServer sessionTransport = mock(com.paritytrading.nassau.soupbintcp.SoupBinTCPServer.class);
+        org.mockito.Mockito.when(sessionTransport.receive()).thenReturn(-1);
+
+        Session session = mock(Session.class);
+        org.mockito.Mockito.when(session.getTransport()).thenReturn(sessionTransport);
+
+        List<Session> toCleanUp = getToCleanUpList(events);
+
+        invokeReceive(events, session);
+
+        assertEquals(1, toCleanUp.size());
+        assertTrue(toCleanUp.contains(session));
+    }
+
+    @Test
+    public void testReceiveDoesNotAddSessionToCleanUpWhenReceiveReturnsPositive() throws Exception {
+        Events events = createEventsInstance();
+
+        com.paritytrading.nassau.soupbintcp.SoupBinTCPServer sessionTransport = mock(com.paritytrading.nassau.soupbintcp.SoupBinTCPServer.class);
+        org.mockito.Mockito.when(sessionTransport.receive()).thenReturn(100);
+
+        Session session = mock(Session.class);
+        org.mockito.Mockito.when(session.getTransport()).thenReturn(sessionTransport);
+
+        List<Session> toCleanUp = getToCleanUpList(events);
+
+        invokeReceive(events, session);
+
+        assertEquals(0, toCleanUp.size());
+    }
+
+    @Test
+    public void testReceiveDoesNotAddSessionToCleanUpWhenReceiveReturnsZero() throws Exception {
+        Events events = createEventsInstance();
+
+        com.paritytrading.nassau.soupbintcp.SoupBinTCPServer sessionTransport = mock(com.paritytrading.nassau.soupbintcp.SoupBinTCPServer.class);
+        org.mockito.Mockito.when(sessionTransport.receive()).thenReturn(0);
+
+        Session session = mock(Session.class);
+        org.mockito.Mockito.when(session.getTransport()).thenReturn(sessionTransport);
+
+        List<Session> toCleanUp = getToCleanUpList(events);
+
+        invokeReceive(events, session);
+
+        assertEquals(0, toCleanUp.size());
+    }
+
+    @Test
+    public void testReceiveAddsSessionToCleanUpWhenIOExceptionThrown() throws Exception {
+        Events events = createEventsInstance();
+
+        com.paritytrading.nassau.soupbintcp.SoupBinTCPServer sessionTransport = mock(com.paritytrading.nassau.soupbintcp.SoupBinTCPServer.class);
+        org.mockito.Mockito.when(sessionTransport.receive()).thenThrow(new IOException());
+
+        Session session = mock(Session.class);
+        org.mockito.Mockito.when(session.getTransport()).thenReturn(sessionTransport);
+
+        List<Session> toCleanUp = getToCleanUpList(events);
+
+        invokeReceive(events, session);
+
+        assertEquals(1, toCleanUp.size());
+        assertTrue(toCleanUp.contains(session));
+    }
 }
