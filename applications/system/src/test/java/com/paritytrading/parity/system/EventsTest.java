@@ -197,4 +197,164 @@ class EventsTest {
         method.setAccessible(true);
         method.invoke(events);
     }
+
+    private void invokeKeepAlive(Events events) throws Exception {
+        Method method = Events.class.getDeclaredMethod("keepAlive");
+        method.setAccessible(true);
+        method.invoke(events);
+    }
+
+    @Test
+    public void testKeepAliveCallsMarketDataTransport() throws Exception {
+        Events events = createEventsInstance();
+        MarketData marketData = getMarketDataField(events);
+        MoldUDP64Server transport = marketData.getTransport();
+
+        invokeKeepAlive(events);
+
+        verify(transport, times(1)).keepAlive();
+    }
+
+    @Test
+    public void testKeepAliveCallsMarketReportingTransport() throws Exception {
+        Events events = createEventsInstance();
+        MarketReporting marketReporting = getMarketReportingField(events);
+        MoldUDP64Server transport = marketReporting.getTransport();
+
+        invokeKeepAlive(events);
+
+        verify(transport, times(1)).keepAlive();
+    }
+
+    @Test
+    public void testKeepAliveHandlesMarketDataIOException() throws Exception {
+        MarketData marketData = createMarketDataMock();
+        MoldUDP64Server transport = marketData.getTransport();
+        org.mockito.Mockito.doThrow(new IOException()).when(transport).keepAlive();
+
+        MarketReporting marketReporting = createMarketReportingMock();
+        OrderEntry orderEntry = createOrderEntryMock();
+        Events events = new Events(marketData, marketReporting, orderEntry);
+
+        invokeKeepAlive(events);
+
+        verify(transport, times(1)).keepAlive();
+    }
+
+    @Test
+    public void testKeepAliveHandlesMarketReportingIOException() throws Exception {
+        MarketData marketData = createMarketDataMock();
+        MarketReporting marketReporting = createMarketReportingMock();
+        MoldUDP64Server transport = marketReporting.getTransport();
+        org.mockito.Mockito.doThrow(new IOException()).when(transport).keepAlive();
+
+        OrderEntry orderEntry = createOrderEntryMock();
+        Events events = new Events(marketData, marketReporting, orderEntry);
+
+        invokeKeepAlive(events);
+
+        verify(transport, times(1)).keepAlive();
+    }
+
+    @Test
+    public void testKeepAliveCallsSessionTransports() throws Exception {
+        Events events = createEventsInstance();
+
+        com.paritytrading.nassau.soupbintcp.SoupBinTCPServer sessionTransport1 = mock(com.paritytrading.nassau.soupbintcp.SoupBinTCPServer.class);
+        com.paritytrading.nassau.soupbintcp.SoupBinTCPServer sessionTransport2 = mock(com.paritytrading.nassau.soupbintcp.SoupBinTCPServer.class);
+
+        Session session1 = mock(Session.class);
+        Session session2 = mock(Session.class);
+        org.mockito.Mockito.when(session1.getTransport()).thenReturn(sessionTransport1);
+        org.mockito.Mockito.when(session2.getTransport()).thenReturn(sessionTransport2);
+
+        List<Session> toKeepAlive = getToKeepAliveList(events);
+        toKeepAlive.add(session1);
+        toKeepAlive.add(session2);
+
+        invokeKeepAlive(events);
+
+        verify(sessionTransport1, times(1)).keepAlive();
+        verify(sessionTransport2, times(1)).keepAlive();
+    }
+
+    @Test
+    public void testKeepAliveAddsTerminatedSessionToCleanUp() throws Exception {
+        Events events = createEventsInstance();
+
+        com.paritytrading.nassau.soupbintcp.SoupBinTCPServer sessionTransport = mock(com.paritytrading.nassau.soupbintcp.SoupBinTCPServer.class);
+        Session session = mock(Session.class);
+        org.mockito.Mockito.when(session.getTransport()).thenReturn(sessionTransport);
+        org.mockito.Mockito.when(session.isTerminated()).thenReturn(true);
+
+        List<Session> toKeepAlive = getToKeepAliveList(events);
+        List<Session> toCleanUp = getToCleanUpList(events);
+        toKeepAlive.add(session);
+
+        invokeKeepAlive(events);
+
+        assertEquals(1, toCleanUp.size());
+        assertTrue(toCleanUp.contains(session));
+    }
+
+    @Test
+    public void testKeepAliveAddsSessionWithIOExceptionToCleanUp() throws Exception {
+        Events events = createEventsInstance();
+
+        com.paritytrading.nassau.soupbintcp.SoupBinTCPServer sessionTransport = mock(com.paritytrading.nassau.soupbintcp.SoupBinTCPServer.class);
+        org.mockito.Mockito.doThrow(new IOException()).when(sessionTransport).keepAlive();
+
+        Session session = mock(Session.class);
+        org.mockito.Mockito.when(session.getTransport()).thenReturn(sessionTransport);
+
+        List<Session> toKeepAlive = getToKeepAliveList(events);
+        List<Session> toCleanUp = getToCleanUpList(events);
+        toKeepAlive.add(session);
+
+        invokeKeepAlive(events);
+
+        assertEquals(1, toCleanUp.size());
+        assertTrue(toCleanUp.contains(session));
+    }
+
+    @Test
+    public void testKeepAliveWithEmptySessionList() throws Exception {
+        Events events = createEventsInstance();
+
+        List<Session> toCleanUp = getToCleanUpList(events);
+
+        invokeKeepAlive(events);
+
+        assertEquals(0, toCleanUp.size());
+    }
+
+    @Test
+    public void testKeepAliveDoesNotAddNonTerminatedSessionToCleanUp() throws Exception {
+        Events events = createEventsInstance();
+
+        com.paritytrading.nassau.soupbintcp.SoupBinTCPServer sessionTransport = mock(com.paritytrading.nassau.soupbintcp.SoupBinTCPServer.class);
+        Session session = mock(Session.class);
+        org.mockito.Mockito.when(session.getTransport()).thenReturn(sessionTransport);
+        org.mockito.Mockito.when(session.isTerminated()).thenReturn(false);
+
+        List<Session> toKeepAlive = getToKeepAliveList(events);
+        List<Session> toCleanUp = getToCleanUpList(events);
+        toKeepAlive.add(session);
+
+        invokeKeepAlive(events);
+
+        assertEquals(0, toCleanUp.size());
+    }
+
+    private MarketData getMarketDataField(Events events) throws Exception {
+        Field field = Events.class.getDeclaredField("marketData");
+        field.setAccessible(true);
+        return (MarketData) field.get(events);
+    }
+
+    private MarketReporting getMarketReportingField(Events events) throws Exception {
+        Field field = Events.class.getDeclaredField("marketReporting");
+        field.setAccessible(true);
+        return (MarketReporting) field.get(events);
+    }
 }
