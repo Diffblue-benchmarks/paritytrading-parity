@@ -34,4 +34,11 @@ public class TradesCommandTest {
         String description = command.getDescription();
         assertEquals("Display occurred trades", description);
     }
+
+    @Test
+    public void testGetName() {
+        TradesCommand command = new TradesCommand();
+        String name = command.getName();
+        assertEquals("trades", name);
+    }
 }
