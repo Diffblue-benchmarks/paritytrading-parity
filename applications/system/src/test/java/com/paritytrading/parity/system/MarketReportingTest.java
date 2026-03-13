@@ -176,4 +176,18 @@ class MarketReportingTest {
         long timestamp = (Long) timestampMethod.invoke(marketReporting);
         assertTrue(timestamp > 0);
     }
+
+    @Test
+    public void testOpen() throws Exception {
+        String session = "TEST_SESSION";
+        NetworkInterface multicastInterface = NetworkInterface.getByInetAddress(InetAddress.getLoopbackAddress());
+        InetSocketAddress multicastGroup = new InetSocketAddress("239.255.0.1", 5000);
+        InetSocketAddress requestAddress = new InetSocketAddress("127.0.0.1", 0);
+
+        MarketReporting reporting = MarketReporting.open(session, multicastInterface, multicastGroup, requestAddress);
+
+        assertNotNull(reporting);
+        assertNotNull(reporting.getTransport());
+        assertNotNull(reporting.getRequestTransport());
+    }
 }
