@@ -121,4 +121,47 @@ class FIXGatewayTest {
         Method fixMethod = FIXGateway.class.getDeclaredMethod("fix", OrderEntryFactory.class, Config.class);
         assertNotNull(fixMethod);
     }
+
+    @Test
+    public void testMainWithConfig() throws Exception {
+        String configString =
+            "order-entry {\n" +
+            "  address = \"127.0.0.1\"\n" +
+            "  port = 0\n" +
+            "}\n" +
+            "fix {\n" +
+            "  address = \"127.0.0.1\"\n" +
+            "  port = 0\n" +
+            "  sender-comp-id = \"TEST_SENDER\"\n" +
+            "}\n" +
+            "instruments {\n" +
+            "  FOO {\n" +
+            "    price-fraction-digits = 2\n" +
+            "    size-fraction-digits = 0\n" +
+            "  }\n" +
+            "}";
+        Config config = ConfigFactory.parseString(configString);
+
+        Method mainMethod = FIXGateway.class.getDeclaredMethod("main", Config.class);
+        mainMethod.setAccessible(true);
+
+        final Exception[] exception = new Exception[1];
+        Thread thread = new Thread(() -> {
+            try {
+                mainMethod.invoke(null, config);
+            } catch (Exception e) {
+                exception[0] = e;
+            }
+        });
+
+        thread.start();
+        Thread.sleep(200);
+        thread.interrupt();
+        thread.join(1000);
+
+        if (exception[0] != null && !(exception[0].getCause() instanceof java.nio.channels.ClosedByInterruptException)
+            && !(exception[0].getCause() instanceof java.nio.channels.ClosedSelectorException)) {
+            throw exception[0];
+        }
+    }
 }
