@@ -27,4 +27,11 @@ public class TradesCommandTest {
         String usage = command.getUsage();
         assertEquals("trades", usage);
     }
+
+    @Test
+    public void testGetDescription() {
+        TradesCommand command = new TradesCommand();
+        String description = command.getDescription();
+        assertEquals("Display occurred trades", description);
+    }
 }
