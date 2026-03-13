@@ -31,6 +31,7 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 import com.paritytrading.parity.util.Instruments;
+import com.paritytrading.parity.util.OrderIDGenerator;
 import com.typesafe.config.Config;
 import com.typesafe.config.ConfigException;
 import com.typesafe.config.ConfigFactory;
@@ -38,6 +39,8 @@ import java.io.ByteArrayOutputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintStream;
+import java.lang.reflect.Constructor;
+import java.lang.reflect.Field;
 import java.net.InetAddress;
 import java.net.InetSocketAddress;
 import java.util.HashMap;
@@ -339,5 +342,65 @@ public class TerminalClientTest {
 
             mockedApplications.verify(() -> Applications.error(any(ConfigException.class)), times(1));
         }
+    }
+
+    @Test
+    public void testConstructorInitializesEventsField() throws Exception {
+        Events events = new Events();
+
+        Constructor<TerminalClient> constructor = TerminalClient.class.getDeclaredConstructor(
+            Events.class, OrderEntry.class, Instruments.class);
+        constructor.setAccessible(true);
+
+        TerminalClient client = constructor.newInstance(events, null, null);
+
+        Field eventsField = TerminalClient.class.getDeclaredField("events");
+        eventsField.setAccessible(true);
+        assertEquals(events, eventsField.get(client));
+    }
+
+    @Test
+    public void testConstructorInitializesOrderIdGenerator() throws Exception {
+        Events events = new Events();
+
+        Constructor<TerminalClient> constructor = TerminalClient.class.getDeclaredConstructor(
+            Events.class, OrderEntry.class, Instruments.class);
+        constructor.setAccessible(true);
+
+        TerminalClient client = constructor.newInstance(events, null, null);
+
+        Field orderIdGeneratorField = TerminalClient.class.getDeclaredField("orderIdGenerator");
+        orderIdGeneratorField.setAccessible(true);
+        Object orderIdGenerator = orderIdGeneratorField.get(client);
+
+        assertNotNull(orderIdGenerator);
+        assertTrue(orderIdGenerator instanceof OrderIDGenerator);
+    }
+
+    @Test
+    public void testConstructorInitializesAllFields() throws Exception {
+        Events events = new Events();
+
+        Constructor<TerminalClient> constructor = TerminalClient.class.getDeclaredConstructor(
+            Events.class, OrderEntry.class, Instruments.class);
+        constructor.setAccessible(true);
+
+        TerminalClient client = constructor.newInstance(events, null, null);
+
+        Field eventsField = TerminalClient.class.getDeclaredField("events");
+        eventsField.setAccessible(true);
+        assertEquals(events, eventsField.get(client));
+
+        Field orderEntryField = TerminalClient.class.getDeclaredField("orderEntry");
+        orderEntryField.setAccessible(true);
+        assertNull(orderEntryField.get(client));
+
+        Field instrumentsField = TerminalClient.class.getDeclaredField("instruments");
+        instrumentsField.setAccessible(true);
+        assertNull(instrumentsField.get(client));
+
+        Field orderIdGeneratorField = TerminalClient.class.getDeclaredField("orderIdGenerator");
+        orderIdGeneratorField.setAccessible(true);
+        assertNotNull(orderIdGeneratorField.get(client));
     }
 }
