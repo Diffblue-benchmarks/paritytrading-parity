@@ -23,6 +23,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.ArgumentMatchers.eq;
+import static org.mockito.Mockito.doThrow;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.mockStatic;
 import static org.mockito.Mockito.times;
@@ -31,17 +32,22 @@ import static org.mockito.Mockito.when;
 
 import com.paritytrading.parity.util.Instruments;
 import com.typesafe.config.Config;
+import com.typesafe.config.ConfigException;
 import com.typesafe.config.ConfigFactory;
 import java.io.ByteArrayOutputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintStream;
 import java.net.InetAddress;
 import java.net.InetSocketAddress;
 import java.util.HashMap;
 import java.util.Map;
+import org.jline.reader.EndOfFileException;
+import org.jline.reader.UserInterruptException;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.jvirtanen.config.Configs;
+import org.jvirtanen.util.Applications;
 import org.mockito.MockedStatic;
 
 public class TerminalClientTest {
@@ -260,5 +266,78 @@ public class TerminalClientTest {
         assertThrows(java.lang.reflect.InvocationTargetException.class, () -> {
             mainMethod.invoke(null, config);
         });
+    }
+
+    @Test
+    public void testMainWithNoArguments() throws Exception {
+        RuntimeException exitException = new RuntimeException("usage called");
+
+        try (MockedStatic<Applications> mockedApplications = mockStatic(Applications.class)) {
+            mockedApplications.when(() -> Applications.usage(anyString())).thenThrow(exitException);
+
+            try {
+                TerminalClient.main(new String[]{});
+            } catch (RuntimeException e) {
+                if (e != exitException) throw e;
+            }
+
+            mockedApplications.verify(() -> Applications.usage("parity-client <configuration-file>"), times(1));
+        }
+    }
+
+    @Test
+    public void testMainWithMultipleArguments() throws Exception {
+        RuntimeException exitException = new RuntimeException("usage called");
+
+        try (MockedStatic<Applications> mockedApplications = mockStatic(Applications.class)) {
+            mockedApplications.when(() -> Applications.usage(anyString())).thenThrow(exitException);
+
+            try {
+                TerminalClient.main(new String[]{"arg1", "arg2"});
+            } catch (RuntimeException e) {
+                if (e != exitException) throw e;
+            }
+
+            mockedApplications.verify(() -> Applications.usage("parity-client <configuration-file>"), times(1));
+        }
+    }
+
+    @Test
+    public void testMainWithFileNotFoundException() throws Exception {
+        RuntimeException errorException = new RuntimeException("error called");
+
+        try (MockedStatic<Applications> mockedApplications = mockStatic(Applications.class)) {
+            mockedApplications.when(() -> Applications.config("nonexistent.conf"))
+                .thenThrow(new FileNotFoundException("File not found"));
+            mockedApplications.when(() -> Applications.error(any(Exception.class))).thenThrow(errorException);
+
+            try {
+                TerminalClient.main(new String[]{"nonexistent.conf"});
+            } catch (RuntimeException e) {
+                if (e != errorException) throw e;
+            }
+
+            mockedApplications.verify(() -> Applications.error(any(FileNotFoundException.class)), times(1));
+        }
+    }
+
+    @Test
+    public void testMainWithConfigException() throws Exception {
+        RuntimeException errorException = new RuntimeException("error called");
+
+        try (MockedStatic<Applications> mockedApplications = mockStatic(Applications.class)) {
+            ConfigException configException = new ConfigException.Missing("test");
+            mockedApplications.when(() -> Applications.config("invalid.conf"))
+                .thenThrow(configException);
+            mockedApplications.when(() -> Applications.error(any(Exception.class))).thenThrow(errorException);
+
+            try {
+                TerminalClient.main(new String[]{"invalid.conf"});
+            } catch (RuntimeException e) {
+                if (e != errorException) throw e;
+            }
+
+            mockedApplications.verify(() -> Applications.error(any(ConfigException.class)), times(1));
+        }
     }
 }
