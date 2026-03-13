@@ -18,11 +18,31 @@ package com.paritytrading.parity.client;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.anyString;
+import static org.mockito.ArgumentMatchers.eq;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.mockStatic;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
 
+import com.paritytrading.parity.util.Instruments;
+import com.typesafe.config.Config;
+import com.typesafe.config.ConfigFactory;
 import java.io.ByteArrayOutputStream;
+import java.io.IOException;
 import java.io.PrintStream;
+import java.net.InetAddress;
+import java.net.InetSocketAddress;
+import java.util.HashMap;
+import java.util.Map;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
+import org.jvirtanen.config.Configs;
+import org.mockito.MockedStatic;
 
 public class TerminalClientTest {
 
@@ -169,5 +189,76 @@ public class TerminalClientTest {
     @Test
     public void testNanosPerMilli() {
         assertEquals(1_000_000, TerminalClient.NANOS_PER_MILLI);
+    }
+
+    @Test
+    public void testMainMethodExists() throws Exception {
+        java.lang.reflect.Method mainMethod = TerminalClient.class.getDeclaredMethod("main", Config.class);
+        assertNotNull(mainMethod);
+        assertTrue(java.lang.reflect.Modifier.isStatic(mainMethod.getModifiers()));
+        assertTrue(java.lang.reflect.Modifier.isPrivate(mainMethod.getModifiers()));
+    }
+
+    @Test
+    public void testMainWithNullConfig() throws Exception {
+        java.lang.reflect.Method mainMethod = TerminalClient.class.getDeclaredMethod("main", Config.class);
+        mainMethod.setAccessible(true);
+
+        assertThrows(java.lang.reflect.InvocationTargetException.class, () -> {
+            mainMethod.invoke(null, (Config) null);
+        });
+    }
+
+    @Test
+    public void testMainWithMissingUsernameConfig() throws Exception {
+        Map<String, Object> configMap = new HashMap<>();
+        configMap.put("order-entry.address", "127.0.0.1");
+        configMap.put("order-entry.port", 8080);
+        configMap.put("order-entry.password", "testpass");
+
+        Config config = ConfigFactory.parseMap(configMap);
+
+        java.lang.reflect.Method mainMethod = TerminalClient.class.getDeclaredMethod("main", Config.class);
+        mainMethod.setAccessible(true);
+
+        assertThrows(java.lang.reflect.InvocationTargetException.class, () -> {
+            mainMethod.invoke(null, config);
+        });
+    }
+
+    @Test
+    public void testMainWithMissingPasswordConfig() throws Exception {
+        Map<String, Object> configMap = new HashMap<>();
+        configMap.put("order-entry.address", "127.0.0.1");
+        configMap.put("order-entry.port", 8080);
+        configMap.put("order-entry.username", "testuser");
+
+        Config config = ConfigFactory.parseMap(configMap);
+
+        java.lang.reflect.Method mainMethod = TerminalClient.class.getDeclaredMethod("main", Config.class);
+        mainMethod.setAccessible(true);
+
+        assertThrows(java.lang.reflect.InvocationTargetException.class, () -> {
+            mainMethod.invoke(null, config);
+        });
+    }
+
+    @Test
+    public void testMainWithCompleteConfigButNoConnection() throws Exception {
+        Map<String, Object> configMap = new HashMap<>();
+        configMap.put("order-entry.address", "127.0.0.1");
+        configMap.put("order-entry.port", 9999);
+        configMap.put("order-entry.username", "testuser");
+        configMap.put("order-entry.password", "testpass");
+        configMap.put("instruments", new HashMap<String, Object>());
+
+        Config config = ConfigFactory.parseMap(configMap);
+
+        java.lang.reflect.Method mainMethod = TerminalClient.class.getDeclaredMethod("main", Config.class);
+        mainMethod.setAccessible(true);
+
+        assertThrows(java.lang.reflect.InvocationTargetException.class, () -> {
+            mainMethod.invoke(null, config);
+        });
     }
 }
