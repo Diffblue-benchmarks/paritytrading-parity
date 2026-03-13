@@ -21,6 +21,8 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.any;
+import static org.mockito.Mockito.anyInt;
 
 import com.paritytrading.nassau.moldudp64.MoldUDP64RequestServer;
 import com.paritytrading.nassau.moldudp64.MoldUDP64Server;
@@ -29,7 +31,10 @@ import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.net.InetSocketAddress;
 import java.nio.channels.DatagramChannel;
+import java.nio.channels.SelectableChannel;
+import java.nio.channels.Selector;
 import java.nio.channels.ServerSocketChannel;
+import java.nio.channels.SocketChannel;
 import java.util.List;
 import org.junit.jupiter.api.Test;
 
@@ -432,5 +437,100 @@ class EventsTest {
 
         assertEquals(1, toCleanUp.size());
         assertTrue(toCleanUp.contains(session));
+    }
+
+    private void invokeAccept(Events events) throws Exception {
+        Method method = Events.class.getDeclaredMethod("accept");
+        method.setAccessible(true);
+        method.invoke(events);
+    }
+
+    private Selector getSelectorField(Events events) throws Exception {
+        Field field = Events.class.getDeclaredField("selector");
+        field.setAccessible(true);
+        return (Selector) field.get(events);
+    }
+
+    private OrderEntry getOrderEntryField(Events events) throws Exception {
+        Field field = Events.class.getDeclaredField("orderEntry");
+        field.setAccessible(true);
+        return (OrderEntry) field.get(events);
+    }
+
+    @Test
+    public void testAcceptAddsSessionToKeepAliveList() throws Exception {
+        Events events = createEventsInstance();
+        OrderEntry orderEntry = getOrderEntryField(events);
+        Selector selector = getSelectorField(events);
+
+        com.paritytrading.nassau.soupbintcp.SoupBinTCPServer sessionTransport = mock(com.paritytrading.nassau.soupbintcp.SoupBinTCPServer.class);
+        SocketChannel channel = SocketChannel.open();
+        channel.configureBlocking(false);
+        org.mockito.Mockito.when(sessionTransport.getChannel()).thenReturn(channel);
+
+        Session session = mock(Session.class);
+        org.mockito.Mockito.when(session.getTransport()).thenReturn(sessionTransport);
+        org.mockito.Mockito.when(orderEntry.accept()).thenReturn(session);
+
+        List<Session> toKeepAlive = getToKeepAliveList(events);
+
+        invokeAccept(events);
+
+        assertEquals(1, toKeepAlive.size());
+        assertTrue(toKeepAlive.contains(session));
+
+        channel.close();
+    }
+
+    @Test
+    public void testAcceptDoesNotAddNullSessionToKeepAliveList() throws Exception {
+        Events events = createEventsInstance();
+        OrderEntry orderEntry = getOrderEntryField(events);
+
+        org.mockito.Mockito.when(orderEntry.accept()).thenReturn(null);
+
+        List<Session> toKeepAlive = getToKeepAliveList(events);
+
+        invokeAccept(events);
+
+        assertEquals(0, toKeepAlive.size());
+    }
+
+    @Test
+    public void testAcceptHandlesIOExceptionFromOrderEntry() throws Exception {
+        Events events = createEventsInstance();
+        OrderEntry orderEntry = getOrderEntryField(events);
+
+        org.mockito.Mockito.when(orderEntry.accept()).thenThrow(new IOException());
+
+        List<Session> toKeepAlive = getToKeepAliveList(events);
+
+        invokeAccept(events);
+
+        assertEquals(0, toKeepAlive.size());
+    }
+
+    @Test
+    public void testAcceptRegistersSessionChannelWithSelector() throws Exception {
+        Events events = createEventsInstance();
+        OrderEntry orderEntry = getOrderEntryField(events);
+        Selector selector = getSelectorField(events);
+
+        com.paritytrading.nassau.soupbintcp.SoupBinTCPServer sessionTransport = mock(com.paritytrading.nassau.soupbintcp.SoupBinTCPServer.class);
+        SocketChannel channel = SocketChannel.open();
+        channel.configureBlocking(false);
+        org.mockito.Mockito.when(sessionTransport.getChannel()).thenReturn(channel);
+
+        Session session = mock(Session.class);
+        org.mockito.Mockito.when(session.getTransport()).thenReturn(sessionTransport);
+        org.mockito.Mockito.when(orderEntry.accept()).thenReturn(session);
+
+        int initialKeys = selector.keys().size();
+
+        invokeAccept(events);
+
+        assertEquals(initialKeys + 1, selector.keys().size());
+
+        channel.close();
     }
 }
