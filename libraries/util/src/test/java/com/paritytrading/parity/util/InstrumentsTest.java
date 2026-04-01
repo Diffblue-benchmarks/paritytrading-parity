@@ -137,6 +137,27 @@ class InstrumentsTest {
         assertEquals("%8.0f", INTEGERS.get("FOO").getSizeFormat());
     }
 
+    @Test
+    void getByStringNotFound() {
+        assertNull(FRACTIONS.get("UNKNOWN"));
+    }
+
+    @Test
+    void getByLong() {
+        Instrument foo = FRACTIONS.get("FOO");
+        assertEquals(foo, FRACTIONS.get(foo.asLong()));
+    }
+
+    @Test
+    void getByLongNotFound() {
+        assertNull(FRACTIONS.get(0L));
+    }
+
+    @Test
+    void iteratorHasNext() {
+        assertTrue(FRACTIONS.iterator().hasNext());
+    }
+
     private static Instruments fromString(String s) {
         Config config = ConfigFactory.parseString(s);
 
