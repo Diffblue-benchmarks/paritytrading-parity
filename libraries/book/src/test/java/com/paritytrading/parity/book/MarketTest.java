@@ -198,6 +198,58 @@ class MarketTest {
     }
 
     @Test
+    void addDuplicateOrderId() {
+        market.add(INSTRUMENT, 1, Side.BUY, 999, 100);
+        market.add(INSTRUMENT, 1, Side.BUY, 999,  50);
+
+        assertEquals(asList(new Level(999, 100, 0, 0)), levels(book));
+
+        Event updateAfterFirst = new Update(INSTRUMENT, true);
+
+        assertEquals(asList(updateAfterFirst), events.collect());
+    }
+
+    @Test
+    void addUnknownInstrument() {
+        market.add(2L, 1, Side.BUY, 999, 100);
+
+        assertEquals(emptyList(), levels(book));
+        assertEquals(emptyList(), events.collect());
+    }
+
+    @Test
+    void modifyUnknownOrderId() {
+        market.modify(99L, 50);
+
+        assertEquals(emptyList(), levels(book));
+        assertEquals(emptyList(), events.collect());
+    }
+
+    @Test
+    void modifyToZeroSize() {
+        market.add(INSTRUMENT, 1, Side.BUY,   999, 100);
+        market.add(INSTRUMENT, 2, Side.SELL, 1001, 200);
+        market.modify(2, 0);
+
+        assertEquals(asList(new Level(999, 100, 0, 0)), levels(book));
+
+        Event updateAfterBid          = new Update(INSTRUMENT, true);
+        Event updateAfterAsk          = new Update(INSTRUMENT, true);
+        Event updateAfterModification = new Update(INSTRUMENT, true);
+
+        assertEquals(asList(updateAfterBid, updateAfterAsk, updateAfterModification),
+                events.collect());
+    }
+
+    @Test
+    void deleteUnknownOrderId() {
+        market.delete(99L);
+
+        assertEquals(emptyList(), levels(book));
+        assertEquals(emptyList(), events.collect());
+    }
+
+    @Test
     void empty() {
         market.add(INSTRUMENT, 1, Side.BUY,   999, 100);
         market.add(INSTRUMENT, 2, Side.SELL, 1001, 200);
