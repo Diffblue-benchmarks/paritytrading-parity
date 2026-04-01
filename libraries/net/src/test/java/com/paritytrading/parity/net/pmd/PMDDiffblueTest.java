@@ -66,6 +66,37 @@ class PMDDiffblueTest {
   }
 
   /**
+   * Test OrderCanceled {@link OrderCanceled#put(ByteBuffer)}.
+   *
+   * <ul>
+   *   <li>Then wrap {@code AXAXAXAXAXAXAXAXAXAXAXAXAX} Bytes is {@code UTF-8} position is twenty-five.
+   * </ul>
+   *
+   * <p>Method under test: {@link OrderCanceled#put(ByteBuffer)}
+   */
+  @Test
+  @DisplayName(
+      "Test OrderCanceled put(ByteBuffer); then wrap 'AXAXAXAXAXAXAXAXAXAXAXAXAX' Bytes is 'UTF-8' position is twenty-five")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"void OrderCanceled.put(ByteBuffer)"})
+  void testOrderCanceledPut_thenWrapAxaxaxaxaxaxaxaxaxaxaxaxaxBytesIsUtf8PositionIsTwentyFive()
+      throws UnsupportedEncodingException {
+    // Arrange
+    OrderCanceled orderCanceled = new OrderCanceled();
+    ByteBuffer buffer = ByteBuffer.wrap("AXAXAXAXAXAXAXAXAXAXAXAXA".getBytes("UTF-8"));
+
+    // Act
+    orderCanceled.put(buffer);
+
+    // Assert
+    assertEquals(25, buffer.position());
+    assertArrayEquals(
+        new byte[] {'X', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+        buffer.array());
+  }
+
+  /**
    * Test OrderCanceled new {@link OrderCanceled} (default constructor).
    *
    * <p>Method under test: default or parameterless constructor of {@link OrderCanceled}
