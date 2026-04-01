@@ -40,6 +40,63 @@ class PMDDiffblueTest {
   }
 
   /**
+   * Test OrderAdded {@link OrderAdded#get(ByteBuffer)}.
+   *
+   * <p>Method under test: {@link OrderAdded#get(ByteBuffer)}
+   */
+  @Test
+  @DisplayName("Test OrderAdded get(ByteBuffer)")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"void OrderAdded.get(ByteBuffer)"})
+  void testOrderAddedGet() throws UnsupportedEncodingException {
+    // Arrange
+    OrderAdded orderAdded = new OrderAdded();
+    ByteBuffer buffer = ByteBuffer.wrap("AXAXAXAXAXAXAXAXAXAXAXAXAXAXAXAXAXAXAXAXAX".getBytes("UTF-8"));
+
+    // Act
+    orderAdded.get(buffer);
+
+    // Assert
+    assertEquals(41, buffer.position());
+    assertFalse(buffer.hasRemaining());
+    assertEquals(4708585257725083992L, orderAdded.timestamp);
+    assertEquals(4708585257725083992L, orderAdded.orderNumber);
+    assertEquals((byte) 65, orderAdded.side);
+    assertEquals(6359461074782166977L, orderAdded.instrument);
+    assertEquals(6359461074782166977L, orderAdded.quantity);
+    assertEquals(6359461074782166977L, orderAdded.price);
+  }
+
+  /**
+   * Test OrderAdded {@link OrderAdded#put(ByteBuffer)}.
+   *
+   * <p>Method under test: {@link OrderAdded#put(ByteBuffer)}
+   */
+  @Test
+  @DisplayName("Test OrderAdded put(ByteBuffer)")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"void OrderAdded.put(ByteBuffer)"})
+  void testOrderAddedPut() throws UnsupportedEncodingException {
+    // Arrange
+    OrderAdded orderAdded = new OrderAdded();
+    ByteBuffer buffer = ByteBuffer.wrap("AXAXAXAXAXAXAXAXAXAXAXAXAXAXAXAXAXAXAXAXAXAX".getBytes("UTF-8"));
+
+    // Act
+    orderAdded.put(buffer);
+
+    // Assert
+    assertEquals(42, buffer.position());
+    assertArrayEquals(
+        new byte[] {
+          'A', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+          0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+        },
+        buffer.array());
+  }
+
+  /**
    * Test OrderCanceled {@link OrderCanceled#get(ByteBuffer)}.
    *
    * <p>Method under test: {@link OrderCanceled#get(ByteBuffer)}
