@@ -44,6 +44,37 @@ class POEDiffblueTest {
   }
 
   /**
+   * Test CancelOrder {@link CancelOrder#put(ByteBuffer)}.
+   *
+   * <p>Method under test: {@link CancelOrder#put(ByteBuffer)}
+   */
+  @Test
+  @DisplayName("Test CancelOrder put(ByteBuffer)")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"void CancelOrder.put(ByteBuffer)"})
+  void testCancelOrderPut() throws UnsupportedEncodingException {
+    // Arrange
+    CancelOrder cancelOrder = new CancelOrder();
+    cancelOrder.orderId = "AXAXAXAXAXAXAXAX".getBytes("UTF-8");
+    cancelOrder.quantity = 4708585257725083992L;
+    ByteBuffer buffer = ByteBuffer.allocate(25);
+
+    // Act
+    cancelOrder.put(buffer);
+
+    // Assert
+    assertEquals(25, buffer.position());
+    assertFalse(buffer.hasRemaining());
+    buffer.flip();
+    assertEquals((byte) 'X', buffer.get());
+    byte[] orderId = new byte[16];
+    buffer.get(orderId);
+    assertArrayEquals("AXAXAXAXAXAXAXAX".getBytes("UTF-8"), orderId);
+    assertEquals(4708585257725083992L, buffer.getLong());
+  }
+
+  /**
    * Test CancelOrder new {@link CancelOrder} (default constructor).
    *
    * <p>Method under test: default or parameterless constructor of {@link CancelOrder}
