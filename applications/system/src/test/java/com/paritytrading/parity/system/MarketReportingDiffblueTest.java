@@ -16,6 +16,8 @@
 package com.paritytrading.parity.system;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assumptions.assumeTrue;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.verify;
 
@@ -23,6 +25,10 @@ import com.paritytrading.nassau.moldudp64.MoldUDP64RequestServer;
 import com.paritytrading.nassau.moldudp64.MoldUDP64Server;
 import java.io.IOException;
 import java.lang.reflect.Constructor;
+import java.net.InetAddress;
+import java.net.InetSocketAddress;
+import java.net.NetworkInterface;
+import java.util.Enumeration;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
@@ -99,6 +105,46 @@ class MarketReportingDiffblueTest {
         marketReporting.trade(1L, 2L, 100L, 3L);
 
         verify(transport).send(any());
+    }
+
+    @Test
+    void testOpen_givenValidNetworkConfig_thenReturnsInstance() throws IOException {
+        NetworkInterface multicastInterface = findMulticastInterface();
+        assumeTrue(multicastInterface != null, "No multicast-capable network interface available");
+
+        InetSocketAddress multicastGroup = new InetSocketAddress(
+                InetAddress.getByName("224.0.0.1"), 15001);
+        InetSocketAddress requestAddress = new InetSocketAddress(
+                InetAddress.getLoopbackAddress(), 0);
+
+        MarketReporting reporting = MarketReporting.open(
+                "TESTSSSS", multicastInterface, multicastGroup, requestAddress);
+
+        assertNotNull(reporting);
+        assertNotNull(reporting.getTransport());
+        assertNotNull(reporting.getRequestTransport());
+    }
+
+    private static NetworkInterface findMulticastInterface() throws IOException {
+        Enumeration<NetworkInterface> interfaces = NetworkInterface.getNetworkInterfaces();
+        if (interfaces == null) {
+            return null;
+        }
+        while (interfaces.hasMoreElements()) {
+            NetworkInterface ni = interfaces.nextElement();
+            if (ni.isUp() && ni.supportsMulticast() && !ni.isLoopback()
+                    && ni.getInetAddresses().hasMoreElements()) {
+                return ni;
+            }
+        }
+        interfaces = NetworkInterface.getNetworkInterfaces();
+        while (interfaces.hasMoreElements()) {
+            NetworkInterface ni = interfaces.nextElement();
+            if (ni.isUp() && ni.supportsMulticast() && ni.getInetAddresses().hasMoreElements()) {
+                return ni;
+            }
+        }
+        return null;
     }
 
 }
