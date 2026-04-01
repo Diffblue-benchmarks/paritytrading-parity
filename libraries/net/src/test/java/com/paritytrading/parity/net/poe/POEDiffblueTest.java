@@ -165,6 +165,62 @@ class POEDiffblueTest {
   }
 
   /**
+   * Test OrderCanceled {@link OrderCanceled#get(ByteBuffer)}.
+   *
+   * <p>Method under test: {@link OrderCanceled#get(ByteBuffer)}
+   */
+  @Test
+  @DisplayName("Test OrderCanceled get(ByteBuffer)")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"void OrderCanceled.get(ByteBuffer)"})
+  void testOrderCanceledGet() throws UnsupportedEncodingException {
+    // Arrange
+    OrderCanceled orderCanceled = new OrderCanceled();
+    ByteBuffer buffer = ByteBuffer.wrap("AXAXAXAXAXAXAXAXAXAXAXAXAXAXAXAXA".getBytes("UTF-8"));
+
+    // Act
+    orderCanceled.get(buffer);
+
+    // Assert
+    assertEquals(33, buffer.position());
+    assertEquals(4708585257725083992L, orderCanceled.timestamp);
+    assertArrayEquals("AXAXAXAXAXAXAXAX".getBytes("UTF-8"), orderCanceled.orderId);
+    assertEquals(4708585257725083992L, orderCanceled.canceledQuantity);
+    assertEquals((byte) 'A', orderCanceled.reason);
+    assertFalse(buffer.hasRemaining());
+  }
+
+  /**
+   * Test OrderCanceled {@link OrderCanceled#put(ByteBuffer)}.
+   *
+   * <p>Method under test: {@link OrderCanceled#put(ByteBuffer)}
+   */
+  @Test
+  @DisplayName("Test OrderCanceled put(ByteBuffer)")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"void OrderCanceled.put(ByteBuffer)"})
+  void testOrderCanceledPut() throws UnsupportedEncodingException {
+    // Arrange
+    OrderCanceled orderCanceled = new OrderCanceled();
+    orderCanceled.timestamp = 4708585257725083992L;
+    orderCanceled.orderId = "AXAXAXAXAXAXAXAX".getBytes("UTF-8");
+    orderCanceled.canceledQuantity = 4708585257725083992L;
+    orderCanceled.reason = (byte) 'A';
+    ByteBuffer buffer = ByteBuffer.allocate(34);
+
+    // Act
+    orderCanceled.put(buffer);
+
+    // Assert
+    assertEquals(34, buffer.position());
+    assertFalse(buffer.hasRemaining());
+    assertArrayEquals(
+        "XAXAXAXAXAXAXAXAXAXAXAXAXAXAXAXAXA".getBytes("UTF-8"), buffer.array());
+  }
+
+  /**
    * Test OrderExecuted new {@link OrderExecuted} (default constructor).
    *
    * <p>Method under test: default or parameterless constructor of {@link OrderExecuted}
