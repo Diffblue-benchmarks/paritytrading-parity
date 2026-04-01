@@ -194,6 +194,76 @@ class PMRDiffblueTest {
   }
 
   /**
+   * Test Trade {@link Trade#get(ByteBuffer)}.
+   *
+   * <ul>
+   *   <li>Then {@link Trade} (default constructor) {@link Trade#timestamp} is {@code
+   *       4708585257725083992}.
+   * </ul>
+   *
+   * <p>Method under test: {@link Trade#get(ByteBuffer)}
+   */
+  @Test
+  @DisplayName(
+      "Test Trade get(ByteBuffer); then Trade (default constructor) timestamp is '4708585257725083992'")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"void Trade.get(ByteBuffer)"})
+  void testTradeGet_thenTradeTimestampIs4708585257725083992() throws UnsupportedEncodingException {
+    // Arrange
+    Trade trade = new Trade();
+    ByteBuffer buffer = ByteBuffer.wrap("AXAXAXAXAXAXAXAXAXAXAXAXAXAXAXAXAXAX".getBytes("UTF-8"));
+
+    // Act
+    trade.get(buffer);
+
+    // Assert
+    assertEquals(36, buffer.position());
+    assertEquals(4708585257725083992L, trade.timestamp);
+    assertEquals(4708585257725083992L, trade.restingOrderNumber);
+    assertEquals(4708585257725083992L, trade.incomingOrderNumber);
+    assertEquals(4708585257725083992L, trade.quantity);
+    assertEquals(1096302936L, trade.matchNumber);
+    assertFalse(buffer.hasRemaining());
+  }
+
+  /**
+   * Test Trade {@link Trade#put(ByteBuffer)}.
+   *
+   * <ul>
+   *   <li>Then wrap {@code AXAXAXAXAXAXAXAXAXAXAXAXAXAXAXAXAXAXAX} Bytes is {@code UTF-8} position
+   *       is thirty-seven.
+   * </ul>
+   *
+   * <p>Method under test: {@link Trade#put(ByteBuffer)}
+   */
+  @Test
+  @DisplayName(
+      "Test Trade put(ByteBuffer); then wrap 'AXAXAXAXAXAXAXAXAXAXAXAXAXAXAXAXAXAXA' Bytes is 'UTF-8' position is thirty-seven")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"void Trade.put(ByteBuffer)"})
+  void testTradePut_thenWrapAxaxaxaxBytesIsUtf8PositionIsThirtySeven()
+      throws UnsupportedEncodingException {
+    // Arrange
+    Trade trade = new Trade();
+    ByteBuffer buffer =
+        ByteBuffer.wrap("AXAXAXAXAXAXAXAXAXAXAXAXAXAXAXAXAXAXA".getBytes("UTF-8"));
+
+    // Act
+    trade.put(buffer);
+
+    // Assert
+    assertEquals(37, buffer.position());
+    assertArrayEquals(
+        new byte[] {
+          'T', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+          0, 0, 0, 0, 0, 0, 0, 0, 0
+        },
+        buffer.array());
+  }
+
+  /**
    * Test Version {@link Version#get(ByteBuffer)}.
    *
    * <ul>
