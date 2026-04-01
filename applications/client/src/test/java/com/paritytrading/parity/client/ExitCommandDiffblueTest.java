@@ -2,6 +2,8 @@ package com.paritytrading.parity.client;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
 import com.diffblue.cover.annotations.ManagedByDiffblue;
 import com.diffblue.cover.annotations.MethodsUnderTest;
 import java.util.Scanner;
@@ -33,6 +35,34 @@ class ExitCommandDiffblueTest {
     // Act and Assert
     assertThrows(
         IllegalArgumentException.class, () -> exitCommand.execute(null, new Scanner("foo")));
+  }
+
+  /**
+   * Test {@link ExitCommand#execute(TerminalClient, Scanner)}.
+   *
+   * <ul>
+   *   <li>When {@link Scanner#Scanner(String)} with empty string.
+   *   <li>Then call {@link TerminalClient#close()}.
+   * </ul>
+   *
+   * <p>Method under test: {@link ExitCommand#execute(TerminalClient, Scanner)}
+   */
+  @Test
+  @DisplayName(
+      "Test execute(TerminalClient, Scanner); when Scanner(String) with empty string; then call close()")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"void ExitCommand.execute(TerminalClient, Scanner)"})
+  void testExecute_whenScannerWithEmptyString_thenCallClose() {
+    // Arrange
+    ExitCommand exitCommand = new ExitCommand();
+    TerminalClient client = mock(TerminalClient.class);
+
+    // Act
+    exitCommand.execute(client, new Scanner(""));
+
+    // Assert
+    verify(client).close();
   }
 
   /**
