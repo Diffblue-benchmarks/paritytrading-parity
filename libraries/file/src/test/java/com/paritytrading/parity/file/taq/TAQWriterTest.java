@@ -18,9 +18,108 @@ package com.paritytrading.parity.file.taq;
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.nio.file.Files;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.io.TempDir;
 
 class TAQWriterTest {
+
+    @TempDir
+    File tempDir;
+
+    @Test
+    void writeWithFileDefaultConfiguration() throws Exception {
+        File file = new File(tempDir, "output.taq");
+
+        TAQ.Quote quote = new TAQ.Quote();
+        quote.date            = "2016-01-01";
+        quote.timestampMillis = 8 * 60 * 60 * 1000;
+        quote.instrument      = "FOO";
+        quote.bidPrice        = 100.50;
+        quote.bidSize         = 1000;
+        quote.askPrice        = 100.75;
+        quote.askSize         = 250;
+
+        try (TAQWriter writer = new TAQWriter(file)) {
+            writer.write(quote);
+        }
+
+        String output = "" +
+            "Date\t" +
+            "Timestamp\t" +
+            "Instrument\t" +
+            "Record Type\t" +
+            "Bid Price\t" +
+            "Bid Size\t" +
+            "Ask Price\t" +
+            "Ask Size\t" +
+            "Trade Price\t" +
+            "Trade Size\t" +
+            "Trade Side\n" +
+            "2016-01-01\t" +
+            "08:00:00.000\t" +
+            "FOO\t" +
+            "Q\t" +
+            "100.50\t" +
+            "1000\t" +
+            "100.75\t" +
+            "250\t" +
+            "\t" +
+            "\t" +
+            "\n";
+
+        assertEquals(output, new String(Files.readAllBytes(file.toPath()), "US-ASCII"));
+    }
+
+    @Test
+    void writeWithFileCustomConfiguration() throws Exception {
+        File file = new File(tempDir, "output-custom.taq");
+
+        TAQ.Trade trade = new TAQ.Trade();
+        trade.date            = "2016-01-01";
+        trade.timestampMillis = 8 * 60 * 60 * 1000 + 5 * 1000;
+        trade.instrument      = "FOO";
+        trade.price           = 0.975000;
+        trade.size            = 0.00000100;
+        trade.side            = TAQ.SELL;
+
+        TAQConfig config = new TAQConfig.Builder()
+            .setPriceFractionDigits("FOO", 6)
+            .setSizeFractionDigits(8)
+            .build();
+
+        try (TAQWriter writer = new TAQWriter(file, config)) {
+            writer.write(trade);
+        }
+
+        String output = "" +
+            "Date\t" +
+            "Timestamp\t" +
+            "Instrument\t" +
+            "Record Type\t" +
+            "Bid Price\t" +
+            "Bid Size\t" +
+            "Ask Price\t" +
+            "Ask Size\t" +
+            "Trade Price\t" +
+            "Trade Size\t" +
+            "Trade Side\n" +
+            "2016-01-01\t" +
+            "08:00:05.000\t" +
+            "FOO\t" +
+            "T\t" +
+            "\t" +
+            "\t" +
+            "\t" +
+            "\t" +
+            "0.975000\t" +
+            "0.00000100\t" +
+            "S\n";
+
+        assertEquals(output, new String(Files.readAllBytes(file.toPath()), "US-ASCII"));
+    }
+
 
     @Test
     void writeWithDefaultConfiguration() throws Exception {
