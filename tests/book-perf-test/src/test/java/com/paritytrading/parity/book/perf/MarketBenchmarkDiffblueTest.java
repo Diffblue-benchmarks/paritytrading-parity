@@ -24,6 +24,24 @@ class MarketBenchmarkDiffblueTest {
   @InjectMocks private MarketBenchmark marketBenchmark;
 
   /**
+   * Test {@link MarketBenchmark#prepare()}.
+   *
+   * <p>Method under test: {@link MarketBenchmark#prepare()}
+   */
+  @Test
+  @DisplayName("Test prepare()")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"void MarketBenchmark.prepare()"})
+  void testPrepare() {
+    // Act
+    marketBenchmark.prepare();
+
+    // Assert - after prepare(), benchmark is ready for use with a real Market
+    marketBenchmark.add();
+  }
+
+  /**
    * Test {@link MarketBenchmark#add()}.
    *
    * <p>Method under test: {@link MarketBenchmark#add()}
