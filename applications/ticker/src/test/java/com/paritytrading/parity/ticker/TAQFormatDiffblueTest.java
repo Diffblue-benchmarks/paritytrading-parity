@@ -3,6 +3,7 @@ package com.paritytrading.parity.ticker;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.anyLong;
 import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 import com.diffblue.cover.annotations.ManagedByDiffblue;
@@ -12,6 +13,7 @@ import com.paritytrading.parity.book.Side;
 import com.paritytrading.parity.util.Instrument;
 import com.paritytrading.parity.util.Instruments;
 import java.util.ArrayList;
+import java.util.Collections;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -39,6 +41,42 @@ class TAQFormatDiffblueTest {
 
     // Assert
     verify(instruments).iterator();
+    assertEquals(0L, actualTaqFormat.timestampMillis());
+  }
+
+  /**
+   * Test {@link TAQFormat#TAQFormat(Instruments)}.
+   *
+   * <ul>
+   *   <li>Given instruments iterator returns one instrument.
+   *   <li>Then calls getPriceFractionDigits and getSizeFractionDigits on instrument.
+   * </ul>
+   *
+   * <p>Method under test: {@link TAQFormat#TAQFormat(Instruments)}
+   */
+  @Test
+  @DisplayName("Test new TAQFormat(Instruments); given instruments iterator returns one instrument; then calls getPriceFractionDigits and getSizeFractionDigits")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"void TAQFormat.<init>(Instruments)"})
+  void testNewTAQFormat_givenInstrumentsIteratorReturnsOneInstrument_thenCallsGetPriceFractionDigits() {
+    // Arrange
+    Instrument instrument = mock(Instrument.class);
+    when(instrument.asString()).thenReturn("AAPL");
+    when(instrument.getPriceFractionDigits()).thenReturn(2);
+    when(instrument.getSizeFractionDigits()).thenReturn(2);
+
+    Instruments instruments = mock(Instruments.class);
+    when(instruments.iterator()).thenReturn(Collections.singletonList(instrument).iterator());
+
+    // Act
+    TAQFormat actualTaqFormat = new TAQFormat(instruments);
+
+    // Assert
+    verify(instruments).iterator();
+    verify(instrument, times(2)).asString();
+    verify(instrument).getPriceFractionDigits();
+    verify(instrument).getSizeFractionDigits();
     assertEquals(0L, actualTaqFormat.timestampMillis());
   }
 
