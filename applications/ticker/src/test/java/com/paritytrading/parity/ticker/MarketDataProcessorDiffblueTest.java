@@ -11,11 +11,62 @@ import com.paritytrading.parity.net.pmd.PMD.OrderAdded;
 import com.paritytrading.parity.net.pmd.PMD.OrderCanceled;
 import com.paritytrading.parity.net.pmd.PMD.OrderExecuted;
 import com.paritytrading.parity.util.Instruments;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 class MarketDataProcessorDiffblueTest {
+  /**
+   * Test {@link MarketDataProcessor#version(PMD.Version)}.
+   *
+   * <ul>
+   *   <li>Given version equals {@link PMD#VERSION} then no error is raised.
+   * </ul>
+   *
+   * <p>Method under test: {@link MarketDataProcessor#version(PMD.Version)}
+   */
+  @Test
+  @DisplayName("Test version(Version); given version equals PMD.VERSION then no error is raised")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"void MarketDataProcessor.version(PMD.Version)"})
+  void testVersion_givenVersionEqualsPmdVersion_thenNoError() {
+    // Arrange
+    Instruments instruments = mock(Instruments.class);
+    when(instruments.getPricePlaceholder()).thenReturn("Price Placeholder");
+    when(instruments.getSizePlaceholder()).thenReturn("Size Placeholder");
+    when(instruments.getPriceWidth()).thenReturn(1);
+    when(instruments.getSizeWidth()).thenReturn(1);
+    DisplayFormat listener = new DisplayFormat(instruments);
+    Market market = new Market(listener);
+
+    Instruments instruments2 = mock(Instruments.class);
+    when(instruments2.getPricePlaceholder()).thenReturn("Price Placeholder");
+    when(instruments2.getSizePlaceholder()).thenReturn("Size Placeholder");
+    when(instruments2.getPriceWidth()).thenReturn(1);
+    when(instruments2.getSizeWidth()).thenReturn(1);
+    DisplayFormat listener2 = new DisplayFormat(instruments2);
+
+    MarketDataProcessor marketDataProcessor = new MarketDataProcessor(market, listener2);
+
+    PMD.Version message = new PMD.Version();
+    message.version = PMD.VERSION;
+
+    // Act
+    marketDataProcessor.version(message);
+
+    // Assert
+    verify(instruments).getPricePlaceholder();
+    verify(instruments2).getPricePlaceholder();
+    verify(instruments).getPriceWidth();
+    verify(instruments2).getPriceWidth();
+    verify(instruments).getSizePlaceholder();
+    verify(instruments2).getSizePlaceholder();
+    verify(instruments).getSizeWidth();
+    verify(instruments2).getSizeWidth();
+  }
+
   /**
    * Test {@link MarketDataProcessor#orderAdded(OrderAdded)}.
    *
