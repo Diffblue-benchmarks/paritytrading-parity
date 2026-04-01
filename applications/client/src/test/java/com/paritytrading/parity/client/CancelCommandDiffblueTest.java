@@ -2,8 +2,13 @@ package com.paritytrading.parity.client;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
 import com.diffblue.cover.annotations.ManagedByDiffblue;
 import com.diffblue.cover.annotations.MethodsUnderTest;
+import com.paritytrading.parity.net.poe.POE;
 import java.io.IOException;
 import java.util.Scanner;
 import org.junit.jupiter.api.DisplayName;
@@ -85,6 +90,37 @@ class CancelCommandDiffblueTest {
 
     // Act and Assert
     assertThrows(IllegalArgumentException.class, () -> cancelCommand.execute(null, arguments));
+  }
+
+  /**
+   * Test {@link CancelCommand#execute(TerminalClient, Scanner)} with {@code client}, {@code
+   * arguments}.
+   *
+   * <ul>
+   *   <li>When {@link Scanner#Scanner(String)} with single token; then send cancel order.
+   * </ul>
+   *
+   * <p>Method under test: {@link CancelCommand#execute(TerminalClient, Scanner)}
+   */
+  @Test
+  @DisplayName(
+      "Test execute(TerminalClient, Scanner) with 'client', 'arguments'; when Scanner with single token; then send cancel order")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"void CancelCommand.execute(TerminalClient, Scanner)"})
+  void testExecuteWithClientArguments_whenScannerWithSingleToken_thenSendCancelOrder()
+      throws IOException {
+    // Arrange
+    CancelCommand cancelCommand = new CancelCommand();
+    OrderEntry orderEntry = mock(OrderEntry.class);
+    TerminalClient client = mock(TerminalClient.class);
+    when(client.getOrderEntry()).thenReturn(orderEntry);
+
+    // Act
+    cancelCommand.execute(client, new Scanner("ORDER1"));
+
+    // Assert
+    verify(orderEntry).send(any(POE.InboundMessage.class));
   }
 
   /**
