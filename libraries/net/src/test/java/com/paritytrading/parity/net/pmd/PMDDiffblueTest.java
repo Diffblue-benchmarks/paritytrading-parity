@@ -107,6 +107,59 @@ class PMDDiffblueTest {
   }
 
   /**
+   * Test OrderExecuted {@link PMD.OrderExecuted#get(ByteBuffer)}.
+   *
+   * <p>Method under test: {@link PMD.OrderExecuted#get(ByteBuffer)}
+   */
+  @Test
+  @DisplayName("Test OrderExecuted get(ByteBuffer)")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"void OrderExecuted.get(ByteBuffer)"})
+  void testOrderExecutedGet() throws UnsupportedEncodingException {
+    // Arrange
+    OrderExecuted orderExecuted = new OrderExecuted();
+    ByteBuffer buffer = ByteBuffer.wrap("AXAXAXAXAXAXAXAXAXAXAXAXAXAX".getBytes("UTF-8"));
+
+    // Act
+    orderExecuted.get(buffer);
+
+    // Assert
+    assertEquals(28, buffer.position());
+    assertEquals(4708585257725083992L, orderExecuted.timestamp);
+    assertEquals(4708585257725083992L, orderExecuted.orderNumber);
+    assertEquals(4708585257725083992L, orderExecuted.quantity);
+    assertEquals(1096302936L, orderExecuted.matchNumber);
+    assertFalse(buffer.hasRemaining());
+  }
+
+  /**
+   * Test OrderExecuted {@link PMD.OrderExecuted#put(ByteBuffer)}.
+   *
+   * <p>Method under test: {@link PMD.OrderExecuted#put(ByteBuffer)}
+   */
+  @Test
+  @DisplayName("Test OrderExecuted put(ByteBuffer)")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"void OrderExecuted.put(ByteBuffer)"})
+  void testOrderExecutedPut() throws UnsupportedEncodingException {
+    // Arrange
+    OrderExecuted orderExecuted = new OrderExecuted();
+    ByteBuffer buffer = ByteBuffer.wrap("AXAXAXAXAXAXAXAXAXAXAXAXAXAXA".getBytes("UTF-8"));
+
+    // Act
+    orderExecuted.put(buffer);
+
+    // Assert
+    assertEquals(29, buffer.position());
+    assertArrayEquals(
+        new byte[] {'E', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0},
+        buffer.array());
+  }
+
+  /**
    * Test Version {@link Version#get(ByteBuffer)}.
    *
    * <ul>
