@@ -264,4 +264,58 @@ class POEDiffblueTest {
     assertArrayEquals(
         new byte[] {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, actualOrderRejected.orderId);
   }
+
+  /**
+   * Test OrderRejected {@link OrderRejected#get(ByteBuffer)}.
+   *
+   * <p>Method under test: {@link OrderRejected#get(ByteBuffer)}
+   */
+  @Test
+  @DisplayName("Test OrderRejected get(ByteBuffer)")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"void OrderRejected.get(ByteBuffer)"})
+  void testOrderRejectedGet() throws UnsupportedEncodingException {
+    // Arrange
+    OrderRejected orderRejected = new OrderRejected();
+    ByteBuffer buffer = ByteBuffer.wrap("AXAXAXAXAXAXAXAXAXAXAXAXA".getBytes("UTF-8"));
+
+    // Act
+    orderRejected.get(buffer);
+
+    // Assert
+    assertEquals(25, buffer.position());
+    assertEquals(4708585257725083992L, orderRejected.timestamp);
+    assertEquals((byte) 'A', orderRejected.reason);
+    assertFalse(buffer.hasRemaining());
+    assertArrayEquals("AXAXAXAXAXAXAXAX".getBytes("UTF-8"), orderRejected.orderId);
+  }
+
+  /**
+   * Test OrderRejected {@link OrderRejected#put(ByteBuffer)}.
+   *
+   * <p>Method under test: {@link OrderRejected#put(ByteBuffer)}
+   */
+  @Test
+  @DisplayName("Test OrderRejected put(ByteBuffer)")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"void OrderRejected.put(ByteBuffer)"})
+  void testOrderRejectedPut() throws UnsupportedEncodingException {
+    // Arrange
+    OrderRejected orderRejected = new OrderRejected();
+    orderRejected.timestamp = 4708585257725083992L;
+    orderRejected.orderId = "AXAXAXAXAXAXAXAX".getBytes("UTF-8");
+    orderRejected.reason = (byte) 'A';
+    ByteBuffer buffer = ByteBuffer.allocate(26);
+
+    // Act
+    orderRejected.put(buffer);
+
+    // Assert
+    assertEquals(26, buffer.position());
+    assertFalse(buffer.hasRemaining());
+    assertArrayEquals(
+        "RAXAXAXAXAXAXAXAXAXAXAXAXA".getBytes("UTF-8"), buffer.array());
+  }
 }
