@@ -220,4 +220,55 @@ class OrdersDiffblueTest {
     // Arrange, Act and Assert
     assertNull(new Orders().findByOrderEntryID(1L));
   }
+
+  /**
+   * Test {@link Orders#removeByOrderEntryID(long)}.
+   *
+   * <p>Method under test: {@link Orders#removeByOrderEntryID(long)}
+   */
+  @Test
+  @DisplayName("Test removeByOrderEntryID(long)")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"void Orders.removeByOrderEntryID(long)"})
+  void testRemoveByOrderEntryID() {
+    // Arrange
+    Orders orders = new Orders();
+    Order order = new Order(1L, "42", "3", 'A', "Symbol", 10.0d);
+    orders.add(order);
+
+    // Act
+    orders.removeByOrderEntryID(1L);
+
+    // Assert
+    assertNull(orders.findByOrderEntryID(1L));
+  }
+
+  /**
+   * Test {@link Orders#removeByOrderEntryID(long)}.
+   *
+   * <ul>
+   *   <li>Given {@link Orders} has an order with a different ID.
+   *   <li>Then the order is still present.
+   * </ul>
+   *
+   * <p>Method under test: {@link Orders#removeByOrderEntryID(long)}
+   */
+  @Test
+  @DisplayName("Test removeByOrderEntryID(long); given Orders with non-matching order; then order remains")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"void Orders.removeByOrderEntryID(long)"})
+  void testRemoveByOrderEntryID_givenNonMatchingOrder_thenOrderRemains() {
+    // Arrange
+    Orders orders = new Orders();
+    Order order = new Order(2L, "42", "3", 'A', "Symbol", 10.0d);
+    orders.add(order);
+
+    // Act
+    orders.removeByOrderEntryID(1L);
+
+    // Assert
+    assertSame(order, orders.findByOrderEntryID(2L));
+  }
 }
