@@ -245,6 +245,73 @@ class POEDiffblueTest {
   }
 
   /**
+   * Test OrderExecuted {@link OrderExecuted#get(ByteBuffer)}.
+   *
+   * <p>Method under test: {@link OrderExecuted#get(ByteBuffer)}
+   */
+  @Test
+  @DisplayName("Test OrderExecuted get(ByteBuffer)")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"void OrderExecuted.get(ByteBuffer)"})
+  void testOrderExecutedGet() throws UnsupportedEncodingException {
+    // Arrange
+    OrderExecuted orderExecuted = new OrderExecuted();
+    ByteBuffer buffer = ByteBuffer.wrap("AXAXAXAXAXAXAXAXAXAXAXAXAXAXAXAXAXAXAXAXAXAXAX".getBytes("UTF-8"));
+
+    // Act
+    orderExecuted.get(buffer);
+
+    // Assert
+    assertEquals(45, buffer.position());
+    assertEquals(4708585257725083992L, orderExecuted.timestamp);
+    assertArrayEquals("AXAXAXAXAXAXAXAX".getBytes("UTF-8"), orderExecuted.orderId);
+    assertEquals(4708585257725083992L, orderExecuted.quantity);
+    assertEquals(4708585257725083992L, orderExecuted.price);
+    assertEquals((byte) 'A', orderExecuted.liquidityFlag);
+    assertEquals(1480677441L, orderExecuted.matchNumber);
+    assertFalse(buffer.hasRemaining());
+  }
+
+  /**
+   * Test OrderExecuted {@link OrderExecuted#put(ByteBuffer)}.
+   *
+   * <p>Method under test: {@link OrderExecuted#put(ByteBuffer)}
+   */
+  @Test
+  @DisplayName("Test OrderExecuted put(ByteBuffer)")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"void OrderExecuted.put(ByteBuffer)"})
+  void testOrderExecutedPut() throws UnsupportedEncodingException {
+    // Arrange
+    OrderExecuted orderExecuted = new OrderExecuted();
+    orderExecuted.timestamp = 4708585257725083992L;
+    orderExecuted.orderId = "AXAXAXAXAXAXAXAX".getBytes("UTF-8");
+    orderExecuted.quantity = 4708585257725083992L;
+    orderExecuted.price = 4708585257725083992L;
+    orderExecuted.liquidityFlag = (byte) 'A';
+    orderExecuted.matchNumber = 1096302936L;
+    ByteBuffer buffer = ByteBuffer.allocate(46);
+
+    // Act
+    orderExecuted.put(buffer);
+
+    // Assert
+    assertEquals(46, buffer.position());
+    assertFalse(buffer.hasRemaining());
+    buffer.flip();
+    assertEquals((byte) 'E', buffer.get());
+    assertEquals(4708585257725083992L, buffer.getLong());
+    byte[] orderId = new byte[16];
+    buffer.get(orderId);
+    assertArrayEquals("AXAXAXAXAXAXAXAX".getBytes("UTF-8"), orderId);
+    assertEquals(4708585257725083992L, buffer.getLong());
+    assertEquals(4708585257725083992L, buffer.getLong());
+    assertEquals((byte) 'A', buffer.get());
+  }
+
+  /**
    * Test OrderRejected new {@link OrderRejected} (default constructor).
    *
    * <p>Method under test: default or parameterless constructor of {@link OrderRejected}
