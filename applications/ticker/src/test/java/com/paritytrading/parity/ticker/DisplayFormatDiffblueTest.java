@@ -111,6 +111,166 @@ class DisplayFormatDiffblueTest {
   }
 
   /**
+   * Test {@link DisplayFormat#update(OrderBook, boolean)}.
+   *
+   * <ul>
+   *   <li>Given bbo is false.
+   *   <li>Then returns early without calling OrderBook methods.
+   * </ul>
+   *
+   * <p>Method under test: {@link DisplayFormat#update(OrderBook, boolean)}
+   */
+  @Test
+  @DisplayName("Test update(OrderBook, boolean); given bbo is false; then returns early")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"void DisplayFormat.update(OrderBook, boolean)"})
+  void testUpdate_givenBboIsFalse_thenReturnsEarly() {
+    // Arrange
+    Instruments instruments = mock(Instruments.class);
+    when(instruments.getPricePlaceholder()).thenReturn("Price Placeholder");
+    when(instruments.getSizePlaceholder()).thenReturn("Size Placeholder");
+    when(instruments.getPriceWidth()).thenReturn(1);
+    when(instruments.getSizeWidth()).thenReturn(1);
+    DisplayFormat displayFormat = new DisplayFormat(instruments);
+
+    OrderBook book = mock(OrderBook.class);
+
+    // Act
+    displayFormat.update(book, false);
+
+    // Assert
+    verify(instruments).getPricePlaceholder();
+    verify(instruments).getPriceWidth();
+    verify(instruments).getSizePlaceholder();
+    verify(instruments).getSizeWidth();
+  }
+
+  /**
+   * Test {@link DisplayFormat#update(OrderBook, boolean)}.
+   *
+   * <ul>
+   *   <li>Given {@link Instrument} {@link Instrument#getSizeFactor()} return 0.5.
+   *   <li>Given bid size is zero.
+   *   <li>Then calls getAskSize(long).
+   * </ul>
+   *
+   * <p>Method under test: {@link DisplayFormat#update(OrderBook, boolean)}
+   */
+  @Test
+  @DisplayName(
+      "Test update(OrderBook, boolean); given Instrument getSizeFactor() return 0.5; given bid size is zero; then calls getAskSize(long)")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"void DisplayFormat.update(OrderBook, boolean)"})
+  void testUpdate_givenInstrumentGetSizeFactorReturn05_thenCallsGetAskSize() {
+    // Arrange
+    Instrument instrument = mock(Instrument.class);
+    when(instrument.getPriceFactor()).thenReturn(10.0d);
+    when(instrument.getSizeFactor()).thenReturn(0.5d);
+    when(instrument.asString()).thenReturn("As String");
+    when(instrument.getPriceFormat()).thenReturn("Price Format");
+    when(instrument.getSizeFormat()).thenReturn("Size Format");
+
+    Instruments instruments = mock(Instruments.class);
+    when(instruments.get(anyLong())).thenReturn(instrument);
+    when(instruments.getPricePlaceholder()).thenReturn("Price Placeholder");
+    when(instruments.getSizePlaceholder()).thenReturn("Size Placeholder");
+    when(instruments.getPriceWidth()).thenReturn(1);
+    when(instruments.getSizeWidth()).thenReturn(1);
+    DisplayFormat displayFormat = new DisplayFormat(instruments);
+
+    OrderBook book = mock(OrderBook.class);
+    when(book.getAskSize(anyLong())).thenReturn(3L);
+    when(book.getBestAskPrice()).thenReturn(1L);
+    when(book.getBestBidPrice()).thenReturn(1L);
+    when(book.getBidSize(anyLong())).thenReturn(0L);
+    when(book.getInstrument()).thenReturn(1L);
+
+    // Act
+    displayFormat.update(book, true);
+
+    // Assert
+    verify(book).getAskSize(1L);
+    verify(book).getBestAskPrice();
+    verify(book).getBestBidPrice();
+    verify(book).getBidSize(1L);
+    verify(book).getInstrument();
+    verify(instrument).asString();
+    verify(instrument).getPriceFactor();
+    verify(instrument).getPriceFormat();
+    verify(instrument).getSizeFactor();
+    verify(instrument).getSizeFormat();
+    verify(instruments).get(1L);
+    verify(instruments).getPricePlaceholder();
+    verify(instruments).getPriceWidth();
+    verify(instruments).getSizePlaceholder();
+    verify(instruments).getSizeWidth();
+  }
+
+  /**
+   * Test {@link DisplayFormat#update(OrderBook, boolean)}.
+   *
+   * <ul>
+   *   <li>Given {@link Instrument} {@link Instrument#getPriceFactor()} return ten.
+   *   <li>Given ask size is zero.
+   *   <li>Then calls getBidSize(long).
+   * </ul>
+   *
+   * <p>Method under test: {@link DisplayFormat#update(OrderBook, boolean)}
+   */
+  @Test
+  @DisplayName(
+      "Test update(OrderBook, boolean); given Instrument getPriceFactor() return ten; given ask size is zero; then calls getBidSize(long)")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"void DisplayFormat.update(OrderBook, boolean)"})
+  void testUpdate_givenInstrumentGetPriceFactorReturnTen_givenAskSizeIsZero_thenCallsGetBidSize() {
+    // Arrange
+    Instrument instrument = mock(Instrument.class);
+    when(instrument.getPriceFactor()).thenReturn(10.0d);
+    when(instrument.getSizeFactor()).thenReturn(10.0d);
+    when(instrument.asString()).thenReturn("As String");
+    when(instrument.getPriceFormat()).thenReturn("Price Format");
+    when(instrument.getSizeFormat()).thenReturn("Size Format");
+
+    Instruments instruments = mock(Instruments.class);
+    when(instruments.get(anyLong())).thenReturn(instrument);
+    when(instruments.getPricePlaceholder()).thenReturn("Price Placeholder");
+    when(instruments.getSizePlaceholder()).thenReturn("Size Placeholder");
+    when(instruments.getPriceWidth()).thenReturn(1);
+    when(instruments.getSizeWidth()).thenReturn(1);
+    DisplayFormat displayFormat = new DisplayFormat(instruments);
+
+    OrderBook book = mock(OrderBook.class);
+    when(book.getAskSize(anyLong())).thenReturn(0L);
+    when(book.getBestAskPrice()).thenReturn(1L);
+    when(book.getBestBidPrice()).thenReturn(1L);
+    when(book.getBidSize(anyLong())).thenReturn(3L);
+    when(book.getInstrument()).thenReturn(1L);
+
+    // Act
+    displayFormat.update(book, true);
+
+    // Assert
+    verify(book).getAskSize(1L);
+    verify(book).getBestAskPrice();
+    verify(book).getBestBidPrice();
+    verify(book).getBidSize(1L);
+    verify(book).getInstrument();
+    verify(instrument).asString();
+    verify(instrument).getPriceFactor();
+    verify(instrument).getPriceFormat();
+    verify(instrument).getSizeFactor();
+    verify(instrument).getSizeFormat();
+    verify(instruments).get(1L);
+    verify(instruments).getPricePlaceholder();
+    verify(instruments).getPriceWidth();
+    verify(instruments).getSizePlaceholder();
+    verify(instruments).getSizeWidth();
+  }
+
+  /**
    * Test {@link DisplayFormat#trade(OrderBook, Side, long, long)}.
    *
    * <ul>
