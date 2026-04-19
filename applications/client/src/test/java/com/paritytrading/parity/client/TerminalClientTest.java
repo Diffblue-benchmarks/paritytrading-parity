@@ -30,7 +30,10 @@ import java.net.InetAddress;
 import java.net.InetSocketAddress;
 import java.util.Locale;
 import java.util.Scanner;
+import java.nio.channels.ClosedChannelException;
 import org.jline.reader.EndOfFileException;
+import org.jline.reader.LineReader;
+import org.jline.reader.LineReaderBuilder;
 import org.jline.reader.UserInterruptException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -350,5 +353,201 @@ class TerminalClientTest {
         }
 
         Mockito.verify(mockClient).run();
+    }
+
+    @Test
+    void runWithNullLineExitsLoop() throws Exception {
+        PrintStream original = System.out;
+        try {
+            System.setOut(new PrintStream(new ByteArrayOutputStream()));
+
+            try (MockedStatic<LineReaderBuilder> builderMock = Mockito.mockStatic(LineReaderBuilder.class)) {
+                LineReaderBuilder mockBuilder = Mockito.mock(LineReaderBuilder.class);
+                LineReader mockReader = Mockito.mock(LineReader.class);
+
+                builderMock.when(LineReaderBuilder::builder).thenReturn(mockBuilder);
+                Mockito.when(mockBuilder.completer(Mockito.any())).thenReturn(mockBuilder);
+                Mockito.when(mockBuilder.build()).thenReturn(mockReader);
+
+                Mockito.when(mockReader.readLine("> ")).thenReturn(null);
+
+                client.run();
+
+                Mockito.verify(orderEntry).close();
+            }
+        } finally {
+            System.setOut(original);
+        }
+    }
+
+    @Test
+    void runWithEmptyLineContinues() throws Exception {
+        PrintStream original = System.out;
+        try {
+            System.setOut(new PrintStream(new ByteArrayOutputStream()));
+
+            try (MockedStatic<LineReaderBuilder> builderMock = Mockito.mockStatic(LineReaderBuilder.class)) {
+                LineReaderBuilder mockBuilder = Mockito.mock(LineReaderBuilder.class);
+                LineReader mockReader = Mockito.mock(LineReader.class);
+
+                builderMock.when(LineReaderBuilder::builder).thenReturn(mockBuilder);
+                Mockito.when(mockBuilder.completer(Mockito.any())).thenReturn(mockBuilder);
+                Mockito.when(mockBuilder.build()).thenReturn(mockReader);
+
+                Mockito.when(mockReader.readLine("> "))
+                        .thenReturn("")
+                        .thenReturn(null);
+
+                client.run();
+
+                Mockito.verify(mockReader, Mockito.times(2)).readLine("> ");
+            }
+        } finally {
+            System.setOut(original);
+        }
+    }
+
+    @Test
+    void runWithUnknownCommandPrintsError() throws Exception {
+        PrintStream original = System.out;
+        try {
+            ByteArrayOutputStream baos = new ByteArrayOutputStream();
+            System.setOut(new PrintStream(baos));
+
+            try (MockedStatic<LineReaderBuilder> builderMock = Mockito.mockStatic(LineReaderBuilder.class)) {
+                LineReaderBuilder mockBuilder = Mockito.mock(LineReaderBuilder.class);
+                LineReader mockReader = Mockito.mock(LineReader.class);
+
+                builderMock.when(LineReaderBuilder::builder).thenReturn(mockBuilder);
+                Mockito.when(mockBuilder.completer(Mockito.any())).thenReturn(mockBuilder);
+                Mockito.when(mockBuilder.build()).thenReturn(mockReader);
+
+                Mockito.when(mockReader.readLine("> "))
+                        .thenReturn("unknowncmd")
+                        .thenReturn(null);
+
+                client.run();
+
+                String output = baos.toString();
+                assertTrue(output.contains("error: Unknown command"));
+            }
+        } finally {
+            System.setOut(original);
+        }
+    }
+
+    @Test
+    void runWithHelpCommand() throws Exception {
+        PrintStream original = System.out;
+        try {
+            ByteArrayOutputStream baos = new ByteArrayOutputStream();
+            System.setOut(new PrintStream(baos));
+
+            try (MockedStatic<LineReaderBuilder> builderMock = Mockito.mockStatic(LineReaderBuilder.class)) {
+                LineReaderBuilder mockBuilder = Mockito.mock(LineReaderBuilder.class);
+                LineReader mockReader = Mockito.mock(LineReader.class);
+
+                builderMock.when(LineReaderBuilder::builder).thenReturn(mockBuilder);
+                Mockito.when(mockBuilder.completer(Mockito.any())).thenReturn(mockBuilder);
+                Mockito.when(mockBuilder.build()).thenReturn(mockReader);
+
+                Mockito.when(mockReader.readLine("> "))
+                        .thenReturn("help")
+                        .thenReturn(null);
+
+                client.run();
+
+                String output = baos.toString();
+                assertTrue(output.contains("Commands:"));
+            }
+        } finally {
+            System.setOut(original);
+        }
+    }
+
+    @Test
+    void runWithExitCommand() throws Exception {
+        PrintStream original = System.out;
+        try {
+            System.setOut(new PrintStream(new ByteArrayOutputStream()));
+
+            try (MockedStatic<LineReaderBuilder> builderMock = Mockito.mockStatic(LineReaderBuilder.class)) {
+                LineReaderBuilder mockBuilder = Mockito.mock(LineReaderBuilder.class);
+                LineReader mockReader = Mockito.mock(LineReader.class);
+
+                builderMock.when(LineReaderBuilder::builder).thenReturn(mockBuilder);
+                Mockito.when(mockBuilder.completer(Mockito.any())).thenReturn(mockBuilder);
+                Mockito.when(mockBuilder.build()).thenReturn(mockReader);
+
+                Mockito.when(mockReader.readLine("> ")).thenReturn("exit");
+
+                client.run();
+
+                Mockito.verify(orderEntry, Mockito.atLeastOnce()).close();
+            }
+        } finally {
+            System.setOut(original);
+        }
+    }
+
+    @Test
+    void runWithIllegalArgumentPrintsUsage() throws Exception {
+        PrintStream original = System.out;
+        try {
+            ByteArrayOutputStream baos = new ByteArrayOutputStream();
+            System.setOut(new PrintStream(baos));
+
+            try (MockedStatic<LineReaderBuilder> builderMock = Mockito.mockStatic(LineReaderBuilder.class)) {
+                LineReaderBuilder mockBuilder = Mockito.mock(LineReaderBuilder.class);
+                LineReader mockReader = Mockito.mock(LineReader.class);
+
+                builderMock.when(LineReaderBuilder::builder).thenReturn(mockBuilder);
+                Mockito.when(mockBuilder.completer(Mockito.any())).thenReturn(mockBuilder);
+                Mockito.when(mockBuilder.build()).thenReturn(mockReader);
+
+                Mockito.when(mockReader.readLine("> "))
+                        .thenReturn("exit foo")
+                        .thenReturn(null);
+
+                client.run();
+
+                String output = baos.toString();
+                assertTrue(output.contains("Usage: exit"));
+            }
+        } finally {
+            System.setOut(original);
+        }
+    }
+
+    @Test
+    void runWithClosedChannelException() throws Exception {
+        PrintStream original = System.out;
+        try {
+            ByteArrayOutputStream baos = new ByteArrayOutputStream();
+            System.setOut(new PrintStream(baos));
+
+            Mockito.doThrow(new ClosedChannelException())
+                    .when(orderEntry).send(Mockito.any());
+
+            try (MockedStatic<LineReaderBuilder> builderMock = Mockito.mockStatic(LineReaderBuilder.class)) {
+                LineReaderBuilder mockBuilder = Mockito.mock(LineReaderBuilder.class);
+                LineReader mockReader = Mockito.mock(LineReader.class);
+
+                builderMock.when(LineReaderBuilder::builder).thenReturn(mockBuilder);
+                Mockito.when(mockBuilder.completer(Mockito.any())).thenReturn(mockBuilder);
+                Mockito.when(mockBuilder.build()).thenReturn(mockReader);
+
+                Mockito.when(mockReader.readLine("> "))
+                        .thenReturn("cancel ORDER123")
+                        .thenReturn(null);
+
+                client.run();
+
+                String output = baos.toString();
+                assertTrue(output.contains("error: Connection closed"));
+            }
+        } finally {
+            System.setOut(original);
+        }
     }
 }
