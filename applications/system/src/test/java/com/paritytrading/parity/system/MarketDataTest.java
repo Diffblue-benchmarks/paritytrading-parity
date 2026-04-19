@@ -23,8 +23,15 @@ import com.paritytrading.nassau.moldudp64.MoldUDP64RequestServer;
 import com.paritytrading.nassau.moldudp64.MoldUDP64Server;
 import com.paritytrading.parity.net.pmd.PMD;
 import java.lang.reflect.Constructor;
+import java.net.InetSocketAddress;
+import java.net.NetworkInterface;
+import java.net.StandardProtocolFamily;
+import java.net.StandardSocketOptions;
+import java.nio.channels.DatagramChannel;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.mockito.MockedConstruction;
+import org.mockito.MockedStatic;
 
 class MarketDataTest {
 
@@ -103,5 +110,50 @@ class MarketDataTest {
         marketData.orderAdded(2L, PMD.SELL, 200L, 100L, 2000L);
 
         verify(transport).send(any(MoldUDP64DownstreamPacket.class));
+    }
+
+    @Test
+    void openConfiguresChannelsAndReturnsInstance() throws Exception {
+        DatagramChannel channel        = mock(DatagramChannel.class);
+        DatagramChannel requestChannel = mock(DatagramChannel.class);
+        NetworkInterface ni            = mock(NetworkInterface.class);
+
+        InetSocketAddress multicastGroup = new InetSocketAddress("239.1.1.1", 5000);
+        InetSocketAddress requestAddress = new InetSocketAddress("127.0.0.1", 5001);
+
+        when(channel.setOption(any(), any())).thenReturn(channel);
+        when(channel.connect(any())).thenReturn(channel);
+        when(requestChannel.bind(any())).thenReturn(requestChannel);
+        when(requestChannel.configureBlocking(false)).thenReturn(requestChannel);
+
+        try (MockedStatic<DatagramChannel> dcMock = mockStatic(DatagramChannel.class);
+             MockedConstruction<MoldUDP64Server> serverCtor =
+                     mockConstruction(MoldUDP64Server.class);
+             MockedConstruction<MoldUDP64RequestServer> requestServerCtor =
+                     mockConstruction(MoldUDP64RequestServer.class)) {
+
+            dcMock.when(() -> DatagramChannel.open(StandardProtocolFamily.INET))
+                  .thenReturn(channel);
+            dcMock.when(() -> DatagramChannel.open())
+                  .thenReturn(requestChannel);
+
+            MarketData result = MarketData.open("session1  ", ni, multicastGroup, requestAddress);
+
+            assertNotNull(result);
+
+            dcMock.verify(() -> DatagramChannel.open(StandardProtocolFamily.INET));
+            verify(channel).setOption(StandardSocketOptions.IP_MULTICAST_IF, ni);
+            verify(channel).connect(multicastGroup);
+
+            dcMock.verify(() -> DatagramChannel.open());
+            verify(requestChannel).bind(requestAddress);
+            verify(requestChannel).configureBlocking(false);
+
+            assertEquals(1, serverCtor.constructed().size());
+            assertEquals(1, requestServerCtor.constructed().size());
+
+            assertNotNull(result.getTransport());
+            assertNotNull(result.getRequestTransport());
+        }
     }
 }
