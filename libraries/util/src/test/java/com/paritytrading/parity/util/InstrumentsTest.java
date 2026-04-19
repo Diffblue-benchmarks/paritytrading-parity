@@ -137,6 +137,34 @@ class InstrumentsTest {
         assertEquals("%8.0f", INTEGERS.get("FOO").getSizeFormat());
     }
 
+    @Test
+    void getByStringReturnsNullForUnknown() {
+        assertNull(FRACTIONS.get("UNKNOWN"));
+    }
+
+    @Test
+    void getByLongFindsInstrument() {
+        Instrument foo = FRACTIONS.get("FOO");
+        long fooAsLong = foo.asLong();
+
+        assertSame(foo, FRACTIONS.get(fooAsLong));
+    }
+
+    @Test
+    void getByLongReturnsNullForUnknown() {
+        assertNull(FRACTIONS.get(0L));
+    }
+
+    @Test
+    void iterator() {
+        int count = 0;
+
+        for (Instrument instrument : FRACTIONS)
+            count++;
+
+        assertEquals(2, count);
+    }
+
     private static Instruments fromString(String s) {
         Config config = ConfigFactory.parseString(s);
 
