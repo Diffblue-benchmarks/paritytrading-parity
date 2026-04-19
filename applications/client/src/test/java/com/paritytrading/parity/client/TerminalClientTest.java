@@ -17,6 +17,9 @@ package com.paritytrading.parity.client;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import com.paritytrading.foundation.ASCII;
+import com.paritytrading.nassau.soupbintcp.SoupBinTCP;
+import com.paritytrading.nassau.soupbintcp.SoupBinTCPClient;
 import com.paritytrading.parity.util.Instruments;
 import com.paritytrading.parity.util.OrderIDGenerator;
 import com.typesafe.config.Config;
@@ -39,6 +42,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.jvirtanen.config.Configs;
 import org.jvirtanen.util.Applications;
+import org.mockito.ArgumentCaptor;
 import org.mockito.MockedStatic;
 import org.mockito.Mockito;
 
@@ -548,6 +552,64 @@ class TerminalClientTest {
             }
         } finally {
             System.setOut(original);
+        }
+    }
+
+    @Test
+    void openCreatesClientAndSendsLogin() throws Exception {
+        InetSocketAddress address = new InetSocketAddress("127.0.0.1", 4000);
+        String           username = "user01";
+        String           password = "pass012345";
+        Instruments      mockInst = Mockito.mock(Instruments.class);
+
+        OrderEntry       mockOrderEntry = Mockito.mock(OrderEntry.class);
+        SoupBinTCPClient mockTransport  = Mockito.mock(SoupBinTCPClient.class);
+        Mockito.when(mockOrderEntry.getTransport()).thenReturn(mockTransport);
+
+        try (MockedStatic<OrderEntry> orderEntryMock = Mockito.mockStatic(OrderEntry.class)) {
+            orderEntryMock.when(() -> OrderEntry.open(Mockito.eq(address), Mockito.any(Events.class)))
+                    .thenReturn(mockOrderEntry);
+
+            TerminalClient result = TerminalClient.open(address, username, password, mockInst);
+
+            assertNotNull(result);
+            assertSame(mockOrderEntry, result.getOrderEntry());
+            assertSame(mockInst, result.getInstruments());
+            assertNotNull(result.getEvents());
+            assertNotNull(result.getOrderIdGenerator());
+
+            ArgumentCaptor<SoupBinTCP.LoginRequest> captor =
+                    ArgumentCaptor.forClass(SoupBinTCP.LoginRequest.class);
+            Mockito.verify(mockTransport).login(captor.capture());
+
+            SoupBinTCP.LoginRequest loginRequest = captor.getValue();
+            assertEquals(username, ASCII.get(loginRequest.username).trim());
+            assertEquals(password, ASCII.get(loginRequest.password).trim());
+        }
+    }
+
+    @Test
+    void openPassesEventsToOrderEntry() throws Exception {
+        InetSocketAddress address = new InetSocketAddress("127.0.0.1", 4001);
+        Instruments      mockInst = Mockito.mock(Instruments.class);
+
+        OrderEntry       mockOrderEntry = Mockito.mock(OrderEntry.class);
+        SoupBinTCPClient mockTransport  = Mockito.mock(SoupBinTCPClient.class);
+        Mockito.when(mockOrderEntry.getTransport()).thenReturn(mockTransport);
+
+        try (MockedStatic<OrderEntry> orderEntryMock = Mockito.mockStatic(OrderEntry.class)) {
+            ArgumentCaptor<Events> eventsCaptor = ArgumentCaptor.forClass(Events.class);
+
+            orderEntryMock.when(() -> OrderEntry.open(Mockito.any(InetSocketAddress.class), Mockito.any(Events.class)))
+                    .thenReturn(mockOrderEntry);
+
+            TerminalClient result = TerminalClient.open(address, "u", "p", mockInst);
+
+            orderEntryMock.verify(() -> OrderEntry.open(Mockito.eq(address), eventsCaptor.capture()));
+
+            Events passedEvents = eventsCaptor.getValue();
+            assertNotNull(passedEvents);
+            assertSame(passedEvents, result.getEvents());
         }
     }
 }
