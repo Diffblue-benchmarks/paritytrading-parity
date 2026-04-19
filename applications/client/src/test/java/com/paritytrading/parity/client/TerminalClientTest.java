@@ -20,7 +20,9 @@ import static org.junit.jupiter.api.Assertions.*;
 import com.paritytrading.parity.util.Instruments;
 import com.paritytrading.parity.util.OrderIDGenerator;
 import com.typesafe.config.Config;
+import com.typesafe.config.ConfigException;
 import java.io.ByteArrayOutputStream;
+import java.io.FileNotFoundException;
 import java.io.PrintStream;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
@@ -28,9 +30,12 @@ import java.net.InetAddress;
 import java.net.InetSocketAddress;
 import java.util.Locale;
 import java.util.Scanner;
+import org.jline.reader.EndOfFileException;
+import org.jline.reader.UserInterruptException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.jvirtanen.config.Configs;
+import org.jvirtanen.util.Applications;
 import org.mockito.MockedStatic;
 import org.mockito.Mockito;
 
@@ -233,6 +238,82 @@ class TerminalClientTest {
     @Test
     void nanosPerMilli() {
         assertEquals(1_000_000L, TerminalClient.NANOS_PER_MILLI);
+    }
+
+    @Test
+    void mainWithNoArgs() throws Exception {
+        try (MockedStatic<Applications> appMock = Mockito.mockStatic(Applications.class)) {
+            RuntimeException exitException = new RuntimeException("exit");
+            appMock.when(() -> Applications.usage(Mockito.anyString())).thenThrow(exitException);
+
+            RuntimeException thrown = assertThrows(RuntimeException.class,
+                    () -> TerminalClient.main(new String[]{}));
+
+            assertSame(exitException, thrown);
+            appMock.verify(() -> Applications.usage("parity-client <configuration-file>"));
+        }
+    }
+
+    @Test
+    void mainWithTooManyArgs() throws Exception {
+        try (MockedStatic<Applications> appMock = Mockito.mockStatic(Applications.class)) {
+            RuntimeException exitException = new RuntimeException("exit");
+            appMock.when(() -> Applications.usage(Mockito.anyString())).thenThrow(exitException);
+
+            RuntimeException thrown = assertThrows(RuntimeException.class,
+                    () -> TerminalClient.main(new String[]{"a", "b"}));
+
+            assertSame(exitException, thrown);
+            appMock.verify(() -> Applications.usage("parity-client <configuration-file>"));
+        }
+    }
+
+    @Test
+    void mainWithConfigException() throws Exception {
+        try (MockedStatic<Applications> appMock = Mockito.mockStatic(Applications.class)) {
+            ConfigException configEx = new ConfigException.Missing("some.path");
+            appMock.when(() -> Applications.config("bad.conf")).thenThrow(configEx);
+
+            TerminalClient.main(new String[]{"bad.conf"});
+
+            appMock.verify(() -> Applications.error(configEx));
+        }
+    }
+
+    @Test
+    void mainWithFileNotFound() throws Exception {
+        try (MockedStatic<Applications> appMock = Mockito.mockStatic(Applications.class)) {
+            FileNotFoundException fnfe = new FileNotFoundException("missing.conf");
+            appMock.when(() -> Applications.config("missing.conf")).thenThrow(fnfe);
+
+            TerminalClient.main(new String[]{"missing.conf"});
+
+            appMock.verify(() -> Applications.error(fnfe));
+        }
+    }
+
+    @Test
+    void mainWithEndOfFileException() throws Exception {
+        try (MockedStatic<Applications> appMock = Mockito.mockStatic(Applications.class)) {
+            appMock.when(() -> Applications.config("test.conf"))
+                    .thenThrow(new EndOfFileException());
+
+            TerminalClient.main(new String[]{"test.conf"});
+
+            appMock.verify(() -> Applications.error(Mockito.any(Throwable.class)), Mockito.never());
+        }
+    }
+
+    @Test
+    void mainWithUserInterruptException() throws Exception {
+        try (MockedStatic<Applications> appMock = Mockito.mockStatic(Applications.class)) {
+            appMock.when(() -> Applications.config("test.conf"))
+                    .thenThrow(new UserInterruptException(""));
+
+            TerminalClient.main(new String[]{"test.conf"});
+
+            appMock.verify(() -> Applications.error(Mockito.any(Throwable.class)), Mockito.never());
+        }
     }
 
     @Test
