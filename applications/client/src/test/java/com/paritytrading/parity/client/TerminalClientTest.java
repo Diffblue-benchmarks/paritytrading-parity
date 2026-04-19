@@ -19,14 +19,19 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import com.paritytrading.parity.util.Instruments;
 import com.paritytrading.parity.util.OrderIDGenerator;
+import com.typesafe.config.Config;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
+import java.net.InetAddress;
+import java.net.InetSocketAddress;
 import java.util.Locale;
 import java.util.Scanner;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.jvirtanen.config.Configs;
+import org.mockito.MockedStatic;
 import org.mockito.Mockito;
 
 class TerminalClientTest {
@@ -228,5 +233,41 @@ class TerminalClientTest {
     @Test
     void nanosPerMilli() {
         assertEquals(1_000_000L, TerminalClient.NANOS_PER_MILLI);
+    }
+
+    @Test
+    void mainWithConfig() throws Exception {
+        Config config = Mockito.mock(Config.class);
+        Mockito.when(config.getString("order-entry.username")).thenReturn("user");
+        Mockito.when(config.getString("order-entry.password")).thenReturn("pass");
+
+        InetAddress address = InetAddress.getLoopbackAddress();
+        int port = 1234;
+        Instruments mockInstruments = Mockito.mock(Instruments.class);
+        TerminalClient mockClient = Mockito.mock(TerminalClient.class);
+
+        try (MockedStatic<Configs> configsMock = Mockito.mockStatic(Configs.class);
+             MockedStatic<Instruments> instrumentsMock = Mockito.mockStatic(Instruments.class, Mockito.CALLS_REAL_METHODS);
+             MockedStatic<TerminalClient> terminalClientMock = Mockito.mockStatic(TerminalClient.class, Mockito.CALLS_REAL_METHODS)) {
+
+            configsMock.when(() -> Configs.getInetAddress(config, "order-entry.address"))
+                    .thenReturn(address);
+            configsMock.when(() -> Configs.getPort(config, "order-entry.port"))
+                    .thenReturn(port);
+            instrumentsMock.when(() -> Instruments.fromConfig(config, "instruments"))
+                    .thenReturn(mockInstruments);
+            terminalClientMock.when(() -> TerminalClient.open(
+                    Mockito.any(InetSocketAddress.class),
+                    Mockito.eq("user"),
+                    Mockito.eq("pass"),
+                    Mockito.eq(mockInstruments)))
+                    .thenReturn(mockClient);
+
+            Method mainMethod = TerminalClient.class.getDeclaredMethod("main", Config.class);
+            mainMethod.setAccessible(true);
+            mainMethod.invoke(null, config);
+        }
+
+        Mockito.verify(mockClient).run();
     }
 }
