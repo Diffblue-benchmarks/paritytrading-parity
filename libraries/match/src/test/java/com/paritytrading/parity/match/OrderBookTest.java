@@ -234,4 +234,36 @@ class OrderBookTest {
         assertEquals(asList(firstBid, match, secondBid), events.collect());
     }
 
+    @Test
+    void duplicateOrderId() {
+        book.enter(1, Side.BUY, 1000, 100);
+        book.enter(1, Side.BUY, 1000, 100);
+
+        Event bid = new Add(1, Side.BUY, 1000, 100);
+
+        assertEquals(asList(bid), events.collect());
+    }
+
+    @Test
+    void buyBelowBestAsk() {
+        book.enter(1, Side.SELL, 1000, 100);
+        book.enter(2, Side.BUY,   999, 100);
+
+        Event ask = new Add(1, Side.SELL, 1000, 100);
+        Event bid = new Add(2, Side.BUY,   999, 100);
+
+        assertEquals(asList(ask, bid), events.collect());
+    }
+
+    @Test
+    void sellAboveBestBid() {
+        book.enter(1, Side.BUY,  1000, 100);
+        book.enter(2, Side.SELL, 1001, 100);
+
+        Event bid = new Add(1, Side.BUY,  1000, 100);
+        Event ask = new Add(2, Side.SELL, 1001, 100);
+
+        assertEquals(asList(bid, ask), events.collect());
+    }
+
 }
